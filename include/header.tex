@@ -1,0 +1,107 @@
+%%% warn about LaTeX 'sins'
+\RequirePackage[l2tabu, orthodox]{nag}
+
+
+%%% KOMA class
+\documentclass[
+     a4paper
+    ,titlepage=true
+    ,fleqn
+    ,oneside   % TODO
+]{scrbook}
+
+
+%%% Fonts, encoding
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[defaultsans,scale=.93]{lato}
+\usepackage[scale=.91]{sourcecodepro}
+\usepackage[T1]{fontenc}
+
+
+%%% Math, symbols, units
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xspace}
+\usepackage{bm}
+\usepackage{dsfont}    % for identity-matrix
+\IfFileExists{siunitx.sty}{
+    \usepackage{siunitx}
+}{
+    \message{Warning: siunitx package is missing.}
+}
+
+% Bold vectors
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+% This redefines a linebreak '\\' inside the 'align'-environment.
+% It adds \notag to all equations except the last (only one label
+% for multi-line equations).
+\makeatletter
+\def\Let@{\def\\{\notag\math@cr}}
+\makeatother
+
+
+%%% Graphics
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage[
+     font=small
+    ,labelfont=bf
+]{caption}
+\captionsetup*[figure]{name=Fig.}
+\graphicspath{{fig/}}
+
+
+%%% Layout, typesetting, formatting
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[iso]{datetime}
+\usepackage[automark,headsepline=.6pt]{scrlayer-scrpage}
+
+%%% Colors
+\usepackage{xcolor}
+\definecolor{link}{rgb}{0.,0.4,1}
+\definecolor{header}{gray}{0.15}
+
+
+%%% Hyperref
+\usepackage[
+     pdfusetitle
+    ,colorlinks=true
+    ,citecolor=link
+    ,linkcolor=link
+    ,pdfborder={0 0 0}
+    ,unicode=true
+]{hyperref}
+
+
+%%% Bibliography
+\usepackage[
+     backend=biber
+    ,defernumbers=true
+    ,style=numeric-comp
+    ,doi=false
+    ,url=false
+    ,isbn=false
+    ,arxiv=abs
+    ,hyperref=true
+    ,backref=true
+    ,maxnames=8
+]{biblatex}
+
+\addbibresource[label=my-publications]{bibliography/my-publications.bib}
+\addbibresource[label=all]{/home/shark/PhD/bibtex/PhD.bib} % TODO
+
+% Hyperlink the title to DOI website
+\newbibmacro{string+doi}[1]{%
+      \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+      \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+      \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+
+%%% Metadata
+\AtBeginDocument{
+    \title{\thesisTitle}
+    \author{\thesisAuthor}
+    \date{\thesisDate}
+}
