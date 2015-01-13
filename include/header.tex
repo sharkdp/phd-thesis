@@ -5,15 +5,18 @@
 %%% KOMA class
 \documentclass[
      a4paper
+    ,13pt
     ,titlepage=true
     ,fleqn
-    ,oneside   % TODO
+    ,oneside
+    ,english
+    ,pagesize
 ]{scrbook}
 
 
 %%% Fonts, encoding
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage{newpxtext,newpxmath}
 \usepackage[defaultsans,scale=.93]{lato}
 \usepackage[scale=.91]{sourcecodepro}
 \usepackage[T1]{fontenc}
@@ -99,9 +102,31 @@
       \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
       \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 
+
 %%% Metadata
 \AtBeginDocument{
     \title{\thesisTitle}
     \author{\thesisAuthor}
     \date{\thesisDate}
 }
+
+
+%%% Chapter pages
+\usepackage{quotchap}
+\renewcommand*{\sectfont}{\rmfamily}
+
+
+%%% Section title
+\usepackage[small,sc]{titlesec}
+
+
+%%% Languages
+\usepackage[ngerman,main=english]{babel}
+
+
+%%% Appendix
+\usepackage[toc]{appendix}
+
+
+%%% References
+\usepackage{cleveref}

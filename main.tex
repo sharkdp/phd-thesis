@@ -4,19 +4,28 @@
 
 \begin{document}
 
-\input{include/titlepage}
-\input{include/publications}
+\input{frontmatter/titlepage}
+
+\cleardoublepage
+
+\input{frontmatter/publications}
+\input{frontmatter/zusammenfassung}
 
 \microtypesetup{protrusion=false}
 \tableofcontents
 \microtypesetup{protrusion=true}
 
-\input{chapters/00_introduction}
-\input{chapters/01_dipolar_interaction}
-\input{chapters/02_anomalous_behavior}
-\input{chapters/03_dipolar_fermions}
-\input{chapters/05_topological_bands}
+\input{chapters/introduction}
+% \input{chapters/anomalous_behavior}
+% \input{chapters/dipolar_fermions}
+\input{chapters/topological_bands}
 
-\printbibliography
+\begin{appendices}
+\input{appendices/dipolar_interaction}
+\end{appendices}
+
+\printbibliography[heading=bibintoc]
+
+\input{endmatter/acknowledgements}
 
 \end{document}
