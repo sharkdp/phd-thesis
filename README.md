@@ -1,11 +1,15 @@
 # phd-thesis
 LaTeX sources for my PhD thesis
 
+Requirements
+------------
+- it is probably a good idea to have `texlive-full` (or equivalent) installed
+- Optionally: `latexmk`
+
 Building
 --------
-Clone the repository, then initialize and clone the `latex-report` submodule:
+Clone the repository including the submodule `latex-report`:
 ```sh
-git submodule init
-git submodule update
+git clone --recursive https://github.com/sharkdp/phd-thesis.git
 ```
-Then, compile by calling `latexmk` from the root folder.
+Then, compile the document by calling `latexmk` from the root folder.
