@@ -1,0 +1,3 @@
+[submodule "include/latex-report"]
+	path = include/latex-report
+	url = https://github.com/sharkdp/latex-report
