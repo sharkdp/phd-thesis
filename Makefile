@@ -1,4 +1,10 @@
 SRC_BIB = /home/shark/PhD/bibtex/PhD.bib
 
-bib: $(SRC_BIB)
+.PHONY: all clean
+
+bibliography/all.bib: $(SRC_BIB)
 	cp $(SRC_BIB) bibliography/all.bib
+
+clean:
+	rm -rf dist
+	mkdir dist
