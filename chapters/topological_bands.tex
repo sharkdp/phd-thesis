@@ -37,18 +37,11 @@ These ideas are motivated by the experimental success in cooling and trapping po
 %These ideas are motivated by the experimental success in cooling polar molecules into the ground state and trapping them in optical lattices~\cite{Ni2008b,Yan2013}.
 
 
-\begin{figure}[ht]
-    \centering
-    \ig{.7}{fig1/fig1}
-
-    \caption{
-        \label{fig:fig1}
-        (a)~Setup: Each lattice site of a two-dimensional optical lattice is occupied by a single polar molecule.
-        The molecules can be excited into two different rotational states.
-        Dipole-dipole interactions induce long-range tunneling links for the excitations.
-        (b)~Rotational level structure of each molecule with applied electric field and additional microwave field with Rabi frequency $\Omega$ and detuning $\Delta$.
-    }
-\end{figure}
+\fig{.7}{fig1/fig1}{setup}{
+(a)~Setup: Each lattice site of a two-dimensional optical lattice is occupied by a single polar molecule.
+The molecules can be excited into two different rotational states.
+Dipole-dipole interactions induce long-range tunneling links for the excitations.
+(b)~Rotational level structure of each molecule with applied electric field and additional microwave field with Rabi frequency $\Omega$ and detuning $\Delta$.}
 
 Here we show that a system of polar molecules gives rise to topological band structures, exploiting the spin-orbit coupling of dipolar interactions in combination with a term that breaks time-reversal symmetry.
 The main idea is based on polar molecules trapped in a two-dimensional deep optical lattice with quenched tunneling between the sites.
@@ -63,7 +56,7 @@ We point out that our proposal can also be applied to Rydberg atoms in similar s
 
 \section{Setup}
 
-We consider a two-dimensional system of ultracold polar molecules in a deep optical lattice with one molecule pinned at each lattice site, as shown in~\figref{fig1}a.
+We consider a two-dimensional system of ultracold polar molecules in a deep optical lattice with one molecule pinned at each lattice site, as shown in~\tref{setup}a.
 The remaining degree of freedom is given by the internal rotational excitations of the molecules with the Hamiltonian
 \begin{align}
     H^{\text{rot}}_i &= B \vec{J}_i^2 - \vec{d}_i\cdot\vec{E}\,.
@@ -73,11 +66,11 @@ In the absence of external fields, the eigenstates $\ket{J,m}$ of $H^{\text{rot}
 % Applying a static electric field, using its direction as quantization axis, will mix states with different $J$.
 Applying a static electric field mixes states with different $J$.
 The projection $m$, however, can still be used to characterize the states.
-In the following, we focus on the lowest state $\ketz$ with $m=0$ and the two degenerate excited states $\ketpm$ with $m = \pm 1$, see~\figref{fig1}b.
+In the following, we focus on the lowest state $\ketz$ with $m=0$ and the two degenerate excited states $\ketpm$ with $m = \pm 1$, see~\tref{setup}b.
 
 % In the following, we select two different but almost degenerate states out of the rotational manifold.
 % These states might be additionally ``dressed'' by applying static and microwave electric fields.
-% For concreteness, we will focus on the setup illustrated in \figref{fig1}b,c.
+% For concreteness, we will focus on the setup illustrated in \tref{setup}b,c.
 % Here, we select two states, called $\ketp$ and $\ketm$ below, which are adiabatically connected to the $\ket{1,1}$ and $\ket{1,{-1}}$ states.
 % These states are split off from the $m=0$ state by the static electric field.
 
@@ -112,13 +105,13 @@ This allows us to map the Hamiltonian to a bosonic model: The lowest energy stat
 Note that these effective bosonic particles have a spin angular momentum of $m =\pm 1$.
 
 A crucial aspect for the generation of topological bands with a nonzero Chern number is the breaking of time-reversal symmetry.
-In our setup, this is achieved by coupling the state $|+\rangle_{i}$ to the rotational state $\ket{m=2}_{i}$ with an off-resonant microwave field \footnote{The coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$}, see \figref{fig1}b.
+In our setup, this is achieved by coupling the state $|+\rangle_{i}$ to the rotational state $\ket{m=2}_{i}$ with an off-resonant microwave field \footnote{The coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$}, see \tref{setup}b.
 This coupling lifts the degeneracy between the two excitations $|\pm\rangle_{i}$ and provides an energy splitting denoted by $2 \mu$.
 
 
 %The system discussed so far is invariant under (pseudo-spin) time-reversal represented by $\mathcal{T}=\sigma_x K$, with $K$ being complex conjugation.
 %A necessary requirement for bands with nonzero Chern number is the opening of bandgaps at the $\Gamma$ and $K$ point and the breaking of $\mathcal{T}$-symmetry~\cite{Haldane1988}.
-%We achieve this by using a circularly polarized microwave to couple the $\ketp$ state off-resonantly to the lowest $m=2$ state~\footnote{The coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$}, see~\figref{fig1}(c).
+%We achieve this by using a circularly polarized microwave to couple the $\ketp$ state off-resonantly to the lowest $m=2$ state~\footnote{The coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$}, see~\tref{setup}(c).
 %This has two effects for the model in~\eqref{eq:hrealspace}.
 %First, the AC Stark shift introduces an energy offset for the dressed $\ketp$ state (relative to the $\ketm$ state).
 %Note that, in addition, this shift can be independently controlled via magnetic fields~\cite{Ospelkaus2010,Yan2013}.
@@ -175,26 +168,19 @@ $\epsilon^2_{\veck} \approx -\frac{2\pi}{3} |\veck|a \ef{2i \varphi}$.
 Here, $\epsilon^0_{\Gamma} \approx 9.03$ and $\varphi$ is defined by $\hat{\veck}=(\cos \varphi, \sin \varphi)^t$.
 % and $\epsilon^0_{\Gamma} = 4\zeta(\sfrac{3}{2})\beta(\sfrac{3}{2})\approx 9.03$ can be expressed with the Riemann $\zeta$-function and the Dirichlet $\beta$-function~\cite{Glasser1973}.
 
-\begin{figure}[ht]
-    \centering
-    \ig{.38}{fig2/fig2a}
-    \ig{.38}{fig2/fig2b}
-
-    \caption{
-        \label{fig:fig2}
-        (a) Dispersion relation for the $\ketp$ and $\ketm$ states on the square lattice.
-        The dashed line shows the time-reversal invariant point $t=\mu=0$ with band touching at the $\Gamma$ and $\text{M}$ point.
-        % The band minima are located at the two $\text{X}$ points $(\pi/a,0)$ and $(0, \pi/a)$.
-        The solid line shows the gapped topological bands in the time-reversal-broken system for $w/\bar{t}=3, \mu=0$ and $t/\bar{t}=0.4$.
-        % For $t/\bar{t}\gtrsim 0.13$, the band minimum is at the $\Gamma$ point.
-        (b) Dispersion relation for the $\ketp$ and $\keto$ states for electric field angles $\Theta_0=0$ (dashed) and $\Theta_0=\pi/4$ (solid), respectively.
-        The latter has a lower band with flatness $f\approx 1$.
-        % Note: The two '\text{X}' points in the Brillouin zone (pi,0) and (0,pi) are not equivalent as the electric field breaks the x/y symmetry.
-    }
-\end{figure}
+\doublefig{.42}{fig2/fig2a}{}{.42}{fig2/fig2b}{}{dispersionSquare}{
+(a) Dispersion relation for the $\ketp$ and $\ketm$ states on the square lattice.
+The dashed line shows the time-reversal invariant point $t=\mu=0$ with band touching at the $\Gamma$ and $\text{M}$ point.
+The band minima are located at the two $\text{X}$ points $(\pi/a,0)$ and $(0, \pi/a)$.
+The solid line shows the gapped topological bands in the time-reversal-broken system for $w/\bar{t}=3, \mu=0$ and $t/\bar{t}=0.4$.
+For $t/\bar{t}\gtrsim 0.13$, the band minimum is at the $\Gamma$ point.
+(b) Dispersion relation for the $\ketp$ and $\keto$ states for electric field angles $\Theta_0=0$ (dashed) and $\Theta_0=\pi/4$ (solid), respectively.
+The latter has a lower band with flatness $f\approx 1$.
+Note: The two '$\text{X}$' points $(\pi/a,0)$ and $(0, \pi/a)$ are not equivalent in this model as the electric field breaks the $x/y$ symmetry.
+}
 
 In the presence of time-reversal symmetry, represented by $\mathcal{T}=\sigma_x \mathcal{K}$ with $\mathcal{K}$ being complex conjugation, the system reduces to the one discussed in ref.~\cite{Syzranov2014}.
-At the $\mathcal{T}$-invariant point, i.e. $t=\mu=0$, the two energy bands of the system exhibit a band touching at the high-symmetry points $\Gamma=(0,0)$ and $\text{M}=(\pi/a, \pi/a)$ where $\epsilon^2_\veck$ vanishes, see \figref{fig2}a.
+At the $\mathcal{T}$-invariant point, i.e. $t=\mu=0$, the two energy bands of the system exhibit a band touching at the high-symmetry points $\Gamma=(0,0)$ and $\text{M}=(\pi/a, \pi/a)$ where $\epsilon^2_\veck$ vanishes, see \tref{dispersionSquare}a.
 %take the from
 %\begin{align}
   %  E_\pm(\veck)=n^0_{\veck} \pm |\vec{n}_{\veck}|= \bar{t} \bb{-\epsilon^0_\veck \pm 3 |\epsilon^2_{\veck}|}.
@@ -211,7 +197,7 @@ The dispersion relation is given by
 \begin{align}
     E_\pm(\veck)=- \bar{t}\, \epsilon^0_\veck \pm \sqrt{w^2 \big|\epsilon^2_{\veck}\big|^2+\big(\mu+t\, \epsilon^0_{\veck}\big)^2}
 \end{align}
-and shown in \figref{fig2}a.
+and shown in \tref{dispersionSquare}a.
 It is gapped whenever the vector $\vec{n}_{\veck}\ne 0$.
 The first two components can only vanish at the $\Gamma$ or $\text{M}$ point.
 % Consequently, the vanishing of the third component at these points yields a necessary and sufficient condition for a gap closing.
@@ -242,7 +228,6 @@ Note that the non-trivial topology solely results from dipolar spin-orbit coupli
     \ig{.7}{fig3/fig3c}
 
     \caption{
-        \label{fig:fig3}
         (a)~Sample-averaged Chern number $\langle C \rangle$ in the disordered system for increasing density $\rho$ of defects.
         A single realization either yields $C=2$ or $C=0$.
         Bars indicate two standard errors.
@@ -257,18 +242,19 @@ Note that the non-trivial topology solely results from dipolar spin-orbit coupli
         The color indicates the flatness $f$ of the lowest band.
         The arrow shows the parameters of the flat-band model in~(b).
     }
+    \tlabel{disorderAndHoneycomb}
 \end{figure}
 
 
 % The main quest is then to optimize the setup in order to optimize the flatness of topological bands.
 The challenge is to find a specific setup that optimizes the flatness of the topological bands.
-This can be achieved either by focusing on different lattice structures (see honeycomb lattice below and \figref{fig3}b) or by an alternative choice for the two excitations.
+This can be achieved either by focusing on different lattice structures (see honeycomb lattice below and \tref{disorderAndHoneycomb}b) or by an alternative choice for the two excitations.
 The latter is less intuitive when trying to understand the spin-orbit coupling, but gives rise to significantly flatter bands: Instead of considering $\ketp$ and $\ketm$, we choose a model including the $\ketp$ and $\keto$ states.
 This is possible for weak electric fields, if the $\ketm$ state is shifted by a microwave field, or by exploiting the coupling between the nuclear spins of the polar molecules and the rotational degree of freedom~\cite{Ospelkaus2010,Yan2013}.
 This model intrinsically breaks time-reversal symmetry and has the advantage that the $\ketp$ and $\keto$ states have different signs for the tunneling strength, making the $\mathcal{T}$-breaking parameter $t=(t^+-t^1)/2$ large compared to $\bar{t}=(t^++t^1)/2$. % in fact, we know that t/tbar = 3t^+/(-t^+) = -3
 For an electric field direction perpendicular to the lattice, this system is gapless.
 Opening the gap is achieved by rotating the electric field away from the $z$-axis by an angle $\Theta$.
-The dispersion relation for $\Theta=0$ and $\pi/4$ is shown in~\figref{fig2}b.
+The dispersion relation for $\Theta=0$ and $\pi/4$ is shown in~\tref{dispersionSquare}b.
 The lower band has a flatness ratio of $f = \text{bandgap}/\text{bandwidth} \approx 1$.
 %While not being as good as the ratios achieved in related proposals~\cite{Yao2012,Yao2013,Neupert2011,Trescher2012,Wang2011a,Yang2012}, we stress that only a single parameter $\Theta$ is `fine-tuned' here. The values of $t^+, t^1$ and $w$ for weak fields are fixed by the dipole-dipole interaction.
 
@@ -304,7 +290,7 @@ Then, the Chern number can be calculated as
 where $F(\theta_x,\theta_y)=\smash{\Im\!\big({\big\langle\frac{\partial \Psi}{\partial \theta_y}\big|\frac{\partial \Psi}{\partial \theta_x}\big\rangle - \big\langle\frac{\partial \Psi}{\partial \theta_x}\big|\frac{\partial \Psi}{\partial \theta_y}\big\rangle}\big)}$ is the many-body Berry curvature depending on the boundary condition twists.
 Note that Eq.~\eqref{eq:manybodychern} reduces to~Eq.~\eqref{eq:chern} in the translationally invariant case.
 For the numerical computations, we use a discretized version~\cite{Fukui2005}.
-The results for the disordered system are summarized in~\figref{fig3}a.
+The results for the disordered system are summarized in~\tref{disorderAndHoneycomb}a.
 We find that the long-range tunneling stabilizes the topological phase for defect densities $\rho\lesssim 0.45$.
 % We find that the topological phase is robust for defect densities $\rho\lesssim 0.45$.
 % The long-range tunneling ${\sim}|\vec{R}|^{-3}$ is found to significantly enhance the stability compared to a model with artificial truncation at the next-to-nearest neighbor level.
@@ -313,15 +299,15 @@ We find that the long-range tunneling stabilizes the topological phase for defec
 \section{Other lattices}
 
 \subsection{Honeycomb lattice:}
-Returning to the simple setup in \figref{fig1}b, the influence of the lattice geometry can be exemplified by going to the honeycomb lattice.
+Returning to the simple setup in \tref{setup}b, the influence of the lattice geometry can be exemplified by going to the honeycomb lattice.
 Due to the two distinct sublattices, we generally obtain four bands in the presence of broken time-reversal symmetry.
 Depending on the microscopic parameters, the bands exhibit a rich topological structure, characterized by their Chern numbers.
 Note that the Chern numbers are calculated with a numerical method similar to the one for the disordered system.
-In \figref{fig3}c, we show a two-dimensional cut through the topological phase diagram, spanned by the parameters $t/\bar{t}, w/\bar{t}$ and $\mu/\bar{t}$.
+In \tref{disorderAndHoneycomb}c, we show a two-dimensional cut through the topological phase diagram, spanned by the parameters $t/\bar{t}, w/\bar{t}$ and $\mu/\bar{t}$.
 We find a multitude of different topological phases with large areas of flatness $f > 0$ for the lowest band.
 A flatness $f < 0$ indicates that the maximum of the lowest band is higher than the minimum of the second band.
 In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient for a nonzero Chern number; $t\ne 0$ is not necessarily needed.
-\figref{fig3}b shows the dispersion relation with a lowest band of flatness $f\approx 6.4$ and a Chern number $C=-1$.
+\tref{disorderAndHoneycomb}b shows the dispersion relation with a lowest band of flatness $f\approx 6.4$ and a Chern number $C=-1$.
 
 % The relation to the bilayer system allows us to explain the behavior of this model on different 2D lattices.
 % Assigning ${+}$ and ${-}$ orbitals to the two distinct sublattices yields a single layer with a Chern number of $C=1$.
@@ -338,20 +324,20 @@ In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient
     \end{minipage}
 
     \caption{
-        \label{fig:fig4}
         (a)~Dispersion relation for the $\ketp$ and $\keto$ states on a cylindrical square lattice geometry with infinite extent in $x$ direction and $31$ sites in $y$ direction.
         Four edge states cross the bandgap in the $C=2$ phase (two for each edge).
         (b)~Exponentially decaying amplitude of the two edge states corresponding to the points shown in the spectrum.
         (c)~Edge state amplitude $|\psi_+(x,y)|^2 + |\psi_-(x,y)|^2$ on a finite $50 \times 50$ square lattice with a fraction $\rho=0.2$ of the molecules removed (missing sites are indicated by crosses).
     }
+    \tlabel{edgeStates}
 \end{figure}
 
 \section{Detection}
 One way to detect the topological band structure experimentally is to create a local excitation close to the edge of the system.
-In \figref{fig4} we show the edge states in the $C=2$ phase on the square lattice.
+In \tref{edgeStates} we show the edge states in the $C=2$ phase on the square lattice.
 The states are exponentially localized on the boundary of the system and the propagation of a single excitation along the edge can be used as an indication of the topological nature of the bands~\cite{Hafezi2013}.
-In \figref{fig4}c, we show the robustness of the edge states against missing molecules.
-The edge state is also visible in a spectroscopic analysis, as a single mode between the broad continuum of the two bands (see~\figref{fig4}a).
+In \tref{edgeStates}c, we show the robustness of the edge states against missing molecules.
+The edge state is also visible in a spectroscopic analysis, as a single mode between the broad continuum of the two bands (see~\tref{edgeStates}a).
 
 \section{Many-body system}
 Finally, the most spectacular evidence of the topological nature would be the appearance of fractional Chern insulators in the many-body system at a fixed density of excitations.

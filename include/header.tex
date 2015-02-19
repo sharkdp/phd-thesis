@@ -132,13 +132,6 @@
 \usepackage{cleveref}
 
 
-%%% Custom header commands
-\newcommand{\chapterprefix}{}
-\newcommand{\includechapter}[1]{
-    \renewcommand{\chapterprefix}{#1}
-    \input{chapters/#1}
-}
-
 \AtEndPreamble{
     \input{include/latex-report/include/commands.tex}
     \input{include/commands.tex}

@@ -1,2 +1,58 @@
+%%% Referencing, file structure
+\newcommand{\chapterprefix}{}
+\newcommand{\chapterpath}{}
+\newcommand{\includechapter}[2]{
+    \renewcommand{\chapterprefix}{#1}
+    \renewcommand{\chapterpath}{#2}
+    \input{chapters/\chapterpath}
+}
+
+
+
+\newcommand{\tlabel}[1]{\label{\chapterprefix:#1}}
+\newcommand{\tref}[1]{\cref{\chapterprefix:#1}}
+\newcommand{\Tref}[1]{\Cref{\chapterprefix:#1}}
+
 %%% Figures
-\renewcommand{\igopt}[2]{\includegraphics[#1]{\chapterprefix/#2}} %%! {options}{file name}
+\renewcommand{\igopt}[2]{\includegraphics[#1]{\chapterpath/#2}} %%! options, filename
+
+\renewcommand{\figopt}[5]{ %%! width, filename, label, caption, placement (h, t, ht)
+    \begin{figure}[#5]
+        \centering
+        \ig{#1}{#2}
+        \caption{#4}
+        \label{\chapterprefix:#3}
+    \end{figure}
+}
+
+\renewcommand{\fig}[4]{ %%! width, filename, label, caption
+    \figopt{#1}{#2}{#3}{#4}{ht}
+}
+
+\renewcommand{\doublefigopt}[9]{ %%! w1, f1, c1, w2, f2, c2, label, main caption, placement
+    \begin{figure}[#9]
+        \centering
+        \ifstrempty{#3}{
+            \subfloat{
+                \ig{#1}{#2}
+            }
+        }{
+            \subfloat[#3]{
+                \ig{#1}{#2}
+            }
+        }
+        \ifstrempty{#6}{
+            \subfloat{
+                \ig{#4}{#5}
+            }
+        }{
+            \subfloat[#6]{
+                \ig{#4}{#5}
+            }
+        }
+        \caption{#8}
+        \label{\chapterprefix:#7}
+    \end{figure}
+}
+
+\renewcommand{\doublefig}[8]{\doublefigopt{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{ht}} %%! w1, f1, c1, w2, f2, c2, label, main caption
