@@ -116,8 +116,16 @@
 
 
 %%% Chapter pages
+\usepackage{xparse}
 \usepackage{quotchap}
-% \renewcommand*{\sectfont}{\rmfamily}
+\NewDocumentEnvironment{tquote}{m}{
+    \begin{savequote}[5.5cm]
+        \begin{flushleft}
+}{
+    \end{flushleft}
+    \qauthor{--- #1}
+\end{savequote}
+}
 
 
 %%% Languages
