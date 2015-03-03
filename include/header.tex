@@ -99,8 +99,10 @@
 \addbibresource[label=my-publications]{bibliography/my-publications.bib}
 \addbibresource[label=all]{bibliography/all.bib}
 
+% do not show month and journal issue:
 \AtEveryBibitem{\clearfield{month}}
 \AtEveryBibitem{\clearfield{number}}
+
 
 % Hyperlink the title to DOI website
 \newbibmacro{string+doi}[1]{%
@@ -146,6 +148,11 @@
 \usepackage[toc]{appendix}
 \Crefname{appendixchapter}{Appendix}{Appendices}
 \crefname{appendixchapter}{appendix}{appendices}
+
+
+%%% Development
+\usepackage{todonotes}
+\presetkeys{todonotes}{color=red!30,inline,prepend,caption=TODO}{}
 
 
 \AtEndPreamble{
