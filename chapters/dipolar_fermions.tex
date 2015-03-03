@@ -17,31 +17,29 @@
 \chaptermark{Driving dipolar fermions into the Quantum Hall regime}
 
 
-A new method to drive a system of neutral dipolar fermions into the lowest Landau level regime is proposed.
-%By employing dipolar spin-flip processes, the fermions are pumped to higher angular momentum states. The external magnetic field is used to implement a repeated transfer scheme which controls the amount of angular momentum.
-By employing adiabatic spin-flip processes in combination with a diabatic transfer, the fermions are pumped to higher orbital angular momentum states in a repeated scheme that allows for the precise control over the final angular momentum.
-A simple analytical model is derived to quantify the transfer and compare the approach to rapidly rotating systems.
-Numerical simulations of the transfer process have been performed for small, interacting systems.
+% A new method to drive a system of neutral dipolar fermions into the lowest Landau level regime is proposed.
+% By employing adiabatic spin-flip processes in combination with a diabatic transfer, the fermions are pumped to higher orbital angular momentum states in a repeated scheme that allows for the precise control over the final angular momentum.
+% A simple analytical model is derived to quantify the transfer and compare the approach to rapidly rotating systems.
+% Numerical simulations of the transfer process have been performed for small, interacting systems.
 
 
 Despite being ideal models for complicated solid state systems, ultracold quantum gases lack one important aspect of the electronic complex: because of the charge neutrality of the atoms, there are no mobile charge carriers that possess a direct coupling to the magnetic vector potential. Plenty of interesting effects, however, arise when charged particles are subject to high magnetic fields in low dimensional systems. The most prominent ones are the integer quantum Hall effect \cite{Klitzing1980} as an example for the appearance of topological states, as well as the fractional quantum Hall effect \cite{Laughlin1983}, potentially giving rise to fundamental excitations with non-Abelian statistics.
 
-Several schemes have been proposed to simulate the effect of magnetic fields for neutral particles. Artificial gauge fields can be created by imprinting phases, making use of the Peierls substitution in optical lattices \cite{Aidelsburger2011,Jimenez-Garcia2012,Struck2012}, or by tailoring spatially dependent Hamiltonians to generate geometric phases \cite{Lin2009}; for an overview see \cite{Dalibard2011}. Rapidly rotating quantum gases provide an alternative route via Larmor's theorem
-%, using the analogy between a charged particle in a constant magnetic field and a neutral particle in a rotating frame
+Several schemes have been proposed to simulate the effect of magnetic fields for neutral particles. Artificial gauge fields can be created by imprinting phases, making use of the Peierls substitution in optical lattices \cite{Aidelsburger2011,Jimenez-Garcia2012,Struck2012}, or by tailoring spatially dependent Hamiltonians to generate geometric phases \cite{Lin2009}; for an overview see \cite{Dalibard2011}. Rapidly rotating quantum gases provide an alternative route via Larmor's theorem, using the analogy between a charged particle in a constant magnetic field and a neutral particle in a rotating frame
 \cite{Cooper2008,Fetter2009}. Several theoretical proposals demonstrate the appearance of highly correlated quantum Hall states for dipolar bosons \cite{Cooper2005} and fermions \cite{Baranov2005,Osterloh2007}. However, the experimental realization of quantum Hall states has been elusive so far. For rotating systems, the main problem is the precise control on the rotation frequency, which is required to reach the lowest Landau level without crossing the rotational instability \cite{Schweikhard2004}.
 
-
-Here we propose a new scheme to access the regime of fast rotation for a dipolar Fermi gas such as $^{161}\text{Dy}$, which has recently been cooled to the quantum degenerate regime \cite{Lu2012}. Starting from a spin-polarized state, dipolar interactions can lead to spin relaxation with a net angular momentum transfer \cite{Hensler2003}. This is known as the Einstein--de Haas effect \cite{Einstein1915} and has been proposed to create rotating Bose-Einstein condensates \cite{Santos2006,Kawaguchi2006}. We suggest using this mechanism in a trapped, quasi-two-dimensional system to control the amount of angular momentum, and -- by repeated application of the transfer scheme -- reach the lowest Landau level (LLL). This scheme allows for direct control over the total angular momentum instead of the rotation frequency and circumvents the prime experimental difficulties toward the realization of the quantum Hall regime in harmonically trapped gases.
-
+Here we propose a new scheme to access the regime of fast rotation for a dipolar Fermi gas such as $^{161}\text{Dy}$ or $^{167}\text{Er}$, where quantum degeneracy has been demonstrated recently~\cite{Lu2012,Aikawa2014}. Starting from a spin-polarized state, dipolar interactions can lead to spin relaxation with a net angular momentum transfer \cite{Hensler2003}. This is known as the Einstein--de Haas effect \cite{Einstein1915} and has been proposed to create rotating Bose-Einstein condensates \cite{Santos2006,Kawaguchi2006}. We suggest to use this mechanism in a trapped, quasi-two-dimensional system to control the amount of angular momentum, and -- by repeated application of the transfer scheme -- reach the lowest Landau level (LLL). This scheme allows for direct control over the total angular momentum instead of the rotation frequency and circumvents the prime experimental difficulties toward the realization of the quantum Hall regime in harmonically trapped gases.
 
 
-%The outline of the paper is as follows. We will first describe the basic mechanism of dipolar relaxation and how it is applied in the proposed transfer scheme. We show that this scheme is able to drive a dipolar Fermi gas to the lowest Landau level regime and derive a simple analytical model to describe the adiabatic transfer. For small system sizes we explicitly simulate the process, including all interactions and demonstrate that the adiabaticity assumption can be fulfilled. Finally, we comment on the different ground states which are accessible in the Quantum Hall regime.
+
+% The outline of the paper is as follows. We will first describe the basic mechanism of dipolar relaxation and how it is applied in the proposed transfer scheme. We show that this scheme is able to drive a dipolar Fermi gas to the lowest Landau level regime and derive a simple analytical model to describe the adiabatic transfer. For small system sizes we explicitly simulate the process, including all interactions and demonstrate that the adiabaticity assumption can be fulfilled. Finally, we comment on the different ground states which are accessible in the Quantum Hall regime.
 
 
 
 \section{Setup}
 \fig{.4}{fig1a}{fig1a}{Dipolar particles, trapped in a quasi-2D geometry with a radial confinement $\omega$. When the external magnetic field $\vec{B}$ is tuned in resonance, dipolar interactions \Vdd can induce spin relaxation processes, leading to a net angular momentum increase of $1\hbar$ per particle.}
 
+\noindent
 We consider a system of $N$ fermionic atoms with magnetic dipole moments $\vec{\mu}$. While extensions to schemes with polar molecules are possible, the permanent dipole moments of the atoms lead to some simplifications.
 %Highly magnetic atoms typically possess a large hyperfine manifold.
 To shorten the discussion, we consider only two internal levels (pseudospin 1/2). The particles are confined in a quasi-two-dimensional harmonic trap with a radial frequency $\omega$ and an axial frequency $\omega_z$. For strong $z$ confinement $\hbar\omega_z \gg \Ef$, where $\Ef$ is the Fermi energy derived below, the system is effectively 2D, see~\tref{fig1a}.
@@ -50,7 +48,6 @@ The interactions between the particles are described by the dipolar interaction 
 \Vdd(\vecr) = \frac{\mu_0}{4\pi}\frac{\vec{\mu}_i  \vec{\mu}_j - 3(\vec{\mu}_i  \vec{\hat{r}})(\vec{\mu}_j \vec{\hat{r}})}{r^3}
 \end{align*}
 where $\vec{r}=\vec{r}_i-\vec{r}_j$ is the relative distance between the two particles.
-%Note that we do not include s-wave scatting, present between different spin components, because it does not affect the described process.
 Note that a weak $s$-wave scattering length does not change the general behavior of our transfer scheme and is ignored in the following.
 The dipole moment $\vec{\mu} =  \mu_\text{B}g \vec{S} / \hbar = \mu_\text{B}g {\boldsymbol\sigma}/2$ is given in terms of the Land\'e factor $g$ and the Pauli matrices. By integrating out the fast motion perpendicular to the $xy$ plane, taking the limit $\omega_z\rightarrow\infty$, and using the spin raising and lowering operators $\sigma^{\pm} = (\sigma^x \pm i \sigma^y)/2$ the interaction reduces to
 \begin{align*}
@@ -95,10 +92,8 @@ To reach the LLL regime, we have to repeat the transfer scheme at least $\liqhe/
 \section{Transfer process}
 
 To quantify a single transfer process, our first aim is to calculate the total energy of $N$ harmonically trapped fermions for a fixed total angular momentum $L$ (polarized state, one spin component). For the noninteracting system, the energy can be obtained by simple summations. We start with the ground state for $L=0$, where all energy shells up to the Fermi energy are completely filled. The energy of the single particle states~$\ket{n,m}$ is given by $E_{nm}=\hbar\omega(2n+\absv{m}+1)$. To avoid cluttering of notation, we introduce dimensionless quantities indicated by a $\dl{\ }$ sign. These quantities are measured in oscillatory units. That is, energy in units of $\hbar\omega$, angular momentum in units of $\hbar$, lengths in units of $l_\text{HO}$ and time in units of $\omega^{-1}$. The degeneracy of each energy level is simply given by $g(\dl{E}) = \dl{E}$.
-%The Fermi energy is thus determined by
 With $N=\sum g(\dl{E}) = \dlEf(\dlEf+1)/2$ the Fermi energy is determined by
 \begin{align*}
-%N&=\sum_{\dl{E}=1}^{\dlEf} g(\dl{E}) = \frac{\dlEf(\dlEf+1)}{2} \\
 \dlEf &= \frac{1}{2}\bb{\sqrt{8N+1}-1} \xrightarrow{N\gg 1} \sqrt{2N}
 \end{align*}
 The total energy for $N$ particles is then given by
@@ -106,11 +101,19 @@ The total energy for $N$ particles is then given by
 \dl{E}(N) = \sum_{\dl{E}=1}^{\dlEf} g(\dl{E}) \dl{E} = \frac{N}{3} \sqrt{8N+1} \xrightarrow{N\gg 1} \frac{(2N)^{3/2}}{3}
 \end{align}
 which shows the known scaling of a trapped 2D Fermi gas~\cite{Yoshimoto2003}.
-%Notice that the energy for the unpolarized system is given by $2\,\dl{E}(N/2)=\frac{2}{3} N^{3/2}$.
+Note that the energy for the unpolarized system is given by $2\,\dl{E}(N/2)=\frac{2}{3} N^{3/2}$.
 To derive the total energy $E(N,L)$ for $L\ne 0$, we define $N_m$ as the number of particles with angular momentum $m$. The energy in terms of $N_m$ is given by
 \begin{align} \label{eq:energyf}
 \dl{E} = \sum_m \sum_{n=0}^{N_m-1} \dl{E}_{nm} = \sum_m N_m\left(N_m + \absv{m} \right).
 \end{align}
+
+\begin{figure}[t]
+    \centering
+    \ig{0.5}{fig2}
+    \caption{\tlabel{fig2} Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\eqref{eq:etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
+\end{figure}
+
+\noindent
 The exact ground state energy can be found combinatorially for small particle numbers by varying the $N_m$ for fixed $N$ and $L$. The result for $N=10$ is shown in~\tref{fig2}. For larger particle numbers this method is not feasible, but an analytic solution can be found for large particle numbers. Then, we can treat $N_{m}$ as a continuous function. To find the minimum of \eqref{eq:energyf} at fixed $N$ and $L$, we introduce two Lagrange multipliers $\mu$, $\Omega$ for the conditions $N = \sum_m N_m$ and $\dl{L} = \sum_m N_m m$, respectively. Taking the functional derivative with respect to $N_m$ yields
 %\begin{align*}
 $N_m=(\dl{\mu}-\absv{m}+\dl{\Omega} m)/2$.
@@ -140,13 +143,7 @@ has a singularity for $\dl{\Omega}=\Omega/\omega=1$ and large values of $L$ can 
 
 \begin{figure}[t]
     \centering
-    \ig{0.5}{fig2}
-    \caption{\tlabel{fig2} Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\eqref{eq:etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-    \ig{0.4}{fig3a}
+    \ig{0.5}{fig3a}
     \caption{\tlabel{fig3a}Description of the transfer in the analytical model with $N=100$ particles for decreasing energy splitting $\Delta$ between the two components $\up$ and $\down$. The transfer starts at $\Delta=\Ef$ with particles continuously being transferred into the $\down$ state as $\Delta$ is lowered to $-\Ef$. Notice that during the transfer, both components rotate in the same direction. The crossing $N_\up=N_\down$ is not precisely at $\Delta=0$ due to the initial bias.}
 \end{figure}
 
@@ -214,12 +211,9 @@ where the length $l_\text{DDI} = m\mu_0\mu^2/4\pi \hbar^2$ parametrizes the stre
 % in a trap of radial frequency $\omega=1\text{kHz}$, the interaction parameter is $\dlCdd\simeq 0.01$.
 %The rate $\dl{\gamma}=\gamma/\omega = \mu \dot{B}/\hbar\omega^2$ is determined by the ramping speed $\dot{B}$ of the magnetic field. For a value of $\dot{B}=1\text{mG}/\text{s}$, the Landau-Zener parameter would be on the order of $\lambda=0.01$. It depends, however, on the radial frequency as $\lambda\sim\omega^3$ and is therefore tuneable to higher values in deeper traps.
 
-A particularly interesting property of the integer quantum Hall state, potentially useful to detect the successful generation, is the perfectly flat density $n=1/\pi l_\text{HO}^2$ within a circular region of radial size $\sqrt{N}l_\text{HO}$, see~\tref{density-comparison}.
-In addition, it is possible to reach states with $L>\liqhe$ by continuing the transfer scheme.
-%The non-interacting ground states with angular momentum offset $\Delta L\equiv L-\liqhe$ are highly degenerate \footnote{The degeneracy $g(N,\Delta L)$ is given by the number of integer partitions of $\Delta L$ into at most $N$ integers.}.
-%The dipolar interaction lifts this degeneracy and
-In this regime,
-highly correlated ground states appear that are closely connected to fractional quantum Hall states, see~\cite{Osterloh2007} for a discussion in the context of rotating systems. Consequently, the presented method of dipolar relaxation allows for the exploration of integer and fractional quantum Hall states, but avoids the experimentally challenging requirement of precise control of the rotation frequency by directly tuning the orbital angular momentum.
+A particularly interesting property of the integer quantum Hall state, potentially useful to detect the successful generation, is the perfectly flat density $n=1/\pi l_\text{HO}^2$ within a circular region of radial size $\sqrt{N}l_\text{HO}$, shown in~\tref{density-comparison}.
+
+%Consequently, the presented method of dipolar relaxation allows for the exploration of integer and fractional quantum Hall states, but avoids the experimentally challenging requirement of precise control of the rotation frequency by directly tuning the orbital angular momentum.
 
 %\newcommand{\p}{\mathop{\tikz{\filldraw [lightblue] (0,0) circle(0.3em);\draw (0,0) circle(0.3em);}}}
 %\newcommand{\h}{\mathop{\tikz{\draw (0,0) circle(0.3em);}}}
@@ -231,6 +225,11 @@ highly correlated ground states appear that are closely connected to fractional 
 
 
 \section{Creation of fractional Quantum Hall states}
+In addition, it is possible to reach states with $L>\liqhe$ by continuing the transfer scheme.
+%The non-interacting ground states with angular momentum offset $\Delta L\equiv L-\liqhe$ are highly degenerate \footnote{The degeneracy $g(N,\Delta L)$ is given by the number of integer partitions of $\Delta L$ into at most $N$ integers.}.
+%The dipolar interaction lifts this degeneracy and
+In this regime,
+highly correlated ground states appear that are closely connected to fractional quantum Hall states, see~\cite{Osterloh2007} for a discussion in the context of rotating systems.
 We consider a situation where we start from an unpolarized state and run the initial half-cycle to the polarized state (transferring $F\cdot N$ angular momentum). The subsequent $k$ cycles transfer $2F \cdot N$ of angular momentum. If we want to generate a FQHE state with $\nu=\sfrac{1}{m}$, the total angular momentum is $m\liqhe$. In total we find the condition
 \begin{align*}
 m\liqhe=m\,\frac{N(N-1)}{2} = k\cdot 2F N + F N.
@@ -276,4 +275,5 @@ For one ,,magical`` particle number $N=2F+1$ it is possible to generate all FQHE
 We also find, that for $F=\sfrac{1}{2}$, the number of particles has to be $N=\frac{2k+1}{m}+1$. In principle, $2k+1$ can be any odd number, but if $m=2k+1$, we have $N=2$ and the whole scheme breaks down (the initial half-cycle does not work). The lowest non-prime odd number is $9$, which means it is possible to generate a $\nu=\sfrac{1}{3}$ state with $4$ particles in $k=4$ cycles. Any other FQHE state requires $7$ or more cycles.
 
 
-
+\subsection{Interacting many-body states}
+\todo{Compare dipolar LLL states to Laughlin wave functions, cite Lewenstein papers etc.}
