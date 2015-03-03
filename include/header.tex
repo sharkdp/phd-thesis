@@ -93,10 +93,14 @@
     ,hyperref=true
     ,backref=true
     ,maxnames=8
+    ,sorting=none
 ]{biblatex}
 
 \addbibresource[label=my-publications]{bibliography/my-publications.bib}
 \addbibresource[label=all]{bibliography/all.bib}
+
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{number}}
 
 % Hyperlink the title to DOI website
 \newbibmacro{string+doi}[1]{%
