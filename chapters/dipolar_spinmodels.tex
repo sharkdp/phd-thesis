@@ -1,0 +1,463 @@
+\chapter{Introduction: dipolar spin models}
+
+% \section{Dipolar spin systems}
+% \subsection{Lattice structures}
+% \subsubsection{One-dimensional}
+% \subsubsection{Two-dimensional}
+
+% \section{Topological band structures}
+% \subsection{Chern number}
+% \subsection{Edge states}
+% \subsection{Quantum Hall effect}
+
+\section{Physical realizations}
+\todo{NV centers, Rydberg atoms, polar molecules, dipolar atoms}
+
+
+\section{Dipolar interactions}
+The tensor part of the dipole-dipole interaction $D\equiv \Vdd R_{ij}^3/\Cdd=\vec{d_1}\vec{d_2}-3(\vec{d_1}\hat{\vec{r}})(\vec{d_2}\hat{\vec{r}})$ where $\Cdd = \mu_0 /4\pi$ or $1/4\pi\epsilon_0$ can be written in terms of a spherical tensor $T^2(\vec{d_i},\vec{d_j})$ of rank 2, build from the two dipole moments, with components
+\begin{align*}
+T^2_0(\vec{d_i},\vec{d_j}) &= \frac{1}{\sqrt{6}} (d^i_+ d^j_- + 2d^i_0 d^j_0 + d^i_{-} d^j_{+})\\
+T^2_{\pm 1}(\vec{d_i},\vec{d_j}) &= \frac{1}{\sqrt{2}} (d^i_{\pm} d^j_0 + d^i_0 d^j_{\pm})\\
+T^2_{\pm 2}(\vec{d_i},\vec{d_j}) &= d^i_{\pm} d^j_{\pm} \phantom{\frac{1}{\sqrt{42}}}
+\end{align*}
+[ Note the additional factor of $\mp 1/\sqrt{2}$ compared to the definition of $j_\pm$. ]
+where the dipole moments are spherical tensors with components
+\begin{align}\label{eq:dipsph}
+d_0 = d_z\qquad d_\pm = \mp\frac{1}{\sqrt{2}}\bb{d_x\pm i d_y}
+\end{align}
+The dipole-dipole interaction is then given by
+\begin{align}
+D &= -\sqrt{6} \,T^2(C)\cdot T^2(\vec{d_1},\vec{d_2})\\
+&\equiv-\sqrt{6}  \sum_p (-1)^p C^2_{-p}(\theta,\phi) T^2_p(\vec{d_1},\vec{d_2})\nonumber
+\end{align}
+where $C^k_p(\theta,\phi)=\sqrt{\frac{4\pi}{2k+1}} Y^k_p(\theta,\phi)$ are modified (unormalized) spherical harmonics. We can expand
+\begin{align}\label{eq:doperator}
+D &= (1-3\cos^2 \theta) \left[d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} \right] \\
+&\,\,-\frac{3}{\sqrt{2}}\sin\theta \,\cos\theta \left[ \ef{+i\phi} (d_0 d_- + d_- d_0) - \ef{-i\phi} (d_0 d_+ + d_+ d_0) \right]\nonumber\\
+&\,\,-\frac{3}{2}\sin^2\theta \left[ \ef{+2i\phi} d_- d_- + \ef{-2i\phi} d_+ d_+\right]\nonumber
+\end{align}
+where in each term the first dipole operator acts on $i$ and the second on $j$. Notice that this coincides with $\Vdd$ from the first part if we change from $d_\pm \rightarrow \mp j_\pm/\sqrt{2}$ and $d_0\rightarrow j_0$.
+For a 2D geometry we set $\theta=\pi/2$ and get
+\begin{align*}
+D = d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} -\frac{3}{2} \left[ \ef{+2i\phi} d_- d_- + \ef{-2i\phi} d_+ d_+\right]
+\end{align*}
+For a 1D geometry in $x$-direction we set $\phi=0$ to get
+\begin{align*}
+D &= d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} -\frac{3}{2} \bb{d_- d_- + d_+ d_+}\\
+ &= d_z d_z + d_y d_y - 2 d_x d_x
+\end{align*}
+while for a 1D geometry in polarization-direction $z$ we set $\theta=0$ in \eqref{eq:doperator} to get
+\begin{align*}
+D &= -2 d_0 d_0 - \bb{d_+ d_- + d_- d_+} = -2 d_z d_z+ d_x d_x + d_y d_y
+\end{align*}
+
+\section{Calculation of the angles for a tilted 2D geometry}
+We consider a 2D system in the $xy$ plane and allow the electric field to point in any direction $\vec{z}$. Let [See PRA 84, 033619, Fig 1]
+\begin{align}
+\vec{z}=\begin{pmatrix}\sin\Theta_0\cos\Phi_0 \\ \sin\Theta_0\sin\Phi_0 \\ \cos\Theta_0\end{pmatrix}
+\end{align}
+and a vector connecting two sites
+\begin{align}
+\vec{R}=\begin{pmatrix}R\cos\Phi \\ R\sin\Phi \\ 0\end{pmatrix}
+\end{align}
+Then, we have the relation
+\begin{align}
+\cos\theta = \vec{z}\vec{\hat{R}} &= \sin\Theta_0\bb{\cos\Phi_0\cos\Phi+\sin\Phi_0\sin\Phi}\\
+&=\sin\Theta_0\cos(\Phi-\Phi_0)
+\end{align}
+We define the difference
+\begin{align}
+\bar\Phi=\Phi-\Phi_0
+\end{align}
+Then, we compute
+\begin{align}
+    f_0(\Theta_0, \bar \Phi)&\equiv 1-3\cos^2\theta = 1-3\sin^2\Theta_0\cos^2\bar\Phi  \\
+    f_1(\Theta_0, \bar \Phi)&\equiv \sin\theta\cos\theta \ef{i\phi} = \sin\Theta_0 \cos\bar\Phi \bb{\cos\Theta_0 \cos\bar\Phi + i \sin \bar\Phi}\\
+    f_2(\Theta_0, \bar \Phi)&\equiv\sin^2\theta \ef{2i\phi} = \bb{\cos\Theta_0 \cos\bar\Phi + i \sin \bar\Phi}^2
+\end{align}
+which are easily seen to reduce to the old expressions in the case $\Theta_0=0$,
+implying $\theta=\pi/2$ and $\bar\Phi=\phi$.
+
+In total, the tensorial part of the dipole-dipole interaction is given by
+\begin{align}
+    D = f_0(\Theta_0, \bar \Phi) &\Big[d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} \Big] \\
+      \qquad-\frac{3}{\sqrt{2}} &\Big[ f_1(\Theta_0, \bar \Phi)  (d_0 d_- + d_- d_0) - f_1(\Theta_0, -\bar \Phi) (d_0 d_+ + d_+ d_0) \Big]\nonumber\\
+      \qquad-\frac{3}{2} &\Big[ f_2(\Theta_0, \bar \Phi) d_- d_- + f_2(\Theta_0, -\bar \Phi) d_+ d_+\Big]\nonumber
+\end{align}
+
+\subsection{Properties of $f_0, f_1, f_2$}
+The dipole-dipole interaction is symmetric under spatial inversion. Therefore
+\begin{align}
+    f_m(\Theta_0, \bar \Phi + \pi) = f_m(\Theta_0, \bar \Phi)
+\end{align}
+Under complex conjugation, we find
+\begin{align}
+    f_m^*(\Theta_0, \bar \Phi) = f_m(\Theta_0, -\bar \Phi)
+\end{align}
+In addition, we can write
+\begin{align}
+    f_1(\Theta_0, \bar \Phi) = \frac{1}{2} \sin \Theta_0 \bc{\cos \Theta_0 (1+\cos 2\bar \Phi) + i \sin 2 \bar \Phi}
+\end{align}
+For small angles $\Theta_0$, we can rewrite
+\begin{align}
+    f_0(\Theta_0, \bar \Phi) &= 1 \\
+    f_1(\Theta_0, \bar \Phi) &= \frac{1}{2} \Theta_0 \bc{1+\ef{2 i \bar \Phi}}=\Theta_0 \cos \bar \Phi \ef{i \bar \Phi}\\
+    f_2(\Theta_0, \bar \Phi) &= \ef{2 i \bar \Phi}
+\end{align}
+Defining $\Theta_0^* = \pi/2 - \theta_\text{magic}=\text{asin}(1/\sqrt{3})$, we have
+\begin{align}
+    f_0(\Theta_0^*, \bar \Phi) = 1-\cos^2\bar \Phi
+\end{align}
+
+\subsection{In-plane electric field}
+For $\Theta_0=\pi/2$, the expressions above reduce to
+\begin{align}
+    1-3\cos^2\theta &= 1-3\cos^2\bar\Phi \\
+    \sin\theta\cos\theta \ef{\pm i\phi} &= \pm \frac{i}{2} \sin 2\bar\Phi \\
+    \sin^2\theta \ef{\pm 2i\phi} &= - \sin^2 \bar\Phi
+\end{align}
+
+% \subsection{In-plane $\Phi_0=\pi/4$ setup}
+% To make things symmetric, assume $\Phi_0=\pi/4$. Then, for nearest neighbors
+% along the X (Y) direction, we have
+
+\subsection{1D setup}
+For a 1D setup we can set $\Phi_0=0$. The angle $\Phi$ is limited
+to the values $0$ or $\pi$, indicated by $\sin\Phi=0$ and
+$\cos\Phi=\pm 1=\text{sign}(X)$. Then, the expressions above reduce to
+\begin{align}
+    1-3\cos^2\theta &= 1-3\sin^2\Theta_0 \\
+    \sin\theta\cos\theta \ef{\pm i\phi} &= \sin\Theta_0 \cos\Theta_0 \\
+    \sin^2\theta \ef{\pm 2i\phi} &= \cos^2 \Theta_0
+\end{align}
+
+\section{Specializing to certain polar molecule states}
+We assume that we are in $d\le 2$ dimensions and that a static DC field has been applied perpendicular to the 2D plane / 1D line. We keep the same notation $\ket{J,M}$ for the perturbed eigenstates after applying the field.
+
+\subsection{$\ket{0,0}$ and $\ket{1,0}$ state}
+\newcommand{\pP}{\mathcal{P}}
+Here, only the $d_0 d_0$ part is relevant for the two internal states as $d_+$ and $d_-$ only couple to the higher $M$ states. Thus we have with $\ket{\down}=\ket{0,0}=\ket{0}$ and $\ket{\up}=\ket{1,0}=\ket{1}$
+\begin{align*}
+d_{0} = \braketop{0}{d_0}{0},\qquad d_{1}=\braketop{1}{d_0}{1},\qquad d_{\up}=\braketop{1}{d_0}{0}=d_{\down}^*
+\end{align*}
+and we can write with projectors $\pP$ on the different states
+\begin{align*}
+D=d_0 d_0 = d_{1}^2 \pP_\up \pP_\up + d_{0}^2 \pP_\down \pP_\down + d_{1}d_{0} (\pP_\down \pP_\up + \pP_\up \pP_\down) \\
++ \absvsq{d_{\up}} (\sigma_+ \sigma_- + \sigma_- \sigma_+)
+\end{align*}
+while terms like $P_\down \sigma_+$ are neglected in the rotating wave approximation as they do not conserve the number of excitations. Using $\sigma_z = \pP_\up - \pP_\down$ and $\mathds{1}=\pP_\up + \pP_\down$ we get
+\begin{align*}
+D=\frac{1}{4} \left[ (d_1+d_0)^2 + (d_1-d_0)^2 \,\sigma_z \sigma_z + d_1 d_0 (\mathds{1}\sigma_z + \sigma_z \mathds{1}) \right]\\ + \absvsq{d_{\up}} (\sigma_+ \sigma_- + \sigma_- \sigma_+)
+\end{align*}
+There is a constant offset and the $\mathds{1}\sigma_z + \sigma_z\mathds{1}$ part describes an effective external field. [ Notice that both the offset and the external field depend on the position of the other molecules and should only be considered as such within the Born-Oppenheimer approximation. Both quantities are proportional to $\sum_{\vec{j}} R_{\vec{i}\vec{j}}^{-3}$. ]. The relevant interaction part is
+\begin{align*}
+D_\text{int}&=\frac{(d_1-d_0)^2}{4} \sigma_z \sigma_z + \absvsq{d_{\up}} (\sigma_+ \sigma_- + \sigma_- \sigma_+)\\
+&= (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y)
+\end{align*}
+
+\subsection{$\ket{0,0}$ and $\ket{1,\pm 1}$ states}
+We define $\ket{0}=\ket{0,0}$, $\ket{\pm}=\ket{1,\pm 1}$. In this case we have the following non-vanishing dipole moments
+\begin{align*}
+d_0 &= \braketop{0}{d_0}{0}&\qquad
+d_{\up} &= \braketop{+}{d_+}{0}=\braketop{-}{d_-}{0}\\
+d_1 &= \braketop{+}{d_0}{+} = \braketop{-}{d_0}{-} &\qquad d_{\down} &= \braketop{0}{d_-}{+}=\braketop{0}{d_+}{-}
+\end{align*}
+with $d_\up = -d_\down$.
+For the 2D geometry we have
+\begin{align*}
+D = d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} -\frac{3}{2} \left[ \ef{+2i\phi} d_- d_- + \ef{-2i\phi} d_+ d_+\right]
+\end{align*}
+We define the operators
+\begin{align*}
+R&=\ket{g}\bra{+}&\qquad X&=\frac{L-R}{\sqrt{2}}\\
+L&=\ket{g}\bra{-}&\qquad Y&=\frac{L+R}{\sqrt{2}}
+\end{align*}
+and the projectors $G=\ket{g}\bra{g}$ and $A=1-G$ onto the $\{0\}$ and $\{+,-\}$ subspace, with the relations
+\begin{align*}
+A = R^\dagger R + L^\dagger L = X^\dagger X + Y^\dagger Y=\mathds{1}-G
+\end{align*}
+The dipole-dipole interaction can be written as (only the excitation-conserving terms)
+\begin{align}
+D &=  \bb{d_1 A_i + d_0 G_i} \bb{d_1 A_j + d_0 G_j}\nonumber\\
+&\qquad\qquad-\frac{1}{2}\absvsq{d_\up} \Big[ L_i^\dagger \bb{L_j-3\ef{+2i\phi}R_j}+\\
+&\qquad\qquad\qquad\qquad\qquad R_i^\dagger\bb{R_j-3\ef{-2i\phi}L_j} + \text{h.c.} \Big]\nonumber\\
+&=\bb{d_1 A_i + d_0 G_i} \bb{d_1 A_j + d_0 G_j} \nonumber\\
+&\qquad\qquad-\frac{1}{2}\absvsq{d_\up} \Big[ X_i^\dagger X_j (1+3\cos 2\phi) +Y_i^\dagger Y_j (1-3\cos 2 \phi)\nonumber\\
+&\qquad\qquad\qquad\qquad\qquad  + (X_i^\dagger Y_j - Y_i^\dagger X_j)3 \sin 2\phi + \text{h.c.} \nonumber\Big]
+\end{align}
+In a 1D setup with the molecules placed on a lattice in x-direction, we have $\phi=0$ and
+\begin{align*}
+D &=  \bb{d_1 A_i + d_0 G_i} \bb{d_1 A_j + d_0 G_j}\\
+&\qquad -\frac{1}{2}\absvsq{d_\up} \left[L_i^\dagger\bb{L_j-3R_j}+R_i^\dagger\bb{R_j-3L_j}+\text{h.c.}\right]\\
+ &=  \bb{d_1 A_i + d_0 G_i} \bb{d_1 A_j + d_0 G_j}
++\absvsq{d_\up} \left[Y_i^\dagger Y_j - 2X_i^\dagger X_j+\text{h.c.}\right]
+\end{align*}
+Matrix elements for different 2-molecule states
+\begin{align*}
+\braketop{00}{D}{00} &= d_0^2 \\
+\braketop{xx}{D}{xx} &= d_1^2 \\
+\braketop{x0}{D}{x0} &= d_0 d_1 \\
+\braketop{x0}{D}{0x} &= -2 \absvsq{d_\up}\\
+\braketop{y0}{D}{0y} &= \absvsq{d_\up}
+\end{align*}
+where we have defined $\ket{x} = (\ket{+}-\ket{-})/\sqrt{2}$ and  $\ket{y} = (\ket{+}+\ket{-})/\sqrt{2}$.
+
+\subsection{Only $\ket{0}$ and $\ket{x}$}
+We can adapt the spin-1/2 notation again ($\ket{\down}=\ket{0}$ and $\ket{\up}=\ket{x}$) and obtain
+\begin{align*}
+D&=\frac{(d_1-d_0)^2}{4} \sigma_z \sigma_z -2 \absvsq{d_\up} (\sigma_+ \sigma_- + \sigma_-\sigma_+)\\
+&=(d_1-d_0)^2 S_z S_z - 4\absvsq{d_\up} (S_x S_x + S_y S_y)
+%&=J_z S_z S_z + J_\perp (S_x S_x + S_y S_y)
+\end{align*}
+
+
+\section{Spin- and hardcore boson models}
+The spin-model and hardcore boson parameters are related by $U=J_z$ and $t=J_\perp/2$.
+
+\subsection{The $\ket{0}$,$\ket{1}$ model}
+Identifying $\ket{1}$ with a particle we get (setting $\Cdd=1$)
+\begin{align*}
+H&=\frac{1}{2}\sum_{\vec{i}\ne \vec{j}} \Vdd^{\vec{i}\vec{j}}\\
+&=\frac{1}{2}\sum_{\vec{i}\ne \vec{j}} \frac{1}{\absv{\vec{i}-\vec{j}}^3}\left[ (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y) \right]\\
+&= \sum_{\vec{i}\ne \vec{j}} \frac{1}{\absv{\vec{i}-\vec{j}}^3}\left[ J_z S_z S_z + J_\perp (S_x S_x + S_y S_y) \right]
+\end{align*}
+with $J_z = (d_1-d_0)^2/2$ and $J_\perp = \absvsq{d_{\up}}$. Notice that the factor of $1/2$ has been absorbed into the $J$-factors.
+
+\subsection{The 1D $\ket{0}$,$\ket{x}$ model}
+The spin-model is directly given by identifying $\ket{0} \leftrightarrow \ket{\down}$ and $\ket{x} \leftrightarrow \ket{\up}$.
+\begin{align*}
+H&=\frac{1}{2}\sum_{\vec{i}\ne \vec{j}} \frac{1}{\absv{\vec{i}-\vec{j}}^3}\left[ (d_1-d_0)^2 S_z S_z - 4\absvsq{d_{\up}} (S_x S_x + S_y S_y) \right]\\
+&= \sum_{\vec{i}\ne \vec{j}} \frac{1}{\absv{\vec{i}-\vec{j}}^3}\left[ J_z S_z S_z + J_\perp (S_x S_x + S_y S_y) \right]
+\end{align*}
+with $J_z=(d_1-d_0)^2/2$ as before and $J_\perp = - 2\absvsq{d_\up}$.
+
+\subsection{The 2D $\ket{0}$,$\ket{+}$,$\ket{-}$ model ($U=0$)}
+Identify $\ket{-}$ with a spin-up particle and $\ket{+}$ with a spin-down particle.
+For the tunneling part we get (factor $1/2$ already in the sum)
+\begin{align*}
+H_t=\sum_{\vec{i}\ne \vec{j}}\frac{1}{\absv{\vec{i}-\vec{j}}^3} \Big[ &\underbrace{-\frac{1}{4}\absvsq{d_\up}}_{t_{\up\up}} \sum_\sigma \bb{c^\dagger_{\vec{i}\sigma} c_{\vec{j}\sigma} + \text{h.c.}}\\
+&+ \underbrace{\frac{3}{4}\absvsq{d_\up}}_{t_{\up\down}} \bb{c^\dagger_{\vec{i}\up}  c_{\vec{j}\down} \ef{+2i\phi_{\vec{i}\vec{j}}} + c^\dagger_{\vec{i}\down}  c_{\vec{j}\up} \ef{-2i\phi_{\vec{i}\vec{j}}} }\Big]
+\end{align*}
+where the positions $\vec{j}=(j_x,j_y)^t\in \mathbb{Z}^2$.
+By applying a Fourier-transformation
+\begin{align*}
+c_{\vec{j}\sigma}&=\frac{1}{\sqrt{N_\text{s}}}\sum_{\vec{q}}b_{\vec{q},\sigma} \ef{-i\vec{q}\vec{j}}\\
+c^\dagger_{\vec{j}\sigma}&=\frac{1}{\sqrt{N_\text{s}}}\sum_{\vec{q}}b^\dagger_{\vec{q},\sigma} \ef{i\vec{q}\vec{j}}
+\end{align*}
+we obtain
+\begin{align*}
+H_t&=\sum_{\vec{q}}  \left[t_{\up\up} \epsilon_{\vec{q}}\sum_\sigma \bb{b^\dagger_{\vec{q}\sigma} b_{\vec{q}\sigma} + \text{h.c.}} + t_{\up\down} \bb{ \epsilon_{\vec{q}}^{+2} b^\dagger_{\vec{q}\up}  b_{\vec{q}\down}  + \epsilon_{\vec{q}}^{-2} b^\dagger_{\vec{q}\down}  b_{\vec{q}\up}  }\right]
+\end{align*}
+with
+\begin{align*}
+\epsilon_{\vec{q}}\equiv \sum_{\vec{j}\ne 0} \frac{\ef{i\vec{q}\vec{j}}}{\absv{\vec{j}}^3}\qquad \epsilon_{\vec{q}}^{\pm}\equiv \sum_{\vec{j}\ne 0} \frac{\ef{i\vec{q}\vec{j}\pm 2i \phi_{\vec{j}}}}{\absv{\vec{j}}^3}
+\end{align*}
+where $\phi_{\vec{j}}\equiv \mathop{\text{arg}}(j_x + i j_y)$. The function $\epsilon_{\vec{q}}$ is real and for $\epsilon^\pm$ one finds $\epsilon_{\vec{q}}^{+} = \bb{\epsilon_{\vec{q}}^{-}}^*$. Therefore
+\begin{align*}
+H_t&=\sum_{\vec{q}}  \begin{pmatrix} b^\dagger_{\vec{q}\up} & b^\dagger_{\vec{q}\down}\end{pmatrix} \begin{pmatrix} t_{\up\up}\,\epsilon_{\vec{q}} & t_{\up\down}\,\epsilon_{\vec{q}}^+ \\ t_{\up\down}\,\epsilon_{\vec{q}}^{+*} & t_{\up\up}\,\epsilon_{\vec{q}} \end{pmatrix}  \begin{pmatrix} b_{\vec{q}\up} \\ b_{\vec{q}\down}\end{pmatrix}
+\end{align*}
+The matrix has eigenvalues $E^\pm_{\vec{q}}=t_{\up\up}\epsilon_{\vec{q}}\pm t_{\up\down}\absv{\epsilon_{\vec{q}}^+}$. If we define $\epsilon_{\vec{q}}^+=\absv{\epsilon_{\vec{q}}^+}\ef{i\theta_{\vec{q}}}$ and introduce new operators $b_{\vec{q},-}=\frac{1}{\sqrt{2}}\bb{b_{\vec{q}\up}-\ef{i\theta_{\vec{q}}} b_{\vec{q}\down}}$ and $b_{\vec{q},+}=\frac{1}{\sqrt{2}}\bb{b_{\vec{q}\up}+\ef{i\theta_{\vec{q}}} b_{\vec{q}\down}}$ we find
+\begin{align*}
+H_t&=\sum_{\vec{q}} \bb{E^-_{\vec{q}} n_{\vec{q},-} +E^+_{\vec{q}} n_{\vec{q},+} }
+\end{align*}
+The dispersion relations are given by
+\begin{align*}
+E^\pm_{\vec{q}}=\frac{1}{4}\absvsq{d_\up}\bb{-\epsilon_{\vec{q}}\pm3\absv{\epsilon_{\vec{q}}^+}}
+\end{align*}
+with $E^-_{\vec{q}} \le E^+_{\vec{q}}$. At the X-points in $k$-space we have the following values of $\theta_{\vec{q}}$
+\begin{align*}
+\theta_{(\pm\pi,0)}=\pi \qquad \theta_{(0,\pm\pi)}=0
+\end{align*}
+which means that we have $b_{(\pm\pi,0),-}=b{(\pm\pi,0),y}$ and $b_{(0,\pm\pi),-}=b_{(0,\pm\pi),x}$.
+
+\subsection{The 2D $\ket{0}$,$\ket{x}$,$\ket{y}$ model ($U=0$)}
+\renewcommand\Re{\operatorname{\text{Re}}}
+\renewcommand\Im{\operatorname{\text{Im}}}
+We have
+\begin{align*}
+H_t=-\frac{1}{4}\absvsq{d_\up} \sum_{\vec{i}\ne\vec{j}}\frac{1}{\absv{\vec{i}-\vec{j}}^3}  \Big[ b_{i,x}^\dagger b_{j,x} (1+3\cos 2\phi) + b_{i,y}^\dagger b_{j,y} (1-3\cos 2 \phi) \\
++ (b_{i,x}^\dagger b_{j,y} - b_{i,y}^\dagger b_{j,x}) 3\sin 2\phi + \text{h.c.} \Big]
+\end{align*}
+After Fourier-transforming we obtain (check this:)
+\begin{align*}
+H_t=-\frac{1}{4}\absvsq{d_\up}\sum_{\vec{q}}  \Big[ b_{\vec{q},x}^\dagger b_{\vec{q},x} (\epsilon_{\vec{q}}+3\Re{\epsilon_{\vec{q}}^+}) + b_{\vec{q},y}^\dagger b_{\vec{q},y} (\epsilon_{\vec{q}}-3\Re{\epsilon_{\vec{q}}^+}) \\
++ (b_{\vec{q},x}^\dagger b_{\vec{q},y} - b_{\vec{q},y}^\dagger b_{\vec{q},x}) 3\Im{\epsilon_{\vec{q}}^+} + \text{h.c.} \Big]
+\end{align*}
+
+\newpage
+\section{Multiboson models}
+\newcommand{\Hmic}{H_\text{mic}}
+We start from the microscopic Hamiltonian, including the DC and AC microwave fields. We are following the notation of Micheli et.~al., PRA \textbf{76} 043604 (2007). We have
+\begin{align}
+    \Hmic &= \sum_i H_i + \frac{1}{2}\sum_{i\ne j} V_\text{dd}(\vec{r}_{ij})\\
+H_i &= B \vec{J}_i^2 - d_0^i E_\text{dc} - \bb{d_1^i E_\text{ac} \ef{-i\omega_\text{ac}t} + \text{c.c.}}
+\end{align}
+where the dipole-dipole interaction in 2D is given by
+\begin{align}
+\Vdd(\vec{R}_{ij})=\frac{v}{R_{ij}^3} \bb{d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} -\frac{3}{2} \left[ \ef{+2i\phi_{ij}} d_- d_- + \ef{-2i\phi_{ij}} d_+ d_+\right]}
+\end{align}
+Here, the dipole moments are considered to be dimensionless and $\vec{R}_{ij}=\vec{r}_{ij}/a$ are dimensionless vectors on the lattice ($a$ is the lattice spacing). The interaction energy scale is then given by $v=\Cdd d^2/a^3= d^2/4\pi\epsilon_0 a^3$.
+
+\section{States}
+In the following analysis we include the rotor states $\ket{00}$ (,,vacuum'') and the $J=1$ excitations $\ket{10}, \ket{1\pm}$ as well as all relevant states which mix in second order perturbation theory.
+
+\subsection{DC dressing}
+With the usual abbreviation $\beta=d E_\text{dc}/B$ we expand the states up to second order in $\beta$ (this is not needed for the energies to be accurate to second order, but for the tunneling elements)
+\begin{align*}
+\ket{00}_\text{dc}&=\bb{1-\frac{\beta^2}{24}} \ket{00} + \frac{\beta}{2\sqrt{3}} \ket{10} + \frac{\beta^2}{18\sqrt{5}} \ket{20}, & E_{00,\text{dc}}&=-\frac{\beta^2}{6} B\\
+%
+% \ket{10}_\text{dc}&=\bb{1-\frac{\beta^2}{20}} \ket{10} - \frac{\beta}{2\sqrt{3}} \ket{00} + \frac{\beta}{2\sqrt{15}} \ket{20} + \frac{\beta^2\sqrt{3/7}}{100} \ket{30}, & E_{10,\text{dc}}&=\bb{2+\frac{\beta^2}{10}} B\\
+%
+\ket{1\pm}_\text{dc}&=\bb{1-\frac{\beta^2}{160}} \ket{1\pm} + \frac{\beta}{4\sqrt{5}} \ket{2\pm} + \frac{\beta^2}{50\sqrt{14}} \ket{3\pm}, & E_{1\pm,\text{dc}}&=\bb{2-\frac{\beta^2}{20}} B \\
+%
+\ket{22}_\text{dc}&=\bb{1-\frac{\beta^2}{504}} \ket{22} + \frac{\beta}{6\sqrt{7}} \ket{32} + \frac{\beta^2}{294\sqrt{3}} \ket{42}, & E_{22,\text{dc}}&=\bb{6-\frac{\beta^2}{42}} B
+\end{align*}
+The resonance frequency
+for the $\ket{1+}_\text{dc}\longrightarrow\ket{22}_\text{dc}$
+transition is given by
+\begin{align}
+\omega_0 = E_{22,\text{dc}}-E_{1+,\text{dc}}=B\bb{4+\frac{11\beta^2}{420}}
+\end{align}
+
+\subsection{AC dressing}
+Next, we additionally consider a $\sigma^+$ AC field on the $\ket{1+}_\text{dc}\longrightarrow\ket{22}_\text{dc}$ transition. We define the Rabi frequency
+\begin{align}
+\Omega=2E_\text{ac}\bra{22}_\text{dc}d_1\ket{10}_\text{dc}
+\end{align}
+and the detuning $\Delta=\omega_\text{ac}-\omega_0$.
+Then, in the rotating frame, within RWA, we
+get the following Hamiltonian in the basis
+$\ket{00}_\text{dc},\ket{1-}_\text{dc},\ket{1+}_\text{dc},\ket{22}_\text{dc}$.
+\begin{align}
+H=\begin{pmatrix} -\delta & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & -\frac{\Omega^*}{2} \\
+0 & 0 & -\frac{\Omega}{2} & \Delta
+\end{pmatrix}+\text{const.}
+\end{align}
+where $\delta = E_{1\pm,\text{dc}}-E_{00,\text{dc}}$. Consequently, we have the following eigenstates of the single-particle Hamiltonian $H_i$ up to second order in $\epsilon\equiv\frac{\Omega}{2\Delta}$
+\begin{align}
+\ket{00}_\text{ac}&=\ket{00}_\text{dc}\\
+\ket{1-}_\text{ac}&=\ket{1-}_\text{dc}\\
+    \ket{1+}_\text{ac}&=\bb{1-\frac{\absvsq{\epsilon}}{2}}\ket{1+}_\text{dc}-\epsilon^*\ket{22}_\text{dc}\\
+    \ket{22}_\text{ac}&=\bb{1-\frac{\absvsq{\epsilon}}{2}}\ket{22}_\text{dc}+\epsilon\ket{1+}_\text{dc}
+\end{align}
+and energies
+\begin{align}
+E_{00,\text{ac}}&=-\delta\\
+E_{1-,\text{ac}}&=0\\
+E_{1+,\text{ac}}&\approx \Delta\absvsq{\epsilon}
+\end{align}
+
+\section{Hardcore-boson model}
+We seek to write a hardcore-boson model in the following form
+\begin{align}
+    H=%\sum_{i,\alpha} \epsilon_\alpha n_{i,\alpha}
+    - \sum_{\substack{i, j\\ \alpha,\beta}} t_{ij}^{\alpha\beta}\, \bopd_{i\alpha} \bop_{j\beta}
+    + \frac{1}{2} \sum_{\substack{i\ne j\\ \alpha,\beta}} V_{ij}^{\alpha\beta}\,  \nop_{i\alpha} \nop_{j\beta}
+\end{align}
+Here we have introduced (hardcore) bosonic operators $\bop_{i,\alpha} =
+\ketbra{00_i}{1\alpha_i}$ where we suppress the AC index from now on.
+The different parameters will be calculated from the microscopic Hamiltonian $\Hmic$.
+First, we define the (interacting) vacuum state by
+\begin{align}
+    \bop_{i,\alpha}\ket{\text{vac}}=0
+\end{align}
+and we measure all energies with respect to the vacuum energy
+$\meanv{\Hmic}=\braketop{\text{vac}}{\Hmic}{\text{vac}}$ of the
+microscopic Hamiltonian\footnote{In the following, we interpret $\Hmic$
+as the corresponding operator in the second-quantized form.}. We
+introduce the following many-body states carrying a single or a double
+excitation:
+\begin{align}
+    \ket{\alpha_i} &= \bopd_{i,\alpha} \ket{\text{vac}} \\
+    \ket{\alpha_i,\beta_j} &= \bopd_{j,\beta} \bopd_{i,\alpha} \ket{\text{vac}}\qquad (i\ne j)
+\end{align}
+Then, we define
+\begin{align}
+    t_{ij}^{\alpha\beta} &= - \braketop{\alpha_i}{\Hmic^V}{\beta_j} \\
+    \epsilon^\alpha &= - t^{\alpha\alpha}_{ii} = \braketop{\alpha_i}{\Hmic^V}{\alpha_i} \\
+    V_{ij}^{\alpha\beta} &= \braketop{\alpha_i,\beta_j}{\Hmic^V}{\alpha_i,\beta_j} - \epsilon_\alpha - \epsilon_\beta
+\end{align}
+where $\Hmic^V=\Hmic-\meanv{\Hmic}$. These terms can be simplified to
+\begin{align}
+    t_{ij}^{\alpha\beta} &= - \frac{v}{R_{ij}^3} \braketop{\alpha 0}{D}{0 \beta} \\
+    \epsilon^\alpha &= v \epsilon_0 \bb{\braketop{\alpha 0}{D}{\alpha 0} - \braketop{0 0}{D}{0 0}} \\
+    V_{ij}^{\alpha\beta} &= \frac{v}{R_{ij}^3} \bb{\braketop{\alpha \beta}{D}{\alpha \beta} - \braketop{\alpha 0}{D}{\alpha 0} - \braketop{0 \beta}{D}{0 \beta} + \braketop{0 0}{D}{0 0}}
+\end{align}
+where the states are simple two-particle states.
+
+\subsection{On-site energies}
+To calculate the on-site energy, we first consider the part coming from the
+dipole-dipole interaction
+\begin{align}
+    \epsilon^\text{int}_\alpha&\equiv-t^{\alpha\alpha}_{ii}=\bra{\alpha_i}\frac{1}{2}\sum_{i\ne j} V_\text{dd}(\vec{r}_{ij})\ket{\alpha_i}-\bra{\text{vac}}\frac{1}{2}\sum_{i\ne j} V_\text{dd}(\vec{r}_{ij})\ket{\text{vac}}\\
+&=\sum_{j\ne 0} \frac{v}{r_j^3} \bra{\alpha}_0\bra{0}_j\bb{d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} }\ket{\alpha}_0\ket{0}_j-(\text{same with $\alpha= 0$})\\
+&= v\epsilon_0 \bb{ \braketop{\alpha}{d_0}{\alpha}\braketop{0}{d_0}{0} - \text{Re}\bb{\braketop{\alpha}{d_+}{\alpha}\braketop{0}{d_+}{0}^*}-(\text{same with $\alpha= 0$})}\\
+%
+&= v\epsilon_0 \bb{ (\braketop{\alpha}{d_0}{\alpha}-\braketop{0}{d_0}{0})\braketop{0}{d_0}{0} - \text{Re}\bb{(\braketop{\alpha}{d_+}{\alpha}-\braketop{0}{d_0}{0})\braketop{0}{d_+}{0}^*}}\\
+%
+&= v\epsilon_0 \bb{ (\meanv{d_0}_\alpha-\meanv{d_0}_0)\meanv{d_0}_0 - \text{Re}\bb{(\meanv{d_+}_\alpha-\meanv{d_0}_0)\meanv{d_+}_0^*}}
+\end{align}
+where the terms with the phase factor $\ef{2i\phi_j}$ vanish on a square lattice, since there is always a $\vec{j}'$ for every $\vec{j}$ which is rotated by $\pi/4$, canceling the contribution from $\vec{j}$.
+We have used that $\braketop{\alpha}{d_-}{\alpha}=-\braketop{\alpha}{d_+}{\alpha}^*$.
+
+To proceed, we calculate the expectation values of the dipole-operators $d_0$ and $d_+$:
+\begin{align}
+\braketop{00}{d_0}{00}&=\frac{\beta}{30} \bb{10-7 \absvsq{\epsilon}}\\
+% \braketop{10}{d_0}{10}&=-\frac{\beta}{5}\\
+\braketop{1+}{d_0}{1+}&=\frac{\beta}{30} \bb{3+7 \absvsq{\epsilon}}\\
+\braketop{1-}{d_0}{1-}&=\frac{\beta}{10}
+\end{align}
+and
+\begin{align}
+\braketop{00}{d_+}{00}&=-\frac{\epsilon}{\sqrt{3}} \bb{1-\frac{49\beta^2}{1440}} \\
+% \braketop{10}{d_+}{10}&=0 \\
+\braketop{1+}{d_+}{1+}&=+\frac{\epsilon}{\sqrt{3}} \bb{1-\frac{49\beta^2}{1440}} \\
+\braketop{1-}{d_+}{1-}&=0
+\end{align}
+Then, we compute
+\begin{align}
+% \epsilon^\text{int}_{1}&=v\epsilon_0\bb{-\frac{8\beta^2}{45} + \frac{\absvsq{\epsilon}}{3}}\\
+% \epsilon^\text{int}_{+}&=v\epsilon_0\bb{-\frac{7\beta^2}{90} + \frac{2\absvsq{\epsilon}}{3}}\\
+% \epsilon^\text{int}_{-}&=v\epsilon_0\bb{-\frac{7\beta^2}{90} + \frac{\absvsq{\epsilon}}{3}}
+\epsilon^\text{int}_{\pm}&=-v\epsilon_0 \frac{7\beta^2}{90}
+\end{align}
+% where, in addition to terms of $O(\beta^3)$ and $O(\epsilon^3)$ we also neglected terms of order $\beta^2\epsilon^2$.
+
+Since the interaction contribution is the same for both states, the difference
+is only given by the AC stark shift
+\begin{align}
+    \epsilon_+-\epsilon_- = \Delta \absvsq{\epsilon}
+\end{align}
+
+\subsection{Tunneling elements}
+Next, we calculate the tunneling elements for $i\ne j$. We first focus on the $+,-$ subspace:
+\begin{align}
+t^{--}_{ij}&=-\braketop{0_j,-_i}{\Hmic}{-_j,0_i}=\frac{v}{6 R_{ij}^3}c_\beta \\
+t^{++}_{ij}&=-\braketop{0_j,+_i}{\Hmic}{+_j,0_i}=\frac{v}{6 R_{ij}^3}\bb{c_\beta- \absvsq{\epsilon} }\\
+t^{-+}_{ij}&=-\braketop{0_j,-_i}{\Hmic}{+_j,0_i}=\frac{v}{6 R_{ij}^3}\bb{-3c_\beta+\frac{3 \absvsq{\epsilon}}{2}}\ef{+2 i \phi_{ij}}\\
+t^{+-}_{ij}&=-\braketop{0_j,+_i}{\Hmic}{-_j,0_i}=\frac{v}{6 R_{ij}^3}\bb{-3c_\beta+\frac{3 \absvsq{\epsilon}}{2}}\ef{-2 i \phi_{ij}}
+\end{align}
+where $\phi_{ji}=\phi_{ij}+\pi$ and $t^{+-}_{ij}=\bb{t^{-+}_{ji}}^*$ because $\bb{\ef{2i\phi_{ji}}}^* = \ef{-2i \phi_{ij}} \ef{-2 i \pi}$.
+We have defined $c_\beta = 1-\frac{49 \beta ^2}{720}\approx 1$.
+
+
+% Including the $10$ state, we have additionally
+% \begin{align}
+% t^{00}_{ij}&=-\braketop{0_i,10_j}{H}{10_i,0_j}=\frac{v}{6 R_{ij}^3}\bc{-2  + \frac{43\beta^2}{90} + 2 \absvsq{\epsilon} }\\
+% %
+% t^{0+}_{ij}&=-\braketop{0_i,+_j}{H}{10_i,0_j}=\frac{v}{6 R_{ij}^3}\bc{-\frac{7\beta \epsilon^*}{5\sqrt{3}} + \frac{9\sqrt{3}\beta \epsilon}{20} \ef{-2i\phi_{ij}} }\\
+% %
+% t^{0-}_{ij}&=-\braketop{0_i,+_j}{H}{10_i,0_j}=\frac{v}{6 R_{ij}^3}\bc{-\frac{3\sqrt{3}\beta \epsilon}{20}  }
+% \end{align}
+% where the tunneling from $\ket{10}$ to $\ket{1\pm}$ is naturally strongly suppressed due to the dipole alignment, which cancels the $d_0d_\pm$ terms. Therefore, only mixing with the other states leads to non-vanishing tunneling elements.
+
+\subsection{Interactions}
+Finally, the interaction terms are given by
+\begin{align}
+    V_{ij}^{--} &= \frac{49\beta^2}{900}\\
+    V_{ij}^{++} &= \frac{49\beta^2}{900} - \frac{2\absvsq{\epsilon}}{5} \\
+    V_{ij}^{+-} &= \frac{49\beta^2}{900} = V_{ij}^{-+}
+\end{align}
