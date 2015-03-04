@@ -1,6 +1,6 @@
-\begin{tquote}{..}
-    ..
-\end{tquote}
+% \begin{tquote}{..}
+%     ..
+% \end{tquote}
 
 \chapter{Anomalous behavior of spin systems with dipolar interactions}
 
@@ -49,7 +49,7 @@ algebraic correlations even in gapped ground states, in agreement with recent pr
 
 \begin{figure}[ht]
     \centering
-    \ig{0.8}{fig1}
+    \ig{0.9}{fig1}
     \caption{(a) Mean-field phase diagram for the XXZ model with dipolar interactions, where $\tan \theta$ is the ratio between the XY and the Ising spin couplings. (b) Ground state energy per particle: the dashed lines show the mean-field predictions, while the solid lines include the contributions from the spin waves. At the critical values $\theta_{c}$ and $\tilde{\theta}_{c}$, the ground state energy exhibits the jump $\Delta e_{c}\approx 0.14J$ and $\Delta \tilde{e}_{c}\approx 0.06J$, indicating the potential formation of an intermediate phase.\tlabel{fig1}}
 \end{figure}
 
@@ -63,11 +63,11 @@ the z-direction splits the rotation levels, and allows us to define a spin 1/2 s
 two states in the rotational manifold. Then, the Hamiltonian reduces to a XXZ model with dipole-dipole interaction
 between the spins \cite{Gorshkov2011}
 %
-\begin{equation}
+\begin{align}
 H = \frac{J a^3}{\hbar^2} \sum_{i \neq j} \frac{\cos \theta \:
 S^{z}_{i}S^{z}_{j}+ \sin \theta
 \: ( S^{x}_{i} S^{x}_{j} + S^{y}_{i} S^{y}_{j} ) }{|{\vec R}_{i} - {\vec R}_{j}|^3}.
-\end{equation}
+\end{align}
 %
 Here, the first term accounts for the static dipole-dipole
 interaction between the different rotational levels with strength $J \cos \theta$ , while the last term
@@ -100,10 +100,10 @@ for the anti-ferromagnetic phases. The summation over the dipole interaction
 reduces to a dimensionless parameter $\epsilon_{\vec K} \approx -2.646$, which is related to
 the dipolar dispersion
 %
-\begin{equation}
-  \epsilon_{\vec q} = \sum_{j \neq 0} e^{i {\vec R}_{j} {\vec q}}\frac{a^3}{|{\vec R}_{j}|^3}
+\begin{align}
+    \epsilon_{\vecq} = \sum_{j \neq 0} e^{i \vecq \vec{R}_{j} }\frac{a^3}{|{\vec R}_{j}|^3}
   \tlabel{dipoledispersion}
-\end{equation}
+\end{align}
 %
 at the corner of the Brillouin zone ${\vec K} = (\pi/a, \pi /a)$.
 In turn, the ferromagnetic phases are enhanced with a mean-field energy
@@ -175,8 +175,8 @@ $\epsilon_{0}\approx 9.033$, and $\epsilon_{\vec K}=(1/\sqrt{2}-1) \epsilon_{0}
 Next, we analyze the excitation spectrum above the mean-field ground states
 within a spin wave analysis. The spin wave analysis is well
 established \cite{Kubo1952,Auerbach1994}, and its application for a spin system with dipolar
-interaction is straightforward. Details of the calculation are presented in
-the supplementary material for the anti-ferromagnetic XY model. The results are
+interaction is straightforward. The details of the calculation for one specific case (the
+anti-ferromagnetic XY model) are presented in \cref{ap:spinwave_analysis}. The results are
 summarized in \tref{table1}, and shown in \tref{fig2}. In the following, we present a detailed
 discussion for each of the four ordered phases.
 
@@ -185,7 +185,7 @@ discussion for each of the four ordered phases.
 
 \begin{figure}[ht]
     \centering
-    \ig{.8}{fig2}
+    \ig{.99}{fig2}
     \caption{Spin wave excitations with $\Gamma=(0,0)$, $M=(0,\pi/2)$, and $K=(\pi/a,\pi/a)$ for different $\theta$ angles. (a) Spectrum of the I-F phase which also shows the behavior of the dipolar dispersion $\epsilon_{\vec q}$ for $\theta=-3\pi/4$, see red line. (b-d) Spectrum for the XY-F, I-AF and XY-AF phases. Each red line is a critical excitation spectrum indicating an instability.\tlabel{fig2}}
 \end{figure}
 
@@ -225,7 +225,7 @@ spin models with long-range interactions \cite{Deng2005,Schuch2006}.
 
 \begin{figure}[ht]
     \centering
-    \ig{.8}{fig3}
+    \ig{.99}{fig3}
     \caption{ Time evolution for localized spin excitations described by the Gaussian wave packet $\psi_{0}({\vec r}) = e^{- |{\vec r}|^2/2\sigma^2}/\sqrt{\pi \sigma^2}$
   with $\sigma \gg a$ in the continuum description. (a) For a linear dispersion $c|{\vec q}|$ in the I-F phase, the dynamics is described by cylindrical symmetric wave packets (see inset) traveling
   with velocity $c$, instead of the conventional quantum mechanical spreading for massive systems.
@@ -333,104 +333,3 @@ $\theta_{c}$ and $\tilde{\theta}_{c}$, the excitation spectrum from the anti-fer
 Consequently, the ground state energy within the spin wave analysis exhibits a jump, see \tref{fig1}a. Such a behavior is an indication
 for the appearance of an intermediate phase. However, this question can not be conclusively answered within the presented analysis due to the limited validity of spin wave theory close to the transition points. However, the appearance of a first order phase transition can be excluded by arguments similar as in
 Ref.~\cite{Spivak2004}.
-
-\section{Spin wave analysis}
-We present the derivation of the spin wave excitation spectrum
-within the spin wave analysis. The basic approach is to start with the ground
-states exhibiting perfect order, which are the correct ground states for the classical
-model at the four points $\theta = 0,\pm \pi/2, \pi$.  Then, we introduce bosonic
-creation and annihilation operators creating a spin excitation above the ground
-state according to the Holstein-Primakoff transformation. The spin Hamiltonian
-then reduces to a Bose-Hubbard model. In lowest order, we can ignore the
-interactions between the bosonic particles, and obtain a quadratic Hamiltonian
-in the bosonic operators, which is diagonalized using a
-Bogoliubov-Valantin transformation.  The latter transformation deforms the
-ground state and introduces fluctuations into the system.
-
-In the following, we demonstrate the spin wave analysis for the most revealing case: the antiferromagnetic XY phase.
-The generalization to the other ground states is straightforward.  Without loss of generality, we choose the anti-ferromagnetic order
-to point along the  $x$ direction. The square lattice is bipartite, and we denote the two sublattices as A and B. Then, the anti-ferromagnetic
- mean-field ground-state is given by   $|G\rangle = \prod_{i\in A} \left|\leftarrow\right\rangle_{i} \prod_{j\in B} \left|\rightarrow\right\rangle_{j}$
- with spins on sublattice~A pointing in the negative $x$ direction, i.e., $S^x \left|\leftarrow\right\rangle = -\hbar/2 \left|\leftarrow\right\rangle$,
- and spins on sublattice~B pointing in the positive $x$ direction ($S^x \left|\rightarrow\right\rangle = \hbar/2 \left|\rightarrow\right\rangle$).
- Excitations on sublattice A are created by flipping a spin with the ladder operator $S^{x+} = S^z-i S^y$,
- while excitations on sublattice B are created via $S^{x-} = S^z+i S^y$.
- We apply a Holstein-Primakoff transformation to bosonic operators
-\begin{align} \label{transHolstein}
-    S^z_i &= \frac{\hbar}{2} (a^{\phantom\dag}_i + a^{\dag}_i) \,\varphi(n_i),\\
-    S^y_i &= \frac{\hbar}{2i} (a^{\phantom\dag}_i - a^{\dag}_i)\, e^{i {\vec K} {\vec R_i}} \,\varphi(n_i),
-\end{align}
-where the phase $e^{i {\vec K}{\vec R_i}}=e^{-i {\vec K}{\vec R_i}}$ accounts for the sublattice-dependent sign with ${\vec K} = (\pi/a, \pi/a)$. The factor $\varphi(n_i)=1-n_i$ is introduced to guarantee bosonic commutation relations for the operators $a_i$.  Here, we are interested in the leading order of the spin wave expansion, and can therefore set
- $\varphi(n_i) \approx 1$. The bosonic operators reduce to
-%
-\begin{align}
-    \aop_i &= (S^z +i S^y e^{i {\vec K} {\vec R_i}} )/\hbar,\\
-    \aopd_i &= (S^z -i S^y e^{i {\vec K} {\vec R_i}})/\hbar,
-\end{align}
-%
-and the number operator $\nop_i = \aopd_i \aop_i = \frac{1}{2} + S_x e^{i {\vec K}{\vec R_i}}/\hbar$.
-
-
-Expanding the spin Hamiltonian in terms of the bosonic operators leads to a Bose-Hubbard Hamiltonian for the spin wave excitations.
-In leading order, we can neglect the interactions between the bosons and obtain the quadratic Hamiltonian
-%
-\begin{align} \label{HamiltonianXYAF}
-H/J = &\sin \theta \, \epsilon_{\vec K} \left(\frac{3 N}{4} - \frac{1}{2}\sum_i\left[\aopd_{i}\aop_i+ \aop_i \aopd_{i}\right]\right) \\
-           &+  \frac{1}{4} \sum_{i\ne j} \frac{
-    \chi_{i j} \bb{ \aopd_{i} \aop_{j}  + \aop_{i} \aopd_{j} }
-  + \eta_{i j} \bb{ \aop_{i} \aop_{j}  + \aopd_{i} \aopd_{j} }
-}{|{\vec R}_{ij}/a|^3}
-\end{align}
-with  ${\vec R}_{ij}={\vec R}_i - {\vec R}_j$,  $N$ the number of lattice sites, and the coupling the terms
-$\chi_{i j}=\cos\theta+\sin\theta e^{i {\vec K} {\vec R}_{ij}}$ and $\eta_{i j}=\cos\theta-\sin\theta e^{i {\vec K} {\vec R}_{ij}}$ including the
- anti-ferromagnetic ordering.
-Introducing the  Fourier representation $\aop_i =  \sum_{\vec q} \aop_{\vec q}e^{-i {\vec q} {\vec R}_i}/\sqrt{N}$,
-the terms involving the bosonic operators in Eq.~(\ref{HamiltonianXYAF}) reduce to
-%
-\begin{align}
-\frac{1}{4} \sum_{\vec q} \bigg[
-\left( \cos\theta \, \epsilon_{\vec q} +\sin\theta \, \epsilon_{\vec q+K} - 2 \sin \theta \epsilon_{\vec K}\right)\Big(\aopd_{\vec q} \aop_{\vec q}  + \aop_{\vec q} \aopd_{\vec q}\Big) \\
-+\left( \cos\theta \, \epsilon_{\vec q}-\sin\theta \, \epsilon_{\vec q+K} \right)\Big(a^{\phantom\dag}_{\vec q} a^{\phantom\dag}_{-\vec q}
-+ a^{\dag}_{\vec q} a^{\dag}_{-{\vec q}} \Big) \bigg].
-\end{align}
-%
-The diagonalization of this Hamiltonian is straightforward using a standard Bogoliubov transformation
-with $\bopd_{\vec q} = u_{\vec q}\, \aopd_{\vec q} - v_{\vec q}\, \aop_{-\vec q}$.
-Then, the Hamiltonian takes the form
-%
-\begin{align} \label{Hdiagonal}
-H = \frac{3J N \sin \theta\, \epsilon_{\vec K}}{4}  + \sum_{\vec q} E^{\mbox{\tiny XY-AF}}_{\vec q} \bb{\bopd_{\vec q}\bop_{\vec q} + \frac{1}{2}}
-\end{align}
-%
-with the spin-wave excitation spectrum $E^{\mbox{\tiny XY-AF}}_{\vec q}$. In addition, the coefficients  for the Bogoliubov transformation
-are given by
-%
-\begin{align}
-u_{\vec q} , v_{\vec q} = \pm\sqrt{\frac{1}{2} \left( \frac{\cos\theta \, \epsilon_{\vec q} +\sin\theta \, (\epsilon_{\vec q+K} - 2 \epsilon_{\vec K})}{2\, \mathcal{E}_{\vec q}}\pm 1\right)},
-\end{align}
-%
-with $\mathcal{E}_{\vec q} \equiv E^{\mbox{\tiny XY-AF}}_{\vec q} / J $.
-The property $u^2_{\vec q}-v^2_{\vec q}=1$ asserts that the transformation is canonical.
-In addition, the ground state obeys the condition $b_{\vec q} \left|\text{vac}\right\rangle = 0$, and the ground state energy per spin at zero temperature $T=0$
-reduces to $e_{\mbox{\tiny XY-AF}}$, see Table I.
-
-We are now able to check the validity of the spin wave approach self-consistently: the deformation of the ground state by the spin wave analysis
-provides a suppression of the anti-ferromagnetic order $ m \equiv  \Delta m - \frac{1}{2}=\left\langle S^x_i e^{i {\vec K} {\vec R_i}} \right\rangle / \hbar$,
-and thus
-%
-\begin{align}
-    \Delta m= \int \frac{d{\vec q}}{v_0} \, \meanv{ \aopd_{\vec q} \aop_{\vec q} } = \integralf{\vecq}{v_0}  \bc{ v_{\vec q}^2 + (2 v_{\vec q}^2 + 1) f_{\vec q} },
-\end{align}
-%
-where $f_{\vec q} = \meanv{ \bopd_\vecq \bopd_\vecq } = \left[\exp(E^{\mbox{\tiny XY-AF}}_{\vec q}/ T)-1\right]^{-1}$ accounts for the thermal occupation of the spin waves. At zero temperature $T=0$, this expression converges and  we obtain $\Delta m \approx 0.03$ for $\theta = \tilde\theta_c$ as well as $\Delta m = 0.39$ for $\theta \approx \frac{\pi}{4}$. In turn, at finite temperatures $T>0$, the low momentum behavior of  the integrand scales as $|{\vec q}|^{-2}$, and therefore $\Delta m$ diverges logarithmically: the long range order is destroyed by the thermal spin wave fluctuations, and gives rise to the well known
-quasi long-range order in analogy to short range XY models.
-
-Finally, the spin wave analysis also allows us to analyze the correlation functions
- $c_{\alpha\alpha}({\vec R}_{ij})=\langle S^\alpha_i S^\alpha_{j} e^{i {\vec K} {\vec R}_{i j}} \rangle$. Using
- the translational invariance of our system, the correlation functions reduce to
-%
-\begin{align} \label{correlationFunction}
-c_{\alpha\alpha}({\vec r}) = \int \frac{d{\vec q}}{v_0} \, c_{\alpha\alpha}({\vec q+K}) \, e^{-i {\vec q} {\vec r}}
-\end{align}
-%
-with $c_{\alpha\alpha}({\vec q}) = \langle S^\alpha_{\vec q} S^\alpha_{-\vec{q}}\rangle$.
