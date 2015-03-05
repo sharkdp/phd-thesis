@@ -8,3 +8,6 @@ bibliography/all.bib: $(SRC_BIB)
 clean:
 	rm -rf dist
 	mkdir dist
+
+spellcheck:
+	bash tools/spellcheck.sh
