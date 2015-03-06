@@ -1,6 +1,6 @@
 SRC_BIB = /home/shark/PhD/bibtex/PhD.bib
 
-.PHONY: all clean
+.PHONY: clean spellcheck common-errors-check
 
 bibliography/all.bib: $(SRC_BIB)
 	cp $(SRC_BIB) bibliography/all.bib
