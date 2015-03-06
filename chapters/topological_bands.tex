@@ -371,18 +371,122 @@ Then, using \refandpage{ds:tensortilted} we can write the tunneling part as
 \begin{align}
     \hamil = \sum_{i\ne j} \frac{\kappa}{\absv{\vecR_{ij}}^3}
     \begin{pmatrix}
-        \bop_{i,+} \\
-        \bop_{i,0} \\
-        \bop_{i,-}
+        \bop_{j,+} \\
+        \bop_{j,1} \\
+        \bop_{j,-}
     \end{pmatrix}^{\dag}
-    \begin{pmatrix}
-        -\frac{d_+^2}{2} f_0 & -\frac{3d_0d_+}{\sqrt{2}} f_1^* & \frac{3d_+d_-}{2} f_2^* \\
-        \cdot & \frac{d_0^2}{2} f_0 & -\frac{3d_0d_-}{\sqrt{2}} f_1^* \\
-        \cdot & \cdot & -\frac{d_-^2}{2} f_0 \\
-    \end{pmatrix}
+    \begingroup
+        \renewcommand*{\arraystretch}{1.5}
+        \begin{pmatrix}
+            -\frac{d_+^2}{2} f_0 & -\frac{3d_0d_+}{\sqrt{2}} f_1^* & \frac{3d_+d_-}{2} f_2^* \\
+            \cdot & \frac{d_0^2}{2} f_0 & -\frac{3d_0d_-}{\sqrt{2}} f_1^* \\
+            \cdot & \cdot & -\frac{d_-^2}{2} f_0 \\
+        \end{pmatrix}
+    \endgroup
     \begin{pmatrix}
         \bop_{i,+} \\
-        \bop_{i,0} \\
+        \bop_{i,1} \\
         \bop_{i,-}
     \end{pmatrix}^{\vphantom\dag}
 \end{align}
+where the functions $f_m = f_m(\Theta_0, \bar\Phi) = f_m(\Theta_0, \phi_{ij} - \Phi_0)$ depend on the electric field direction and the relative angle $\phi_{ij}$ between the dipoles, see \cref{ds:fmfunctions}.
+
+
+
+\section{Microscopic form of the parameters}
+% $\ketp$ and $\ketm$ states:
+As described in the main text, in the presence of the static electric field, we denote the lowest rotational states having $m=0, \pm 1$ by $\ketz$ and $\ketpm$, respectively.
+In addition, let $\ket{m=2}$ be the lowest $m=2$ state.
+A microwave with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$ couples the states $\ketp$ and $\ket{m=2}$.
+For a large detuning $\Delta \gg \Omega, V$, the number of $\ketp$ (and $\ketm$) excitations is conserved.
+In the rotating frame, within rotating wave approximation, the AC-dressed $\ketp$ state is given by
+\begin{align}
+    \ketp_\text{ac} &= \bb{1-\epsilon^2/2}\ketp - \epsilon \ket{m=2}
+\end{align}
+up to second order in $\epsilon=\Omega/2\Delta$.
+For sufficiently strong electric fields, the states $\ketz$ and $\ketm$ are essentially unaffected by the microwave.
+% To avoid cluttering of notation, we drop the \emph{ac} index on the $\ketp$ state.
+
+To derive the parameters of the hopping Hamiltonian~(3) in the main text, we introduce the vacuum state $\ket{\text{vac}}=\prod_k \ketz_k$ and the single particle states $\ket{\Psi_{i,\pm}}=\bopd_{i,\pm} \ket{\text{vac}}$.
+Then, the hopping amplitudes are given by
+\begin{align}
+    t^{\alpha\beta}_{ij} &= \braketop{\Psi_{i,\alpha}}{H^\text{dd}}{\Psi_{j,\beta}}.
+\end{align}
+We set the spin-conserving term $t^{\pm\pm}_{ij}=-t^\pm \cdot a^3/|\vec{R}_{ij}|^3$ and the spin-flip tunneling $t^{-+}_{ij}=w \ef{2i \phi_{ij}} \cdot a^3/|\vec{R}_{ij}|^3$ to get the final expressions for the nearest-neighbor tunneling rates
+\begin{align}
+    t^+ &= \frac{\kappa d_{1}^2}{2a^3} (1 - \epsilon^2), \nonumber \\
+    t^- &= \frac{\kappa d_{1}^2}{2a^3}, \nonumber \\
+    w &= \frac{3 \kappa d_{1}^2}{2a^3} (1-\epsilon^2/2)
+\end{align}
+with the transition dipole element $d_{1}=\absv{\braketop{-}{d^{-\vphantom{0}}}{{0}}}$.
+The evaluation of the dipole matrix elements for finite electric fields is straightforward and has been described in detail~\cite{Micheli2007}.
+
+In the absence of other techniques to shift the energy, the expression for the offset between the $\ketp$ and $\ketm$ state is given by the AC Stark shift $\Omega^2/4\Delta\equiv 2\mu$.
+
+\subsection{Model with \texorpdfstring{$\ketp$}{+} and \texorpdfstring{$\keto$}{1} state}
+Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
+Then, the dipole-dipole interaction can be expressed as
+\begin{align}
+    H^\text{dd}_{ij} &= \frac{\kappa}{|\vec{R}_{ij}|^3} \bigg[ f_0(\Theta, \phi_{ij} - \Phi)\, \Big( d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j\big) \Big) \nonumber \\
+                     &\hspace{1.38em} -\frac{3}{\sqrt{2}} \Big( f_1(\Theta, \phi_{ij} - \Phi) \, \big(d^0_i d^-_j + d^-_i d^0_j\big) + \hc \Big)\nonumber\\
+                     &\hspace{2.2em} -\frac{3}{2} \big( f_2(\Theta, \phi_{ij} - \Phi) \, d^-_i d^-_j + \hc \big ) \bigg]
+\end{align}
+where
+\begin{align}
+    f_0(\Theta, \phi) &= 1-3\sin^2 \Theta \cos^2 \phi\, , \nonumber \\
+    f_1(\Theta, \phi) &= \sin \Theta \cos \phi \bb{\cos \Theta \cos \phi + i \sin \phi} , \nonumber \\
+    f_2(\Theta, \phi) &= \bb{\cos\Theta \cos\phi + i \sin \phi}^2 .
+\end{align}
+For $\Theta=0$, the interaction reduces to expression~(2) given in the main text.
+For the tunneling rates we find
+\begin{align}
+    t^{++}_{ij} &= -\frac{\kappa d_{1}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \nonumber \\
+    t^{11}_{ij} &= \frac{\kappa d_{0}^2}{R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \nonumber \\
+    t^{1+}_{ij} &= \frac{3\kappa d_{0}d_{1}}{\sqrt{2}R_{ij}^3} f_1(\Theta, \phi_{ij} - \Phi)
+\end{align}
+where $d_0=\absv{\braketop{1}{d^0}{0}}$. Note that $t^{1+}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice.
+
+\section{Double-layer picture}
+
+\begin{figure}[t]
+    \centering
+    \ig{.6}{fig-supplement/fig1}
+
+    \caption{
+        \tlabel{fig-supplement}
+        Hopping strengths and flux pattern of a single layer in different lattices.
+        Tunneling elements without arrow are real numbers.
+        Complex hoppings have the indicated strength along the arrow and the complex conjugate in the opposite direction.
+        (a)~Square lattice: A single layer can be constructed by stripes of one component along one of the primitive vectors, effectively doubling the unit cell.
+        The second layer is given by a translation along the second primitive vector.
+        (b)~Honeycomb lattice: By distributing the $\ketp, \ketm$ orbitals to the two distinct sublattices it is possible to retain the symmetry of the lattice.
+        The second layer is given by a $60^\circ$ rotation.
+    }
+\end{figure}
+
+Topological band structures can be classified by considering equivalence classes of models that can be continuously deformed into each other without closing the energy gap~\cite{Hasan2010}.
+In particular, the Chern number of a single band can only change if it touches another band.
+Using this idea, we show that the model introduced in the main text in its $C=2$ phase is adiabatically equivalent to a system of two uncoupled copies of a $C=1$ layer.
+
+To see this, imagine separating the two orbitals $\ketp$ and $\ketm$ per site spatially along the $z$-direction (without changing any tunneling rates) such that we obtain two separate square lattice layers, called A and B.
+Sorting all terms in the Hamiltonian into intra- and inter-layer processes, we can write
+\begin{align}
+H=H_\text{A} + H_\text{B} + \lambda H_\text{AB}
+\end{align}
+where $\lambda=1$.
+The choice which orbital resides in layer A (and B) can be made individually for each lattice site.
+In any case, the resulting two layers will be interconnected by an infinite number of tunneling links $H_\text{AB}$.
+The idea is to find a specific arrangement of the orbitals such that we can continuously let $\lambda \longrightarrow 0$ \emph{without} closing a gap in the excitation spectrum, preserving the topological phase while disentangling the layers.
+
+Focusing on layer A (layer B being simply the complement), one possible arrangement is shown in \tref{fig-supplement}(a).
+The ${+}$ (${-}$) orbitals are assigned to odd (even) columns along the $y$-direction.
+For the Chern number of such a single layer we find $C=1$, using methods analogous to the ones described in the main text.
+The full system can be understood as two such layers, shifted by one lattice site in $x$-direction.
+With a unit cell twice the size of the original model, each layer contributes to one half of the full Brillouin zone, effectively doubling the Chern number to $C=2$.
+
+The single layer system has some interesting properties.
+In \tref{fig-supplement}(a) we show that it is possible to find a staggered magnetic flux pattern which creates the same tunneling phases as the dipole-dipole interaction, including tunneling up to the next-to-nearest neighbor level.
+% The resulting model is reminiscent of the famous Haldane model~\cite{Haldane1988}, adapted to the square lattice~\cite{Goldman2013,Li2008,Liu2010,Liu2011,Stanescu2010,Wang2011,Wang2014}.
+Using a site-dependent microwave dressing, it has been shown that a model similar to our single-layer system can be realized, giving rise to a $\nu=1/2$ fractional Chern insulating phase~\cite{Yao2012,Yao2013}.
+
+On the honeycomb lattice, a single layer can be constructed which retains the original symmetry of the lattice, see \tref{fig-supplement}(b). Here, the two bands of the single layer also have $C=\pm 1$ but occupy the same Brillouin zone as the double layer system. Consequently, the four bands of the full system are constructed from the combination of two $C=1$ and two $C=-1$ bands, giving rise to a multitude of different topological phases.
