@@ -344,3 +344,45 @@ Finally, the most spectacular evidence of the topological nature would be the ap
 Here, the hard-core constraint naturally provides a strong on-site interaction for the bosons.
 In addition, the remaining static dipolar interactions are a tunable knob to control the interaction strength.
 The most promising candidate for a bosonic fractional Chern insulator in a band with $C=2$ appears for a filling of $\nu = 2/3$, as suggested by numerical calculations~\cite{Moller2009,Wang2012a}.
+
+
+\section{Full derivation of the +,-,1 model with a tilted field}
+\todo{move this somewhere else. The idea is:
+start from arbitrary lattice + arbitrary DC, AC fields + all three \keto, \ketpm states.
+then: derive 2d \ketpm models, 2d \keto \ketp model, 1d \ketpm model for chain..
+}
+
+The idea of this chapter is to derive dipolar spin models in a (quite) general way. Later on, we will specialize to several different cases based on the dimensionality of the system, the selection of states, \ldots. We assume that we have dipolar spins at certain positions $\vec{R}_i$ in the $xy$ plane and an electric field $\vec{E}$ pointing in an arbitary direction (see ...).
+
+We assume a generic level structure of the kind shown in figure XXX with a groundstate called $\ketz$ and three excited states $\keto, \ketpm$. The only requirement on these states is that
+\begin{align}
+    \braketop{m+\delta}{d_\Delta}{m} \ll d_0 \text{ for } \delta \ne \Delta
+\end{align}
+where $d_0, d_\pm$ are the dipole operators, defined with respect to the electric field axis.
+In particular, this requirement will be fulfilled for arbitrary electric field strengths. However, this also includes microwave dressed states, even with circularly polarized light, coupling states with different $m$.
+
+To shorten the notation, we define the following transition dipole matrix elements:
+\begin{align}
+    d_0 &= \absv{ \smallbraketop{1}{d^0}{0} } \\
+    d_+ &= \absv{ \smallbraketop{{+}}{d^+}{0} } \\
+    d_- &= \absv{ \smallbraketop{{-}}{d^-}{0} }
+\end{align}
+Then, using \refandpage{ds:tensortilted} we can write the tunneling part as
+\begin{align}
+    \hamil = \sum_{i\ne j} \frac{\kappa}{\absv{\vecR_{ij}}^3}
+    \begin{pmatrix}
+        \bop_{i,+} \\
+        \bop_{i,0} \\
+        \bop_{i,-}
+    \end{pmatrix}^{\dag}
+    \begin{pmatrix}
+        -\frac{d_+^2}{2} f_0 & -\frac{3d_0d_+}{\sqrt{2}} f_1^* & \frac{3d_+d_-}{2} f_2^* \\
+        \cdot & \frac{d_0^2}{2} f_0 & -\frac{3d_0d_-}{\sqrt{2}} f_1^* \\
+        \cdot & \cdot & -\frac{d_-^2}{2} f_0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        \bop_{i,+} \\
+        \bop_{i,0} \\
+        \bop_{i,-}
+    \end{pmatrix}^{\vphantom\dag}
+\end{align}
