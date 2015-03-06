@@ -15,32 +15,39 @@
 
 
 \section{Dipolar interactions}
-The tensor part of the dipole-dipole interaction $D\equiv \Vdd R_{ij}^3/\Cdd=\vec{d_1}\vec{d_2}-3(\vec{d_1}\hat{\vec{r}})(\vec{d_2}\hat{\vec{r}})$ where $\Cdd = \mu_0 /4\pi$ or $1/4\pi\epsilon_0$ can be written in terms of a spherical tensor $T^2(\vec{d_i},\vec{d_j})$ of rank 2, build from the two dipole moments, with components
-\begin{align}
-T^2_0(\vec{d_i},\vec{d_j}) &= \frac{1}{\sqrt{6}} (d^i_+ d^j_- + 2d^i_0 d^j_0 + d^i_{-} d^j_{+})\\
-T^2_{\pm 1}(\vec{d_i},\vec{d_j}) &= \frac{1}{\sqrt{2}} (d^i_{\pm} d^j_0 + d^i_0 d^j_{\pm})\\
-T^2_{\pm 2}(\vec{d_i},\vec{d_j}) &= d^i_{\pm} d^j_{\pm} \phantom{\frac{1}{\sqrt{42}}}
+The aim of this introductory section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecri, \vecrj$,
+\begin{align} \tlabel{ddint}
+\Vdd(\vecr_{ij}) = \frac{\kappa}{\absv{\vecr_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecr}_{ij})(\vecd_j \cdot \hat{\vecr}_{ij}) }
 \end{align}
-[ Note the additional factor of $\mp 1/\sqrt{2}$ compared to the definition of $j_\pm$. ]
-where the dipole moments are spherical tensors with components
+in a spherical tensor representation which will be useful throughout this thesis~\cite{Micheli2007,Gorshkov2011c}.
+\Tref{ddint} is given in terms of the vector $\vecr_{ij} = \vecr_j - \vecr_i$ and its normalized form $\hat{\vecr}_{ij}$.
+For electric (magnetic) dipoles, the constant prefactor is given by $\kappa = 1/4\pi\epsilon$ ($\kappa=\mu_0/4\pi$).
+We focus on the distance-independent part of the dipole-dipole interaction $D_{ij} \equiv \Vdd \absv{\vecr_{ij}}^3/\kappa=\vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecr}_{ij})(\vecd_j \cdot \hat{\vecr}_{ij})$ which can be written in terms of a spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with components
+\begin{align}
+T^2_0(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{6}} (d_i^+ d_j^- + 2d_i^0 d_j^0 + d_i^{-} d_j^{+}), \\
+T^2_{\pm 1}(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{2}} (d_i^{\pm} d_j^0 + d_i^0 d_j^{\pm}), \\
+T^2_{\pm 2}(\vecd^i, \vecd^j) &= d_i^{\pm} d_j^{\pm} \phantom{\frac{1}{\sqrt{42}}}.
+\end{align}
+It is constructed from the two dipole moments which are rank-one tensors with spherical components
 \begin{align}\label{eq:dipsph}
-d_0 = d_z\qquad d_\pm = \mp\frac{1}{\sqrt{2}}\bb{d_x\pm i d_y}
+d^0_i = d^z_i, \qquad d_i^\pm = \mp\frac{1}{\sqrt{2}}\bb{d_i^x\pm i d_i^y}
 \end{align}
-The dipole-dipole interaction is then given by
+Using this, the dipole-dipole interaction can be written as a contraction of two rank-two tensors \cite{Brown2003}
 \begin{align}
-D &= -\sqrt{6} \,T^2(C)\cdot T^2(\vec{d_1},\vec{d_2})\\
-&\equiv-\sqrt{6}  \sum_p (-1)^p C^2_{-p}(\theta,\phi) T^2_p(\vec{d_1},\vec{d_2})
+    D_{ij} &= -\sqrt{6} \: T^2(C)\cdot T^2(\vec{d_1},\vec{d_2})\\
+           &= -\sqrt{6}  \sum_{m=-2}^{2} (-1)^m C^2_{-m}(\theta,\phi) \, T^2_m(\vecd_i,\vecd_j).
 \end{align}
-where $C^k_p(\theta,\phi)=\sqrt{\frac{4\pi}{2k+1}} Y^k_p(\theta,\phi)$ are modified (unnormalized) spherical harmonics. We can expand
+Here, $C^l_m(\theta,\phi)=\sqrt{\frac{4\pi}{2l+1}} Y^l_m(\theta,\phi)$ are the modified (unnormalized) spherical harmonics and $\theta, \phi$ are the spherical angles of the vector $\hat{\vecr}_{ij}$. We can expand this expression to get
 \begin{align}\label{eq:doperator}
-D &= (1-3\cos^2 \theta) \left[d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} \right] \\
-&\,\,-\frac{3}{\sqrt{2}}\sin\theta \,\cos\theta \left[ \ef{+i\phi} (d_0 d_- + d_- d_0) - \ef{-i\phi} (d_0 d_+ + d_+ d_0) \right]\\
-&\,\,-\frac{3}{2}\sin^2\theta \left[ \ef{+2i\phi} d_- d_- + \ef{-2i\phi} d_+ d_+\right]
+    D_{ij} &= (1-3\cos^2 \theta) \bc{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
+           &\quad -\frac{3}{\sqrt{2}}\sin\theta \,\cos\theta \bc{ (d_i^0 d_j^- + d_i^- d_j^0) \ef{+i\phi} - (d_i^0 d_j^+ + d_i^+ d_j^0) \ef{-i\phi} } \\
+           &\quad -\frac{3}{2}\sin^2\theta \bc{ \ef{+2i\phi} d_i^- d_j^- + \ef{-2i\phi} d_i^+ d_j^+ }.
 \end{align}
-where in each term the first dipole operator acts on $i$ and the second on $j$. Notice that this coincides with $\Vdd$ from the first part if we change from $d_\pm \rightarrow \mp j_\pm/\sqrt{2}$ and $d_0\rightarrow j_0$.
-For a 2D geometry we set $\theta=\pi/2$ and get
+It is worth noting that the $T^2_{m=0}(\vecd_i, \vecd_j)$-terms in the first row conserve the ``internal'' angular momentum while the $m=1$ ($m=2$) terms in the second (third) row increase or decrease two internal angular momentum by one (two) quanta.
+
+For most applications, we will be concerned with two-dimensional systems where the dipoles are aligned perpendicular to the plane. Then, the dipoles will be perpendicular to the interconnecting axis $\vecr_{ij}$ (implying $\theta = \pi/2$) and the tensorial part reduces to
 \begin{align}
-D = d_0 d_0 + \frac{1}{2}\bb{d_+ d_- + d_- d_+} -\frac{3}{2} \left[ \ef{+2i\phi} d_- d_- + \ef{-2i\phi} d_+ d_+\right]
+    D^\text{(2D)}_{ij} = d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} -\frac{3}{2} \bb{ d_i^- d_j^- \ef{+2i\phi} + d_i^+ d_j^+ \ef{-2i\phi} }
 \end{align}
 For a 1D geometry in $x$-direction we set $\phi=0$ to get
 \begin{align}
