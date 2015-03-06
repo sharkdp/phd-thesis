@@ -100,16 +100,16 @@ and then expand the square:
 \end{align}
 We can now evaluate
 \begin{align}
-    \integralb{0}{\infty}{x} \sin\bb{\frac{kx}{4n}} \ef{-x} x^{\alpha+\beta-1} &= \Im{ \integralb{0}{\infty}{x} \ef{-(1-ik /4n)x} x^{\alpha+\beta-1}} \\
-    &= \Im{ \frac{(\alpha+\beta-1)!}{\bb{1-\frac{i k}{4n}}^{\alpha+\beta}} }
+    \integralb{0}{\infty}{x} \sin\bb{\frac{kx}{4n}} \ef{-x} x^{\alpha+\beta-1} &= \Imf{ \integralb{0}{\infty}{x} \ef{-(1-ik /4n)x} x^{\alpha+\beta-1}} \\
+    &= \Imf{ \frac{(\alpha+\beta-1)!}{\bb{1-\frac{i k}{4n}}^{\alpha+\beta}} }
 \end{align}
 leading to
 \begin{align}
-    \rho_k=\frac{2}{k n} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} (-1)^{\alpha+\beta} \frac{(\alpha+\beta-1)!}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \Im{ \frac{1}{\bb{1-\frac{i k}{4n}}^{\alpha+\beta}} }
+    \rho_k=\frac{2}{k n} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} (-1)^{\alpha+\beta} \frac{(\alpha+\beta-1)!}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \Imf{ \frac{1}{\bb{1-\frac{i k}{4n}}^{\alpha+\beta}} }
 \end{align}
 We now define $\kappa=\frac{k}{4n}$ to simplify the structure
 \begin{align}
-    \rho_k=\frac{1}{2n^2} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} (-1)^{\alpha+\beta} \frac{(\alpha+\beta-1)!}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \Im{ \frac{1}{\kappa\bb{ 1-i\kappa }^{\alpha+\beta}} }
+    \rho_k=\frac{1}{2n^2} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} (-1)^{\alpha+\beta} \frac{(\alpha+\beta-1)!}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \Imf{ \frac{1}{\kappa\bb{ 1-i\kappa }^{\alpha+\beta}} }
 \end{align}
 We can now expand this expression into a series around $\kappa=0$. All odd orders vanish identically. For even $\nu$, the $\mathcal{O}(k^\nu)$ coefficient is given by
 \begin{align}
