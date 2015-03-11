@@ -2,12 +2,11 @@
     \ldots~a super-dense substance known as dark matter; each pound of which weighs over ten thousand pounds.
 \end{tquote}
 
-\newcommand{\ketm}{\ket{{-}}}
 \newcommand{\ketp}{\ket{{+}}}
-\newcommand{\ketpm}{\ket{{\pm}}}
+\newcommand{\ketm}{\ket{{-}}}
 \newcommand{\ketz}{\ket{{0}}}
-\newcommand{\keto}{\ket{{1}}}
-\newcommand{\vecsigma}{\boldsymbol{\sigma}}
+\newcommand{\ketpm}{\ket{{\pm}}}
+\newcommand{\keto}{\ket{1}}
 
 \chapter{Topological band structures}
 
@@ -15,13 +14,13 @@ We demonstrate the realization of topological band structures by exploiting the 
 The system is based on polar molecules trapped in a deep optical lattice, where the dynamics of rotational excitations follows a hopping Hamiltonian which is determined by the dipolar exchange interactions.
 We find topological bands with Chern number $C=2$ on the square lattice, while a very rich structure of different topological bands appears on the honeycomb lattice.
 We show that the system is robust against missing molecules.
-For certain parameters we obtain flat bands, providing a promising candidate for the realization of bosonic fractional Chern insulators.
+For certain parameters we obtain flat bands, providing a promising candidate for the realization of hard-core bosonic fractional Chern insulators.
 
 The quest for the realization of different topological states of matter marks one of the major challenges in quantum many-body physics.
 A well established concept for the generation of two-dimensional topologically ordered states exhibiting anyonic excitations are flat bands characterized by a topological invariant in combination with strong interactions~\cite{Bergholtz2013,Parameswaran2013}.
 The prime example is the fractional quantum Hall effect, where strong magnetic fields generate Landau levels~\cite{Nayak2008}.
 Furthermore, lattice models without Landau levels have been proposed for the realization of topological bands~\cite{Haldane1988,Raghu2008,Wang2011,Neupert2011,Wang2012a,Grushin2012,Moller2009,Sun2010,Barkeshli2012,Wang2011a,Sterdyniak2013,Liu2012,Yao2013,Yang2012,Dauphin2012,Cooper2012,Cooper2013,Shi2013}.
-Notably, spin-orbit coupling has emerged as an experimentally promising tool for band structures with topological invariants~\cite{Kane2005,Qi2011,Hasan2010,Tang2011}.
+Notably, spin-orbit coupling has emerged as an experimentally promising tool for band structures with topological invariants~\cite{Kane2005,Pesin2009,Qi2011,Hasan2010,Tang2011,Qiao2011}.
 In this letter, we show that dipolar interactions, exhibiting intrinsic spin-orbit coupling, can be exploited for the realization of topological bands with cold polar molecules.
 
 In cold gases experiments, the phenomenon that dipolar interactions exhibit spin-orbit coupling is at the heart of demagnetization cooling~\cite{Hensler2003,Fattori2006,Pasquiou2011,DePaz2013a},
@@ -48,7 +47,8 @@ The relevant degree of freedom of the polar molecules is given by two different 
 We demonstrate that the band structure for such an excitation is characterized by a Chern number which depends on the underlying lattice structure.
 In particular, we find that the system on a square lattice gives rise to Chern number $C=2$, while a rich phase diagram appears on the honeycomb lattice. % with several different Chern bands with $C$ ranging from $1$ to $4$.
 Ideally, the setup is initialized with one polar molecule per lattice site, but we demonstrate that the topological properties are robust, even if nearly half of the molecules are randomly removed.
-Hard-core bosons in topological bands with Chern number $C=2$ are expected to give rise to a fractional Chern insulator at $2/3$ filling~\cite{Moller2009,Wang2012a}.
+In contrast to non-interacting fermions, free bosons cannot form a topological insulator. However,
+the bosonic excitations in our system are subject to a hard-core constraint and are expected to give rise to a fractional Chern insulator at $2/3$ filling in $C=2$ topological bands~\cite{Moller2009,Wang2012a,Sterdyniak2015}.
 
 The main advantages of our realization, using the spin-orbit coupling present in dipolar interactions, are its robustness and the low experimental requirements, while many alternative theoretical proposals with cold gases require strong spatially inhomogeneous laser fields with variations on the scale of one lattice constant~\cite{Liu2010,Stanescu2010,Goldman2013,Li2008,Yao2012,Yao2013,Goldman2013,Jaksch2003}.
 We point out that our proposal can also be applied to Rydberg atoms in similar setups~\cite{Barredo2014,Piotrowicz2013,Nogrette2014}.
@@ -143,17 +143,14 @@ where we use the spinor notation $\psiopd_j = \big( \bopd_{j,+} , \bopd_{j,-} \b
 % The energy scale is given by the characteristic energy of the dipole-dipole interaction $V$.
 The energy scale of the hopping rates $t^+$, $t^-$, and $w$ is given by $V$. The precise form depends on the microscopic parameters and is detailed in the supplementary material.
 Note that $t^{+} = t^{-}$ without the applied microwave.
-In momentum space with $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$, including the internal energy $H_{i}^{\text{rot}}$ of the excitations $|\pm\rangle_{i}$, the Hamiltonian reduces to
+In momentum space with $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$, including the internal energy $H_{i}^{\text{rot}}$ of the excitations $|\pm\rangle_{i}$, the Hamiltonian can be rewritten as
 \begin{align}
     H &= \sum_{\veck} \psiopd_{\veck} \big({n^{0\vphantom\dagger}_{\veck} \: \mathds{1} + \vec{n}^{\vphantom \dagger}_{\veck}\cdot\vecsigma}\big) \psiop_{\veck}
     \label{eq:hkspace}
 \end{align}
-where $\vecsigma$ denotes the vector of Pauli matrices.
-We introduce the dipolar dispersion relation~\cite{Peter2012b,Syzranov2014}
-\begin{align}
-    \epsilon^m_{\veck} = \sum_{j\ne 0} \frac{a^3}{|\vec{R}_j|^3}\ef{i\veck \vec{R}_j + i m \phi_{j}}, % = \big(\epsilon^{-m}_{\veck}\big)^*
-\end{align}
-which determines the spin-independent hopping $n^0_{\veck} = -\bar{t}\, \epsilon^0_{\veck}$, as well as the spin-orbit term characterized by the vector
+where it is useful to express the traceless part of the Hamiltonian
+as the product of a three dimensional real vector $\vec{n}_{\veck}$ and the vector of Pauli matrices $\vecsigma$ \cite{Hasan2010,Bernevig2013}.
+The real vector characterizes the spin-orbit coupling terms and takes the form
 \begin{align}
     \vec{n}^{\vphantom 0}_{\veck} = \begin{pmatrix}
         w \Re \epsilon^2_{\veck} \\
@@ -161,8 +158,13 @@ which determines the spin-independent hopping $n^0_{\veck} = -\bar{t}\, \epsilon
         \mu + t\, \epsilon^0_{\veck}
     \end{pmatrix}
 \end{align}
-with ${\bar t} =( t^{+}+t^{-})/2$, $t = (t^--t^+)/2 > 0$, and the energy splitting $\mu$. % \mu = (E_+ - E_-)/2 is actually just half the energy splitting...
-The precise determination of $\epsilon^m_{\veck}$ can be achieved by an Ewald summation technique providing a non-analytic low momentum behavior
+with $t = (t^--t^+)/2 > 0$.
+The spin-independent hopping is determined by $n^0_{\veck} = -\bar{t}\, \epsilon^0_{\veck}$ with ${\bar t} = (t^{+}+t^{-})/2$.
+We have introduced the dipolar dispersion relation~\cite{Peter2012b,Syzranov2014}
+\begin{align}
+    \epsilon^m_{\veck} = \sum_{j\ne 0} \frac{a^3}{|\vec{R}_j|^3}\ef{i\veck \vec{R}_j + i m \phi_{j}}.
+\end{align}
+The precise determination of this function can be achieved by an Ewald summation technique providing a non-analytic low momentum behavior
 $\epsilon^0_{\veck} \approx \epsilon^0_{\Gamma} - 2\pi |\veck|a$ and
 $\epsilon^2_{\veck} \approx -\frac{2\pi}{3} |\veck|a \ef{2i \varphi}$.
 Here, $\epsilon^0_{\Gamma} \approx 9.03$ and $\varphi$ is defined by $\hat{\veck}=(\cos \varphi, \sin \varphi)^t$.
@@ -326,7 +328,7 @@ In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient
     \caption{
         (a)~Dispersion relation for the $\ketp$ and $\keto$ states on a cylindrical square lattice geometry with infinite extent in $x$ direction and $31$ sites in $y$ direction.
         Four edge states cross the bandgap in the $C=2$ phase (two for each edge).
-        (b)~Exponentially decaying amplitude of the two edge states corresponding to the points shown in the spectrum.
+        (b)~Exponentially decaying amplitude of the two edge states in logarithmic scale, corresponding to the points shown in the spectrum.
         (c)~Edge state amplitude $|\psi_+(x,y)|^2 + |\psi_-(x,y)|^2$ on a finite $50 \times 50$ square lattice with a filling fraction of $0.8$ (missing sites are indicated by crosses).
     }
     \tlabel{edgeStates}
@@ -340,10 +342,10 @@ In \tref{edgeStates}c, we show the robustness of the edge states against missing
 The edge state is also visible in a spectroscopic analysis, as a single mode between the broad continuum of the two bands (see~\tref{edgeStates}a).
 
 \section{Many-body system}
-Finally, the most spectacular evidence of the topological nature would be the appearance of fractional Chern insulators in the many-body system at a fixed density of excitations.
-Here, the hard-core constraint naturally provides a strong on-site interaction for the bosons.
+Finally, the most spectacular evidence of the topological nature would be the appearance of fractional Chern insulators in the interacting many-body system at a fixed density of excitations.
+In our system, the hard-core constraint naturally provides a strong on-site interaction for the bosons.
 In addition, the remaining static dipolar interactions are a tunable knob to control the interaction strength.
-The most promising candidate for a bosonic fractional Chern insulator in a band with $C=2$ appears for a filling of $\nu = 2/3$, as suggested by numerical calculations~\cite{Moller2009,Wang2012a}.
+The most promising candidate for a hard-core bosonic fractional Chern insulator in a band with $C=2$ appears for a filling of $\nu = 2/3$, as suggested by numerical calculations~\cite{Moller2009,Wang2012a}.
 
 
 \section{Full derivation of the +,-,1 model with a tilted field}
