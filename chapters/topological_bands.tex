@@ -391,6 +391,32 @@ Then, using \refandpage{ds:tensortilted} we can write the tunneling part as
 \end{align}
 where the functions $f_m = f_m(\Theta_0, \bar\Phi) = f_m(\Theta_0, \phi_{ij} - \Phi_0)$ depend on the electric field direction and the relative angle $\phi_{ij}$ between the dipoles, see \cref{ds:fmfunctions}.
 
+To simplify the notation, we introduce the expressions
+\begin{align}
+    t^\alpha &= \frac{\kappa d_\alpha^2}{2a^3} \\
+    w &= \frac{3\kappa d^+d^-}{2a^3}
+\end{align}
+
+\subsection{The +- model}
+\begin{align}
+    \hamil = \sum_{i\ne j} \frac{a^3}{\absv{\vecR_{ij}}^3}
+    \begin{pmatrix}
+        \bop_{j,+} \\
+        \bop_{j,-}
+    \end{pmatrix}^{\dag}
+    \begingroup
+        \renewcommand*{\arraystretch}{1.5}
+        \begin{pmatrix}
+            -t^+ f_0 & w f_2^* \\
+            w f_2 & -t^- f_0 \\
+        \end{pmatrix}
+    \endgroup
+    \begin{pmatrix}
+        \bop_{i,+} \\
+        \bop_{i,-}
+    \end{pmatrix}^{\vphantom\dag}
+\end{align}
+
 
 
 \section{Microscopic form of the parameters}
