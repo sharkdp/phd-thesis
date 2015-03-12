@@ -12,6 +12,7 @@
 \newcommand{\tlabel}[1]{\label{\chapterprefix:#1}}
 \newcommand{\tref}[1]{\cref{\chapterprefix:#1}}
 \newcommand{\Tref}[1]{\Cref{\chapterprefix:#1}}
+\newcommand{\labeltref}[1]{\labelcref{\chapterprefix:#1}}
 \newcommand{\refandpage}[1]{\cref{#1} on \cpageref{#1}}
 
 %%% Figures
@@ -57,3 +58,6 @@
 }
 
 \renewcommand{\doublefig}[8]{\doublefigopt{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{th}} %%! w1, f1, c1, w2, f2, c2, label, main caption
+
+%%% correct quotation marks
+\newcommand{\qu}[1]{``#1''}

@@ -6,6 +6,7 @@ bibliography/all.bib: $(SRC_BIB)
 	cp $(SRC_BIB) bibliography/all.bib
 
 clean:
+	rm bibliography/all.bib
 	rm -rf dist
 	mkdir dist
 
