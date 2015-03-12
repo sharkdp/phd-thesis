@@ -37,7 +37,7 @@ Chromium \cite{Griesmaier2005a,Beaufils2008}, fermionic \cite{Naylor2015}
 Dysprosium \cite{Lu2011}, fermionic \cite{Lu2012}
 erbium \cite{Aikawa2012} fermionic \cite{Aikawa2014}
 
-\todo{permament dipole moment, hyperfine ground state, lande factor}
+\todo{permanent dipole moment, hyperfine ground state, Lande factor}
 
 
 \section{Dipole-dipole interaction}
@@ -45,7 +45,7 @@ The aim of this introductory section is to rewrite the familiar interaction betw
 \begin{align} \tlabel{ddint}
 \Hdd(\vecR_{ij}) = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij}) }
 \end{align}
-in a spherical tensor representation which will be useful throughout this thesis~\cite{Micheli2007,Gorshkov2011c}.
+in a spherical tensor representation~\cite{Micheli2007,Gorshkov2011c} which will be useful throughout this thesis.
 \Tref{ddint} is given in terms of the vector $\vecR_{ij} = \vecR_j - \vecR_i$ and its normalized form $\hat{\vecR}_{ij}$.
 For electric (magnetic) dipoles, the constant prefactor is given by $\kappa = 1/4\pi\epsilon$ ($\kappa=\mu_0/4\pi$).
 We focus on the distance-independent part $D_{ij} \equiv \Hdd \absv{\vecR_{ij}}^3/\kappa=\vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij})$ of the dipole-dipole interaction which can be written in terms of the spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with components
@@ -55,7 +55,7 @@ T^2_{\pm 1}(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{2}} (d_i^{\pm} d_j^0 + d_i^0 d_j
 T^2_{\pm 2}(\vecd^i, \vecd^j) &= d_i^{\pm} d_j^{\pm}.
 \end{align}
 It is constructed from the two dipole moments which are themselves rank-one tensors with spherical components
-\begin{align}
+\begin{align} \tlabel{sphericalcomp}
 d^0_i = d^z_i, \qquad d_i^\pm = \mp\frac{1}{\sqrt{2}}\bb{d_i^x\pm i d_i^y}.
 \end{align}
 Using this, the dipole-dipole interaction can be written as a contraction of two rank-two tensors \cite{Brown2003}, leading to
@@ -63,7 +63,7 @@ Using this, the dipole-dipole interaction can be written as a contraction of two
     D_{ij} &= -\sqrt{6} \: T^2(C)\cdot T^2(\vec{d_1},\vec{d_2})\\
            &= -\sqrt{6}  \sum_{m=-2}^{2} (-1)^m C^2_{-m}(\theta,\phi) \, T^2_m(\vecd_i,\vecd_j).
 \end{align}
-Here, $C^l_m(\theta,\phi)=\sqrt{\frac{4\pi}{2l+1}} Y^l_m(\theta,\phi)$ are the modified (unnormalized) spherical harmonics and $\theta, \phi$ are the spherical angles of the vector $\hat{\vecR}_{ij}$ in the coordinate system of the quantization axis. We can expand this expression to get
+Here, $C^l_m(\theta,\phi)=\sqrt{\frac{4\pi}{2l+1}} Y^l_m(\theta,\phi)$ are the modified (unnormalized) spherical harmonics and $\theta = \theta_{ij}, \phi = \phi_{ij}$ are the spherical angles of the vector $\hat{\vecR}_{ij}$ in the coordinate system of the quantization axis. We can expand this expression to get
 \begin{align}\tlabel{doperator}
     D_{ij} &= (1-3\cos^2 \theta) \bc{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
            &\quad -\frac{3}{\sqrt{2}}\sin\theta \,\cos\theta \bc{ (d_i^0 d_j^- + d_i^- d_j^0) \ef{+i\phi} - (d_i^0 d_j^+ + d_i^+ d_j^0) \ef{-i\phi} } \\
@@ -72,7 +72,7 @@ Here, $C^l_m(\theta,\phi)=\sqrt{\frac{4\pi}{2l+1}} Y^l_m(\theta,\phi)$ are the m
 It is worth noting that the $T^2_{m=0}(\vecd_i, \vecd_j)$-terms in the first row conserve the ``internal'' angular momentum while the $m=1$ ($m=2$) terms in the second (third) row increase or decrease the internal angular momentum by one (two) quanta.
 
 For most applications, we will be concerned with two-dimensional systems where the dipoles are aligned perpendicular to the plane. Then, the dipoles are also perpendicular to the interconnecting axis $\vecR_{ij}$, implying $\theta = \pi/2$. In this case, the $m=1$ terms drop out and the tensorial part reduces to
-\begin{align}
+\begin{align} \tlabel{dop2d}
     D^\text{(2D)}_{ij} = d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} -\frac{3}{2} \bb{ d_i^- d_j^- \ef{+2i\phi} + d_i^+ d_j^+ \ef{-2i\phi} }
 \end{align}
 For a one-dimensional geometry there are two high-symmetry geometries. If the dipoles are perpendicular to the lattice direction (say, the $x$-direction) we can set $\phi=0$, further simplifying $D_{ij}$ to
@@ -172,18 +172,64 @@ in the following we look at three different choices. each of them is a rise in c
 
 
 
-\subsection{Two internal levels with $\Delta m = 0$ (Anomalous behavior)}
+\subsection{Two-level dipoles: Ising and XY interacations}
+Here, we assume that we have chosen two states, denoted as $\ketz$ and $\keto$, which have the
+same $M$ quantum number.
+Then, only the $d^0_id^0_j$ part of the dipolar interaction is relevant.
+We define the (transition) dipole elements
+\begin{align*}
+    d_{0} = \smallbraketop{0}{d^0}{0},\qquad
+    d_{1} = \smallbraketop{1}{d^0}{1},\qquad
+    d_{01} = |\smallbraketop{0}{d^0}{1}| = |\smallbraketop{1}{d^0}{0}|.
+\end{align*}
+Then, using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can express the
+dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
+\begin{align*}
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \bc {d_{1}^2 P^1_i P^1_j + d_{0}^2 P^0_i P^0_j + d_{1}d_{0} (P^1_i P^0_j + P^0_i P^1_j) + d_{01}^2 (\splus_i \sminus_j + \sminus_i \splus_j) }.
+\end{align*}
+Here, we have neglected all processes which are not energy-conserving,
+i.e. terms that do not conserve the number of excitations, and would
+cancel out in the rotating wave approximation.
+Using $\sz = P^1 - P^0$ and $\id = P^1 + P^0$ we find
+\begin{align*}
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + d_{01}^2 (\splus_i \sminus_j + \sminus_i \splus_j)\\
+              &\qquad\qquad\qquad + \frac{d_1^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_1+d_0)^2}{4} \Big].
+\end{align*}
+Here, the first two terms describe Ising- and XY-type interactions between the two-level dipoles. The third term is equivalent to a magnetic field in $z$ direction and the last term is just a constant energy offset\footnote{Note, however, that the \qu{magnetic field} and the constant offset depend on the positions of all other dipoles. If the system is not translationally invariant, these terms can play a role.}.
+% \begin{align*}
+% D_\text{int}&=\frac{(d_1-d_0)^2}{4} \sigma_z \sigma_z + \absvsq{d_{\up}} (\sigma_+ \sigma_- + \sigma_- \sigma_+)\\
+% &= (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y)
+% \end{align*}
 
-Call the states $\ketup$ and $\ketdn$. We only consider the energy-conserving terms because $\Vdd \ll B$. The only relevant terms in the interaction is $d^0d^0$ which generates both an $\sz \sz$ term and the tunneling term $\splus\sminus$.
+\subsection{Two-level dipoles with \texorpdfstring{$\Delta M = 1$}{dM = 1}}
+We proceed similar as before and denote the two states by $\ketz$ and $\ketp$, indicating the difference of $\Delta M = 1$ between the two states. The relevant dipole matrix elements are\footnote{The sign difference in the last term is due to $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = \smallbraketop{+}{- d^+}{0}^*$. Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements.}
+\begin{align}
+    d_0 = \smallbraketop{0}{d^0}{0},\qquad
+    d_+ = \smallbraketop{+}{d^0}{+},\qquad
+    d_{+0} = |\smallbraketop{+}{d^+}{0}| = -d_{0+}.
+\end{align}
+Due to the different angular momentum of the two states, the term $d^0_i d^0_j$ only generates an interaction term $\sz_i \sz_j$. However, the term $d^+_i d^-_j$ provides an excitation conserving tunneling term proportional to $\splus\sminus$, just as before. The different nature of the states leads to a flipped sign compared to the previous model:
+\begin{align*}
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_+-d_0)^2}{4} \sz_i \sz_j  - \frac{d_{0+}^2}{2} (\splus_i \sminus_j + \sminus_i \splus_j) \\
+              &\qquad\qquad\qquad + \frac{d_+^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_++d_0)^2}{4} \Big].
+\end{align*}
 
-\subsection{Two internal levels with $\Delta m = 1$ (dipolar fermions and 1,+ model?)}
-now $d^0d^0$ only generates an interaction term $\sz \sz$. the term $d^+d^-$ provides an energy conserving tunneling term $\splus\sminus$.
+\subsubsection{Magnetic dipoles}
+Using the magnetic dipole moment $\vec{d}=\mu_\text{B} g \vecsigma / 2$ of a dipolar atom with spin $S=1/2$,
+the dipole matrix elements are given by
+\begin{align}
+    d_0 &= \smallbraketop{0}{d^z}{0} = -\mu_\text{B}g/2, \\
+    d_+ &= \smallbraketop{+}{d^z}{+} = +\mu_\text{B}g/2, \\
+    d_{+0} &= |\smallbraketop{+}{d^+}{0}| = \smallbraketop{+}{\sqrt{2} \sigma^+}{0} = +\mu_\text{B}g/\sqrt{2}.
+\end{align}
+Then, including the energy non-conserving terms proportional to $\sminus_i\sminus_j$, the Hamiltonian reduces to
+\begin{align}
+    \Hdd_{ij} = \frac{\kappa \mu_\text{B}^2 g^2}{4 R_{ij}^3} \bc{ \sz_i \sz_j - \bb{\splus_i \sminus_j+ 3 \sminus_i\sminus_j \ef{+2i\phi} + \hc } }.
+\end{align}
 
-For DF we are also interested in the energy non-conserving term $d^+d^+$ which leads to the $\splus\splus$ contribution.
-
-\subsection{Three internal levels with $\Delta m_{1,2} = \pm 1$ (FE and PM)}
+\subsection{Three-level dipoles with \texorpdfstring{$\Delta M_{1,2} = \pm 1$}{dM = -1, +1}}
 same as before. $d^0d^0$ leads to interaction terms. $d^+d^-$ provides tunneling for both $+$ and $-$. But now there is an energy conserving $d^+d^+$ contribution, the $+$ to $-$ tunneling.
 
 
-\subsection{Three internal levels with $\Delta m_1 = 1, \Delta_m2 = 0$ (+, 1 model)}
+\subsection{Three-level dipoles with \texorpdfstring{$\Delta M_{1,2} = 0, 1$}{dM = 0, +1}}
 same as before but we now need a tilted field to enable the $d^+d^0$ terms.
