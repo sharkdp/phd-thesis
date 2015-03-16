@@ -171,10 +171,12 @@ In addition to choosing a certain set of atomic or molecular states, external fi
 in the following we look at three different choices. each of them is a rise in complexity, but also intruduces one additional feature.
 
 
+\fig{.35}{dipole-moments}{dipole-moments}{Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions \qu{downwards}.}
+
 
 \subsection{Two-level dipoles: Ising and XY interacations}
 Here, we assume that we have chosen two states, denoted as $\ketz$ and $\keto$, which have the
-same $M$ quantum number.
+same $M$ quantum number (see~\tref{dipole-moments}).
 Then, only the $d^0_id^0_j$ part of the dipolar interaction is relevant.
 We define the (transition) dipole elements
 \begin{align*}
@@ -201,8 +203,19 @@ Here, the first two terms describe Ising- and XY-type interactions between the t
 % &= (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y)
 % \end{align*}
 
+\todo{
+    Introducing the spin $\sfrac{1}{2}$ operators, we can rewrite this to
+\begin{align*}
+    \Hdd &= \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j} \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{2} S^z_i S^z_j  + q_1^2 (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
+         &= \sum_{i\ne j} \frac{a^3}{R_{ij}^3} \Big[ \frac{\kappa (d_1-d_0)^2}{2a^3} S^z_i S^z_j  + \frac{\kappa q_1^2}{a^3} (S^x_i S^x_j + S^y_i S^y_j) \Big].
+\end{align*}
+Then, $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. Thus,
+$\tan \theta = 2q_1^2/(d_1-d_0)^2$.
+}
+
 \subsection{Two-level dipoles with \texorpdfstring{$\Delta M = 1$}{dM = 1}}
-We proceed similar as before and denote the two states by $\ketz$ and $\ketp$, indicating the difference of $\Delta M = 1$ between the two states. The relevant dipole matrix elements are\footnote{The sign difference in the last term is due to $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = \smallbraketop{+}{- d^+}{0}^*$. Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements.}
+In this related case, we replace the upper state $\keto$ by the $M=1$ state $\ketp$ (see \tref{dipole-moments}) and proceed similar as before.
+The relevant dipole matrix elements are\footnote{The sign difference in the last term is due to $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = \smallbraketop{+}{- d^+}{0}^*$.Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements.}
 \begin{align}
     d_0 = \smallbraketop{0}{d^0}{0},\qquad
     d_+ = \smallbraketop{+}{d^0}{+},\qquad
@@ -227,8 +240,9 @@ Then, including the energy non-conserving terms proportional to $\sminus_i\sminu
     \Hdd_{ij} = \frac{\kappa \mu_\text{B}^2 g^2}{4 R_{ij}^3} \bc{ \sz_i \sz_j - \bb{\splus_i \sminus_j+ 3 \sminus_i\sminus_j \ef{+2i\phi} + \hc } }.
 \end{align}
 
-\subsection{Three-level dipoles with \texorpdfstring{$\Delta M_{1,2} = \pm 1$}{dM = -1, +1}}
-The dipole matrix elements are given by
+\subsection{Three-level dipoles}
+We create a \textsf{V}-level scheme including the $\ketz, \ketp$ and $\ketm$ levels with
+dipole matrix elements
 \begin{align}
     d_0 = \smallbraketop{0}{d^0}{0}, \qquad
     d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
@@ -276,8 +290,8 @@ where
     V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0)
 \end{align}
 
-\subsection{Four level dipoles}
-same as before but we now need a tilted field to enable the $d^+d^0$ terms.
+\subsection{General case: Four-level dipoles in a tilted field}
+Including all states in \tref{dipole-moments} and a (possibly) tilted electric field, we find
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} f_0 & \frac{3q_+ q_1}{\sqrt{2}} f_1^* & \frac{3q_+q_-}{2} f_2^* \\
@@ -285,5 +299,3 @@ same as before but we now need a tilted field to enable the $d^+d^0$ terms.
     \frac{3q_+q_-}{2} f_2 & \frac{3q_1q_-}{\sqrt{2}} f_1 & -\frac{q_-^2}{2} f_0
 \end{pmatrix}
 \end{align}
-
-\fig{.35}{dipole-moments}{dipole-moments}{Relevant static (blue) and transition (red) dipole moments.}
