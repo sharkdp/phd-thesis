@@ -260,7 +260,7 @@ using this, we can write
     d^0_i d^0_j &= d_0^2 + d_0(d_+-d_0) (\nop_{+,i}+\nop_{+,j}) + d_0(d_--d_0) (\nop_{-,i}+\nop_{-,j}) \\
                 &\quad + (d_+ - d_0)^2 \nop_{+,i} \nop_{+,j} + (d_- - d_0)^2 \nop_{-,i} \nop_{-,j} \\
                 &\quad + (d_+ - d_0)(d_- - d_0) (\nop_{+,i} \nop_{-,j} + \nop_{-,i} \nop_{+,j}) \\
-    d^+_i d^-_j + d^-_i d^+_j &= q_+^2 \bb{ \bopd_{+,i} \bop_{+,j} + \hc } + q_-^2 \bb{ \bopd_{-,i} \bop_{-,j} + \hc } \\
+    d^+_i d^-_j &= q_+^2 \bopd_{+,i} \bop_{+,j} + q_-^2 \bopd_{-,j} \bop_{-,i} \\
     d^+_i d^+_j &= - q_+q_- \, \bopd_{+,i} \bop_{-,j}
 \end{align}
 neglecting excitation-nonconserving terms. Then, dropping the constant terms and \qu{magnetic fields}, we find:
@@ -276,7 +276,7 @@ where
     V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0)
 \end{align}
 
-\subsection{Three-level dipoles with \texorpdfstring{$\Delta M_{1,2} = 0, 1$}{dM = 0, +1}}
+\subsection{Four level dipoles}
 same as before but we now need a tilted field to enable the $d^+d^0$ terms.
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
@@ -285,3 +285,5 @@ same as before but we now need a tilted field to enable the $d^+d^0$ terms.
     \frac{3q_+q_-}{2} f_2 & \frac{3q_1q_-}{\sqrt{2}} f_1 & -\frac{q_-^2}{2} f_0
 \end{pmatrix}
 \end{align}
+
+\fig{.35}{dipole-moments}{dipole-moments}{Relevant static (blue) and transition (red) dipole moments.}
