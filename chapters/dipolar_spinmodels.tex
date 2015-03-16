@@ -178,21 +178,21 @@ same $M$ quantum number.
 Then, only the $d^0_id^0_j$ part of the dipolar interaction is relevant.
 We define the (transition) dipole elements
 \begin{align*}
-    d_{0} = \smallbraketop{0}{d^0}{0},\qquad
-    d_{1} = \smallbraketop{1}{d^0}{1},\qquad
-    d_{01} = |\smallbraketop{0}{d^0}{1}| = |\smallbraketop{1}{d^0}{0}|.
+    d_0 = \smallbraketop{0}{d^0}{0},\qquad
+    d_1 = \smallbraketop{1}{d^0}{1},\qquad
+    q_1 = |\smallbraketop{1}{d^0}{0}| = |\smallbraketop{0}{d^0}{1}|.
 \end{align*}
 Then, using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can express the
 dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
 \begin{align*}
-    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \bc {d_{1}^2 P^1_i P^1_j + d_{0}^2 P^0_i P^0_j + d_{1}d_{0} (P^1_i P^0_j + P^0_i P^1_j) + d_{01}^2 (\splus_i \sminus_j + \sminus_i \splus_j) }.
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \bc {d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j + d_1d_0 (P^1_i P^0_j + P^0_i P^1_j) + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) }.
 \end{align*}
 Here, we have neglected all processes which are not energy-conserving,
 i.e. terms that do not conserve the number of excitations, and would
 cancel out in the rotating wave approximation.
 Using $\sz = P^1 - P^0$ and $\id = P^1 + P^0$ we find
 \begin{align*}
-    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + d_{01}^2 (\splus_i \sminus_j + \sminus_i \splus_j)\\
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j)\\
               &\qquad\qquad\qquad + \frac{d_1^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_1+d_0)^2}{4} \Big].
 \end{align*}
 Here, the first two terms describe Ising- and XY-type interactions between the two-level dipoles. The third term is equivalent to a magnetic field in $z$ direction and the last term is just a constant energy offset\footnote{Note, however, that the \qu{magnetic field} and the constant offset depend on the positions of all other dipoles. If the system is not translationally invariant, these terms can play a role.}.
@@ -206,11 +206,11 @@ We proceed similar as before and denote the two states by $\ketz$ and $\ketp$, i
 \begin{align}
     d_0 = \smallbraketop{0}{d^0}{0},\qquad
     d_+ = \smallbraketop{+}{d^0}{+},\qquad
-    d_{+0} = |\smallbraketop{+}{d^+}{0}| = -d_{0+}.
+    q_+ = |\smallbraketop{+}{d^+}{0}| = |\smallbraketop{0}{d^-}{+}|
 \end{align}
 Due to the different angular momentum of the two states, the term $d^0_i d^0_j$ only generates an interaction term $\sz_i \sz_j$. However, the term $d^+_i d^-_j$ provides an excitation conserving tunneling term proportional to $\splus\sminus$, just as before. The different nature of the states leads to a flipped sign compared to the previous model:
 \begin{align*}
-    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_+-d_0)^2}{4} \sz_i \sz_j  - \frac{d_{0+}^2}{2} (\splus_i \sminus_j + \sminus_i \splus_j) \\
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_+-d_0)^2}{4} \sz_i \sz_j  - \frac{q_+^2}{2} (\splus_i \sminus_j + \sminus_i \splus_j) \\
               &\qquad\qquad\qquad + \frac{d_+^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_++d_0)^2}{4} \Big].
 \end{align*}
 
@@ -218,9 +218,9 @@ Due to the different angular momentum of the two states, the term $d^0_i d^0_j$ 
 Using the magnetic dipole moment $\vec{d}=\mu_\text{B} g \vecsigma / 2$ of a dipolar atom with spin $S=1/2$,
 the dipole matrix elements are given by
 \begin{align}
-    d_0 &= \smallbraketop{0}{d^z}{0} = -\mu_\text{B}g/2, \\
-    d_+ &= \smallbraketop{+}{d^z}{+} = +\mu_\text{B}g/2, \\
-    d_{+0} &= |\smallbraketop{+}{d^+}{0}| = \smallbraketop{+}{\sqrt{2} \sigma^+}{0} = +\mu_\text{B}g/\sqrt{2}.
+    d_0 &= \smallbraketop{0}{d^0}{0} = -\mu_\text{B}g/2, \\
+    d_+ &= \smallbraketop{+}{d^0}{+} = +\mu_\text{B}g/2, \\
+    q_+ &= |\smallbraketop{+}{d^+}{0}| = \smallbraketop{+}{\sqrt{2} \sigma^+}{0} = +\mu_\text{B}g/\sqrt{2}.
 \end{align}
 Then, including the energy non-conserving terms proportional to $\sminus_i\sminus_j$, the Hamiltonian reduces to
 \begin{align}
@@ -228,8 +228,60 @@ Then, including the energy non-conserving terms proportional to $\sminus_i\sminu
 \end{align}
 
 \subsection{Three-level dipoles with \texorpdfstring{$\Delta M_{1,2} = \pm 1$}{dM = -1, +1}}
-same as before. $d^0d^0$ leads to interaction terms. $d^+d^-$ provides tunneling for both $+$ and $-$. But now there is an energy conserving $d^+d^+$ contribution, the $+$ to $-$ tunneling.
-
+The dipole matrix elements are given by
+\begin{align}
+    d_0 = \smallbraketop{0}{d^0}{0}, \qquad
+    d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
+    q_\pm &= |\smallbraketop{\pm}{d^\pm}{0}|.
+\end{align}
+%
+% Then, we define $R=\ketbra{0}{{+}}$ and $L=\ketbra{0}{{-}}$, as well as projectors $P^0, P^\pm$.
+% \begin{align}
+%     d^0 &= d_0 P^0 + d_+ P^+ + d_- P^- \\
+%     d^+ &= d_{+0} R^\dag - d_{-0} L \\
+%     d^- &= d_{+0} R - d_{-0} L^\dag
+% \end{align}
+% using this, we can write
+% \begin{align}
+%     d^0_i d^0_j &= (d_0 P^0_i + d_+ P^+_i + d_- P^-_i)(d_0 P^0_j + d_+ P^+_j + d_- P^-_j) \\
+%     d^+_i d^-_j + d^-_i d^+_j &= d_{+0}^2 R^\dag_i R_j + d_{-0}^2 L^\dag_i L_j + \hc \\
+%     d^+_i d^+_j &= - d_{+0}d_{-0} R^\dag_i L_j
+% \end{align}
+% neglecting excitation-nonconserving terms
+%
+Then, we define $\bop_\pm=\ketbra{0}{{\pm}}$, and write the dipole operator in terms of the bosonic operators
+\begin{align}
+    d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_- \\
+    d^+ &= q_+ \bopd_+ - q_- \bop_- \\
+    d^- &= q_+ \bop_+  - q_- \bopd_-
+\end{align}
+using this, we can write
+\begin{align}
+    d^0_i d^0_j &= d_0^2 + d_0(d_+-d_0) (\nop_{+,i}+\nop_{+,j}) + d_0(d_--d_0) (\nop_{-,i}+\nop_{-,j}) \\
+                &\quad + (d_+ - d_0)^2 \nop_{+,i} \nop_{+,j} + (d_- - d_0)^2 \nop_{-,i} \nop_{-,j} \\
+                &\quad + (d_+ - d_0)(d_- - d_0) (\nop_{+,i} \nop_{-,j} + \nop_{-,i} \nop_{+,j}) \\
+    d^+_i d^-_j + d^-_i d^+_j &= q_+^2 \bb{ \bopd_{+,i} \bop_{+,j} + \hc } + q_-^2 \bb{ \bopd_{-,i} \bop_{-,j} + \hc } \\
+    d^+_i d^+_j &= - q_+q_- \, \bopd_{+,i} \bop_{-,j}
+\end{align}
+neglecting excitation-nonconserving terms. Then, dropping the constant terms and \qu{magnetic fields}, we find:
+\begin{align}
+    \Hdd_{ij} = \sum_{\alpha,\beta} \bc{ t_{ij}^{\alpha\beta} \bopd_{\alpha,i} \bop_{\beta,j} + V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j} }
+\end{align}
+where
+\begin{align}
+    t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
+    -\frac{q_+^2}{2} & \frac{3q_+q_-}{2} \ef{-2i \phi_{ij}} \\
+    \frac{3q_+q_-}{2} \ef{+2i \phi_{ij}} & -\frac{q_-^2}{2}
+\end{pmatrix} \\
+    V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0)
+\end{align}
 
 \subsection{Three-level dipoles with \texorpdfstring{$\Delta M_{1,2} = 0, 1$}{dM = 0, +1}}
 same as before but we now need a tilted field to enable the $d^+d^0$ terms.
+\begin{align}
+    t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
+    -\frac{q_+^2}{2} f_0 & \frac{3q_+ q_1}{\sqrt{2}} f_1^* & \frac{3q_+q_-}{2} f_2^* \\
+    \frac{3q_+q_1}{\sqrt{2}} f_1 & q_1^2 f_0 & \frac{3q_1q_-}{\sqrt{2}} f_1^* \\
+    \frac{3q_+q_-}{2} f_2 & \frac{3q_1q_-}{\sqrt{2}} f_1 & -\frac{q_-^2}{2} f_0
+\end{pmatrix}
+\end{align}
