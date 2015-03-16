@@ -52,7 +52,7 @@ We focus on the distance-independent part $D_{ij} \equiv \Hdd \absv{\vecR_{ij}}^
 \begin{align}
 T^2_0(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{6}} (d_i^+ d_j^- + 2d_i^0 d_j^0 + d_i^{-} d_j^{+}), \\
 T^2_{\pm 1}(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{2}} (d_i^{\pm} d_j^0 + d_i^0 d_j^{\pm}), \\
-T^2_{\pm 2}(\vecd^i, \vecd^j) &= d_i^{\pm} d_j^{\pm}.
+T^2_{\pm 2}(\vecd^i, \vecd^j) &= d_i^{\pm} d_j^{\pm} \vphantom{\frac{1}{42}}.
 \end{align}
 It is constructed from the two dipole moments which are themselves rank-one tensors with spherical components
 \begin{align} \tlabel{sphericalcomp}
@@ -65,9 +65,9 @@ Using this, the dipole-dipole interaction can be written as a contraction of two
 \end{align}
 Here, $C^l_m(\theta,\phi)=\sqrt{\frac{4\pi}{2l+1}} Y^l_m(\theta,\phi)$ are the modified (unnormalized) spherical harmonics and $\theta = \theta_{ij}, \phi = \phi_{ij}$ are the spherical angles of the vector $\hat{\vecR}_{ij}$ in the coordinate system of the quantization axis. We can expand this expression to get
 \begin{align}\tlabel{doperator}
-    D_{ij} &= (1-3\cos^2 \theta) \bc{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
-           &\quad -\frac{3}{\sqrt{2}}\sin\theta \,\cos\theta \bc{ (d_i^0 d_j^- + d_i^- d_j^0) \ef{+i\phi} - (d_i^0 d_j^+ + d_i^+ d_j^0) \ef{-i\phi} } \\
-           &\quad -\frac{3}{2}\sin^2\theta \bc{ \ef{+2i\phi} d_i^- d_j^- + \ef{-2i\phi} d_i^+ d_j^+ }.
+    D_{ij} &= (1-3\cos^2 \theta) \BC{ d_i^0 d_j^0 + \frac{1}{2}\Bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
+           &\quad -\frac{3}{\sqrt{2}}\sin\theta \,\cos\theta\, \BC{ \Bb{ d_i^0 d_j^- + d_i^- d_j^0 } \ef{+i\phi} - \Bb{ d_i^0 d_j^+ + d_i^+ d_j^0 } \ef{-i\phi} } \\
+           &\quad -\frac{3}{2}\sin^2\theta \, \BC{ \ef{+2i\phi} d_i^- d_j^- + \ef{-2i\phi} d_i^+ d_j^+ }.
 \end{align}
 It is worth noting that the $T^2_{m=0}(\vecd_i, \vecd_j)$-terms in the first row conserve the ``internal'' angular momentum while the $m=1$ ($m=2$) terms in the second (third) row increase or decrease the internal angular momentum by one (two) quanta.
 
