@@ -109,7 +109,7 @@ For the angle $\theta$ between the dipole orientation $\vec{\hat{E}}$ and the in
 \end{align}
 With the difference $\bar\Phi=\Phi_{ij}-\Phi_0$, we can express the relevant terms in the dipole-dipole interaction as
 \begin{align} \tlabel{fmfunctions}
-    f_0(\Theta_0, \bar \Phi)&\equiv 1-3\cos^2\theta = 1-3\sin^2\Theta_0\cos^2\bar\Phi, \\
+    f_0(\Theta_0, \bar \Phi)&\equiv 1-3\cos^2\theta = 1-3\sin^2\Theta_0\cos^2\bar\Phi, \vphantom{\bb{\bar \Phi}} \\
     f_1(\Theta_0, \bar \Phi)&\equiv \sin\theta\cos\theta \ef{i\phi} = \sin\Theta_0 \cos\bar\Phi \bb{\cos\Theta_0 \cos\bar\Phi + i \sin \bar\Phi}, \\
     f_2(\Theta_0, \bar \Phi)&\equiv\sin^2\theta \ef{2i\phi} = \bb{\cos\Theta_0 \cos\bar\Phi + i \sin \bar\Phi}^2.
 \end{align}
@@ -143,25 +143,23 @@ In total, the tensorial part of the dipole-dipole interaction from \tref{doperat
 %     f_0(\Theta_0^*, \bar \Phi) = 1-\cos^2\bar \Phi
 % \end{align}
 
-\todo{Do we need the following paragraphs?}
+% \subsubsection{In-plane electric field}
+% For $\Theta_0=\pi/2$, the expressions above reduce to
+% \begin{align}
+%     1-3\cos^2\theta &= 1-3\cos^2\bar\Phi \\
+%     \sin\theta\cos\theta \ef{\pm i\phi} &= \pm \frac{i}{2} \sin 2\bar\Phi \\
+%     \sin^2\theta \ef{\pm 2i\phi} &= - \sin^2 \bar\Phi
+% \end{align}
 
-\subsubsection{In-plane electric field}
-For $\Theta_0=\pi/2$, the expressions above reduce to
-\begin{align}
-    1-3\cos^2\theta &= 1-3\cos^2\bar\Phi \\
-    \sin\theta\cos\theta \ef{\pm i\phi} &= \pm \frac{i}{2} \sin 2\bar\Phi \\
-    \sin^2\theta \ef{\pm 2i\phi} &= - \sin^2 \bar\Phi
-\end{align}
-
-\subsubsection{One-dimensional setup}
-For a 1D setup we can set $\Phi_0=0$. The angle $\Phi$ is limited
-to the values $0$ or $\pi$, indicated by $\sin\Phi=0$ and
-$\cos\Phi=\pm 1=\text{sign}(X)$. Then, the expressions above reduce to
-\begin{align}
-    1-3\cos^2\theta &= 1-3\sin^2\Theta_0 \\
-    \sin\theta\cos\theta \ef{\pm i\phi} &= \sin\Theta_0 \cos\Theta_0 \\
-    \sin^2\theta \ef{\pm 2i\phi} &= \cos^2 \Theta_0
-\end{align}
+% \subsubsection{One-dimensional setup}
+% For a 1D setup we can set $\Phi_0=0$. The angle $\Phi$ is limited
+% to the values $0$ or $\pi$, indicated by $\sin\Phi=0$ and
+% $\cos\Phi=\pm 1=\text{sign}(X)$. Then, the expressions above reduce to
+% \begin{align}
+%     1-3\cos^2\theta &= 1-3\sin^2\Theta_0 \\
+%     \sin\theta\cos\theta \ef{\pm i\phi} &= \sin\Theta_0 \cos\Theta_0 \\
+%     \sin^2\theta \ef{\pm 2i\phi} &= \cos^2 \Theta_0
+% \end{align}
 
 
 \section{Choosing a particular model}
@@ -231,8 +229,8 @@ Due to the different angular momentum of the two states, the term $d^0_i d^0_j$ 
 Using the magnetic dipole moment $\vec{d}=\mu_\text{B} g \vecsigma / 2$ of a dipolar atom with spin $S=1/2$,
 the dipole matrix elements are given by
 \begin{align}
-    d_0 &= \smallbraketop{0}{d^0}{0} = -\mu_\text{B}g/2, \\
-    d_+ &= \smallbraketop{+}{d^0}{+} = +\mu_\text{B}g/2, \\
+    d_0 &= \smallbraketop{0}{d^0}{0} = -\mu_\text{B}g/2, \vphantom{\sqrt{2}} \\
+    d_+ &= \smallbraketop{+}{d^0}{+} = +\mu_\text{B}g/2, \vphantom{\sqrt{2}} \\
     q_+ &= |\smallbraketop{+}{d^+}{0}| = \smallbraketop{+}{\sqrt{2} \sigma^+}{0} = +\mu_\text{B}g/\sqrt{2}.
 \end{align}
 Then, including the energy non-conserving terms proportional to $\sminus_i\sminus_j$, the Hamiltonian reduces to
