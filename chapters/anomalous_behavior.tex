@@ -117,28 +117,27 @@ shifted to the values $\theta_{c}= \arctan(\epsilon_{\vec K}/\epsilon_{0})
 \approx -0.1 \pi$ and $\tilde{\theta}_c = \pi+ \arctan(\epsilon_{0}/\epsilon_{\vec K})\approx 0.6 \pi$.
 
 
-
-
-\begin{table*}[t]
-    \tiny
-\begin{tabular}{ccc}
-\toprule
- ground state $\alpha$& \hspace{30pt} spin wave excitation spectrum $E^{\alpha}_{\vec q}$ \hspace{30pt} & \hspace{20pt} ground state energy per spin $e_{\alpha}$ \hspace{20pt} \\
- \hline
- \\
-I-F& $J \big(\sin \theta \epsilon_{\vec q} - \cos \theta \epsilon_{0}\big) $&   $\displaystyle  \frac{3 J \cos \theta \epsilon_{0}}{4}  +\frac{1}{2}  \int \frac{d{\vec q}}{v_0} E_{\alpha}({\vec q})=\frac{J  \cos \theta \epsilon_{0}}{4}$\\
- \\
- XY-F & $    J\sqrt{ \sin\theta \big(\epsilon_{\vec q}-\epsilon_{0}\big)\big( \cos\theta \epsilon_{\vec q}- \sin \theta \epsilon_{0}\big)}$
-&$\displaystyle   \frac{3 J \sin \theta \epsilon_{0} }{4}  +\frac{1}{2}  \int \frac{d{\vec q}}{v_0} E^{\alpha}_{\vec q}$\\
-\\
- I-AF &  $ J  \sqrt{\big( \sin \theta \epsilon_{{\vec q}+{\vec K}}-\cos \theta \epsilon_{\vec K}\big) \big(\sin \theta \epsilon_{\vec q}- \cos \theta \epsilon_{\vec K }\big)}$
- &$ \displaystyle \frac{3  J \cos \theta \epsilon_{\vec K} }{4}  +\frac{1}{2}  \int \frac{d{\vec q}}{v_0} E^{\alpha}_{\vec q}$\\
- \\
- XY-AF& $  J  \sqrt{\sin \theta \big(  \epsilon_{{\vec q}+{\vec K}}-\epsilon_{\vec K} \big)\big( \cos \theta \epsilon_{\vec q}-\sin \theta \epsilon_{\vec K}\big)}$&
- $\displaystyle \frac{3 J \sin \theta \epsilon_{\vec K} }{4} + \frac{1}{2}  \int \frac{d{\vec q}}{v_0} E^{\alpha}_{\vec q}$\\
-\end{tabular}
-\caption{ \tlabel{table1} Spin wave excitation spectrum $E_{\vec q}^{\alpha}$ and ground state energy  $e_{\alpha}$.}
-\end{table*}
+\begin{table}[t]
+    {
+        \tabulinesep=1.5mm
+        \small
+        \begin{tabu} to \textwidth {X[.218]X[1.306]X}
+            \toprule
+            GS $\alpha$ & spin wave excitation spectrum $E^{\alpha}_{\vec q}$ & ground state energy per spin $e_{\alpha}$ \\
+            \midrule
+            I-F &   $J (\sin \theta \, \epsilon_{\vec q} - \cos \theta \, \epsilon_{0}) $
+                &   $\displaystyle \frac{3 J \cos \theta \, \epsilon_{0}}{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}\!=\!\frac{J \cos \theta  \epsilon_{0}}{4}$ \\
+            XY-F &  $J \sqrt{ \sin\theta \, (\epsilon_{\vec q}-\epsilon_{0})( \cos\theta \, \epsilon_{\vec q}- \sin \theta \, \epsilon_{0})}$
+                 &  $\displaystyle \frac{3 J \sin \theta \, \epsilon_{0} }{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}$ \\
+            I-AF &  $J \sqrt{( \sin \theta \, \epsilon_{{\vec q}+{\vec K}}-\cos \theta \, \epsilon_{\vec K}) (\sin \theta \, \epsilon_{\vec q}- \cos \theta \, \epsilon_{\vec K })}$
+                 &  $\displaystyle  \frac{3  J \cos \theta \, \epsilon_{\vec K} }{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}$ \\
+            XY-AF & $J \sqrt{\sin \theta \, (  \epsilon_{{\vec q}+{\vec K}}-\epsilon_{\vec K} )( \cos \theta \, \epsilon_{\vec q}-\sin \theta \, \epsilon_{\vec K})}$
+                  & $\displaystyle \frac{3 J \sin \theta \, \epsilon_{\vec K} }{4} + \frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}$ \\
+            \bottomrule
+        \end{tabu}
+        \caption{ \tlabel{table1} Spin wave excitation spectrum $E_{\vec q}^{\alpha}$ and ground state energy  $e_{\alpha}$.}
+    }
+\end{table}
 
 
 
@@ -276,14 +275,15 @@ The spin wave dynamics caused by the anomalous dispersion relation $\sim \sqrt{|
 
 \begin{table}
     \centering
-\begin{tabular}{cccc}
-\toprule
- correlation function &  \hspace{10pt} $T=0$    \hspace{10pt}&   \hspace{10pt} $0 < T< T_{c}$    \hspace{10pt}&   \hspace{10pt}$T_{c}< T $    \hspace{10pt}\\
- \hline
-$ \langle S^{z}_{i} S^{z}_{j}\rangle$  &$ \sim |{\vec r}|^{-5/2}$  & $\sim |{\vec r}|^{-3}$ &  $\sim |{\vec r}|^{-3}$ \\
-$ \langle S^{y}_{i} S^{y}_{j}+ S^{x}_{i} S^{x}_{j}\rangle- m^2$  &$ \sim |{\vec r}|^{-3/2}$ &  $\sim |{\vec r}|^{-1}$ &  $\sim |{\vec r}|^{-3}$
-\end{tabular}
-\caption{ \tlabel{table2} Correlation functions in the XY-F phase predicted by the spin wave analysis and high temperature expansion. }
+    \begin{tabu} to .8\textwidth {X[1.8]X[c]X[c]X[c]}
+        \toprule
+        correlation function & $T=0$ & $0 < T < T_{c}$ & $T_{c}< T$ \\
+        \midrule
+        $ \langle S^{z}_{i} S^{z}_{j}\rangle$  &$ \sim |{\vec r}|^{-5/2}$  & $\sim |{\vec r}|^{-3}$ &  $\sim |{\vec r}|^{-3}$ \\
+        $ \langle S^{y}_{i} S^{y}_{j}+ S^{x}_{i} S^{x}_{j}\rangle- m^2$  &$ \sim |{\vec r}|^{-3/2}$ &  $\sim |{\vec r}|^{-1}$ &  $\sim |{\vec r}|^{-3}$ \\
+        \bottomrule
+    \end{tabu}
+    \caption{Correlation functions in the XY-F phase predicted by the spin wave analysis and high temperature expansion.\tlabel{table2}}
 \end{table}
 
 
