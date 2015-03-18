@@ -1,0 +1,99 @@
+\chapter{Dipolar dispersion}
+\label{dipolar_dispersion}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\epsk}{\epsilon_{\veck}}
+\newcommand{\epskm}{\epsilon_{\veck}^m}
+
+\section{Definition and properties}
+This appendix is concerned with the properties of the dipolar dispersion relation~\cite{Peter2012b,Syzranov2014,Peter2014}
+\begin{align}
+    \epskm = \sum_{j\ne 0} \frac{a^3}{|\vecR_j|^3}\ef{i\veck \vecR_j + i m \phi_{j}},\qquad m \in \{0, \pm 2\}.
+\end{align}
+on a general two-dimensional Bravais lattice.
+Here, $a$ is the lattice constant, $\vecR_j=(X_j, Y_j)^t$ is the position of the $j$-th lattice site and $\phi_j = \arg(X_j+i Y_j)$ is the polar angle in the lattice plane, i.e. the angle between the vector $\vecR$ and the positive $x$ axis\footnote{Note that $\epsk^{\pm 2}$ change under a redefinition of the angle $\phi_j \goesto \phi_j + \phi_0$. The absolute value $\absv{\epsk^{\pm 2}}$ is invariant, however.}. For the remainder of this section we will measure lengths in units of $a$ and suppress the $j$ index, such that
+\begin{align}
+    \epskm = \sum_{\vec{R}\ne0} \frac{1}{R^3}\ef{i\veck \vecR + i m \phi_{\vecR}},
+\end{align}
+where $R=|\vecR|$ and the sum runs over all lattice sites except the origin.
+Using $\phi_{-\vecR} = \phi_\vecR + \pi$ and the inversion symmetry of Bravais lattices,
+it is easy to derive the following properties of the dispersion relation ($m$ is always even):
+\begin{align}
+    \eps_{-\veck}^m &= \epsk^m, \\
+    \eps_{\veck}^{-m} &= \bb{ \epsk^m }^*.
+\end{align}
+The second property also shows that $\epsk^0 \in \mathbb{R}$.
+
+\section{Symmetries and zeros}
+\newcommand{\sop}{\mathcal{S}}
+Let $\sop$ be a symmetry operation which leaves the lattice invariant, i.e. $\sop \, \{ \vecR \} = \{ \vecR \}$.
+Since the scalar product is left invariant,
+we can derive the property
+\begin{align}
+    \eps_{\sop\veck}^m = \sum_{\vecR\ne 0} R^{-3} \ef{i\veck \vecR + i m \phi_{\sop\vecR}}.
+\end{align}
+Now let $\sop=C_p$ be a rotation by $2\pi/p$. Then, we find
+\begin{align}
+    \eps_{\sop \veck}^m = \ef{2\pi i m/p} \epskm.
+\end{align}
+If $\veck^*$ is a high-symmetry point which is invariant under the rotation, that is
+$\sop\veck^* = \veck^* + \vec{G}$ with an arbitrary reciprocal lattice vector $\vec{G}$, we find $\eps_{\veck^*}^m = \ef{2\pi i m/p} \eps_{\veck^*}^m$, leading to a condition for zeros of the dispersion relation:
+\begin{align}
+    \epsilon^m_{\veck^*} = 0\qquad\text{if } m \notin p\mathbb{Z}.
+\end{align}
+For $m=\pm 2$, we can use any symmetry $C_n$ with $n>2$.
+
+% \paragraph{Inversion symmetry / $C_2$ symmetry} For any odd $m$, we have roots
+% at every inversion-symmetric point in the BZ. For the square lattice, these
+% are: $\Gamma=(0,0), K=(\pi,\pi), X=(\pi,0)$. For the triangular lattice, we
+% have two points $\Gamma=(0,0)$ and $X=\bb{\pi, -\pi/\sqrt{3}}$.
+
+\paragraph{Triangular lattice:} The points $\Gamma$ as well as
+$K=(4\pi/3,0)$ and $K'=- K$ are invariant under $C_3$ rotations. Therefore,
+$\epsilon^2_\Gamma=\epsilon^2_K=\epsilon^2_{K'}=0$.
+
+\paragraph{Square lattice:} The points $\Gamma$ and $K=(\pi,\pi)$ are
+invariant under $C_4$, leading to $\epsilon^2_\Gamma=\epsilon^2_K=0$.
+
+
+\section{Low-momentum behavior}
+For small $|\veck| \ll 1$ we can make a crude approximation\footnote{We will rederive the results in this section in a \qu{cleaner} way later.} and replace the discrete Fourier series
+by a continuous Fourier transform. We set $\veck\vecR = k R \cos(\phi-\psi)$ where
+$\phi$ is the angle between $\vecR$ and the $x$-axis and $\psi$ is the
+corresponding angle between $\veck$ and the $x$-axis. Then
+\begin{align}
+    \epskm &= \sum_{\vecR\ne 0} R^{-3} \ef{i\veck\vecR+i m \phi_\vecR}
+    \approx \integralb{R_c}{\infty}{R} \integralb{0}{2\pi}{\phi} \ef{ikR \cos(\phi-\psi) + i m \phi} / R^2\\
+    &= k \ef{im \psi} \integralb{z_c}{\infty}{z} \integralb{0}{2\pi}{\phi} \ef{i z \cos(\phi) + i m \phi} / z^2\\
+    &= 2\pi k (-1)^{m/2} \ef{i m \psi} \integralb{z_c}{\infty}{z} J_{\absv{m}}(z)/z^2
+\end{align}
+where we have to introduce a lower cutoff $R_c$ for the radial integration.
+We cannot determine this cutoff and consequently this calculation is only useful
+if we find quantities like $\epsilon_{\veck}^m-\epsilon^m_0$ which (a) allow
+us to safely take the limit $z_c \goesto 0$ while keeping $R_c$ constant and
+(b) do not depend on $R_c$ in this limit.
+
+\paragraph{$m=0$:} In the case of $\epsk^0$, the integral in the expression
+\begin{align}
+    \epsk^0 \approx 2\pi k \integralb{z_c}{\infty}{z} J_0(z)/z^2
+\end{align}
+diverges as $z_c^{-1}$ in the limit $z_c \goesto 0$. However, we can subtract this diverging part and calculate
+\begin{align}
+    \epskm - \frac{2\pi}{R_c} \approx 2\pi k \bc{ \, \integralb{z_c}{\infty}{z} \frac{J_0(z)}{z^2} - \frac{1}{z_c} } = -2\pi k,
+\end{align}
+giving us the correct expression for the linear part in $k$, i.e. $\epsk^0=\eps_0^0 - 2\pi |\veck|$.
+
+\paragraph{$m=2$:} For any $|m|>1$, the integral can be evaluated in the limit $z_c\goesto 0$. We find
+\begin{align}
+    \epsilon^m_{\veck} \approx \frac{2\pi (-1)^{m/2}}{m^2-1} k \ef{im \psi}
+\end{align}
+which allows us to determine $\epsilon^{\pm 2}_{\veck} \approx -\frac{2\pi}{3} |\veck| \ef{\pm 2 i \psi}$.
+
+% We can rewrite it in the following form
+% \begin{align}
+%     \epsilon^2_{\veck} = -\frac{2\pi}{3} \bb{\frac{k_x^2-k_y^2}{k} + i \frac{2k_x k_y}{k} } = -\frac{2\pi}{3} \frac{(k_x+i k_y)^2}{k} = -\frac{2\pi}{3} k \ef{2i \psi}
+% \end{align}
+% where $\psi = \text{arg}(k_x+i k_y)$. We see that
+% \begin{align}
+%     \absv{\epsilon^2_{\veck}} = \frac{2\pi}{3} k
+% \end{align}
