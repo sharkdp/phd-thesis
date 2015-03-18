@@ -57,6 +57,7 @@ invariant under $C_4$, leading to $\epsilon^2_\Gamma=\epsilon^2_K=0$.
 
 
 \section{Low-momentum behavior}
+\tlabel{lowmomentum}
 For small $|\veck| \ll 1$ we can make a crude approximation\footnote{We will rederive the results in this section in a \qu{cleaner} way later.} and replace the discrete Fourier series
 by a continuous Fourier transform. We set $\veck\vecR = k R \cos(\phi-\psi)$ where
 $\phi$ is the angle between $\vecR$ and the $x$-axis and $\psi$ is the
@@ -81,7 +82,7 @@ diverges as $z_c^{-1}$ in the limit $z_c \goesto 0$. However, we can subtract th
 \begin{align}
     \epskm - \frac{2\pi}{R_c} \approx 2\pi k \bc{ \, \integralb{z_c}{\infty}{z} \frac{J_0(z)}{z^2} - \frac{1}{z_c} } = -2\pi k,
 \end{align}
-giving us the correct expression for the linear part in $k$, i.e. $\epsk^0=\eps_0^0 - 2\pi |\veck|$.
+giving us the correct expression for the linear part in $k$, i.e. $\epsk^0=\eps_\Gamma^0 - 2\pi |\veck|$.
 
 \paragraph{$m=2$:} For any $|m|>1$, the integral can be evaluated in the limit $z_c\goesto 0$. We find
 \begin{align}
@@ -96,4 +97,82 @@ which allows us to determine $\epsilon^{\pm 2}_{\veck} \approx -\frac{2\pi}{3} |
 % where $\psi = \text{arg}(k_x+i k_y)$. We see that
 % \begin{align}
 %     \absv{\epsilon^2_{\veck}} = \frac{2\pi}{3} k
-% \end{align}
+%
+
+\section{Exact results and Ewald summation}
+This section is mainly of interest for a numerically efficient determination of the function~$\epskm$.
+To start, it is convenient to rewrite $\epskm$ such that the explicit angular dependence is removed from the sum. With $\vecR = (X, Y)^t$ and $\ef{im\phi_\vecR} = (X+iY)^m/R^m$ we can write
+\begin{align} \tlabel{epstochi}
+    \epsilon^m_{\veck}
+    &= \sum_{\vec{R}\ne 0} \frac{(X+i Y)^m}{R^{3+m}}\ef{i\vec{k}\vec{R}}
+    = \sum_{\vec{R}\ne 0} \frac{(-i \partial_{k_x}+ \partial_{k_y})^m}{R^{3+m}} \ef{i\vec{k}\vec{R}} \\
+    &= (-i)^m (\partial_{k_x}+ i \partial_{k_y})^m \chi^{3+m}(\veck)
+\end{align}
+where $\chi^s(\veck) = \sum_{\vecR\ne 0} \ef{i \veck \vecR} R^{-s}$.
+In the following, we will see how to derive exact results for the function $\chi^{3+m}(\veck)$.
+% Using \tref{epstochi} we can use these to get
+
+\subsection{Exact values on the square lattice}
+At the $\Gamma = (0, 0)$ point, the exact value of the function
+$\chi^s(0) = 4\beta(\sfrac{s}{2})\zeta(\sfrac{s}{2})$
+can be expressed with the help of the Riemann $\zeta$-function and the Dirichlet $\beta$-function~\cite{Glasser1973}.
+This immediately leads to
+\begin{align}
+    \eps^0_\Gamma = \chi^3(0) = 4 \zeta(\sfrac{3}{2}) \beta(\sfrac{3}{2})\approx 9.03.
+\end{align}
+To get the exact value at the $K=(\pi,\pi)$ point, we denote the two sublattices of the bipartite square lattice by $A$ and $B$. Both have a lattice constant of $\sqrt{2}$.
+By $A$, we denote the sublattice that includes the origin and $B$ is the sublattice which includes the nearest neighbors of the origin. The full lattice is denoted by $A+B$.
+Then, $\eps^0_\Gamma = \eps^0_\Gamma(A+B) = \eps^0_\Gamma(A) + \eps^0_\Gamma(B)$
+and
+$\eps^0_K = \eps^0_\Gamma(A) - \eps^0_\Gamma(B)$. With $\eps^0_\Gamma(A)=2^{-3/2} \eps^0_\Gamma$, we find
+\begin{align}
+    \eps^0_K = 2\eps^0_\Gamma(A) - \eps^0_\Gamma = \bb{ 1/\sqrt{2} - 1 } \eps^0_\Gamma \approx -2.65.
+\end{align}
+Using a similar technique with four sublattices, we can also find
+\begin{align}
+    \eps^0_X = \frac{1}{4}\bb{ 1- \sqrt{2} } \eps^0_\Gamma \approx -0.94
+\end{align}
+at the $X=(\pi, 0)$ point. These exact values can serve as a useful benchmark for any kind of approximation.
+
+\subsection{Ewald summation}
+This section uses ideas from \refcite{Muller2010} and extends the results to $m\ne 0$.
+First, using the relation
+\begin{align}
+    \frac{1}{R^s}=\frac{1}{\Gamma(s/2)} \integralb{0}{\infty}{\lambda} \lambda^{s/2-1} \ef{-\lambda R^2},\qquad s>0
+\end{align}
+we can rewrite
+\begin{align}
+    \chi^s(\veck)&=\frac{1}{\Gamma(s/2)}\sum_{\vec{R}\ne 0} \bb{\int_0^\eta + \int_\eta^\infty} \mathrm{d}\lambda\, \lambda^{s/2-1} \ef{-\lambda R^2 + i \veck \vec{R}} \\
+                 &= \frac{\eta^{s/2}}{\Gamma(s/2)}\sum_{\vec{R}\ne 0} \bb{\integralb{1}{\infty}{\lambda} \lambda^{-s/2-1} \ef{-\eta R^2 / \lambda} + \integralb{1}{\infty}{\lambda} \lambda^{s/2-1} \ef{-\eta \lambda R^2}} \ef{i\veck \vec{R}}
+\end{align}
+where we have substituted $\lambda \rightarrow \eta/\lambda$ in the first and $\lambda \rightarrow \eta \lambda$ in the second integral.
+The parameter $\eta > 0$ determines the border between the real-space and the $k$-space summation.
+Using the Poisson summation formula we transform
+\begin{align}
+    \sum_{\vec{R}\ne 0} \ef{-\eta R^2/\lambda + i \veck \vec{R}} = \sum_{\vec{R}} (\dots) - 1 = \frac{\pi\lambda}{\eta} \sum_{\vecq} \ef{-\frac{\lambda}{4\eta} \absvsq{\vecq+\veck}} - 1
+\end{align}
+which leads to
+\begin{align} \tlabel{twosum}
+    \phi_s(\veck) &= \frac{\eta^{s/2}}{\Gamma(s/2)} \bb{\frac{\pi}{\eta} \sum_{\vecq} E_{s/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\eta}} - \frac{2}{s} + \sum_{\vec{R}\ne 0} E_{1-s/2}\!\bb{R^2 \eta} \ef{i \veck \vec{R}} }.
+\end{align}
+Here, we have introduced the exponential integral function
+\begin{align}
+    E_n(z) = \integralb{1}{\infty}{t} \frac{\ef{-z t}}{t^n}
+\end{align}
+Both sums in \tref{twosum} are fast-converging since high
+values of $\vecq$ ($\vec{R}$) are exponentially suppressed by $E_n$.
+For odd $s=3+m$ (i.e. even $m$) we can expand
+\begin{align}
+    E_{s/2}(z) = \Gamma(1-s/2)\, z^{s/2-1} + \sum_{k=0}^\infty \frac{(-1)^{k+1} z^k}{k! (1+k-s/2)}
+\end{align}
+which means that the $\vecq=0$ term has a contribution
+\begin{align}
+\frac{\eta^{s/2}}{\Gamma(s/2)} \frac{\pi}{\eta} \Gamma(1-s/2) \bb{\frac{\absvsq{\veck}}{4\eta}}^{s/2-1} = \frac{2^{2-s}\pi\, \Gamma(1-s/2)}{\Gamma(s/2)} \absv{\veck}^{s-2}
+\end{align}
+Substituting $s=3+m$ and taking $m$ derivatives, the prefactor of the linear term becomes
+\begin{align}
+    \frac{\pi\, (1+m)!! \,\Gamma[-(m+1)/2]}{\Gamma[(3+m)/2]} = 2\pi \frac{(-2)^{1+m/2} (1+m/2)!}{(2+m)!}
+\end{align}
+For $m=0$ the prefactor is given by $-2\pi$ and for $m=2$ we find $2\pi/3$, in accordance with
+the results in \tref{lowmomentum}
+
