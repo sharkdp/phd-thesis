@@ -7,6 +7,11 @@
     \input{chapters/\chapterpath}
 }
 
+\newcommand{\includeappendix}[2]{
+    \renewcommand{\chapterprefix}{#1}
+    \renewcommand{\chapterpath}{#2}
+    \input{appendices/\chapterpath}
+}
 
 
 \newcommand{\tlabel}[1]{\label{\chapterprefix:#1}}
