@@ -116,6 +116,10 @@
 % remove the prefix 'In: '
 \renewbibmacro{in:}{}
 
+% regular journal title, bold volume number
+\DeclareFieldFormat*{journaltitle}{#1}
+\DeclareFieldFormat*{volume}{\mkbibbold{#1}}
+
 % Hyperlink the title to DOI website
 \newbibmacro{string+doi}[1]{%
       \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
