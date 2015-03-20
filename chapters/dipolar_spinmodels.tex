@@ -268,9 +268,9 @@ dipole matrix elements
 %
 Then, we define $\bop_\pm=\ketbra{0}{{\pm}}$, and write the dipole operator in terms of the bosonic operators
 \begin{align}
-    d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_- \\
-    d^+ &= q_+ \bopd_+ - q_- \bop_- \\
-    d^- &= q_+ \bop_+  - q_- \bopd_-
+    d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
+    d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
+    d^- &= q_+ \bop_+  - q_- \bopd_-.
 \end{align}
 using this, we can write
 \begin{align}
@@ -289,8 +289,8 @@ where
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} & \frac{3q_+q_-}{2} \ef{-2i \phi_{ij}} \\
     \frac{3q_+q_-}{2} \ef{+2i \phi_{ij}} & -\frac{q_-^2}{2}
-\end{pmatrix} \\
-    V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0)
+\end{pmatrix}, \\
+    V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0).
 \end{align}
 
 \paragraph{One-dimensional system}

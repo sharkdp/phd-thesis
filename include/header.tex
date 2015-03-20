@@ -93,6 +93,7 @@
     ,url=false
     ,isbn=false
     ,arxiv=abs
+    ,firstinits=true
     ,hyperref=true
     ,backref=true
     ,maxnames=8
@@ -103,9 +104,17 @@
 \addbibresource[label=all]{bibliography/all.bib}
 
 % do not show month and journal issue:
-\AtEveryBibitem{\clearfield{month}}
-\AtEveryBibitem{\clearfield{number}}
+\AtEveryBibitem{
+    \clearfield{month}
+    \clearfield{number}
+}
 
+% only show starting page 494 of a page range like 494-499.
+% also, suppress the 'p. ' prefix
+\DeclareFieldFormat{pages}{\mkfirstpage{#1}}
+
+% remove the prefix 'In: '
+\renewbibmacro{in:}{}
 
 % Hyperlink the title to DOI website
 \newbibmacro{string+doi}[1]{%
