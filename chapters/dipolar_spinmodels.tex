@@ -293,6 +293,24 @@ where
     V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0)
 \end{align}
 
+\paragraph{One-dimensional system}
+In one dimension, we can always choose $\phi_{ij}=0$. Furthermore, if $q_+=q_-$, the tunneling
+elements simplify to
+\begin{align}
+    t_{ij} &= \frac{\kappa q^2}{2R_{ij}^3} (3\sigma_x-\sigma_z).
+\end{align}
+By transforming to $\ket{x}=(\ketp-\ketm)/\sqrt{2}$ and $\ket{y}=(\ketp+\ketm)/\sqrt{2}$, the
+tunneling part can be diagonalized:
+\begin{align}
+    t_{ij} &= \frac{\kappa q^2}{R_{ij}^3} \begin{pmatrix}
+    -1 & 0 \\
+    0 & 2
+    \end{pmatrix}.
+\end{align}
+If the energy of the $\ket{x}, \ket{y}$ manifold is low enough compared to the $\ketz$ state, this
+causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. This quantum phase transition has been investigated beyond mean-field theory in~\cite{Klinsmann2014}.
+\todo{rewrite this paragraph}
+
 \subsection{General case: Four-level dipoles in a tilted field}
 Including all states in \tref{dipole-moments} and a (possibly) tilted electric field, we find
 \begin{align}
