@@ -22,7 +22,7 @@ to point along the  $x$ direction. The square lattice is bipartite, and we denot
  Excitations on sublattice A are created by flipping a spin with the ladder operator $S^{x+} = S^z-i S^y$,
  while excitations on sublattice B are created via $S^{x-} = S^z+i S^y$.
  We apply a Holstein-Primakoff transformation to bosonic operators
-\begin{align}
+\begin{align} \tlabel{transHolstein}
     S^z_i &= \frac{\hbar}{2} (a^{\phantom\dag}_i + a^{\dag}_i) \,\varphi(n_i),\\
     S^y_i &= \frac{\hbar}{2i} (a^{\phantom\dag}_i - a^{\dag}_i)\, e^{i {\vec K} {\vec R_i}} \,\varphi(n_i),
 \end{align}
@@ -64,7 +64,7 @@ The diagonalization of this Hamiltonian is straightforward using a standard Bogo
 with $\bopd_{\vecq} = u_{\vecq}\, \aopd_{\vecq} - v_{\vecq}\, \aop_{-\vecq}$.
 Then, the Hamiltonian takes the form
 %
-\begin{align}
+\begin{align} \tlabel{Hdiagonal}
 H = \frac{3J N \sin \theta\, \epsilon_{\vec K}}{4}  + \sum_{\vecq} E^{\mbox{\tiny XY-AF}}_{\vecq} \bb{\bopd_{\vecq}\bop_{\vecq} + \frac{1}{2}}
 \end{align}
 %
@@ -95,8 +95,34 @@ Finally, the spin wave analysis also allows us to analyze the correlation functi
  $c_{\alpha\alpha}({\vec R}_{ij})=\langle S^\alpha_i S^\alpha_{j} e^{i {\vec K} {\vec R}_{i j}} \rangle$. Using
  the translational invariance of our system, the correlation functions reduce to
 %
-\begin{align}
+\begin{align} \tlabel{correlationFunction}
     c_{\alpha\alpha}({\vec r}) = \integralf{\vecq}{v_0} c_{\alpha\alpha}({\vecq+\vecK}) \, e^{-i {\vecq} {\vec r}}
 \end{align}
 %
 with $c_{\alpha\alpha}({\vecq}) = \langle S^\alpha_{\vecq} S^\alpha_{-\vec{q}}\rangle$.
+Combining the Holstein Primakoff transformation from \tref{transHolstein} and the Bogoliubov transformation,
+the correlation functions can be expanded in terms of the coefficients $u_{\vecq}$ and $v_{\vecq}$ as
+%
+\begin{align}
+c_{zz}({\vecq+\vecK}) &= \frac{1}{4} (u_{\vecq+\vecK}+v_{\vecq+\vecK})^2 \coth\left(\frac{J \mathcal{E}_{\vecq}}{2T}\right) , \\
+c_{yy}({\vecq+\vecK}) &= \frac{1}{4}  (u_{\vecq}-v_{\vecq})^2 \coth\left(\frac{J \mathcal{E}_{\vecq}}{2T}\right) .
+\end{align}
+%
+The long distance behavior $|{\vecr}| \rightarrow \infty$ of the correlation function is determined by the low momentum
+behavior of the above expressions
+%
+\begin{align}
+(u_{\vecq+\vecK}+v_{\vecq+\vecK})^2 &\sim |{\vecq}|+\const \\
+(u_{\vecq}-v_{\vecq})^2 &\sim\frac{ 1}{|{\vecq}|}
+\end{align}
+%
+and describes the leading non-analytic part.
+The latter can be replaced using the following relation, which derives via an Ewald summation,
+%
+\begin{align}
+   |{\vecq}|^{\gamma} \sim \sum_{j \neq 0}\frac{e^{i {\vecq} {\vecR}_{j}}}{|{\vecR}_{j}|^{2+\gamma}}
+\end{align}
+%
+for $|{\vecq}|\rightarrow 0$ and $\gamma >-2$; (for $\gamma = 0,2,4,\ldots$ the left side is replaced by $|{\vecq}|^\gamma \log |{\vecq}|$).
+At zero temperature $T=0$, the integration in \tref{correlationFunction}
+is straightforward and provides the scaling behavior  $c_{zz}({\vecr}) \sim |{\vecr}|^{-3}$ and $c_{yy}({\vecr}) \sim |{\vecr}|^{-1}$.
