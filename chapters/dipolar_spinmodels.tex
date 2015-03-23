@@ -226,7 +226,8 @@ Then, $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^
 $\tan \theta = 2q_1^2/(d_1-d_0)^2$.
 }
 
-\subsection{Two-level dipoles with \texorpdfstring{$\Delta M = 1$}{dM = 1}}
+\subsection{Two-level dipoles with different angular momentum}
+\tlabel{twoleveldm}
 In this related case, we replace the upper state $\keto$ by the $M=1$ state $\ketp$ (see \tref{dipole-moments}) and proceed similar as before.
 The relevant dipole matrix elements are\footnote{The sign difference in the last term is due to $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = \smallbraketop{+}{- d^+}{0}^*$.Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements.}
 \begin{align}
@@ -249,7 +250,7 @@ the dipole matrix elements are given by
     q_+ &= |\smallbraketop{+}{d^+}{0}| = \smallbraketop{+}{\sqrt{2} \sigma^+}{0} = +\mu_\text{B}g/\sqrt{2}.
 \end{align}
 Then, including the energy non-conserving terms proportional to $\sminus_i\sminus_j$, the Hamiltonian reduces to
-\begin{align}
+\begin{align} \tlabel{hdd2dmagnetic}
     \Hdd_{ij} = \frac{\kappa \mu_\text{B}^2 g^2}{4 R_{ij}^3} \bc{ \sz_i \sz_j - \bb{\splus_i \sminus_j+ 3 \sminus_i\sminus_j \ef{+2i\phi} + \hc } }.
 \end{align}
 

@@ -78,7 +78,7 @@ The first excited $m=0$ state, called $\keto$, will be used later.
 % Here, $\kappa=1/4\pi\epsilon_0$ and $\vec{R}_{ij}$ is the vector connecting the two molecules at lattice sites $i$ and $j$.
 % In two dimensions, with an electric field perpendicular to the lattice, this expression reduces to
 % \begin{align}
-%     H_{\text{dd}}^{ij}&=\frac{\kappa}{R_{ij}^3} \Big[d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j -3 d^-_i d^-_j \ef{2i\phi_{ij}} + \hc\big)\Big] \label{eq:ddint}
+%     H_{\text{dd}}^{ij}&=\frac{\kappa}{R_{ij}^3} \Big[d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j -3 d^-_i d^-_j \ef{2i\phi_{ij}} + \hc\big)\Big] \tlabel{ddint}
 % \end{align}
 % with $d^0=d^z, d^\pm=\mp (d^x\pm i d^y)/\sqrt{2}$ the spherical components of the dipole operator
 % and the polar angle $\phi_{ij}$ defined via $\smash{\hat{\vec{R}}_{ij} = (\cos \phi_{ij}, \sin \phi_{ij})^t}$.
@@ -87,11 +87,11 @@ The full system, including pairwise dipole-dipole interactions between the polar
 In the two-dimensional setup with the electric field perpendicular to the lattice, the interaction can be expressed as
 \begin{align}
     H^{\text{dd}}_{ij}=\frac{\kappa}{|\vec{R}_{ij}|^3} &\Big[d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j) \nonumber \\
-                                                       &\quad - \frac{3}{2}\big(d^-_i d^-_j \ef{2i\phi_{ij}} + d^+_i d^+_j \ef{-2i\phi_{ij}}\big)\Big] \label{eq:ddint}
+                                                       &\quad - \frac{3}{2}\big(d^-_i d^-_j \ef{2i\phi_{ij}} + d^+_i d^+_j \ef{-2i\phi_{ij}}\big)\Big] \tlabel{ddint}
 \end{align}
 with $\kappa=1/4\pi\epsilon_0$.
 Here, $\phi_{ij}$ denotes the in-plane polar angle of the vector $\vec{R}_{ij} \equiv |\vec{R}_{ij}| \cdot (\cos \phi_{ij}, \sin \phi_{ij})^t$ which connects the two molecules at lattice sites $i$ and $j$, and the operators $d^0=d^z$ and $d^\pm=\mp (d^x\pm i d^y)/\sqrt{2}$ are the spherical components of the dipole operator.
-The intrinsic spin-orbit coupling is visible in the second line in Eq.~\eqref{eq:ddint}, where a change in internal angular momentum by $\pm 2$ is associated with a change in orbital angular momentum encoded in the phase factor $e^{\mp 2i \phi_{ij}}$.
+The intrinsic spin-orbit coupling is visible in the second line in \tref{ddint}, where a change in internal angular momentum by $\pm 2$ is associated with a change in orbital angular momentum encoded in the phase factor $e^{\mp 2i \phi_{ij}}$.
 
 For molecules with a permanent dipole moment $d$ in an optical lattice with spacing $a$, the characteristic interaction energy $V=\kappa d^2/a^3$ is much weaker than the rotational splitting $B$.
 For strong electric fields, the energy separation between the states $\ketpm_i$ and $\keto_i$ is also much larger than the interaction energy.
@@ -107,7 +107,7 @@ This coupling lifts the degeneracy between the two excitations $|\pm\rangle_{i}$
 %The system discussed so far is invariant under (pseudo-spin) time-reversal represented by $\mathcal{T}=\sigma_x K$, with $K$ being complex conjugation.
 %A necessary requirement for bands with nonzero Chern number is the opening of bandgaps at the $\Gamma$ and $K$ point and the breaking of $\mathcal{T}$-symmetry~\cite{Haldane1988}.
 %We achieve this by using a circularly polarized microwave to couple the $\ketp$ state off-resonantly to the lowest $m=2$ state~\footnote{The coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$}, see~\tref{setup}(c).
-%This has two effects for the model in~\eqref{eq:hrealspace}.
+%This has two effects for the model in~\tref{hrealspace}.
 %First, the AC Stark shift introduces an energy offset for the dressed $\ketp$ state (relative to the $\ketm$ state).
 %Note that, in addition, this shift can be independently controlled via magnetic fields~\cite{Ospelkaus2010,Yan2013}.
 %Second, the tunneling strength $t^+$ of the $\ketp$ particles now differs from the one of the $\ketm$ particles ($t^-$).
@@ -131,7 +131,7 @@ The interaction Hamiltonian reduces to
         \end{pmatrix}
     \endgroup\!
     \psiop_j \,,
-    \label{eq:hrealspace}
+    \tlabel{hrealspace}
 \end{align}
 where we use the spinor notation $\psiopd_j = \big( \bopd_{j,+} , \bopd_{j,-} \big)$.
 % The precise form of the hopping rates $t^+$, $t^-$, and $w$ depends on the microscopic parameters and the detailed expressions are presented in the supplementary material.
@@ -141,7 +141,7 @@ Note that $t^{+} = t^{-}$ without the applied microwave.
 In momentum space with $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$, including the internal energy $H_{i}^{\text{rot}}$ of the excitations $|\pm\rangle_{i}$, the Hamiltonian can be rewritten as
 \begin{align}
     H &= \sum_{\veck} \psiopd_{\veck} \big({n^{0\vphantom\dagger}_{\veck} \: \mathds{1} + \vec{n}^{\vphantom \dagger}_{\veck}\cdot\vecsigma}\big) \psiop_{\veck}
-    \label{eq:hkspace}
+    \tlabel{hkspace}
 \end{align}
 where it is useful to express the traceless part of the Hamiltonian
 as the product of a three dimensional real vector $\vec{n}_{\veck}$ and the vector of Pauli matrices $\vecsigma$ \cite{Hasan2010,Bernevig2013}.
@@ -209,7 +209,7 @@ In the gapped system, the Chern number~\cite{Hasan2010,Qi2011} can be calculated
 We can check, however, that the remaining terms are not strong enough to close a gap.
 Conversely, note that the cutoff radius has to be larger than $\sqrt{2}a$, as the next-to-nearest neighbor terms are crucial for the $C=2$ phase and may not be neglected.}
 \begin{align}
-    C &= \frac{1}{4\pi}\int_{\text{BZ}}\!\mathrm{d}{^2\veck}\, ( \partial_{k_x} \hat{\vec{n}}_{\veck} \times \partial_{k_y} \hat{\vec{n}}_{\veck} ) \cdot \hat{\vec{n}}_{\veck} \, . \label{eq:chern}
+    C &= \frac{1}{4\pi}\int_{\text{BZ}}\!\mathrm{d}{^2\veck}\, ( \partial_{k_x} \hat{\vec{n}}_{\veck} \times \partial_{k_y} \hat{\vec{n}}_{\veck} ) \cdot \hat{\vec{n}}_{\veck} \, . \tlabel{chern}
 \end{align}
 We find that the Chern number of the lower band is $C=2$ for $-\epsilon^0_{\Gamma} < \mu/t < -\epsilon^0_\text{M}$, and zero outside this range.
 % Note that the non-trivial topology is purely a consequence of the spin-orbit coupling by dipolar interaction in combination with time-reversal symmetry breaking.
@@ -282,10 +282,10 @@ We are interested in the Chern number of the lower `band', composed of the lowes
 To this end, we pretend to have a free fermionic system at half filling whose many-body ground state $\Psi=\Psi(\theta_x, \theta_y)$ is given by the Slater determinant of the lowest $N_l$ states.
 Then, the Chern number can be calculated as
 \begin{align}
-    C &= \frac{1}{2\pi}\iint\!\mathrm{d}\theta_x \mathrm{d}\theta_y \, F(\theta_x, \theta_y), \label{eq:manybodychern}
+    C &= \frac{1}{2\pi}\iint\!\mathrm{d}\theta_x \mathrm{d}\theta_y \, F(\theta_x, \theta_y), \tlabel{manybodychern}
 \end{align}
 where $F(\theta_x,\theta_y)=\smash{\Im\!\big({\big\langle\frac{\partial \Psi}{\partial \theta_y}\big|\frac{\partial \Psi}{\partial \theta_x}\big\rangle - \big\langle\frac{\partial \Psi}{\partial \theta_x}\big|\frac{\partial \Psi}{\partial \theta_y}\big\rangle}\big)}$ is the many-body Berry curvature depending on the boundary condition twists.
-Note that Eq.~\eqref{eq:manybodychern} reduces to~Eq.~\eqref{eq:chern} in the translationally invariant case.
+Note that \tref{manybodychern} reduces to \tref{chern} in the translationally invariant case.
 For the numerical computations, we use a discretized version~\cite{Fukui2005}.
 The results for the disordered system are summarized in~\tref{disorderAndHoneycomb}a.
 We find that the long-range tunneling stabilizes the topological phase for defect densities $\rho\lesssim 0.45$.

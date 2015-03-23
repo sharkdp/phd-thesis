@@ -1,5 +1,5 @@
 \chapter{Spin-wave analysis}
-\label{ap:spinwave_analysis}
+\label{spinwave_analysis}
 
 We present the derivation of the spin wave excitation spectrum
 within the spin wave analysis. The basic approach is to start with the ground
@@ -22,7 +22,7 @@ to point along the  $x$ direction. The square lattice is bipartite, and we denot
  Excitations on sublattice A are created by flipping a spin with the ladder operator $S^{x+} = S^z-i S^y$,
  while excitations on sublattice B are created via $S^{x-} = S^z+i S^y$.
  We apply a Holstein-Primakoff transformation to bosonic operators
-\begin{align} \label{transHolstein}
+\begin{align}
     S^z_i &= \frac{\hbar}{2} (a^{\phantom\dag}_i + a^{\dag}_i) \,\varphi(n_i),\\
     S^y_i &= \frac{\hbar}{2i} (a^{\phantom\dag}_i - a^{\dag}_i)\, e^{i {\vec K} {\vec R_i}} \,\varphi(n_i),
 \end{align}
@@ -40,7 +40,7 @@ and the number operator $\nop_i = \aopd_i \aop_i = \frac{1}{2} + S_x e^{i {\vec 
 Expanding the spin Hamiltonian in terms of the bosonic operators leads to a Bose-Hubbard Hamiltonian for the spin wave excitations.
 In leading order, we can neglect the interactions between the bosons and obtain the quadratic Hamiltonian
 %
-\begin{align} \label{HamiltonianXYAF}
+\begin{align} \tlabel{HamiltonianXYAF}
 H/J = &\sin \theta \, \epsilon_{\vec K} \left(\frac{3 N}{4} - \frac{1}{2}\sum_i\left[\aopd_{i}\aop_i+ \aop_i \aopd_{i}\right]\right) \\
            &+  \frac{1}{4} \sum_{i\ne j} \frac{
     \chi_{i j} \bb{ \aopd_{i} \aop_{j}  + \aop_{i} \aopd_{j} }
@@ -51,7 +51,7 @@ with  ${\vec R}_{ij}={\vec R}_i - {\vec R}_j$,  $N$ the number of lattice sites,
 $\chi_{i j}=\cos\theta+\sin\theta e^{i {\vec K} {\vec R}_{ij}}$ and $\eta_{i j}=\cos\theta-\sin\theta e^{i {\vec K} {\vec R}_{ij}}$ including the
  anti-ferromagnetic ordering.
 Introducing the  Fourier representation $\aop_i =  \sum_{\vec q} \aop_{\vec q}e^{-i {\vec q} {\vec R}_i}/\sqrt{N}$,
-the terms involving the bosonic operators in Eq.~(\ref{HamiltonianXYAF}) reduce to
+the terms involving the bosonic operators in \tref{HamiltonianXYAF} reduce to
 %
 \begin{align}
 \frac{1}{4} \sum_{\vec q} \bigg[
@@ -64,7 +64,7 @@ The diagonalization of this Hamiltonian is straightforward using a standard Bogo
 with $\bopd_{\vec q} = u_{\vec q}\, \aopd_{\vec q} - v_{\vec q}\, \aop_{-\vec q}$.
 Then, the Hamiltonian takes the form
 %
-\begin{align} \label{Hdiagonal}
+\begin{align}
 H = \frac{3J N \sin \theta\, \epsilon_{\vec K}}{4}  + \sum_{\vec q} E^{\mbox{\tiny XY-AF}}_{\vec q} \bb{\bopd_{\vec q}\bop_{\vec q} + \frac{1}{2}}
 \end{align}
 %
@@ -95,7 +95,7 @@ Finally, the spin wave analysis also allows us to analyze the correlation functi
  $c_{\alpha\alpha}({\vec R}_{ij})=\langle S^\alpha_i S^\alpha_{j} e^{i {\vec K} {\vec R}_{i j}} \rangle$. Using
  the translational invariance of our system, the correlation functions reduce to
 %
-\begin{align} \label{correlationFunction}
+\begin{align}
 c_{\alpha\alpha}({\vec r}) = \int \frac{d{\vec q}}{v_0} \, c_{\alpha\alpha}({\vec q+K}) \, e^{-i {\vec q} {\vec r}}
 \end{align}
 %
