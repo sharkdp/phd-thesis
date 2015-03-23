@@ -50,34 +50,34 @@ H/J = &\sin \theta \, \epsilon_{\vec K} \left(\frac{3 N}{4} - \frac{1}{2}\sum_i\
 with  ${\vec R}_{ij}={\vec R}_i - {\vec R}_j$,  $N$ the number of lattice sites, and the coupling the terms
 $\chi_{i j}=\cos\theta+\sin\theta e^{i {\vec K} {\vec R}_{ij}}$ and $\eta_{i j}=\cos\theta-\sin\theta e^{i {\vec K} {\vec R}_{ij}}$ including the
  anti-ferromagnetic ordering.
-Introducing the  Fourier representation $\aop_i =  \sum_{\vec q} \aop_{\vec q}e^{-i {\vec q} {\vec R}_i}/\sqrt{N}$,
+Introducing the  Fourier representation $\aop_i =  \sum_{\vecq} \aop_{\vecq}e^{-i {\vecq} {\vec R}_i}/\sqrt{N}$,
 the terms involving the bosonic operators in \tref{HamiltonianXYAF} reduce to
 %
 \begin{align}
-\frac{1}{4} \sum_{\vec q} \bigg[
-\left( \cos\theta \, \epsilon_{\vec q} +\sin\theta \, \epsilon_{\vec q+K} - 2 \sin \theta \epsilon_{\vec K}\right)\Big(\aopd_{\vec q} \aop_{\vec q}  + \aop_{\vec q} \aopd_{\vec q}\Big) \\
-+\left( \cos\theta \, \epsilon_{\vec q}-\sin\theta \, \epsilon_{\vec q+K} \right)\Big(a^{\phantom\dag}_{\vec q} a^{\phantom\dag}_{-\vec q}
-+ a^{\dag}_{\vec q} a^{\dag}_{-{\vec q}} \Big) \bigg].
+\frac{1}{4} \sum_{\vecq} \bigg[
+\left( \cos\theta \, \epsq +\sin\theta \, \epsilon_{\vecq+\vecK} - 2 \sin \theta \epsilon_{\vec K}\right)\Big(\aopd_{\vecq} \aop_{\vecq}  + \aop_{\vecq} \aopd_{\vecq}\Big) \\
++\left( \cos\theta \, \epsq-\sin\theta \, \epsilon_{\vecq+K} \right)\Big(a^{\phantom\dag}_{\vecq} a^{\phantom\dag}_{-\vecq}
++ a^{\dag}_{\vecq} a^{\dag}_{-{\vecq}} \Big) \bigg].
 \end{align}
 %
 The diagonalization of this Hamiltonian is straightforward using a standard Bogoliubov transformation
-with $\bopd_{\vec q} = u_{\vec q}\, \aopd_{\vec q} - v_{\vec q}\, \aop_{-\vec q}$.
+with $\bopd_{\vecq} = u_{\vecq}\, \aopd_{\vecq} - v_{\vecq}\, \aop_{-\vecq}$.
 Then, the Hamiltonian takes the form
 %
 \begin{align}
-H = \frac{3J N \sin \theta\, \epsilon_{\vec K}}{4}  + \sum_{\vec q} E^{\mbox{\tiny XY-AF}}_{\vec q} \bb{\bopd_{\vec q}\bop_{\vec q} + \frac{1}{2}}
+H = \frac{3J N \sin \theta\, \epsilon_{\vec K}}{4}  + \sum_{\vecq} E^{\mbox{\tiny XY-AF}}_{\vecq} \bb{\bopd_{\vecq}\bop_{\vecq} + \frac{1}{2}}
 \end{align}
 %
-with the spin-wave excitation spectrum $E^{\mbox{\tiny XY-AF}}_{\vec q}$. In addition, the coefficients  for the Bogoliubov transformation
+with the spin-wave excitation spectrum $E^{\mbox{\tiny XY-AF}}_{\vecq}$. In addition, the coefficients  for the Bogoliubov transformation
 are given by
 %
 \begin{align}
-u_{\vec q} , v_{\vec q} = \pm\sqrt{\frac{1}{2} \left( \frac{\cos\theta \, \epsilon_{\vec q} +\sin\theta \, (\epsilon_{\vec q+K} - 2 \epsilon_{\vec K})}{2\, \mathcal{E}_{\vec q}}\pm 1\right)},
+u_{\vecq} , v_{\vecq} = \pm\sqrt{\frac{1}{2} \left( \frac{\cos\theta \, \epsq +\sin\theta \, (\epsilon_{\vecq+K} - 2 \epsilon_{\vec K})}{2\, \mathcal{E}_{\vecq}}\pm 1\right)},
 \end{align}
 %
-with $\mathcal{E}_{\vec q} \equiv E^{\mbox{\tiny XY-AF}}_{\vec q} / J $.
-The property $u^2_{\vec q}-v^2_{\vec q}=1$ asserts that the transformation is canonical.
-In addition, the ground state obeys the condition $b_{\vec q} \left|\text{vac}\right\rangle = 0$, and the ground state energy per spin at zero temperature $T=0$
+with $\mathcal{E}_{\vecq} \equiv E^{\mbox{\tiny XY-AF}}_{\vecq} / J $.
+The property $u^2_{\vecq}-v^2_{\vecq}=1$ asserts that the transformation is canonical.
+In addition, the ground state obeys the condition $b_{\vecq} \left|\text{vac}\right\rangle = 0$, and the ground state energy per spin at zero temperature $T=0$
 reduces to $e_{\mbox{\tiny XY-AF}}$, see \cref{ab:table1}.
 
 We are now able to check the validity of the spin wave approach self-consistently: the deformation of the ground state by the spin wave analysis
@@ -85,10 +85,10 @@ provides a suppression of the anti-ferromagnetic order $ m \equiv  \Delta m - \f
 and thus
 %
 \begin{align}
-    \Delta m= \int \frac{d{\vec q}}{v_0} \, \meanv{ \aopd_{\vec q} \aop_{\vec q} } = \integralf{\vecq}{v_0}  \bc{ v_{\vec q}^2 + (2 v_{\vec q}^2 + 1) f_{\vec q} },
+    \Delta m= \integralf{\vecq}{v_0} \meanv{ \aopd_{\vecq} \aop_{\vecq} } = \integralf{\vecq}{v_0}  \bc{ v_{\vecq}^2 + (2 v_{\vecq}^2 + 1) f_{\vecq} },
 \end{align}
 %
-where $f_{\vec q} = \meanv{ \bopd_\vecq \bopd_\vecq } = \left[\exp(E^{\mbox{\tiny XY-AF}}_{\vec q}/ T)-1\right]^{-1}$ accounts for the thermal occupation of the spin waves. At zero temperature $T=0$, this expression converges and  we obtain $\Delta m \approx 0.03$ for $\theta = \tilde\theta_c$ as well as $\Delta m = 0.39$ for $\theta \approx \frac{\pi}{4}$. In turn, at finite temperatures $T>0$, the low momentum behavior of  the integrand scales as $|{\vec q}|^{-2}$, and therefore $\Delta m$ diverges logarithmically: the long range order is destroyed by the thermal spin wave fluctuations, and gives rise to the well known
+where $f_{\vecq} = \meanv{ \bopd_\vecq \bopd_\vecq } = \left[\exp(E^{\mbox{\tiny XY-AF}}_{\vecq}/ T)-1\right]^{-1}$ accounts for the thermal occupation of the spin waves. At zero temperature $T=0$, this expression converges and  we obtain $\Delta m \approx 0.03$ for $\theta = \tilde\theta_c$ as well as $\Delta m = 0.39$ for $\theta \approx \frac{\pi}{4}$. In turn, at finite temperatures $T>0$, the low momentum behavior of  the integrand scales as $|{\vecq}|^{-2}$, and therefore $\Delta m$ diverges logarithmically: the long range order is destroyed by the thermal spin wave fluctuations, and gives rise to the well known
 quasi long-range order in analogy to short range XY models.
 
 Finally, the spin wave analysis also allows us to analyze the correlation functions
@@ -96,7 +96,7 @@ Finally, the spin wave analysis also allows us to analyze the correlation functi
  the translational invariance of our system, the correlation functions reduce to
 %
 \begin{align}
-c_{\alpha\alpha}({\vec r}) = \int \frac{d{\vec q}}{v_0} \, c_{\alpha\alpha}({\vec q+K}) \, e^{-i {\vec q} {\vec r}}
+    c_{\alpha\alpha}({\vec r}) = \integralf{\vecq}{v_0} c_{\alpha\alpha}({\vecq+\vecK}) \, e^{-i {\vecq} {\vec r}}
 \end{align}
 %
-with $c_{\alpha\alpha}({\vec q}) = \langle S^\alpha_{\vec q} S^\alpha_{-\vec{q}}\rangle$.
+with $c_{\alpha\alpha}({\vecq}) = \langle S^\alpha_{\vecq} S^\alpha_{-\vec{q}}\rangle$.

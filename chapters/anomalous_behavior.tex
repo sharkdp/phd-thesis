@@ -96,26 +96,26 @@ interactions between the spins within mean-field theory. The
 main influence is the reduction of the stability for the antiferromagnetic
 phases, as the next-nearest neighbor interaction introduces a weak frustration
 to the system. The ground state energy per lattice site within mean-field
-reduces to $ e_{\mbox{\tiny I-AF}} = J \cos \theta \, \epsilon_{\vec K}/4$ and $e_{\mbox{\tiny XY-AF}} = J \sin \theta \, \epsilon_{\vec K}/4$
+reduces to $ e_{\mbox{\tiny I-AF}} = J \cos \theta \, \eps_\vecK/4$ and $e_{\mbox{\tiny XY-AF}} = J \sin \theta \, \epsK/4$
 for the anti-ferromagnetic phases. The summation over the dipole interaction
-reduces to a dimensionless parameter $\epsilon_{\vec K} \approx -2.646$, which is related to
+reduces to a dimensionless parameter $\epsK \approx -2.646$, which is related to
 the dipolar dispersion
 %
 \begin{align}
-    \epsilon_\vecq = \sum_{j \neq 0} e^{i \vecq \vecR_j }\frac{a^3}{|\vecR_j|^3}
+    \eps_\vecq = \sum_{j \neq 0} e^{i \vecq \vecR_j }\frac{a^3}{|\vecR_j|^3}
   \tlabel{dipoledispersion}
 \end{align}
 %
-at the corner of the Brillouin zone ${\vec K} = (\pi/a, \pi /a)$.
+at the corner of the Brillouin zone $\vecK = (\pi/a, \pi /a)$.
 In turn, the ferromagnetic phases are enhanced with a mean-field energy
-$e_{\mbox{\tiny I-F}} = J \cos \theta \, \epsilon_0/4 $ and $ e_{\mbox{\tiny XY-F}} = J \sin \theta \, \epsilon_0/4$
-with $\epsilon_{0} \approx 9.033$. The modifications to the
+$e_{\mbox{\tiny I-F}} = J \cos \theta \, \epsZ/4 $ and $ e_{\mbox{\tiny XY-F}} = J \sin \theta \, \epsZ/4$
+with $\epsZ \approx 9.033$. The modifications to the
 phase diagram are shown in \tref{fig1}: first, the Heisenberg points at
 $\theta = \pi/4, 5 \pi/4$ are protected by the SU(2) symmetry and still
 provide the transition between the Ising and the XY phases. However, the
 transitions from the ferromagnetic towards the anti-ferromagnetic phase are
-shifted to the values $\theta_{c}= \arctan(\epsilon_{\vec K}/\epsilon_{0})
-\approx -0.1 \pi$ and $\tilde{\theta}_c = \pi+ \arctan(\epsilon_{0}/\epsilon_{\vec K})\approx 0.6 \pi$.
+shifted to the values $\theta_{c}= \arctan(\epsK/\epsZ)
+\approx -0.1 \pi$ and $\tilde{\theta}_c = \pi+ \arctan(\epsZ/\epsK)\approx 0.6 \pi$.
 
 
 \begin{table}[t]
@@ -124,49 +124,49 @@ shifted to the values $\theta_{c}= \arctan(\epsilon_{\vec K}/\epsilon_{0})
         \small
         \begin{tabu} to \textwidth {X[.218]X[1.306]X}
             \toprule
-            GS $\alpha$ & spin wave excitation spectrum $E^{\alpha}_{\vec q}$ & ground state energy per spin $e_{\alpha}$ \\
+            GS $\alpha$ & spin wave excitation spectrum $E^{\alpha}_{\vecq}$ & ground state energy per spin $e_{\alpha}$ \\
             \midrule
-            I-F &   $J (\sin \theta \, \epsilon_{\vec q} - \cos \theta \, \epsilon_{0}) $
-                &   $\displaystyle \frac{3 J \cos \theta \, \epsilon_{0}}{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}\!=\!\frac{J \cos \theta  \epsilon_{0}}{4}$ \\
-            XY-F &  $J \sqrt{ \sin\theta \, (\epsilon_{\vec q}-\epsilon_{0})( \cos\theta \, \epsilon_{\vec q}- \sin \theta \, \epsilon_{0})}$
-                 &  $\displaystyle \frac{3 J \sin \theta \, \epsilon_{0} }{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}$ \\
-            I-AF &  $J \sqrt{( \sin \theta \, \epsilon_{{\vec q}+{\vec K}}-\cos \theta \, \epsilon_{\vec K}) (\sin \theta \, \epsilon_{\vec q}- \cos \theta \, \epsilon_{\vec K })}$
-                 &  $\displaystyle  \frac{3  J \cos \theta \, \epsilon_{\vec K} }{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}$ \\
-            XY-AF & $J \sqrt{\sin \theta \, (  \epsilon_{{\vec q}+{\vec K}}-\epsilon_{\vec K} )( \cos \theta \, \epsilon_{\vec q}-\sin \theta \, \epsilon_{\vec K})}$
-                  & $\displaystyle \frac{3 J \sin \theta \, \epsilon_{\vec K} }{4} + \frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vec q}$ \\
+            I-F &   $J (\sin \theta \, \epsq - \cos \theta \, \epsZ) $
+                &   $\displaystyle \frac{3 J \cos \theta \, \epsZ}{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vecq}\!=\!\frac{J \cos \theta  \epsZ}{4}$ \\
+            XY-F &  $J \sqrt{ \sin\theta \, (\epsq-\epsZ)( \cos\theta \, \epsq- \sin \theta \, \epsZ)}$
+                 &  $\displaystyle \frac{3 J \sin \theta \, \epsZ }{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vecq}$ \\
+            I-AF &  $J \sqrt{( \sin \theta \, \eps_{\vecq+\vecK}-\cos \theta \, \epsK) (\sin \theta \, \epsq- \cos \theta \, \epsK )}$
+                 &  $\displaystyle  \frac{3  J \cos \theta \, \epsK }{4}  +\frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vecq}$ \\
+            XY-AF & $J \sqrt{\sin \theta \, (  \eps_{\vecq+\vecK}-\epsK )( \cos \theta \, \epsq-\sin \theta \, \epsK)}$
+                  & $\displaystyle \frac{3 J \sin \theta \, \epsK }{4} + \frac{1}{2} \integralf{\vecq}{v_0} E^{\alpha}_{\vecq}$ \\
             \bottomrule
         \end{tabu}
-        \caption{ \tlabel{table1} Spin wave excitation spectrum $E_{\vec q}^{\alpha}$ and ground state energy  $e_{\alpha}$.}
+        \caption{ \tlabel{table1} Spin wave excitation spectrum $E_{\vecq}^{\alpha}$ and ground state energy  $e_{\alpha}$.}
     }
 \end{table}
 
 
 
-The dipole dispersion $\epsilon_{\vec q}$ in \tref{dipoledispersion}
+The dipole dispersion $\epsq$ in \tref{dipoledispersion}
 converges very slowly due to the characteristic power law decay of the dipole-dipole
 interaction. It is this slow decay, which will give rise to several peculiar
 properties of the system. Therefore, we continue first with a detailed discussion
-of this dipolar dispersion. The precise determination of $\epsilon_{\vec q}$ is
+of this dipolar dispersion. The precise determination of $\epsq$ is
 most conveniently performed using an Ewald summation \cite{Bonsall1977}, which transforms
 the summation over the slowly converging terms with algebraic decay into a summation of exponential factors, i.e.,
 %
 \begin{align}
-    \epsilon_\vecq   = &- 2 \pi a | {\vec q}|\operatorname{erfc}(a |{\vec q}|/2\sqrt{\pi})   + 4 \pi \left( e^{- \frac{a^2 |{\vec q}|^2}{4 \pi}} - \frac{1}{3}\right)
+    \epsq   = &- 2 \pi a | {\vecq}|\operatorname{erfc}(a |{\vecq}|/2\sqrt{\pi})   + 4 \pi \left( e^{- \frac{a^2 |{\vecq}|^2}{4 \pi}} - \frac{1}{3}\right)
 \\
-   & +     2 \pi \sum_{i\neq 0} \integralb{1}{\infty}{\lambda} \lambda^{3/2} \left[ e^{- \pi  \lambda \left(\frac{ {\vec R}_{i}}{a} + \frac{a {\vec q}}{2 \pi}\right)^2} +\lambda^{2}  e^{- \frac{\pi \lambda |{\vec R}_{i}|^2}{a^2}+ i {\vec R}_{i}{\vec q}}\right]\tlabel{Ewaldsummation}
+   & +     2 \pi \sum_{i\neq 0} \integralb{1}{\infty}{\lambda} \lambda^{3/2} \left[ e^{- \pi  \lambda \left(\frac{ {\vecR}_{i}}{a} + \frac{a {\vecq}}{2 \pi}\right)^2} +\lambda^{2}  e^{- \frac{\pi \lambda |{\vecR}_{i}|^2}{a^2}+ i {\vecR}_{i}{\vecq}}\right]\tlabel{Ewaldsummation}
 \end{align}
 %
 with $\operatorname{erfc}(x)$ the complementary error function. The important feature of the dipole
 dispersion is captured by the first term in \tref{Ewaldsummation}, which
-gives rise to a linear and non-analytic behavior $\epsilon_\vecq \sim
-\epsilon_0 - 2 \pi a |\vecq|$ for small values $q \ll 1/a $, while all
+gives rise to a linear and non-analytic behavior $\epsq \sim
+\epsZ - 2 \pi a |\vecq|$ for small values $q \ll 1/a $, while all
 remaining terms are analytic. It is this linear part, which will give rise to
 several unconventional properties of spin systems in 2D with dipolar
 interactions, and is a consequence of the slow decay of the dipole-dipole
 interaction. The summation in the last term converges very quickly and
 guarantees the periodicity of the dipolar dispersion. The quantitative behavior
 is shown in \tref{fig2}a, and the numerical efficient determination provides
-$\epsilon_{0}\approx 9.033$, and $\epsilon_{\vec K}=(1/\sqrt{2}-1) \epsilon_{0}
+$\epsZ\approx 9.033$, and $\epsK=(1/\sqrt{2}-1) \epsZ
 \approx -2.646$
 
 
@@ -186,7 +186,7 @@ discussion for each of the four ordered phases.
 \begin{figure}[ht]
     \centering
     \ig{.99}{fig2}
-    \caption{Spin wave excitations with $\Gamma=(0,0)$, $M=(0,\pi/2)$, and $K=(\pi/a,\pi/a)$ for different $\theta$ angles. (a) Spectrum of the I-F phase which also shows the behavior of the dipolar dispersion $\epsilon_{\vec q}$ for $\theta=-3\pi/4$, see red line. (b-d) Spectrum for the XY-F, I-AF and XY-AF phases. Each red line is a critical excitation spectrum indicating an instability.\tlabel{fig2}}
+    \caption{Spin wave excitations with $\Gamma=(0,0)$, $M=(0,\pi/2)$, and $K=(\pi/a,\pi/a)$ for different $\theta$ angles. (a) Spectrum of the I-F phase which also shows the behavior of the dipolar dispersion $\epsq$ for $\theta=-3\pi/4$, see red line. (b-d) Spectrum for the XY-F, I-AF and XY-AF phases. Each red line is a critical excitation spectrum indicating an instability.\tlabel{fig2}}
 \end{figure}
 
 
@@ -196,17 +196,17 @@ The ferromagnetic mean-field ground state is twofold degenerate with all spins
 either point up or down, and is the exact ground state for $\theta =
 \pi$, i.e., $\ket{G} = \prod_{i} \ketdn_{i}$. Within the spin wave analysis,
 the ground state is not modified and the excitation
-spectrum reduces to $E_{{\vec q}}^{\mbox{\tiny I-F}}$, see \tref{table1}.
+spectrum reduces to $E_{{\vecq}}^{\mbox{\tiny I-F}}$, see \tref{table1}.
 The spin waves exhibit an excitation gap $\Delta$: (i) approaching the
 Heisenberg point at $\theta = -3 \pi /4$, the excitation gap
 vanishes, indicating the instability towards the XY ferromagnet, (ii) in
-turn, for anti-ferromagnetic XY couplings, the gap is minimal at ${\vec K}$,
+turn, for anti-ferromagnetic XY couplings, the gap is minimal at $\vecK$,
 vanishes at the mean-field transition point $\tilde{\theta}_{c}$ and drives an instability towards the formation
 of antiferromagnetic ordering.
 
 In contrast to any short range ferromagnetic spin model, the
-dispersion relation $E_{{\vec q}}^{\mbox{\tiny I-F}}$ is not quadratic for small momenta,
-but rather exhibits a linear behavior, i.e., $E_{{\vec q}}^{\mbox{\tiny I-F}} \sim E_{0}^{\mbox{\tiny I-F}}+ \hbar c |{\vec q}|$ with
+dispersion relation $E_{{\vecq}}^{\mbox{\tiny I-F}}$ is not quadratic for small momenta,
+but rather exhibits a linear behavior, i.e., $E_{{\vecq}}^{\mbox{\tiny I-F}} \sim E_{0}^{\mbox{\tiny I-F}}+ \hbar c |{\vecq}|$ with
 velocity $c= - 2 \pi a J \sin \theta /\hbar$, which is a consequence of the dipolar interaction in
 the system. This anomalous behavior strongly influences the dynamics
 of the spin waves.
@@ -217,7 +217,7 @@ well described by a continuum description.
 Instead of the conventional quantum mechanical spreading, one finds
 a ballistic expansion of a cylindrical wave packet with velocity $c$.
 In addition, the dipole-dipole interaction also strongly influences the correlation function.
-Within conventional perturbation theory, we find algebraic correlations $\langle S_{i}^{x} S_{j}^{x}\rangle \sim 1/|{\vec r}|^3$.
+Within conventional perturbation theory, we find algebraic correlations $\langle S_{i}^{x} S_{j}^{x}\rangle \sim 1/|{\vecr}|^3$.
 This algebraic decay of correlations even in gapped systems is a peculiar property of
 spin models with long-range interactions \cite{Deng2005,Schuch2006}.
 
@@ -226,12 +226,12 @@ spin models with long-range interactions \cite{Deng2005,Schuch2006}.
 \begin{figure}[ht]
     \centering
     \ig{.99}{fig3}
-    \caption{ Time evolution for localized spin excitations described by the Gaussian wave packet $\psi_{0}({\vec r}) = e^{- |{\vec r}|^2/2\sigma^2}/\sqrt{\pi \sigma^2}$
-  with $\sigma \gg a$ in the continuum description. (a) For a linear dispersion $c|{\vec q}|$ in the I-F phase, the dynamics is described by cylindrical symmetric wave packets (see inset) traveling
+    \caption{ Time evolution for localized spin excitations described by the Gaussian wave packet $\psi_{0}({\vecr}) = e^{- |{\vecr}|^2/2\sigma^2}/\sqrt{\pi \sigma^2}$
+  with $\sigma \gg a$ in the continuum description. (a) For a linear dispersion $c|{\vecq}|$ in the I-F phase, the dynamics is described by cylindrical symmetric wave packets (see inset) traveling
   with velocity $c$, instead of the conventional quantum mechanical spreading for massive systems.
-  (b) For an anomalous dispersion with $\alpha \sqrt{|{\vec q}|}$ in the XY-F phase, the behavior at long times $t\gg\sqrt{\sigma} \alpha$ reduces to a
+  (b) For an anomalous dispersion with $\alpha \sqrt{|{\vecq}|}$ in the XY-F phase, the behavior at long times $t\gg\sqrt{\sigma} \alpha$ reduces to a
   scaling function $\xi(z)$ via $|\psi(x,\tau)|^2 = \xi(x/\tau -1/2)/\tau^2$ (see inset) using rescaled
-  time $\tau = t \alpha /\sqrt{\sigma}$ and space $x = |{\vec r}|/\sigma$ coordinates. It describes a cylindrical symmetric wave front with velocity
+  time $\tau = t \alpha /\sqrt{\sigma}$ and space $x = |{\vecr}|/\sigma$ coordinates. It describes a cylindrical symmetric wave front with velocity
   $\alpha \sqrt{\sigma}$.\tlabel{fig3}}
 \end{figure}
 
@@ -241,9 +241,9 @@ spin models with long-range interactions \cite{Deng2005,Schuch2006}.
 \subsection{XY-ferromagnetic phase}
 Here, the spins are aligned in the xy plane.
  Within the spin wave analysis, we obtain the excitation spectrum
- $ E^{\mbox{\tiny{XY-F}}}_{\vec q}$ and the modified ground state energy
+ $ E^{\mbox{\tiny{XY-F}}}_{\vecq}$ and the modified ground state energy
  $e_{\mbox{\tiny{XY-F}}}$.
-In the low momentum regime, the dispersion relation behaves as $ E^{\mbox{\tiny XY-F}}_{\vec q} \sim \sqrt{|{\vec q}|}$, in contrast to the well
+In the low momentum regime, the dispersion relation behaves as $ E^{\mbox{\tiny XY-F}}_{\vecq} \sim \sqrt{|{\vecq}|}$, in contrast to the well
 known linear Goldstone modes for the broken $U(1)$ symmetry.
 This anomalous behavior is a peculiar property of the dipolar interaction, and the most crucial consequence
 is the existence of long-range order for the continuous broken symmetry at finite temperatures
@@ -253,13 +253,13 @@ the order parameter reduces to $m \equiv \Delta m - 1/2=\langle S_{i}^{x}\rangle
 the suppression of the order parameter by quantum fluctuations. Within spin wave theory, it reduces to ($\Delta m = \langle \aopd_i \aop_i\rangle$)
 %
 \begin{align}
-    \Delta m = \integralf{\vecq}{v_0} \left[\frac{\cos \theta \, \epsilon_{\vec q} +\sin \theta ( \epsilon_{\vec q}-2 \epsilon_{0})}{4 E_{\vec q} } \coth\!\Big(\frac{E_{\vec q}}{2T}\Big) - \frac{1}{2}\right] .
+    \Delta m = \integralf{\vecq}{v_0} \left[\frac{\cos \theta \, \vecq +\sin \theta ( \epsq-2 \epsZ)}{4 E_{\vecq} } \coth\!\Big(\frac{E_{\vecq}}{2T}\Big) - \frac{1}{2}\right] .
 \end{align}
 %
-This expression is finite and small: at $T=0$, the integrand behaves as $\sim 1/\sqrt{|{\vec q}|}$ and we find a
+This expression is finite and small: at $T=0$, the integrand behaves as $\sim 1/\sqrt{|{\vecq}|}$ and we find a
 suppression of the order $\Delta m \approx 0.008$ at $\theta= - \pi/2 $. The smallness of this corrections due to
 quantum fluctuations is a good justification for the validity of the spin wave analysis. On the other hand,
-even at finite temperatures, the low momentum behavior of the integrand takes the form $\sim T/|{\vec q}|$,
+even at finite temperatures, the low momentum behavior of the integrand takes the form $\sim T/|{\vecq}|$,
 and provides a finite contribution in contrast to a conventional Goldstone mode, which provides a logarithmic divergence.
 
 
@@ -272,7 +272,7 @@ within spin wave theory and a high temperature expansion are summarized in \tref
 as the dipolar interactions gives rise to a confining of vortices, i.e., the interaction potential
 between a vortex--anti-vortex pair increases linearly with the separation between the vortices.
 
-The spin wave dynamics caused by the anomalous dispersion relation $\sim \sqrt{|{\vec q}|}$ are shown in \tref{fig3}b for a Gaussian wave packet of width $\sigma$. Interestingly, the propagation velocity of the wave packets is proportional to $\sqrt{\sigma}$ and thus faster for broad wave packets, in contrast to the usual dispersion dynamics. This is a consequence of the group velocity $v_{\vec q} \sim 1/\sqrt{|{\vec q}|}$ which is large for the small momentum components involved in the broad wave packets.
+The spin wave dynamics caused by the anomalous dispersion relation $\sim \sqrt{|{\vecq}|}$ are shown in \tref{fig3}b for a Gaussian wave packet of width $\sigma$. Interestingly, the propagation velocity of the wave packets is proportional to $\sqrt{\sigma}$ and thus faster for broad wave packets, in contrast to the usual dispersion dynamics. This is a consequence of the group velocity $v_{\vecq} \sim 1/\sqrt{|{\vecq}|}$ which is large for the small momentum components involved in the broad wave packets.
 
 \begin{table}
     \centering
@@ -280,8 +280,8 @@ The spin wave dynamics caused by the anomalous dispersion relation $\sim \sqrt{|
         \toprule
         correlation function & $T=0$ & $0 < T < T_{c}$ & $T_{c}< T$ \\
         \midrule
-        $ \langle S^{z}_{i} S^{z}_{j}\rangle$  &$ \sim |{\vec r}|^{-5/2}$  & $\sim |{\vec r}|^{-3}$ &  $\sim |{\vec r}|^{-3}$ \\
-        $ \langle S^{y}_{i} S^{y}_{j}+ S^{x}_{i} S^{x}_{j}\rangle- m^2$  &$ \sim |{\vec r}|^{-3/2}$ &  $\sim |{\vec r}|^{-1}$ &  $\sim |{\vec r}|^{-3}$ \\
+        $ \langle S^{z}_{i} S^{z}_{j}\rangle$  &$ \sim |{\vecr}|^{-5/2}$  & $\sim |{\vecr}|^{-3}$ &  $\sim |{\vecr}|^{-3}$ \\
+        $ \langle S^{y}_{i} S^{y}_{j}+ S^{x}_{i} S^{x}_{j}\rangle- m^2$  &$ \sim |{\vecr}|^{-3/2}$ &  $\sim |{\vecr}|^{-1}$ &  $\sim |{\vecr}|^{-3}$ \\
         \bottomrule
     \end{tabu}
     \caption{Correlation functions in the XY-F phase predicted by the spin wave analysis and high temperature expansion.\tlabel{table2}}
@@ -293,17 +293,15 @@ Next, we focus on the antiferromagnetic phases and start with the I-AF ground st
 Again, the ground state is two-fold degenerate on bipartite lattices. We choose the ground state with spin up on sublattice $A$
 and spin down on sublattice $B$, i.e., $\ket{G} = \prod_{i \in A} \ketup_{i} \prod_{j\in B} \ketdn_{j}$.
 The spin wave analysis is straightforward (see supplement), and we obtain
-the spin wave excitation spectrum $ E^{\mbox{\tiny I-AF}}_{\vec q}$ and ground state energy $ e_{\mbox{\tiny I-AF}}$, see \tref{table1}.
+the spin wave excitation spectrum $ E^{\mbox{\tiny I-AF}}_{\vecq}$ and ground state energy $ e_{\mbox{\tiny I-AF}}$, see \tref{table1}.
 The system exhibits an excitation gap as expected for a system with a broken $Z_{2}$ symmetry.
 However, the dipole interactions give rise to an anomalous behavior at small momenta similar to
-the ferromagnetic Ising phase with $E^{\mbox{\tiny I-AF}}_{\vec q}- E^{\mbox{\tiny I-AF}}_{0} \sim -
-\sin \theta\, |{\vec q}|$. Consequently, the dynamics of spin waves at low momenta is in analogy to the
+the ferromagnetic Ising phase with $E^{\mbox{\tiny I-AF}}_{\vecq}- E^{\mbox{\tiny I-AF}}_{0} \sim -
+\sin \theta\, |{\vecq}|$. Consequently, the dynamics of spin waves at low momenta is in analogy to the
 Ising-ferromagnet, see \tref{fig3}. Within spin wave theory, we obtain that the anti-ferromagnetic correlations
-%\langle S_{i}^{\beta}S_{j}^{\beta} e^{i {\vec K}( {\vec R}_{i}-{\vec R}_{j})} \rangle$
-%$\langle S_{i}^{\beta}S_{j}^{\beta} e^{i {\vec K}{\vec R}_{i j}} \rangle$ with ${\vec R}_{i j} = {\vec R}_{i}- {\vec R}_{j}$
 $\langle (-1)^{i-j} S_{i}^{\beta}S_{j}^{\beta} \rangle$
 as well as the ferromagnetic correlations $\langle S_{i}^{\beta}S_{j}^{\beta} \rangle$ decay with the
-power law $\sim1/ |{\vec r}|^{3}$ with $\beta = x,y,z$ determined by the characteristic behavior of the dipole-dipole interaction.
+power law $\sim1/ |{\vecr}|^{3}$ with $\beta = x,y,z$ determined by the characteristic behavior of the dipole-dipole interaction.
 The excitation gap vanishes approaching the mean field critical point $\theta_{c}$ towards XY- ferromagnetic
 phase, and also approaching the Heisenberg point at $\theta = \pi/4$. For the latter, the qualitative behavior of the excitation spectrum
 changes drastically within a very narrow range of $\theta$, see \tref{fig2}c.
@@ -312,13 +310,13 @@ changes drastically within a very narrow range of $\theta$, see \tref{fig2}c.
 
 \subsection{XY antiferromagnetic phase}
 Finally, we analyze the properties of the antiferromagnetic XY phase.
-In contrast to the ferromagnetic XY phase, the excitation spectrum $E^{\mbox{\tiny XY-AF}}_{\vec q}$
+In contrast to the ferromagnetic XY phase, the excitation spectrum $E^{\mbox{\tiny XY-AF}}_{\vecq}$
 exhibits the conventional linear Goldstone mode, see \tref{fig2}d. This can be understood, as the
 anti-ferromagnetic ordering introduces a cancellation of the dipolar interactions, and provides a behavior in analogy to
 its short range counter part: true long-range order exists only at $T=0$, while at finite temperature the system
 exhibits quasi long-range order and eventually undergoes a Kosterlitz-Thouless transition for increasing temperature.
 Nevertheless, the dipole-dipole interactions give rise to the characteristic algebraic correlations, e.g.,
-$\langle (-1)^{i-j}S_{i}^{z}S_{j}^{z} \rangle \sim 1/|{\vec r}|^3$ for the anti-ferromagnetic transverse spin correlation at zero temperature.
+$\langle (-1)^{i-j}S_{i}^{z}S_{j}^{z} \rangle \sim 1/|{\vecr}|^3$ for the anti-ferromagnetic transverse spin correlation at zero temperature.
 
 
 
