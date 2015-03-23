@@ -32,20 +32,26 @@ Here we propose a new scheme to access the regime of fast rotation for a dipolar
 \noindent
 We consider a system of $N$ fermionic atoms with magnetic dipole moments $\vecd$. While extensions to schemes with polar molecules are possible, the permanent dipole moments of the atoms lead to some simplifications.
 %Highly magnetic atoms typically possess a large hyperfine manifold.
-To shorten the discussion, we consider only two internal levels (pseudospin 1/2). The particles are confined in a quasi-two-dimensional harmonic trap with a radial frequency $\omega$ and an axial frequency $\omega_z$. For strong $z$ confinement $\hbar\omega_z \gg \Ef$, where $\Ef$ is the Fermi energy derived below, the system is effectively 2D, see~\tref{fig1a}.
+To shorten the discussion, we consider only two internal levels (pseudospin 1/2). The particles are confined in a quasi-two-dimensional harmonic trap with a radial frequency $\omega$ and an axial frequency $\omega_z$. For strong $z$ confinement $\hbar\omega_z \gg \Ef$, where $\Ef$ is the Fermi energy derived below, the system is effectively two dimensional, see~\tref{fig1a}.
 The interactions between the particles are described by the dipolar interaction potential
-\begin{align}
+\begin{align} \tlabel{dfvdd}
 \Vdd(\vecR) = \frac{\kappa}{\absv{\vecR}^3} \bc{ \vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR})(\vecd_j \cdot \hat{\vecR}) }
 \end{align}
-from \cref{ds:ddint} where $\vecR=\vecR_i-\vecR_j$ is the relative distance between the two particles.
+as defined in \cref{ds:ddint}, where $\vecR=\vecR_i-\vecR_j$ is the relative distance between the two particles.
 Note that a weak $s$-wave scattering length does not change the general behavior of our transfer scheme and is ignored in the following.
-The dipole moment $\vecd =  \mu_\text{B}g \vec{S} / \hbar = \mu_\text{B}g {\boldsymbol\sigma}/2$ is given in terms of the Land\'e factor $g$ and the Pauli matrices. By integrating out the fast motion perpendicular to the $xy$ plane, taking the limit $\omega_z\rightarrow\infty$, and using the spin raising and lowering operators $\sigma^{\pm} = (\sigma^x \pm i \sigma^y)/2$ the interaction reduces to
+For two internal levels, we can write the
+dipole moment $\vecd =  \mu_\text{B}g \vec{S} / \hbar = \mu_\text{B}g \vecsigma/2$ in terms of the Land\'e factor $g$ and the Pauli matrices $\vecsigma$.
+
+In two dimensions, using the spin raising and lowering operators $\sigma^{\pm} = (\sigma^x \pm i \sigma^y)/2$, the interaction between these two-level dipoles reduces to
 \begin{align}
 \Vdd(R,\phi) =  \frac{\Cdd}{R^3} \left[
 \sigma^z_i \sigma^z_j - (\sigma^+_i \sigma^-_j +3 \ef{2i\phi} \sigma^-_i \sigma^-_j  +\hc)
-\right]
+\right],
 \end{align}
-where $R,\phi$ are polar coordinates in the $xy$ plane and $\Cdd = \kappa \mu_\text{B}^2 g^2 / 4$  characterizes the strength of the interaction. The dipolar interaction features three different processes. The first term proportional to $\sigma^z_i\sigma^z_j$ describes spin-preserving collisions, while the second term \smash{$\sigma^+_i\sigma^-_j$} accounts for spin-exchange collisions. These terms conserve separately the total spin and the total angular momentum.  Finally, the third operator \smash{$\ef{2i\phi} \sigma^-_i \sigma^-_j$} describes the relaxation process that transfers spin to orbital angular momentum, see \tref{fig1b},\subref*{df:fig1c}. The sum $L+S$ is still conserved and the spin flip leads to an orbital motion with an increase of relative angular momentum of $2\hbar$.
+which is the expression given in \refandpage{ds:hdd2dmagnetic}. Here, $R$ and $\phi$ are polar coordinates in the $xy$ plane and $\Cdd = \kappa \mu_\text{B}^2 g^2 / 4$ characterizes the strength of the interaction.
+Note that this expression can also be derived from the full interaction \labeltref{dfvdd} by integrating out the fast motion perpendicular to the $xy$ plane in the limit $\omega_z\rightarrow\infty$.
+
+The dipolar interaction features three different processes. The first term proportional to $\sigma^z_i\sigma^z_j$ describes spin-preserving collisions, while the second term \smash{$\sigma^+_i\sigma^-_j$} accounts for spin-exchange collisions. These terms conserve separately the total spin and the total angular momentum.  Finally, the third operator \smash{$\ef{2i\phi} \sigma^-_i \sigma^-_j$} describes the relaxation process that transfers spin to orbital angular momentum, see \tref{fig1b},\subref*{df:fig1c}. The sum $L+S$ is still conserved and the spin flip leads to an orbital motion with an increase of relative angular momentum of $2\hbar$.
 
 \begin{figure}[t]
     \centering
@@ -87,24 +93,24 @@ With $N=\sum g(\dl{E}) = \dlEf(\dlEf+1)/2$ the Fermi energy is determined by
 \dlEf &= \frac{1}{2}\bb{\sqrt{8N+1}-1} \xrightarrow{N\gg 1} \sqrt{2N}
 \end{align}
 The total energy for $N$ particles is then given by
-\begin{align} \label{eq:energyzero}
+\begin{align} \tlabel{energyzero}
 \dl{E}(N) = \sum_{\dl{E}=1}^{\dlEf} g(\dl{E}) \dl{E} = \frac{N}{3} \sqrt{8N+1} \xrightarrow{N\gg 1} \frac{(2N)^{3/2}}{3}
 \end{align}
 which shows the known scaling of a trapped 2D Fermi gas~\cite{Yoshimoto2003}.
 Note that the energy for the unpolarized system is given by $2\,\dl{E}(N/2)=\frac{2}{3} N^{3/2}$.
 To derive the total energy $E(N,L)$ for $L\ne 0$, we define $N_m$ as the number of particles with angular momentum $m$. The energy in terms of $N_m$ is given by
-\begin{align} \label{eq:energyf}
+\begin{align} \tlabel{energyf}
 \dl{E} = \sum_m \sum_{n=0}^{N_m-1} \dl{E}_{nm} = \sum_m N_m\left(N_m + \absv{m} \right).
 \end{align}
 
 \begin{figure}[t]
     \centering
     \ig{0.5}{fig2}
-    \caption{\tlabel{fig2} Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\eqref{eq:etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
+    \caption{\tlabel{fig2} Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\tref{etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
 \end{figure}
 
 \noindent
-The exact ground state energy can be found combinatorially for small particle numbers by varying the $N_m$ for fixed $N$ and $L$. The result for $N=10$ is shown in~\tref{fig2}. For larger particle numbers this method is not feasible, but an analytic solution can be found for large particle numbers. Then, we can treat $N_{m}$ as a continuous function. To find the minimum of \eqref{eq:energyf} at fixed $N$ and $L$, we introduce two Lagrange multipliers $\mu$, $\Omega$ for the conditions $N = \sum_m N_m$ and $\dl{L} = \sum_m N_m m$, respectively. Taking the functional derivative with respect to $N_m$ yields
+The exact ground state energy can be found combinatorially for small particle numbers by varying the $N_m$ for fixed $N$ and $L$. The result for $N=10$ is shown in~\tref{fig2}. For larger particle numbers this method is not feasible, but an analytic solution can be found for large particle numbers. Then, we can treat $N_{m}$ as a continuous function. To find the minimum of \tref{energyf} at fixed $N$ and $L$, we introduce two Lagrange multipliers $\mu$, $\Omega$ for the conditions $N = \sum_m N_m$ and $\dl{L} = \sum_m N_m m$, respectively. Taking the functional derivative with respect to $N_m$ yields
 %\begin{align}
 $N_m=(\dl{\mu}-\absv{m}+\dl{\Omega} m)/2$.
 %\end{align}
@@ -116,10 +122,10 @@ The parameters can be determined by solving the constraints and summing from $m_
 %\Omega = \left[1+\frac{(2N)^3}{(3L)^2}\right]^{-1/2}, \qquad N_0= \sqrt{\frac{N}{2}}\left[1+\frac{(3L)^2}{(2N)^3}\right]^{-1/2}.
 %\end{align}
 By using these relations and omitting correction terms of order $1/L$ and $\sqrt{N}$, we obtain the total energy
-\begin{align} \label{eq:etotnl}
+\begin{align} \tlabel{etotnl}
 \dl{E}(N,\dl{L})= \frac{1}{3} \sqrt{\big(2N\big)^3 + \big(3\dl{L}\big)^2}.
 \end{align}
-This result agrees with the exact behavior for $L=0$ as derived in~\eqref{eq:energyzero}, and even for particle numbers as small as $N=10$ it is close to the exact ground state energy, as shown in \tref{fig2}. For $L\ge\liqhe$, the minimization problem becomes trivial as all particles occupy the lowest Landau level. The energy is exactly given by $\dl{E}=\dl{L}$, which is also obtained asymptotically from~\eqref{eq:etotnl} in the limit $\dl{L}\gg N$.
+This result agrees with the exact behavior for $L=0$ as derived in~\tref{energyzero}, and even for particle numbers as small as $N=10$ it is close to the exact ground state energy, as shown in \tref{fig2}. For $L\ge\liqhe$, the minimization problem becomes trivial as all particles occupy the lowest Landau level. The energy is exactly given by $\dl{E}=\dl{L}$, which is also obtained asymptotically from~\tref{etotnl} in the limit $\dl{L}\gg N$.
 
 It is now possible to quantify the link between our approach (fixed angular momentum) and rapidly rotating systems (fixed rotation frequency) explicitly. Both are connected by a Legendre transform and we should in fact interpret the Lagrange multiplier $\Omega=\frac{\partial E}{\partial L}$
 as the rotation frequency. In a harmonic trap, the system becomes unstable if $\Omega$ exceeds the value of the trap frequency $\omega$, as the harmonic confinement in the rotating frame is effectively given by $\omega-\Omega$. The angular momentum
@@ -137,8 +143,8 @@ has a singularity for $\dl{\Omega}=\Omega/\omega=1$ and large values of $L$ can 
     \caption{\tlabel{fig3a}Description of the transfer in the analytical model with $N=100$ particles for decreasing energy splitting $\Delta$ between the two components $\up$ and $\down$. The transfer starts at $\Delta=\Ef$ with particles continuously being transferred into the $\down$ state as $\Delta$ is lowered to $-\Ef$. Notice that during the transfer, both components rotate in the same direction. The crossing $N_\up=N_\down$ is not precisely at $\Delta=0$ due to the initial bias.}
 \end{figure}
 
-Starting from expression \eqref{eq:etotnl} for the energy, we are now able to describe the transfer process in the adiabatic limit. Let $N_\up$ be the number of particles in the spin-up state and $N_\down = N-N_\up$ the particles in the spin-down state. We describe both components separately and write the total energy as
-%\begin{align} \label{eq:minimize}
+Starting from expression \tref{etotnl} for the energy, we are now able to describe the transfer process in the adiabatic limit. Let $N_\up$ be the number of particles in the spin-up state and $N_\down = N-N_\up$ the particles in the spin-down state. We describe both components separately and write the total energy as
+%\begin{align} \tlabel{minimize}
 $E(N_\up,L_\up) + E(N_\down,L_\down) + \Delta\cdot N_\down$
 %\end{align}
 where we have introduced the Zeeman energy shift $\Delta=\mu_\text{B} g B$ (energy measured with respect to the energy of the lower Zeeman state). We assume that every particle eventually takes part in the transfer process (adiabaticity) and consequently one quanta of angular momentum is transferred per particle. Starting from the nonrotating state at $L=0$, this imposes the transfer condition $L_\up + L_\down = L = N_\down\hbar$. Adding this condition with another Lagrange multiplier, one can quantify the transfer process as a function of $\Delta$, see \tref{fig3a}. Coming from high fields where $\Delta > \Ef$, the transfer starts right at the Fermi energy. Note that during the transfer, while $\Ef > \Delta > -\Ef$, both components ($\up$, $\down$) rotate in the same direction. Eventually all particles get transferred to the lower spin state and the total angular momentum equals $L=L_\down=N\hbar$.
@@ -154,7 +160,7 @@ where we have introduced the Zeeman energy shift $\Delta=\mu_\text{B} g B$ (ener
         \ig{0.4}{fig3c}
         \tlabel{fig3c}
     }
-    \caption{\label{fig:fig3}(a) Full simulation of the transfer scheme for $N=4,6$, and $8$~particles in the adiabatic limit $\gamma\rightarrow 0$. As the Zeeman splitting $\Delta$ is tuned through zero, the angular momentum increases in steps of $2\hbar$, indicating the transfer of two particle at a time. The interaction strength is given by $\dlCdd=0.1$. (b) Angular momentum at the end of the transfer for $N=6$ particles at different values of the Landau-Zener parameter $\lambda=\dlCdd^2/\dl{\gamma}$. The data points for different rates collapse onto a single curve. The solid line is a probabilistic model, fitted to the data points.}
+    \caption{\tlabel{fig3}(a) Full simulation of the transfer scheme for $N=4,6$, and $8$~particles in the adiabatic limit $\gamma\rightarrow 0$. As the Zeeman splitting $\Delta$ is tuned through zero, the angular momentum increases in steps of $2\hbar$, indicating the transfer of two particle at a time. The interaction strength is given by $\dlCdd=0.1$. (b) Angular momentum at the end of the transfer for $N=6$ particles at different values of the Landau-Zener parameter $\lambda=\dlCdd^2/\dl{\gamma}$. The data points for different rates collapse onto a single curve. The solid line is a probabilistic model, fitted to the data points.}
 \end{figure}
 
 To justify the adiabaticity assumption above, we simulate the transfer process for small systems of few particles. We include all interactions mediated by $\Vdd(R,\phi)$, and assume, that the strength of the interaction $\dlCdd=(\Cdd/l_\text{HO}^3)/\hbar\omega \ll 1$ is weak compared to the Landau level splitting. Then, only a few excited states have to be taken into account.
