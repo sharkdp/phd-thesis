@@ -187,7 +187,8 @@ in the following we look at three different choices. each of them is a rise in c
 \fig{.35}{dipole-moments}{dipole-moments}{Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions \qu{downwards}.}
 
 
-\subsection{Two-level dipoles: Ising and XY interacations}
+\subsection{Two-level dipoles: Realizing Ising and XY interactions}
+\tlabel{xxz}
 Here, we assume that we have chosen two states, denoted as $\ketz$ and $\keto$, which have the
 same $M$ quantum number (see~\tref{dipole-moments}).
 Then, only the $d^0_id^0_j$ part of the dipolar interaction is relevant.
@@ -197,18 +198,18 @@ We define the (transition) dipole elements
     d_1 = \smallbraketop{1}{d^0}{1},\qquad
     q_1 = |\smallbraketop{1}{d^0}{0}| = |\smallbraketop{0}{d^0}{1}|.
 \end{align}
-Then, using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can express the
+Using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can now express the
 dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
 \begin{align}
-    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \bc {d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j + d_1d_0 (P^1_i P^0_j + P^0_i P^1_j) + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) }.
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j + d_1d_0 (P^1_i P^0_j + P^0_i P^1_j)\\
+              &\qquad\qquad+ q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) \Big].
 \end{align}
 Here, we have neglected all processes which are not energy-conserving,
-i.e. terms that do not conserve the number of excitations, and would
-cancel out in the rotating wave approximation.
+i.e. terms that do not conserve the number of excitations and would cancel in the rotating wave approximation.
 Using $\sz = P^1 - P^0$ and $\id = P^1 + P^0$ we find
 \begin{align}
     \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j)\\
-              &\qquad\qquad\qquad + \frac{d_1^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_1+d_0)^2}{4} \Big].
+              &\qquad\qquad + \frac{d_1^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_1+d_0)^2}{4} \Big].
 \end{align}
 Here, the first two terms describe Ising- and XY-type interactions between the two-level dipoles. The third term is equivalent to a magnetic field in $z$ direction and the last term is just a constant energy offset\footnote{Note, however, that the \qu{magnetic field} and the constant offset depend on the positions of all other dipoles. If the system is not translationally invariant, these terms can play a role.}.
 % \begin{align}
@@ -216,15 +217,16 @@ Here, the first two terms describe Ising- and XY-type interactions between the t
 % &= (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y)
 % \end{align}
 
-\todo{
-    Introducing the spin $\sfrac{1}{2}$ operators, we can rewrite this to
-\begin{align}
-    \Hdd &= \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j} \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{2} S^z_i S^z_j  + q_1^2 (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
-         &= \sum_{i\ne j} \frac{a^3}{R_{ij}^3} \Big[ \frac{\kappa (d_1-d_0)^2}{2a^3} S^z_i S^z_j  + \frac{\kappa q_1^2}{a^3} (S^x_i S^x_j + S^y_i S^y_j) \Big].
+\paragraph{Dipolar XXZ Hamiltonian}
+Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can write the interaction Hamiltonian for all dipoles as
+\begin{align} \tlabel{hxxz}
+    H &= \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j} \frac{\kappa}{\hbar^2 R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{2} S^z_i S^z_j  + q_1^2 (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
+         % &= \sum_{i\ne j} \frac{a^3}{R_{ij}^3} \Big[ \frac{\kappa (d_1-d_0)^2}{2a^3} S^z_i S^z_j  + \frac{\kappa q_1^2}{a^3} (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
+         &= \frac{Ja^3}{\hbar^2} \sum_{i\ne j} \frac{\cos\theta\, S^z_i S^z_j  + \sin\theta\, (S^x_i S^x_j + S^y_i S^y_j)}{R_{ij}^3}
 \end{align}
-Then, $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. Thus,
-$\tan \theta = 2q_1^2/(d_1-d_0)^2$.
-}
+where $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. The lattice constant $a$ has been introduced for future convenience.
+This model is reminescent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. As special cases, this model includes the Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) and XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior}.
+%Thus, $\tan \theta = 2q_1^2/(d_1-d_0)^2$.
 
 \subsection{Two-level dipoles with different angular momentum}
 \tlabel{twoleveldm}
@@ -331,3 +333,26 @@ Including all states in \tref{dipole-moments} and a (possibly) tilted electric f
     \frac{3q_+q_-}{2} f_2 & \frac{3q_1q_-}{\sqrt{2}} f_1 & -\frac{q_-^2}{2} f_0
 \end{pmatrix}
 \end{align}
+
+% \section{Single-excitation band structure}
+% Neglecting the interaction terms, we write the general single-particle Hamiltonian as
+% \begin{align}
+%     H = \sum_{i,j,\alpha,\beta} t^{\alpha \beta}_{ij} \bopd_{i \alpha}\bop_{j \beta},\qquad t^{\alpha \beta}_{ij} \sim |\vecR_{ij}|^{-3} f_{(\beta-\alpha)}(\Theta_0, \Phi_{ij} - \Phi_0).
+% \end{align}
+% Here, the $f$ functions for negative $m$ are defined by $f_{-m}=f_m^*$.
+
+% \todo{Fourier trafo}
+
+% We see that the relevant terms are given by
+% \begin{align}
+%     \sum_{\vecR\ne 0} \frac{\ef{i\veck\vecR}}{R^3} f_m(\Theta_0, \Phi_{\vecR} - \Phi_0)
+% \end{align}
+
+% We have introduced the dipolar dispersion relation~\cite{Peter2012b,Syzranov2014,Peter2014}
+% \begin{align}
+%     \epsilon^m_{\veck} = \sum_{j\ne 0} \frac{a^3}{|\vec{R}_j|^3}\ef{i\veck \vec{R}_j + i m \phi_{j}}.
+% \end{align}
+% The precise determination of this function can be achieved by an Ewald summation technique providing a non-analytic low momentum behavior
+% $\epsilon^0_{\veck} \approx \epsilon^0_{\Gamma} - 2\pi |\veck|a$ and
+% $\epsilon^2_{\veck} \approx -\frac{2\pi}{3} |\veck|a \ef{2i \varphi}$.
+% Here, $\epsilon^0_{\Gamma} \approx 9.03$ and $\varphi$ is defined by $\hat{\veck}=(\cos \varphi, \sin \varphi)^t$.
