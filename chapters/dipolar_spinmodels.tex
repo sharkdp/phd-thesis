@@ -192,36 +192,36 @@ Here, we assume that we have chosen two states, denoted as $\ketz$ and $\keto$, 
 same $M$ quantum number (see~\tref{dipole-moments}).
 Then, only the $d^0_id^0_j$ part of the dipolar interaction is relevant.
 We define the (transition) dipole elements
-\begin{align*}
+\begin{align}
     d_0 = \smallbraketop{0}{d^0}{0},\qquad
     d_1 = \smallbraketop{1}{d^0}{1},\qquad
     q_1 = |\smallbraketop{1}{d^0}{0}| = |\smallbraketop{0}{d^0}{1}|.
-\end{align*}
+\end{align}
 Then, using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can express the
 dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
-\begin{align*}
+\begin{align}
     \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \bc {d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j + d_1d_0 (P^1_i P^0_j + P^0_i P^1_j) + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) }.
-\end{align*}
+\end{align}
 Here, we have neglected all processes which are not energy-conserving,
 i.e. terms that do not conserve the number of excitations, and would
 cancel out in the rotating wave approximation.
 Using $\sz = P^1 - P^0$ and $\id = P^1 + P^0$ we find
-\begin{align*}
+\begin{align}
     \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j)\\
               &\qquad\qquad\qquad + \frac{d_1^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_1+d_0)^2}{4} \Big].
-\end{align*}
+\end{align}
 Here, the first two terms describe Ising- and XY-type interactions between the two-level dipoles. The third term is equivalent to a magnetic field in $z$ direction and the last term is just a constant energy offset\footnote{Note, however, that the \qu{magnetic field} and the constant offset depend on the positions of all other dipoles. If the system is not translationally invariant, these terms can play a role.}.
-% \begin{align*}
+% \begin{align}
 % D_\text{int}&=\frac{(d_1-d_0)^2}{4} \sigma_z \sigma_z + \absvsq{d_{\up}} (\sigma_+ \sigma_- + \sigma_- \sigma_+)\\
 % &= (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y)
-% \end{align*}
+% \end{align}
 
 \todo{
     Introducing the spin $\sfrac{1}{2}$ operators, we can rewrite this to
-\begin{align*}
+\begin{align}
     \Hdd &= \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j} \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{2} S^z_i S^z_j  + q_1^2 (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
          &= \sum_{i\ne j} \frac{a^3}{R_{ij}^3} \Big[ \frac{\kappa (d_1-d_0)^2}{2a^3} S^z_i S^z_j  + \frac{\kappa q_1^2}{a^3} (S^x_i S^x_j + S^y_i S^y_j) \Big].
-\end{align*}
+\end{align}
 Then, $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. Thus,
 $\tan \theta = 2q_1^2/(d_1-d_0)^2$.
 }
@@ -236,10 +236,10 @@ The relevant dipole matrix elements are\footnote{The sign difference in the last
     q_+ = |\smallbraketop{+}{d^+}{0}| = |\smallbraketop{0}{d^-}{+}|
 \end{align}
 Due to the different angular momentum of the two states, the term $d^0_i d^0_j$ only generates an interaction term $\sz_i \sz_j$. However, the term $d^+_i d^-_j$ provides an excitation conserving tunneling term proportional to $\splus\sminus$, just as before. The different nature of the states leads to a flipped sign compared to the previous model:
-\begin{align*}
+\begin{align}
     \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_+-d_0)^2}{4} \sz_i \sz_j  - \frac{q_+^2}{2} (\splus_i \sminus_j + \sminus_i \splus_j) \\
               &\qquad\qquad\qquad + \frac{d_+^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_++d_0)^2}{4} \Big].
-\end{align*}
+\end{align}
 
 \subsubsection{Magnetic dipoles}
 Using the magnetic dipole moment $\vec{d}=\mu_\text{B} g \vecsigma / 2$ of a dipolar atom with spin $S=1/2$,
