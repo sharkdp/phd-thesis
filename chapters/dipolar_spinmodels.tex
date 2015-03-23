@@ -57,11 +57,12 @@ erbium \cite{Aikawa2012} fermionic \cite{Aikawa2014}
 \section{Dipole-dipole interaction}
 The aim of this introductory section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$,
 \begin{align} \tlabel{ddint}
-\Hdd(\vecR_{ij}) = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij}) }
+\Hdd(\vecR_{ij}) = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } }
 \end{align}
 in a spherical tensor representation~\cite{Micheli2007,Gorshkov2011c} which will be useful throughout this thesis.
 \Tref{ddint} is given in terms of the vector $\vecR_{ij} = \vecR_j - \vecR_i$ and its normalized form $\hat{\vecR}_{ij}$.
-For electric (magnetic) dipoles, the constant prefactor is given by $\kappa = 1/4\pi\epsilon$ ($\kappa=\mu_0/4\pi$).
+The constant prefactor is given by $\kappa = 1/4\pi\epsilon$ for electric dipoles and by
+$\kappa = \mu_0 / 4\pi$ for magnetic dipoles.
 We focus on the distance-independent part $D_{ij} \equiv \Hdd \absv{\vecR_{ij}}^3/\kappa=\vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij})$ of the dipole-dipole interaction which can be written in terms of the spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with components
 \begin{align}
 T^2_0(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{6}} (d_i^+ d_j^- + 2d_i^0 d_j^0 + d_i^{-} d_j^{+}), \\

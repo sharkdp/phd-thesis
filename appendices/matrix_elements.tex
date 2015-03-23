@@ -3,22 +3,22 @@
 
 In this section, we show how to simplify the matrix elements of the dipolar interaction $V_{ijkl}=\braketop{ij}{\Vdd}{kl}$ with each index $ijkl$ representing a set of quantum numbers $i=(n_i,m_i,\sigma_i)$ and
 \begin{align*}
-\Vdd(r,\phi) =  \frac{\Cdd}{r^3} \left[
+\Vdd(R,\phi) =  \frac{\Cdd}{R^3} \left[
 \sigma^z_1 \sigma^z_2 - (\sigma^+_1 \sigma^-_2 +3 \ef{2i\phi} \sigma^-_1 \sigma^-_2  +\text{h.c.})
 \right]
 \end{align*}
 the dipolar interaction in 2D in terms of the polar coordinates of the relative vector $\vec{r}=\vecr_1-\vecr_2$ between two particles. The spin-part is easily resolved and therefore we can concentrate on matrix elements of the form
 \begin{align*}
-V^{\Delta m}\equiv\braketop{n_1'm_1'n_2'm_2'}{\frac{\ef{i\Delta m\phi}}{r^3}}{n_1m_1n_2m_2}
+V^{\Delta m}\equiv\braketop{n_1'm_1'n_2'm_2'}{\frac{\ef{i\Delta m\phi}}{R^3}}{n_1m_1n_2m_2}
 \end{align*}
 with $\Delta m = 0, \pm 2$.
 
 \section{Talmi-Moshinsky transformation}
 It is useful to change the basis to center-of-mass and relative coordinate states with
 \begin{align*}
-\vec{Q} = \bb{\vec{r_1} + \vec{r_2}}/\sqrt{2}, \qquad \vec{q} = \bb{\vec{r_1} - \vec{r_2}}/\sqrt{2}.
+\vec{Q} = \bb{\vec{R_1} + \vec{R_2}}/\sqrt{2}, \qquad \vec{q} = \bb{\vec{R_1} - \vec{R_2}}/\sqrt{2}.
 \end{align*}
-Notice the symmetric definition with the additional factor of $1/\sqrt{2}$ compared to the usual definition of the relative vector $\vec{r} = \sqrt{2} \vec{q}$.
+Note the symmetric definition with the additional factor of $1/\sqrt{2}$ compared to the usual definition of the relative vector $\vec{r} = \sqrt{2} \vec{q}$.
 Due to the quadratic character of the potential, $\vec{Q}$ and $\vec{q}$ are subject to the same harmonic potential. Thus, the product state $\ket{n_1m_1n_2m_2}=\ket{n_1m_1}\ket{n_2m_2}$ can be decomposed in terms of harmonic oscillator states $\ket{NM}\ket{nm}$ of the $\vec{Q},\vec{q}$ coordinates via
 \begin{align*}
 \ket{n_1m_1n_2m_2} = \!\!\! \sum_{N,M,n,m} \!\!\! T^{n_1m_1n_2m_2}_{NMnm} \ket{NMnm}
