@@ -180,7 +180,13 @@
 
 %%% LaTeX warnings
 % see http://tex.stackexchange.com/q/183149
-\pdfsuppresswarningpagegroup=1
+% and http://tex.stackexchange.com/a/198590
+\begingroup\expandafter\expandafter\expandafter\endgroup
+\expandafter\ifx\csname pdfsuppresswarningpagegroup\endcsname\relax
+\else
+    \pdfsuppresswarningpagegroup=1\relax
+\fi
+
 
 
 \AtEndPreamble{
