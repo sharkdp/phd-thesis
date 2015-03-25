@@ -20,3 +20,5 @@ Clone the repository including the submodule [latex-report](https://github.com/s
 git clone --recursive https://github.com/sharkdp/phd-thesis
 ```
 Then, compile the document by calling `latexmk` from the root folder.
+
+Note: If you do not have `pplatex` installed, you have to remove the file `.latexmkrc` (or modify it) before calling `latexmk`.
