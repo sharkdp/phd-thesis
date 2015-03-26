@@ -206,66 +206,47 @@ where the length $l_\text{DDI} = m\kappa d^2/\hbar^2$ parametrizes the strength 
 
 A particularly interesting property of the integer quantum Hall state, potentially useful to detect the successful generation, is the perfectly flat density $n=1/\pi l_\text{HO}^2$ within a circular region of radial size $\sqrt{N}l_\text{HO}$, shown in~\tref{density-comparison}.
 
-%Consequently, the presented method of dipolar relaxation allows for the exploration of integer and fractional quantum Hall states, but avoids the experimentally challenging requirement of precise control of the rotation frequency by directly tuning the orbital angular momentum.
-
-%\newcommand{\p}{\mathop{\tikz{\filldraw [lightblue] (0,0) circle(0.3em);\draw (0,0) circle(0.3em);}}}
-%\newcommand{\h}{\mathop{\tikz{\draw (0,0) circle(0.3em);}}}
-
-%Finally, we discuss the available states in the lowest Landau level. After $k$ transfer cycles the total angular momentum is $\dl{L}=kN$ for even $N$ and $\dl{L}=k(N-1)$ for odd $N$, as only pairs of particles can be transferred. To achieve $\dl{L}=\dlliqhe$, $k=(N-1)/2$ cycles are needed for even $N$ and $k=N/2$ cycles for odd $N$, a half-integer number in both cases. To circumvent this problem, it is possible to start from an unpolarized state with $N_\up=N_\down=N/2$. Assuming $N/2$ is even, the first transfer drives the system to a polarized $\dl{L}=N/2$ state while $N/2-1$ subsequent cycles (including all particles) will bring the system exactly to $\dl{L}=N/2 + (N/2-1)N = \dlliqhe$.
-
-
-%By simply continuing the transfer scheme\todo{(which might be necessary due to non-perfect transfer or imprecise knowledge of $N$)}, it is possible to reach states with $L>\liqhe$. The non-interacting ground states with angular momentum offset $\Delta L\equiv L-\liqhe$ are highly degenerate \footnote{The degeneracy $g(N,\Delta L)$ is given by the number of integer partitions of $\Delta L$ into at most $N$ integers.}. The dipolar interaction lifts this degeneracy and highly correlated ground states appear as ground states as discussed in \cite{Osterloh2007} for rotating systems. The same analysis applies for our setup, with the difference that it is possible to directly tune to certain angular momentum values instead of obtaining $L$ from a given rotation frequency $\Omega$.
-
 
 \section{Creation of fractional Quantum Hall states}
-In addition, it is possible to reach states with $L>\liqhe$ by continuing the transfer scheme.
-%The non-interacting ground states with angular momentum offset $\Delta L\equiv L-\liqhe$ are highly degenerate \footnote{The degeneracy $g(N,\Delta L)$ is given by the number of integer partitions of $\Delta L$ into at most $N$ integers.}.
-%The dipolar interaction lifts this degeneracy and
-In this regime,
-highly correlated ground states appear that are closely connected to fractional quantum Hall states, see~\cite{Osterloh2007} for a discussion in the context of rotating systems.
-We consider a situation where we start from an unpolarized state and run the initial half-cycle to the polarized state (transferring $F\cdot N$ angular momentum). The subsequent $k$ cycles transfer $2F \cdot N$ of angular momentum. If we want to generate a FQHE state with $\nu=\sfrac{1}{m}$, the total angular momentum is $m\liqhe$. In total we find the condition
-\begin{align}
-m\liqhe=m\,\frac{N(N-1)}{2} = k\cdot 2F N + F N.
-\end{align}
-Solving for the number of particles, we obtain
-\begin{align}
-N=\frac{2F(2k+1)}{m} + 1
-\end{align}
-For just one cycle ($k=1$), we find
-\begin{align}
-N=\frac{3\cdot 2F}{m}+1
-\end{align}
-Since $F$ is half-integer, we find that $m$ has to be equal to $3$ or one of the prime factors of $2F$.
-For  $^{161}\text{Dy}$, $^{167}\text{Er}$ and $^{53}\text{Cr}$ we have $2F=21, 19$ and $9$, respectively. For all of them, the $\nu = \sfrac{1}{3}$ state is accessible (for $N=2F+1$ particles), but in addition, for $^{161}\text{Dy}$ it is possible to generate $\nu=\sfrac{1}{7}$ and $\nu=\sfrac{1}{9}$ states in one cycle (for $10$ resp. $8$ particles).
+By simply continuing the transfer scheme, it is possible to reach states with $L>\liqhe$.
+In this regime, highly correlated ground states appear that are closely connected to fractional quantum Hall effect (FQHE) states. For a discussion in the context of rotating systems, see~\cite{Osterloh2007}.
+We consider a situation where we start from an unpolarized state and run the initial half-cycle to the polarized state (transferring $F\cdot N$ angular momentum). The subsequent $k$ cycles transfer $2F \cdot N$ of angular momentum. A FQHE state with a filling of $\nu=\sfrac{1}{m}$ has a total angular momentum of $m\cdot \liqhe$. \Tref{fqhenumbers} shows a few possible scenarios for the generation of fractional states for small numbers of paricles and a perfectly working transfer scheme.
 
-For one ,,magical`` particle number $N=2F+1$ it is possible to generate all FQHE states with any $\nu=\sfrac{1}{m}$ state within $k=m$ cycles (except for $F=\sfrac{1}{2}$, see below).
-
-\begin{table}[ht]
+\begin{table}[t]
     \centering
-    \begin{tabular}{cccc}
+    \begin{tabular}{lccc}
     \toprule
     Species & cycles & particles & obtained state ($\nu$) \\
     \midrule
-    $^{161}\text{Dy}$ & 1 & 64 & 1 \\
+    $^{161}\text{Dy}$ ($F=21/2$) & 1 & 64 & 1 \\
     & 1 & $22^\star$ & $\sfrac{1}{3}$ \\
     & 1 & 10 & $\sfrac{1}{7}$ \\
     & 1 & 8 & $\sfrac{1}{9}$ \\
     & 2 & $22^\star$ & $\sfrac{1}{5}$ \\
     & 3 & $22^\star$ & $\sfrac{1}{7}$ \\
     \midrule
-    $^{167}\text{Er}$ & 1 & 58 & 1 \\
+    $^{167}\text{Er}$ ($F=19/2$) & 1 & 58 & 1 \\
     & 1 & $20^\star$ & $\sfrac{1}{3}$ \\
     & 2 & $20^\star$ & $\sfrac{1}{5}$ \\
     \midrule
-    $^{53}\text{Cr}$ & 1 & 28 & 1 \\
+    $^{53}\text{Cr}$ ($F=9/2$) & 1 & 28 & 1 \\
     & 1 & $10^\star$ & $\sfrac{1}{3}$ \\
     & 2 & $10^\star$ & $\sfrac{1}{5}$ \\
     \bottomrule
     \end{tabular}
-    \caption{Examples of accessible final states with more than $4$ particles. ,,Magical`` particle number $N^\star=2F+1$ is marked.}
+    \caption{Playing with numbers: Examples of accessible final fractional states with more than $4$ particles for a perfectly working transfer scheme. For $N^\star=2F+1$ particles, every FQHE state can be obtained with $m=1/\nu$ cycles.\tlabel{fqhenumbers}}
 \end{table}
 
-We also find, that for $F=\sfrac{1}{2}$, the number of particles has to be $N=\frac{2k+1}{m}+1$. In principle, $2k+1$ can be any odd number, but if $m=2k+1$, we have $N=2$ and the whole scheme breaks down (the initial half-cycle does not work). The lowest non-prime odd number is $9$, which means it is possible to generate a $\nu=\sfrac{1}{3}$ state with $4$ particles in $k=4$ cycles. Any other FQHE state requires $7$ or more cycles.
+The obtained (non-interacting) states in the lowest Landau level at $L>\liqhe$ are highly degenerate, as there are many possibilities to distribute the total angular momentum among the particles.
+In fact, it is easy to show that the degeneracy $g(N, \Delta L)$ of the state with $N$ particles and an excess angular momentum of $\Delta L=L-\liqhe$ is given by the number
+of integer partitions of the number $\Delta L$ into at most $N$ integers.
+Each term in such an integer partition is related to the angular momentum offset of one particle from its initial position at $\Delta L = 0$.
+As an example, consider the case of $N=3$ particles and a total angular momentum of $L=\liqhe + \Delta L = 3+4$. Then, we have an excess angular momentum of $\Delta L=4$ and the degeneracy of the state is given by $g(3,4)=4$ with the following four possible integer partitions and their related states $\ket{m_1,m_2,m_3}$:
+\begin{align*}
+4 &\longleftrightarrow \ket{0,1,6} &\qquad 2+2 \longleftrightarrow \ket{0,3,4}\\
+1+3 &\longleftrightarrow \ket{0,2,5}&\qquad 1+1+2 \longleftrightarrow \ket{1,2,4}
+\end{align*}
+For $N = 4$ particles (or more) with the same $\Delta L=4$, there would be one additional integer partition $1+1+1+1$, leading to five degenerate states.
 
 
 \subsection{Interacting many-body states}
