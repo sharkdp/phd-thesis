@@ -137,22 +137,14 @@
 }
 
 
-%%% Section title
-% \usepackage[small,sc]{titlesec}
-
-
 %%% Chapter pages
-\usepackage{xparse}
-\usepackage{quotchap}
-\NewDocumentEnvironment{tquote}{m}{
-    \begin{savequote}[5.5cm]
-        \begin{flushleft}
-}{
-    \end{flushleft}
-    \qauthor{--- #1}
-\end{savequote}
-}
+\usepackage{titlesec}
 \colorlet{chaptergrey}{gray!50}
+\titleformat{\chapter}[display]
+            {\sffamily\bfseries}
+            {\raggedleft\color{chaptergrey}\fontsize{3.5cm}{1em}\selectfont\thechapter}
+            {0pt}
+            {\leavevmode\\\huge\raggedleft}
 
 
 %%% Languages
