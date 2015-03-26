@@ -1,51 +1,50 @@
 \chapter{Harmonic oscillator matrix elements of the dipolar interaction}
 \label{matrix_elements}
 
-In this section, we show how to simplify the matrix elements of the dipolar interaction $V_{ijkl}=\braketop{ij}{\Vdd}{kl}$ with each index $ijkl$ representing a set of quantum numbers $i=(n_i,m_i,\sigma_i)$ and
+\section{Talmi-Moshinsky transformation}
+In this section, we show how to simplify the matrix elements of the dipolar interaction $V_{ijkl}=\smallbraketop{ij}{\Vdd}{kl}$ with each index $ijkl$ representing a set of 2D harmonic oscillator quantum numbers $i=(n_i,m_i,\sigma_i)$ and
 \begin{align}
 \Vdd(R,\phi) =  \frac{\Cdd}{R^3} \left[
 \sigma^z_1 \sigma^z_2 - (\sigma^+_1 \sigma^-_2 +3 \ef{2i\phi} \sigma^-_1 \sigma^-_2  +\text{h.c.})
 \right]
 \end{align}
-the dipolar interaction in 2D in terms of the polar coordinates of the relative vector $\vec{r}=\vecr_1-\vecr_2$ between two particles. The spin-part is easily resolved and therefore we can concentrate on matrix elements of the form
+the dipolar interaction in terms of the polar coordinates $\vec{R}=\vecR_1-\vecR_2=(R\cos \phi, R\sin \phi)$ of the relative vector between two particles. The spin-part is easily resolved and we can concentrate on matrix elements of the form
 \begin{align}
-V^{\Delta m}\equiv\braketop{n_1'm_1'n_2'm_2'}{\frac{\ef{i\Delta m\phi}}{R^3}}{n_1m_1n_2m_2}
+V^{\Delta m}\equiv\smallbraketop{n_1'm_1'n_2'm_2'}{\frac{\ef{i\Delta m\, \phi}}{R^3}}{n_1m_1n_2m_2}
 \end{align}
-with $\Delta m = 0, \pm 2$.
-
-\section{Talmi-Moshinsky transformation}
+with the difference in angular momentum $\Delta m = 0, \pm 2$.
 It is useful to change the basis to center-of-mass and relative coordinate states with
 \begin{align}
-\vec{Q} = \bb{\vec{R_1} + \vec{R_2}}/\sqrt{2}, \qquad \vec{q} = \bb{\vec{R_1} - \vec{R_2}}/\sqrt{2}.
+    \vec{Q} = \frac{\vec{R_1} + \vec{R_2}}{\sqrt{2}}, \qquad \vec{q} = \frac{\vec{R_1} - \vec{R_2}}{\sqrt{2}}.
 \end{align}
-Note the symmetric definition with the additional factor of $1/\sqrt{2}$ compared to the usual definition of the relative vector $\vec{r} = \sqrt{2} \vec{q}$.
-Due to the quadratic character of the potential, $\vec{Q}$ and $\vec{q}$ are subject to the same harmonic potential. Thus, the product state $\ket{n_1m_1n_2m_2}=\ket{n_1m_1}\ket{n_2m_2}$ can be decomposed in terms of harmonic oscillator states $\ket{NM}\ket{nm}$ of the $\vec{Q},\vec{q}$ coordinates via
+Note the symmetric definition with the additional factor of $1/\sqrt{2}$ compared to the usual definition of the relative vector.
+Due to the quadratic character of the potential, the new degrees of freedom $\vec{Q}$ and $\vec{q}$ are subject to the same harmonic potential. Thus, the product state $\ket{n_1m_1n_2m_2}=\ket{n_1m_1}\ket{n_2m_2}$ can be decomposed in terms of harmonic oscillator states $\ket{NM}\ket{nm}$ of the $\vec{Q},\vec{q}$ coordinates via
 \begin{align}
 \ket{n_1m_1n_2m_2} = \!\!\! \sum_{N,M,n,m} \!\!\! T^{n_1m_1n_2m_2}_{NMnm} \ket{NMnm}
 \end{align}
 where the $T^{n_1m_1n_2m_2}_{NMnm}$ are called Talmi-Moshinsky coefficients \cite{Moshinsky1959,Talmi1952}. Since the center-of-mass is not affected by the interaction, the relevant matrix elements are
 \begin{align}
-\braketop{n'm'}{\frac{\ef{i\Delta m \phi}}{(\sqrt{2} q)^3}}{nm} = \delta_{m+\Delta m,m'} \integralb{0}{\infty}{q} \frac{R_{n'}^{m'}(q) R_n^m(q) \,q}{\bb{\sqrt{2} q}^3}
+\smallbraketop{n'm'}{\frac{\ef{i\Delta m \phi}}{(\sqrt{2} q)^3}}{nm} = \delta_{m+\Delta m,m'} \integralb{0}{\infty}{q} \frac{R_{n'}^{m'}(q) R_n^m(q) \,q}{\bb{\sqrt{2} q}^3}
 \end{align}
 where the radial functions $R_n^m$ are given in terms of the generalized Laguerre polynomials $L_n^{\absv{m}}$ as
 \begin{align}
 R_n^m(q) = \sqrt{\frac{2n!}{(n+\absv{m})!}}\, q^{\absv{m}}\expf{-\frac{q^2}{2}}\cdot L_n^{\absv{m}}(q^2).
 \end{align}
-The matrix element $V^{\Delta m}$ is thus
+The matrix element $V^{\Delta m}$ is thus given by
 \begin{align}
 V^{\Delta m}= \!\!\! &\sum_{N,M,n,n',m} \!\!\! (T^*)^{n_1'm_1'n_2'm_2'}_{NMn'(m+\Delta m)} \cdot T^{n_1m_1n_2m_2}_{NMnm} \cdot
  \integralb{0}{\infty}{q} \frac{R_{n'}^{m+\Delta m}(q) R_n^m(q) \,q}{\bb{\sqrt{2} q}^3}.
 \end{align}
-where the remaining integral can be calculated analytically for specific $n,n',m$ and $\Delta m$.
+where the remaining integral can be calculated analytically for specific values of $n,n',m$ and $\Delta m$.
 
 \section{Lowest Landau level}
-In the lowest Landau level where $n_i=0$ for all particles this can be further simplified. The decomposition of a state $\ket{0m_10m_2}$ into relative and center of mass coordinates shows that only $\ket{0M0m}$ states appear due to energy conservation. If we consider a single spin component, the only relevant matrix element is the $\sigma^z_i \sigma^z_j$ part with $\Delta m=0$ and
+In the lowest Landau level where $n_i=0$ for all particles, this expression can be further simplified. The decomposition of a state $\ket{0m_10m_2}$ into relative and center of mass coordinates shows that only $\ket{0M0m}$ states appear due to energy conservation. If we consider a single spin component, the only relevant matrix element is the $\sigma^z_i \sigma^z_j$ part with $\Delta m=0$ and
 \begin{align}
-V^0 &= 2^{-3/2} \sum_{M,m}  (T^*)^{m_1'm_2'}_{Mm} \cdot T^{m_1m_2}_{Mm} \braketop{m}{q^{-3}}{m}.
+V^0 &= 2^{-3/2} \sum_{M,m}  (T^*)^{m_1'm_2'}_{Mm} \cdot T^{m_1m_2}_{Mm} \smallbraketop{m}{q^{-3}}{m}.
 \end{align}
 For $m\ge 0$ the integration yields
 \begin{align}
-\braketop{m}{q^{-3}}{m} &= \frac{2}{m!} \integralb{0}{\infty}{q} q^{2m-2} \ef{-q^2}
+\smallbraketop{m}{q^{-3}}{m} &= \frac{2}{m!} \integralb{0}{\infty}{q} q^{2m-2} \ef{-q^2}
 = \frac{\Gamma\big(m-\frac{1}{2}\big)}{\Gamma\big(m+1\big)}
 \end{align}
 For $m=0$, the integration diverges as the integrand behaves like $q^{-2}$ for small $q$. However, if we consider the antisymmetrized matrix element
