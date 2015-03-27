@@ -1,118 +1,106 @@
-\chapter{Classical XY model}
+\chapter{Classical dipolar XY model}
 \label{xy_model}
 
-% TODO: move these to abbreviations.tex if we use this chapter
-\newcommand{\Raij}{\absv{\vec{R}_i-\vec{R}_j}^3}
-\newcommand{\aij}{\absv{\vec{i}-\vec{j}}^3}
-\newcommand{\suminj}{\sum_{i\ne j}}
-
-% TODO: update to \integral* commands if we use this chapter
-
-Classical XY model with ferromagnetic $J_{ij} \propto 1/\Raij$ coupling:
+The classical XY model with ferromagnetic long-range dipolar couplings is given by
 \begin{align}
-H=-J a^3 \sum_{i\ne j} \frac{\cos(\theta_i - \theta_j)}{\Raij}
+    H = -J a^3 \sum_{i\ne j} \frac{\vec{S}_i \cdot \vec{S}_j}{|\vecR_i - \vecR_j|^3}
+  = -J \sum_{i\ne j} \frac{\cos(\theta_i - \theta_j)}{|\vecr_{ij}|^3}.
 \end{align}
-Set $\vec{i}\equiv \vec{R}_i/a$:
-\begin{align}
-H=-J \sum_{i\ne j} \frac{\cos(\theta_i - \theta_j)}{\aij}
-\end{align}
+Here, $J>0$ is the coupling constant, $\vec{S}_i=(\cos \theta_i, \sin \theta_i)^t$ are classical spins restricted to two dimensions and $\vecr_{ij}=(\vecR_i - \vecR_j)/a$ is the dimensionless relative distance, used for conciseness.
 
 \section{High temperature expansion}
-Partition function ($\beta = J/kT$):
+With the reduced inverse temperature $\beta = J/kT$, we can write the partition function as
 \begin{align}
-Z=\int\prod_{i} \frac{\text{d}\theta_i}{2\pi}  \expf{\beta \suminj \frac{\cos(\theta_i - \theta_j)}{\aij}}
+    Z=\int\prod_{k} \frac{\mathrm{d}\theta_k}{2\pi}  \operatorname{exp}\!\bigg(\beta \sum_{i\ne j} \cos(\theta_i - \theta_j) |\vecr_{ij}|^{-3} \bigg).
 \end{align}
-Expand for $\beta \ll 1$:
+% \begin{align}
+%     Z=\int\prod_{k} \frac{\mathrm{d}\theta_k}{2\pi}  \prod_{i\ne j}  \bb{1 + \beta \cos(\theta_i - \theta_j) |\vecr_{ij}|^{-3}} + \mathcal{O}(\beta^2)
+% \end{align}
+In the high temperature limit $\beta \ll 1$, keeping only linear terms in $\beta$,
+the two-point correlation function $\meanv{\vec{S}_\alpha \vec{S}_\beta}$ is given by
 \begin{align}
-Z=\int\prod_{i} \frac{\text{d}\theta_i}{2\pi}  \prod_{i\ne j}  \bb{1 + \beta \frac{\cos(\theta_i - \theta_j)}{\aij} + O\bb{\beta^2}}
+    \meanv{\vec{S}_\alpha \vec{S}_\beta} &= \meanv{\cos(\theta_\alpha - \theta_\beta)} \\ &= \frac{1}{Z} \int\prod_{k} \frac{\mathrm{d}\theta_k}{2\pi}  \cos(\theta_\alpha - \theta_\beta)
+    \prod_{i\ne j}  \bb{1 + \beta \cos(\theta_i - \theta_j) |\vecr_{ij}|^{-3}}
 \end{align}
-The correlation function $\meanv{\vec{S_x} \vec{S_y}}$ in this limit is given by
+After integration over all angles, only two terms in the expansion of the product contribute to the lowest order: $\beta \cos(\theta_\alpha - \theta_\beta) |\vecr_{\alpha\beta}|^{-3}$ and $\beta \cos(\theta_\beta - \theta_\alpha) |\vecr_{\beta\alpha}|^{-3}$. Then, the correlation function is given by
 \begin{align}
-\meanv{\vec{S_x} \vec{S_y}} &= \meanv{\cos(\theta_i - \theta_j)} \\ &= \frac{1}{Z} \int\prod_{i} \frac{\text{d}\theta_i}{2\pi}  \cos(\theta_x - \theta_y)
-\prod_{i\ne j}  \bb{1 + \beta \frac{\cos(\theta_i - \theta_j)}{\aij}}
+% \meanv{\vec{S}_\alpha \vec{S}_\beta} &= \frac{1}{Z} \int\prod_{k} \frac{\mathrm{d}\theta_k}{2\pi} 2 \beta \cdot \frac{\cos(\theta_\alpha}-\vec{\beta}}^3} \\
+% &= \frac{\beta}{Z} \frac{1}{\absv{\vec{\alpha}-\vec{\beta}}^3} + O\bb{\beta^2}
+    \meanv{\vec{S}_\alpha \vec{S}_\beta} &= \frac{2 \beta}{Z} \int\prod_{k} \frac{\mathrm{d}\theta_k}{2\pi} \cos(\theta_\alpha - \theta_\beta)^2 \absv{\vecr_{\alpha\beta}}^{-3}
+    = \frac{\beta}{Z} \frac{1}{\absv{\vecr_{\alpha\beta}}^3} = \frac{\beta}{|\vecr_{\alpha\beta}|^3}.
 \end{align}
-For each $i\ne j$ in the expansion of the product either the $1$ or the term $\beta \cos(\theta_i - \theta_j)/\aij$ can be chosen. After integration over all $\theta_i$ only terms of the form
-\begin{align}
-\beta^{k+1} \cos(\theta_x - \theta_{i_1}) \cos(\theta_{i_1} - \theta_{i_2}) \cdots \cos(\theta_{i_{k-1}}-\theta{i_k})\cos(\theta_{i_k} - \theta_y)
-\end{align}
-are non-vanishing. Only 2 terms contribute to the lowest order: $\beta \cos(\theta_x - \theta_y)$ and $\beta \cos(\theta_y - \theta_x)$.
-\begin{align}
-\meanv{\vec{S_x} \vec{S_y}} &= \frac{1}{Z} \int\prod_{i} \frac{\text{d}\theta_i}{2\pi} 2 \beta \cdot \frac{\cos(\theta_x - \theta_y)^2}{\absv{\vec{x}-\vec{y}}^3} \\
-&= \frac{\beta}{Z} \frac{1}{\absv{\vec{x}-\vec{y}}^3} + O\bb{\beta^2}
-\end{align}
-Since $Z = 1+O\bb{\beta^3}$, as the smallest loop includes 3 terms, the correlation function is given by
-\begin{align}
-\meanv{\vec{S_x} \vec{S_y}} &= \frac{\beta}{2\absv{\vec{x}-\vec{y}}^3} + O\bb{\beta^2}
-\end{align}
+In the last step, we have used that $Z = 1+ \mathcal{O}(\beta^3)$, as the smallest loop includes three terms.
 
-\section{Low temperature expansion}
-In the spin-wave approximation
-\begin{align}
-H=-J \sum_{i\ne j} \frac{\cos(\theta_i - \theta_j)}{\aij} \approx \text{const.} + \frac{J}{2} \sum_{i\ne j} \frac{(\theta_i - \theta_j)^2}{\aij}
-\end{align}
-Using
-\begin{align}
-G^{-1}(\vec{i}-\vec{j}) = \begin{cases}2\epsilon_{\vec{0}} \qquad  &i=j\\-\frac{2}{\aij}\qquad &i\ne j\end{cases}
-\end{align}
-with
-\begin{align}
-\epsilon_{\vec{q}} \equiv \sum_{\vec{j}\ne \vec{0}} \frac{\text{e}^{i \vec{q} \vec{j}}}{\absv{\vec{j}}^3}
-\end{align}
-the sum can be rearranged
-\begin{align}
-\sum_{i\ne j} \frac{(\theta_i - \theta_j)^2}{\aij} &= \sum_{i\ne j} \frac{\theta_i^2 + \theta_j^2- 2 \theta_i \theta_j}{\aij} \\
-&=
-2 \sum_i \theta_i^2 \sum_{j\ne i} \frac{1}{\aij} - 2 \sum_{i\ne j} \frac{\theta_i \theta_j}{\aij} \\
-&=
-2 \sum_i \epsilon_{\vec{0}} \theta_i^2 - 2 \sum_{i\ne j} \frac{\theta_i \theta_j}{\aij} \\
-&= \sum_{i, j} \theta_i G^{-1}(\vec{i}-\vec{j}) \theta_j
-\end{align}
-leading to (dropping the constant)
-\begin{align}
-H=\frac{J}{2} \sum_{i, j} \theta_i G^{-1}(\vec{i}-\vec{j}) \theta_j
-\end{align}
-The Fourier transform of $G^{-1}$ is given by
-\begin{align}
-G^{-1}(\vec{q})&=\sum_{\vec{j}} \text{e}^{i \vec{q} \vec{j}} G^{-1}(\vec{j}) \\
-&=2(\epsilon_{\vec{0}} - \epsilon_{\vec{q}})
-\end{align}
-Then the Hamilton function can be diagonalized
-\begin{align}
-H=J \int \frac{\text{d}^2q}{v_0} (\epsilon_{\vec{0}} - \epsilon_{\vec{q}}) \absvsq{\theta_{\vec{q}}}
-\end{align}
-giving the dispersion relation for the $\vec{q}$ mode
-\begin{align}
-E(\vec{q}) = J (\epsilon_{\vec{0}} - \epsilon_{\vec{q}})
-\end{align}
-The correlation function
-\begin{align}
-\meanv{\vec{S_x} \vec{S_y}} &= \mathop{\text{Re}}\meanv{\ef{i(\theta_i-\theta_j)}}
-\end{align}
-can be evaluated using
-\begin{align}
-\meanv{\ef{i(\theta_i-\theta_j)}} &= \frac{1}{Z} \int\prod_{i} \frac{\text{d}\theta_i}{2\pi} \expf{-\frac{\beta}{2} \sum_{i, j} \theta_i G^{-1}(\vec{i}-\vec{j}) \theta_j + i (\theta_i-\theta_j)} \\
-&= \expf{-\frac{G(\vec{0})-G(\vec{i}-\vec{j})}{\beta}}
-\end{align}
-In the Fourier representation
-\begin{align}
-G(\vec{l})=\int \frac{\text{d}^2q}{v_0} \frac{\ef{i\vec{q}\vec{l}}}{2(\epsilon_{\vec{0}} - \epsilon_{\vec{q}})}
-\end{align}
-%For $q\ll1$ we have
-%\begin{align}
-%\epsilon_{\vec{0}} - \epsilon_{\vec{q}} \approx 2\pi \absv{\vec{q}}
-%\end{align}
-%Using this approximation for large $l$ we have
-%\begin{align}
-%G(\vec{l})&\approx\frac{1}{2\pi}\int \frac{\text{d}^2q}{v_0} \frac{\ef{i\vec{q}\vec{l}}}{q}\\
-%&\approx \frac{1}{(2\pi)^3}\integralb{0}{\pi}{q}\integralb{0}{2\pi}{\phi} \ef{i q l \cos{\phi}} \\
-%&\approx \frac{1}{(2\pi)^2}\integralb{0}{\pi}{q} J_0(ql)
-%\end{align}
-For large $l\gg a$ the function $G(\vec{l})$ is isotropic and converges to a constant
-\begin{align}
-\lim_{l\rightarrow\infty} G(\vec{0})-G(l) = G_\infty \approx 0.063
-\end{align}
-This leads to
-\begin{align}
-\lim_{l\rightarrow\infty}\meanv{\vec{S_0} \vec{S_l}} = \expf{-\frac{G_\infty k_BT}{J}}
-\end{align}
+% TODO: update to \integral* commands if we use this section
+
+% \section{Low temperature expansion}
+% In the spin-wave approximation
+% \begin{align}
+% H=-J \sum_{i\ne j} \frac{\cos(\theta_i - \theta_j)}{|\vecr_{ij}|^3} \approx \text{const.} + \frac{J}{2} \sum_{i\ne j} \frac{(\theta_i - \theta_j)^2}{|\vecr_{ij}|^3}
+% \end{align}
+% Using
+% \begin{align}
+% G^{-1}(\vec{i}-\vec{j}) = \begin{cases}2\epsilon_{\vec{0}} \qquad  &i=j\\-\frac{2}{|\vecr_{ij}|^3}\qquad &i\ne j\end{cases}
+% \end{align}
+% with
+% \begin{align}
+% \epsilon_{\vec{q}} \equiv \sum_{\vec{j}\ne \vec{0}} \frac{\text{e}^{i \vec{q} \vec{j}}}{\absv{\vec{j}}^3}
+% \end{align}
+% the sum can be rearranged
+% \begin{align}
+% \sum_{i\ne j} \frac{(\theta_i - \theta_j)^2}{|\vecr_{ij}|^3} &= \sum_{i\ne j} \frac{\theta_i^2 + \theta_j^2- 2 \theta_i \theta_j}{|\vecr_{ij}|^3} \\
+% &=
+% 2 \sum_i \theta_i^2 \sum_{j\ne i} \frac{1}{|\vecr_{ij}|^3} - 2 \sum_{i\ne j} \frac{\theta_i \theta_j}{|\vecr_{ij}|^3} \\
+% &=
+% 2 \sum_i \epsilon_{\vec{0}} \theta_i^2 - 2 \sum_{i\ne j} \frac{\theta_i \theta_j}{|\vecr_{ij}|^3} \\
+% &= \sum_{i, j} \theta_i G^{-1}(\vec{i}-\vec{j}) \theta_j
+% \end{align}
+% leading to (dropping the constant)
+% \begin{align}
+% H=\frac{J}{2} \sum_{i, j} \theta_i G^{-1}(\vec{i}-\vec{j}) \theta_j
+% \end{align}
+% The Fourier transform of $G^{-1}$ is given by
+% \begin{align}
+% G^{-1}(\vec{q})&=\sum_{\vec{j}} \text{e}^{i \vec{q} \vec{j}} G^{-1}(\vec{j}) \\
+% &=2(\epsilon_{\vec{0}} - \epsilon_{\vec{q}})
+% \end{align}
+% Then the Hamilton function can be diagonalized
+% \begin{align}
+% H=J \int \frac{\mathrm{d}^2q}{v_0} (\epsilon_{\vec{0}} - \epsilon_{\vec{q}}) \absvsq{\theta_{\vec{q}}}
+% \end{align}
+% giving the dispersion relation for the $\vec{q}$ mode
+% \begin{align}
+% E(\vec{q}) = J (\epsilon_{\vec{0}} - \epsilon_{\vec{q}})
+% \end{align}
+% The correlation function
+% \begin{align}
+% \meanv{\vec{S_x} \vec{S_y}} &= \mathop{\text{Re}}\meanv{\ef{i(\theta_i-\theta_j)}}
+% \end{align}
+% can be evaluated using
+% \begin{align}
+% \meanv{\ef{i(\theta_i-\theta_j)}} &= \frac{1}{Z} \int\prod_{i} \frac{\mathrm{d}\theta_i}{2\pi} \expf{-\frac{\beta}{2} \sum_{i, j} \theta_i G^{-1}(\vec{i}-\vec{j}) \theta_j + i (\theta_i-\theta_j)} \\
+% &= \expf{-\frac{G(\vec{0})-G(\vec{i}-\vec{j})}{\beta}}
+% \end{align}
+% In the Fourier representation
+% \begin{align}
+% G(\vec{l})=\int \frac{\mathrm{d}^2q}{v_0} \frac{\ef{i\vec{q}\vec{l}}}{2(\epsilon_{\vec{0}} - \epsilon_{\vec{q}})}
+% \end{align}
+% %For $q\ll1$ we have
+% %\begin{align}
+% %\epsilon_{\vec{0}} - \epsilon_{\vec{q}} \approx 2\pi \absv{\vec{q}}
+% %\end{align}
+% %Using this approximation for large $l$ we have
+% %\begin{align}
+% %G(\vec{l})&\approx\frac{1}{2\pi}\int \frac{\mathrm{d}^2q}{v_0} \frac{\ef{i\vec{q}\vec{l}}}{q}\\
+% %&\approx \frac{1}{(2\pi)^3}\integralb{0}{\pi}{q}\integralb{0}{2\pi}{\phi} \ef{i q l \cos{\phi}} \\
+% %&\approx \frac{1}{(2\pi)^2}\integralb{0}{\pi}{q} J_0(ql)
+% %\end{align}
+% For large $l\gg a$ the function $G(\vec{l})$ is isotropic and converges to a constant
+% \begin{align}
+% \lim_{l\rightarrow\infty} G(\vec{0})-G(l) = G_\infty \approx 0.063
+% \end{align}
+% This leads to
+% \begin{align}
+% \lim_{l\rightarrow\infty}\meanv{\vec{S_0} \vec{S_l}} = \expf{-\frac{G_\infty k_BT}{J}}
+% \end{align}
 
