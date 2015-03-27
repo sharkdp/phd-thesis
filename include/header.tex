@@ -138,6 +138,12 @@
 
 
 %%% Chapter pages
+
+% We know that usage of titlesec together with KOMA is not recommended.
+% Switch off this warning:
+\usepackage{silence}
+\WarningFilter{scrbook}{Usage of package `titlesec'}
+
 \usepackage{titlesec}
 \colorlet{chaptergrey}{gray!50}
 \titleformat{\chapter}[display]
