@@ -178,7 +178,8 @@
 \presetkeys{todonotes}{color=red!30,inline,prepend,caption=TODO}{}
 
 
-%%% LaTeX warnings
+%%% pdf
+
 % see http://tex.stackexchange.com/q/183149
 % and http://tex.stackexchange.com/a/198590
 \begingroup\expandafter\expandafter\expandafter\endgroup
@@ -186,6 +187,9 @@
 \else
     \pdfsuppresswarningpagegroup=1\relax
 \fi
+
+% set PDF version to 1.7
+\pdfoptionpdfminorversion=7
 
 
 
