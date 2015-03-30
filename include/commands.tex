@@ -26,48 +26,61 @@
 
 
 %%% Figures
-\renewcommand{\igopt}[2]{\includegraphics[#1]{\chapterpath/#2}} %%! options, filename
+% options, filename
+\renewcommand{\igopt}[2]{\includegraphics[#1]{\chapterpath/#2}}
 
-\renewcommand{\figopt}[5]{ %%! width, filename, label, caption, placement (h, t, ht)
-    \begin{figure}[#5]
+% width, filename, label, caption
+\renewcommand{\figopt}[4]{
+    \begin{figure}[t]
         \centering
         \ig{#1}{#2}
         \caption{#4}
-        \label{\chapterprefix:#3}
+        \tlabel{#3}
     \end{figure}
 }
 
-\renewcommand{\fig}[4]{ %%! width, filename, label, caption
-    \figopt{#1}{#2}{#3}{#4}{t}
+% width, filename, caption
+\renewcommand{\fig}[3]{
+    \figopt{#1}{#2}{#2}{#3}
 }
 
-\renewcommand{\doublefigopt}[9]{ %%! w1, f1, c1, w2, f2, c2, label, main caption, placement
-    \begin{figure}[#9]
+% w1, f1, l1, c1, w2, f2, l2, c2, main caption
+\renewcommand{\doublefigopt}[9]{
+    \begin{figure}[t]
         \centering
-        \ifstrempty{#3}{
+        \ifstrempty{#4}{
             \subfloat{
                 \ig{#1}{#2}
+                \tlabel{#3}
             }
         }{
-            \subfloat[#3]{
+            \subfloat[#4]{
                 \ig{#1}{#2}
+                \tlabel{#3}
             }
         }
-        \ifstrempty{#6}{
+        \ifstrempty{#8}{
             \subfloat{
-                \ig{#4}{#5}
+                \ig{#5}{#6}
+                \tlabel{#7}
             }
         }{
-            \subfloat[#6]{
-                \ig{#4}{#5}
+            \subfloat[#8]{
+                \ig{#5}{#6}
+                \tlabel{#7}
             }
         }
-        \caption{#8}
-        \label{\chapterprefix:#7}
+        \caption{#9}
     \end{figure}
 }
 
-\renewcommand{\doublefig}[8]{\doublefigopt{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{t}} %%! w1, f1, c1, w2, f2, c2, label, main caption
+% w1, f1, c1, w2, f2, c2, main caption
+\renewcommand{\doublefig}[7]{\doublefigopt{#1}{#2}{#2}{#3}{#4}{#5}{#5}{#6}{#7}}
+
+\newcommand{\sfA}{\textbf{(a)}}
+\newcommand{\sfB}{\textbf{(b)}}
+\newcommand{\sfC}{\textbf{(c)}}
+\newcommand{\sfD}{\textbf{(d)}}
 
 %%% correct quotation marks
 \newcommand{\qu}[1]{``#1''}

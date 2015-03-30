@@ -23,7 +23,7 @@ Here we propose a new scheme to access the regime of fast rotation for a dipolar
 
 
 \section{Setup}
-\fig{.4}{fig1a}{fig1a}{Dipolar particles, trapped in a quasi-2D geometry with a radial confinement $\omega$. When the external magnetic field $\vec{B}$ is tuned in resonance, dipolar interactions \Vdd can induce spin relaxation processes, leading to a net angular momentum increase of $1\hbar$ per particle.}
+\fig{.4}{fig1a}{Dipolar particles, trapped in a quasi-2D geometry with a radial confinement $\omega$. When the external magnetic field $\vec{B}$ is tuned in resonance, dipolar interactions \Vdd can induce spin relaxation processes, leading to a net angular momentum increase of $1\hbar$ per particle.}
 
 \noindent
 We consider a system of $N$ fermionic atoms with magnetic dipole moments $\vecd$. While extensions to schemes with polar molecules are possible, the permanent dipole moments of the atoms lead to some simplifications.
@@ -63,7 +63,7 @@ The dipolar interaction features three different processes. The first term propo
         \ig{0.31}{fig1d}
         \tlabel{fig1d}
     }
-    \caption{\tlabel{fig1}(a) Energy levels of a 2D harmonic oscillator. (b) One of the possible spin-flip processes, bringing both particles to higher angular momentum states. (c) Eventually, after repeated application of the driving scheme, all particles occupy the lowest Landau level.}
+    \caption{\sfA~Energy levels of a 2D harmonic oscillator. \sfB~One of the possible spin-flip processes, bringing both particles to higher angular momentum states. \sfC~Eventually, after repeated application of the driving scheme, all particles occupy the lowest Landau level.}
 \end{figure}
 
 It is this process that allows us to drive the dipolar particles to higher angular momentum states. Assuming the gas is initially in a spin-polarized state with the external magnetic field pointing in the positive $z$ direction, the particles will undergo spin relaxation when the field is adiabatically ramped through zero and finally pointing in the negative $z$ direction. During this adiabatic ramping,
@@ -99,11 +99,7 @@ To derive the total energy $E(N,L)$ for $L\ne 0$, we define $N_m$ as the number 
 \dl{E} = \sum_m \sum_{n=0}^{N_m-1} \dl{E}_{nm} = \sum_m N_m\left(N_m + \absv{m} \right).
 \end{align}
 
-\begin{figure}[t]
-    \centering
-    \ig{0.5}{fig2}
-    \caption{\tlabel{fig2} Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\tref{etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
-\end{figure}
+\fig{0.5}{fig2}{Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\tref{etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
 
 \noindent
 The exact ground state energy can be found combinatorially for small particle numbers by varying the $N_m$ for fixed $N$ and $L$. The result for $N=10$ is shown in~\tref{fig2}. For larger particle numbers this method is not feasible, but an analytic solution can be found for large particle numbers. Then, we can treat $N_{m}$ as a continuous function. To find the minimum of \tref{energyf} at fixed $N$ and $L$, we introduce two Lagrange multipliers $\mu$, $\Omega$ for the conditions $N = \sum_m N_m$ and $\dl{L} = \sum_m N_m m$, respectively. Taking the functional derivative with respect to $N_m$ yields
@@ -133,11 +129,7 @@ has a singularity for $\dl{\Omega}=\Omega/\omega=1$ and large values of $L$ can 
 
 %In turn, the value of $\Omega(N,\liqhe)/\omega = 1-\frac{16}{9N}+\mathcal{O}(N^{-2})$ which is %needed to reach the QHE regime, quickly converges to 1. In our setup, the rotation frequency $%\Omega(L)$ is inferred from the given angular momentum. In the limit $L\rightarrow \infty$, it %approaches the critical value, but never exceeds it\todo{reference subfig?}. \todo{Note that for $L%\ge\liqhe$, the energy is exactly given by $E=L$ and the frequency is therefore fixed at $%%\Omega=1$.}
 
-\begin{figure}[t]
-    \centering
-    \ig{0.5}{fig3a}
-    \caption{\tlabel{fig3a}Description of the transfer in the analytical model with $N=100$ particles for decreasing energy splitting $\Delta$ between the two components $\up$ and $\down$. The transfer starts at $\Delta=\Ef$ with particles continuously being transferred into the $\down$ state as $\Delta$ is lowered to $-\Ef$. Notice that during the transfer, both components rotate in the same direction. The crossing $N_\up=N_\down$ is not precisely at $\Delta=0$ due to the initial bias.}
-\end{figure}
+\fig{0.5}{fig3a}{Description of the transfer in the analytical model with $N=100$ particles for decreasing energy splitting $\Delta$ between the two components $\up$ and $\down$. The transfer starts at $\Delta=\Ef$ with particles continuously being transferred into the $\down$ state as $\Delta$ is lowered to $-\Ef$. Notice that during the transfer, both components rotate in the same direction. The crossing $N_\up=N_\down$ is not precisely at $\Delta=0$ due to the initial bias.}
 
 Starting from expression \labeltref{etotnl} for the energy, we are now able to describe the transfer process in the adiabatic limit. Let $N_\up$ be the number of particles in the spin-up state and $N_\down = N-N_\up$ the particles in the spin-down state. We describe both components separately and write the total energy as
 %\begin{align} \tlabel{minimize}
@@ -146,18 +138,7 @@ $E(N_\up,L_\up) + E(N_\down,L_\down) + \Delta\cdot N_\down$
 where we have introduced the Zeeman energy shift $\Delta=\mu_\text{B} g B$ (energy measured with respect to the energy of the lower Zeeman state). We assume that every particle eventually takes part in the transfer process (adiabaticity) and consequently one quanta of angular momentum is transferred per particle. Starting from the nonrotating state at $L=0$, this imposes the transfer condition $L_\up + L_\down = L = N_\down\hbar$. Adding this condition with another Lagrange multiplier, one can quantify the transfer process as a function of $\Delta$, see \tref{fig3a}. Coming from high fields where $\Delta > \Ef$, the transfer starts right at the Fermi energy. Note that during the transfer, while $\Ef > \Delta > -\Ef$, both components ($\up$, $\down$) rotate in the same direction. Eventually all particles get transferred to the lower spin state and the total angular momentum equals $L=L_\down=N\hbar$.
 
 \section{Numerical simulation}
-\begin{figure}[t]
-    \centering
-    \subfloat[]{
-        \ig{0.4}{fig3b}
-        \tlabel{fig3b}
-    }
-    \subfloat[]{
-        \ig{0.4}{fig3c}
-        \tlabel{fig3c}
-    }
-    \caption{\tlabel{fig3}(a) Full simulation of the transfer scheme for $N=4,6$, and $8$~particles in the adiabatic limit $\gamma\rightarrow 0$. As the Zeeman splitting $\Delta$ is tuned through zero, the angular momentum increases in steps of $2\hbar$, indicating the transfer of two particle at a time. The interaction strength is given by $\dlCdd=0.1$. (b) Angular momentum at the end of the transfer for $N=6$ particles at different values of the Landau-Zener parameter $\lambda=\dlCdd^2/\dl{\gamma}$. The data points for different rates collapse onto a single curve. The solid line is a probabilistic model, fitted to the data points.}
-\end{figure}
+\doublefig{0.4}{fig3b}{ }{0.4}{fig3c}{ }{\sfA~Full simulation of the transfer scheme for $N=4,6$, and $8$~particles in the adiabatic limit $\gamma\rightarrow 0$. As the Zeeman splitting $\Delta$ is tuned through zero, the angular momentum increases in steps of $2\hbar$, indicating the transfer of two particle at a time. The interaction strength is given by $\dlCdd=0.1$. \sfB~Angular momentum at the end of the transfer for $N=6$ particles at different values of the Landau-Zener parameter $\lambda=\dlCdd^2/\dl{\gamma}$. The data points for different rates collapse onto a single curve. The solid line is a probabilistic model, fitted to the data points.}
 
 To justify the adiabaticity assumption above, we simulate the transfer process for small systems of few particles. We include all interactions mediated by $\Vdd(R,\phi)$, and assume, that the strength of the interaction $\dlCdd=(\Cdd/l_\text{HO}^3)/\hbar\omega \ll 1$ is weak compared to the Landau level splitting. Then, only a few excited states have to be taken into account.
 % -- cut --
@@ -201,7 +182,7 @@ The two important experimental requirements are a precise magnetic field control
 \end{align}
 where the length $l_\text{DDI} = m\kappa d^2/\hbar^2$ parametrizes the strength of the interaction \cite{Lu2012}. In a setup with $N\sim 10$ fermionic $^{161}\text{Dy}$ atoms, a long lifetime of $t_\text{e}=10\text{s}$ and a radial frequency of $\omega = 3\text{kHz}$ are needed to reach values of $\lambda$ on the order of $1$. We comment, however, that the transfer scheme works already for smaller values of $\lambda$.
 
-\fig{.7}{density-comparison}{density-comparison}{Density distribution $n(r)$ for different non-interacting states of $N=55$ particles. The fermionic LLL state at $L=\liqhe$ has a perfectly flat density of $1/\pi l_\text{HO}^2$ in a circular region of radial size $\sqrt{N}l_\text{HO}\approx 7.4l_\text{HO}$ while the $L=0$ ground-state is close to the well-known parabolic Thomas-Fermi distribution. The bosonic ground state is shown for comparison.}
+\fig{.7}{density-comparison}{Density distribution $n(r)$ for different non-interacting states of $N=55$ particles. The fermionic LLL state at $L=\liqhe$ has a perfectly flat density of $1/\pi l_\text{HO}^2$ in a circular region of radial size $\sqrt{N}l_\text{HO}\approx 7.4l_\text{HO}$ while the $L=0$ ground-state is close to the well-known parabolic Thomas-Fermi distribution. The bosonic ground state is shown for comparison.}
 
 % in a trap of radial frequency $\omega=1\text{kHz}$, the interaction parameter is $\dlCdd\simeq 0.01$.
 %The rate $\dl{\gamma}=\gamma/\omega = \mu \dot{B}/\hbar\omega^2$ is determined by the ramping speed $\dot{B}$ of the magnetic field. For a value of $\dot{B}=1\text{mG}/\text{s}$, the Landau-Zener parameter would be on the order of $\lambda=0.01$. It depends, however, on the radial frequency as $\lambda\sim\omega^3$ and is therefore tuneable to higher values in deeper traps.
@@ -262,7 +243,7 @@ We can calculate the ground state for small particle numbers by exact diagonaliz
 Again, we assume that the strength of the interaction $\dlCdd=(\Cdd/l_\text{HO}^3)/\hbar\omega \ll 1$ is weak compared to the Landau level splitting.
 The matrix elements of the dipolar interaction in the lowest Landau level are given in \cref{me:vlll}.
 
-\doublefig{.49}{fqhe-comparison}{\tlabel{fqhe-comparison}}{.46}{lll-excitations}{\tlabel{lll-excitations}}{fqhe}{(a) Density distributions for interacting ground states of $N=6$ particles at total angular momentum $L=\liqhe, 2\liqhe$ and $3\liqhe$. The Laughlin wave function at $m=3$ ($\nu=1/3$) is shown for comparison. (b) Ground state energy and excitation spectrum of $N=5$ particles for increasing angular momentum. The inset shows the opening gap at $L=3\liqhe$, corresponding to a filling of $\nu = 1/3$.}
+\doublefig{.49}{fqhe-comparison}{ }{.46}{lll-excitations}{ }{\sfA~Density distributions for interacting ground states of $N=6$ particles at total angular momentum $L=\liqhe, 2\liqhe$ and $3\liqhe$. The Laughlin wave function at $m=3$ ($\nu=1/3$) is shown for comparison. \sfB~Ground state energy and excitation spectrum of $N=5$ particles for increasing angular momentum. The inset shows the opening gap at $L=3\liqhe$, corresponding to a filling of $\nu = 1/3$.}
 
 \Tref{fqhe-comparison} shows the density distribution of the dipole-dipole interacting ground states for six particles. While the density is flat in the center for $L=\liqhe$, the distribution spreads to higher radii for increasing $L$. The density distribution at $L=3\liqhe$ is close to the corresponding Laughlin wave function at a filling of $\nu=1/3$. \Tref{lll-excitations} shows the ground state energy and the excitation spectrum for five particles at different total angular momentum. The decreasing energy is a consequence of the spreading density at higher angular momentum. At $L=3\liqhe$ it is possible to see evidence for a gap opening. For details, we refer to \refscite{Qiu2011,Osterloh2007}.
 
