@@ -209,16 +209,6 @@ We find that the Chern number of the lower band is $C=2$ for $-\epsilon^0_{\Gamm
 % Note that the non-trivial topology is purely a consequence of the spin-orbit coupling by dipolar interaction in combination with time-reversal symmetry breaking.
 Note that the non-trivial topology solely results from dipolar spin-orbit coupling and time-reversal symmetry breaking.
 
-\doublefig{.5}{fig3/fig3a}{ }{.27}{fig3/fig3b}{ }{\sfA~Sample-averaged Chern number $\langle C \rangle$ in the disordered system for increasing density $\rho$ of defects.
-        A single realization either yields $C=2$ or $C=0$.
-        Bars indicate two standard errors.
-        The results are shown for square lattices of size $L \times L$ with $L=10, 20, 40$
-        and a cutoff radius for the interaction $R_c \lesssim L/2$ slightly smaller than half the system size to avoid self-interaction.
-        The long-range tunneling stabilizes the topological phase for defect densities $\rho \lesssim 0.45$.
-        As a comparison, the dashed line shows the results for a $10 \times 10$ grid with tunneling only included up to the next-to-nearest neighbor, leading to a significant destabilization.
-        \sfB~Two-dimensional projection of the dispersion relation in the honeycomb lattice for $t/\bar{t}=0.54, w/\bar{t}=1.97$ and $\mu/\bar{t}=-4.54$.
-        The lowest band has a flatness ratio of $f\approx 6.4$ and a Chern number of $C=-1$.}
-
 % The main quest is then to optimize the setup in order to optimize the flatness of topological bands.
 The challenge is to find a specific setup that optimizes the flatness of the topological bands.
 This can be achieved either by focusing on different lattice structures (see honeycomb lattice below and \tref{fig3/fig3b}) or by an alternative choice for the two excitations.
@@ -232,17 +222,58 @@ The lower band has a flatness ratio of $f = \text{bandgap}/\text{bandwidth} \app
 %While not being as good as the ratios achieved in related proposals~\cite{Yao2012,Yao2013,Neupert2011,Trescher2012,Wang2011a,Yang2012}, we stress that only a single parameter $\Theta$ is `fine-tuned' here. The values of $t^+, t^1$ and $w$ for weak fields are fixed by the dipole-dipole interaction.
 
 
-Topological band structures are classified by considering equivalence classes of models that can be continuously deformed into each other without closing the energy gap~\cite{Hasan2010}.
-% In particular, the Chern number of a single band can only change if it touches another band.
-Using this idea, we can demonstrate that our model with $C=2$ is adiabatically equivalent to a system of two uncoupled copies of a $C=1$ layer (see supplementary material for details).
-% The single layer system has some interesting properties, as it can be described by a staggered magnetic flux pattern.
-The resulting single layer model can be described by a staggered flux pattern and is reminiscent of the famous Haldane model~\cite{Haldane1988}, adapted to the square lattice~\cite{Goldman2013,Li2008,Liu2010,Liu2011,Stanescu2010,Wang2011,Wang2014,Yao2012,Yao2013}.
+
+\section{Classification and double-layer picture}
+
+\doublefig{.36}{fig-supplement/fig1a}{ }{.28}{fig-supplement/fig1b}{ }{
+Hopping strengths and flux pattern of a single layer in different lattices.
+Tunneling elements without arrow are real numbers.
+Complex hoppings have the indicated strength along the arrow and the complex conjugate in the opposite direction.
+\sfA~Square lattice: A single layer can be constructed by stripes of one component along one of the primitive vectors, effectively doubling the unit cell.
+The second layer is given by a translation along the second primitive vector.
+\sfB~Honeycomb lattice: By distributing the $\ketp, \ketm$ orbitals to the two distinct sublattices it is possible to retain the symmetry of the lattice.
+The second layer is given by a $60^\circ$ rotation.
+}
+
+Topological band structures can be classified by considering equivalence classes of models that can be continuously deformed into each other without closing the energy gap~\cite{Hasan2010}.
+In particular, the Chern number of a single band can only change if it touches another band.
+Using this idea, we show that our model in its $C=2$ phase is adiabatically equivalent to a system of two uncoupled copies of a $C=1$ layer.
+
+To see this, imagine separating the two orbitals $\ketp$ and $\ketm$ per site spatially along the $z$-direction (without changing any tunneling rates) such that we obtain two separate square lattice layers, called A and B.
+Sorting all terms in the Hamiltonian into intra- and inter-layer processes, we can write
+\begin{align}
+H=H_\text{A} + H_\text{B} + \lambda H_\text{AB}
+\end{align}
+where $\lambda=1$.
+The choice which orbital resides in layer A (and B) can be made individually for each lattice site.
+In any case, the resulting two layers will be interconnected by an infinite number of tunneling links $H_\text{AB}$.
+The idea is to find a specific arrangement of the orbitals such that we can continuously let $\lambda \longrightarrow 0$ \emph{without} closing a gap in the excitation spectrum, preserving the topological phase while disentangling the layers.
+
+Focusing on layer A (layer B being simply the complement), one possible arrangement is shown in \tref{fig-supplement/fig1a}.
+The ${+}$ (${-}$) orbitals are assigned to odd (even) columns along the $y$-direction.
+For the Chern number of such a single layer we find $C=1$, using methods analogous to the ones described in the main text.
+The full system can be understood as two such layers, shifted by one lattice site in $x$-direction.
+With a unit cell twice the size of the original model, each layer contributes to one half of the full Brillouin zone, effectively doubling the Chern number to $C=2$.
+
+The single layer system has some interesting properties.
+In \tref{fig-supplement/fig1a} we show that it is possible to find a staggered magnetic flux pattern which creates the same tunneling phases as the dipole-dipole interaction, including tunneling up to the next-to-nearest neighbor level.
+The resulting single layer model is reminiscent of the famous Haldane model~\cite{Haldane1988}, adapted to the square lattice~\cite{Goldman2013,Li2008,Liu2010,Liu2011,Stanescu2010,Wang2011,Wang2014,Yao2012,Yao2013}.
+Using a site-dependent microwave dressing, it has been shown that a model similar to our single-layer system can be realized, giving rise to a $\nu=1/2$ fractional Chern insulating phase~\cite{Yao2012,Yao2013}.
 It is rather remarkable that uniform dipole-dipole interactions give rise to a model usually requiring strong modulations on the order of the lattice spacing.
-%Using a site-dependent microwave dressing, it has been shown that a model similar to our single-layer system can be realized, giving rise to a $\nu=1/2$ fractional Chern insulating phase~\cite{Yao2012,Yao2013}.
 
-
+On the honeycomb lattice, a single layer can be constructed which retains the original symmetry of the lattice, see \tref{fig-supplement/fig1b}. Here, the two bands of the single layer also have $C=\pm 1$ but occupy the same Brillouin zone as the double layer system. Consequently, the four bands of the full system are constructed from the combination of two $C=1$ and two $C=-1$ bands, giving rise to a multitude of different topological phases.
 
 \section{Influence of disorder}
+
+\doublefig{.5}{fig3/fig3a}{ }{.27}{fig3/fig3b}{ }{\sfA~Sample-averaged Chern number $\langle C \rangle$ in the disordered system for increasing density $\rho$ of defects.
+        A single realization either yields $C=2$ or $C=0$.
+        Bars indicate two standard errors.
+        The results are shown for square lattices of size $L \times L$ with $L=10, 20, 40$
+        and a cutoff radius for the interaction $R_c \lesssim L/2$ slightly smaller than half the system size to avoid self-interaction.
+        The long-range tunneling stabilizes the topological phase for defect densities $\rho \lesssim 0.45$.
+        As a comparison, the dashed line shows the results for a $10 \times 10$ grid with tunneling only included up to the next-to-nearest neighbor, leading to a significant destabilization.
+        \sfB~Two-dimensional projection of the dispersion relation in the honeycomb lattice for $t/\bar{t}=0.54, w/\bar{t}=1.97$ and $\mu/\bar{t}=-4.54$.
+        The lowest band has a flatness ratio of $f\approx 6.4$ and a Chern number of $C=-1$.}
 
 An experimental initialization with a perfectly uniform filling of one molecule per site is challenging.
 Consequently, we analyze the stability of the topological band structure for random samples with a nonzero probability $\rho$ for an empty lattice site.
@@ -437,41 +468,3 @@ For the tunneling rates we find
 \end{align}
 where $d_0=\absv{\braketop{1}{d^0}{0}}$. Note that $t^{1+}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice.
 
-\section{Double-layer picture}
-
-\doublefig{.36}{fig-supplement/fig1a}{ }{.28}{fig-supplement/fig1b}{ }{
-Hopping strengths and flux pattern of a single layer in different lattices.
-Tunneling elements without arrow are real numbers.
-Complex hoppings have the indicated strength along the arrow and the complex conjugate in the opposite direction.
-\sfA~Square lattice: A single layer can be constructed by stripes of one component along one of the primitive vectors, effectively doubling the unit cell.
-The second layer is given by a translation along the second primitive vector.
-\sfB~Honeycomb lattice: By distributing the $\ketp, \ketm$ orbitals to the two distinct sublattices it is possible to retain the symmetry of the lattice.
-The second layer is given by a $60^\circ$ rotation.
-}
-
-Topological band structures can be classified by considering equivalence classes of models that can be continuously deformed into each other without closing the energy gap~\cite{Hasan2010}.
-In particular, the Chern number of a single band can only change if it touches another band.
-Using this idea, we show that the model introduced in the main text in its $C=2$ phase is adiabatically equivalent to a system of two uncoupled copies of a $C=1$ layer.
-
-To see this, imagine separating the two orbitals $\ketp$ and $\ketm$ per site spatially along the $z$-direction (without changing any tunneling rates) such that we obtain two separate square lattice layers, called A and B.
-Sorting all terms in the Hamiltonian into intra- and inter-layer processes, we can write
-\begin{align}
-H=H_\text{A} + H_\text{B} + \lambda H_\text{AB}
-\end{align}
-where $\lambda=1$.
-The choice which orbital resides in layer A (and B) can be made individually for each lattice site.
-In any case, the resulting two layers will be interconnected by an infinite number of tunneling links $H_\text{AB}$.
-The idea is to find a specific arrangement of the orbitals such that we can continuously let $\lambda \longrightarrow 0$ \emph{without} closing a gap in the excitation spectrum, preserving the topological phase while disentangling the layers.
-
-Focusing on layer A (layer B being simply the complement), one possible arrangement is shown in \tref{fig-supplement/fig1a}.
-The ${+}$ (${-}$) orbitals are assigned to odd (even) columns along the $y$-direction.
-For the Chern number of such a single layer we find $C=1$, using methods analogous to the ones described in the main text.
-The full system can be understood as two such layers, shifted by one lattice site in $x$-direction.
-With a unit cell twice the size of the original model, each layer contributes to one half of the full Brillouin zone, effectively doubling the Chern number to $C=2$.
-
-The single layer system has some interesting properties.
-In \tref{fig-supplement/fig1a} we show that it is possible to find a staggered magnetic flux pattern which creates the same tunneling phases as the dipole-dipole interaction, including tunneling up to the next-to-nearest neighbor level.
-% The resulting model is reminiscent of the famous Haldane model~\cite{Haldane1988}, adapted to the square lattice~\cite{Goldman2013,Li2008,Liu2010,Liu2011,Stanescu2010,Wang2011,Wang2014}.
-Using a site-dependent microwave dressing, it has been shown that a model similar to our single-layer system can be realized, giving rise to a $\nu=1/2$ fractional Chern insulating phase~\cite{Yao2012,Yao2013}.
-
-On the honeycomb lattice, a single layer can be constructed which retains the original symmetry of the lattice, see \tref{fig-supplement/fig1b}. Here, the two bands of the single layer also have $C=\pm 1$ but occupy the same Brillouin zone as the double layer system. Consequently, the four bands of the full system are constructed from the combination of two $C=1$ and two $C=-1$ bands, giving rise to a multitude of different topological phases.
