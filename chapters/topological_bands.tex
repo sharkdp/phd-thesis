@@ -80,8 +80,7 @@ The first excited $m=0$ state, called $\keto$, will be used later.
 The full system, including pairwise dipole-dipole interactions between the polar molecules, is described by $H=\sum_i H^{\text{rot}}_i + \frac{1}{2}\sum_{i\ne j}H^{\text{dd}}_{ij}$.
 In the two-dimensional setup with the electric field perpendicular to the lattice, the interaction can be expressed as
 \begin{align}
-    H^{\text{dd}}_{ij}=\frac{\kappa}{|\vec{R}_{ij}|^3} &\Big[d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j) \nonumber \\
-                                                       &\quad - \frac{3}{2}\big(d^-_i d^-_j \ef{2i\phi_{ij}} + d^+_i d^+_j \ef{-2i\phi_{ij}}\big)\Big] \tlabel{ddint}
+    H^{\text{dd}}_{ij}=\frac{\kappa}{|\vec{R}_{ij}|^3} &\Big[d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j) - \frac{3}{2}\big(d^-_i d^-_j \ef{2i\phi_{ij}} + d^+_i d^+_j \ef{-2i\phi_{ij}}\big)\Big] \tlabel{ddint}
 \end{align}
 with $\kappa=1/4\pi\epsilon_0$.
 Here, $\phi_{ij}$ denotes the in-plane polar angle of the vector $\vec{R}_{ij} \equiv |\vec{R}_{ij}| \cdot (\cos \phi_{ij}, \sin \phi_{ij})^t$ which connects the two molecules at lattice sites $i$ and $j$, and the operators $d^0=d^z$ and $d^\pm=\mp (d^x\pm i d^y)/\sqrt{2}$ are the spherical components of the dipole operator.
@@ -196,7 +195,7 @@ The first two components can only vanish at the $\Gamma$ or $\text{M}$ point.
 Consequently, the gap closes iff the third component is zero at one of these two points, that is for
 % We find the two transition points
 \begin{align} % we could replace t -> -t to have eps_Gamma and eps_K here...? (But: t would be negative)
-    \mu/t &= -\epsilon^0_{\Gamma} \approx -9.03, \nonumber\\
+    \mu/t &= -\epsilon^0_{\Gamma} \approx -9.03, \\
     \mu/t &= -\epsilon^0_\text{M} = \Big(1-1/\sqrt{2}\Big)\epsilon_{\Gamma}^0 \approx +2.65.
 \end{align}
 In the gapped system, the Chern number~\cite{Hasan2010,Qi2011} can be calculated as the winding number of the normalized vector $\hat{\vec{n}}_\veck = \vec{n}_\veck/|\vec{n}_\veck|$ via
@@ -418,8 +417,8 @@ Then, the hopping amplitudes are given by
 \end{align}
 We set the spin-conserving term $t^{\pm\pm}_{ij}=-t^\pm \cdot a^3/|\vec{R}_{ij}|^3$ and the spin-flip tunneling $t^{-+}_{ij}=w \ef{2i \phi_{ij}} \cdot a^3/|\vec{R}_{ij}|^3$ to get the final expressions for the nearest-neighbor tunneling rates
 \begin{align}
-    t^+ &= \frac{\kappa d_{1}^2}{2a^3} (1 - \epsilon^2), \nonumber \\
-    t^- &= \frac{\kappa d_{1}^2}{2a^3}, \nonumber \\
+    t^+ &= \frac{\kappa d_{1}^2}{2a^3} (1 - \epsilon^2), \\
+    t^- &= \frac{\kappa d_{1}^2}{2a^3}, \\
     w &= \frac{3 \kappa d_{1}^2}{2a^3} (1-\epsilon^2/2)
 \end{align}
 with the transition dipole element $d_{1}=\absv{\braketop{-}{d^{-\vphantom{0}}}{{0}}}$.
@@ -431,21 +430,21 @@ In the absence of other techniques to shift the energy, the expression for the o
 Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
 Then, the dipole-dipole interaction can be expressed as
 \begin{align}
-    H^\text{dd}_{ij} &= \frac{\kappa}{|\vec{R}_{ij}|^3} \bigg[ f_0(\Theta, \phi_{ij} - \Phi)\, \Big( d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j\big) \Big) \nonumber \\
-                     &\hspace{1.38em} -\frac{3}{\sqrt{2}} \Big( f_1(\Theta, \phi_{ij} - \Phi) \, \big(d^0_i d^-_j + d^-_i d^0_j\big) + \hc \Big)\nonumber\\
+    H^\text{dd}_{ij} &= \frac{\kappa}{|\vec{R}_{ij}|^3} \bigg[ f_0(\Theta, \phi_{ij} - \Phi)\, \Big( d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j\big) \Big) \\
+                     &\hspace{1.38em} -\frac{3}{\sqrt{2}} \Big( f_1(\Theta, \phi_{ij} - \Phi) \, \big(d^0_i d^-_j + d^-_i d^0_j\big) + \hc \Big) \\
                      &\hspace{2.2em} -\frac{3}{2} \big( f_2(\Theta, \phi_{ij} - \Phi) \, d^-_i d^-_j + \hc \big ) \bigg]
 \end{align}
 where
 \begin{align}
-    f_0(\Theta, \phi) &= 1-3\sin^2 \Theta \cos^2 \phi\, , \nonumber \\
-    f_1(\Theta, \phi) &= \sin \Theta \cos \phi \bb{\cos \Theta \cos \phi + i \sin \phi} , \nonumber \\
+    f_0(\Theta, \phi) &= 1-3\sin^2 \Theta \cos^2 \phi\, , \\
+    f_1(\Theta, \phi) &= \sin \Theta \cos \phi \bb{\cos \Theta \cos \phi + i \sin \phi} , \\
     f_2(\Theta, \phi) &= \bb{\cos\Theta \cos\phi + i \sin \phi}^2 .
 \end{align}
 For $\Theta=0$, the interaction reduces to expression~(2) given in the main text.
 For the tunneling rates we find
 \begin{align}
-    t^{++}_{ij} &= -\frac{\kappa d_{1}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \nonumber \\
-    t^{11}_{ij} &= \frac{\kappa d_{0}^2}{R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \nonumber \\
+    t^{++}_{ij} &= -\frac{\kappa d_{1}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
+    t^{11}_{ij} &= \frac{\kappa d_{0}^2}{R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
     t^{1+}_{ij} &= \frac{3\kappa d_{0}d_{1}}{\sqrt{2}R_{ij}^3} f_1(\Theta, \phi_{ij} - \Phi)
 \end{align}
 where $d_0=\absv{\braketop{1}{d^0}{0}}$. Note that $t^{1+}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice.
