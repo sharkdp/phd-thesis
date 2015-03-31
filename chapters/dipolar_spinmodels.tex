@@ -359,3 +359,124 @@ Including all states in \tref{dipole-moments} and a (possibly) tilted electric f
 % $\epsilon^0_{\veck} \approx \epsilon^0_{\Gamma} - 2\pi |\veck|a$ and
 % $\epsilon^2_{\veck} \approx -\frac{2\pi}{3} |\veck|a \ef{2i \varphi}$.
 % Here, $\epsilon^0_{\Gamma} \approx 9.03$ and $\varphi$ is defined by $\hat{\veck}=(\cos \varphi, \sin \varphi)^t$.
+
+
+\section{Bosonic models for the excitations}
+
+We assume a generic level structure of the kind shown in \tref{dipole-moments} with a ground state called $\ketz$ and three excited states $\keto, \ketpm$. The only requirement on these states is that
+\begin{align}
+    \braketop{m+\delta}{d_\Delta}{m} \ll d_0 \text{ for } \delta \ne \Delta
+\end{align}
+where $d_0, d_\pm$ are the dipole operators, defined with respect to the electric field axis.
+In particular, this requirement will be fulfilled for arbitrary electric field strengths. However, this also includes microwave dressed states, even with circularly polarized light, coupling states with different $m$.
+
+To shorten the notation, we define the following transition dipole matrix elements:
+\begin{align}
+    d_0 &= \absv{ \smallbraketop{1}{d^0}{0} } \\
+    d_+ &= \absv{ \smallbraketop{{+}}{d^+}{0} } \\
+    d_- &= \absv{ \smallbraketop{{-}}{d^-}{0} }
+\end{align}
+Then, using \refandpage{ds:tensortilted} we can write the tunneling part as
+\begin{align}
+    \hamil = \sum_{i\ne j} \frac{\kappa}{\absv{\vecR_{ij}}^3}
+    \begin{pmatrix}
+        \bop_{j,+} \\
+        \bop_{j,1} \\
+        \bop_{j,-}
+    \end{pmatrix}^{\dag}
+    \begingroup
+        \renewcommand*{\arraystretch}{1.5}
+        \begin{pmatrix}
+            -\frac{d_+^2}{2} f_0 & -\frac{3d_0d_+}{\sqrt{2}} f_1^* & \frac{3d_+d_-}{2} f_2^* \\
+            \cdot & \frac{d_0^2}{2} f_0 & -\frac{3d_0d_-}{\sqrt{2}} f_1^* \\
+            \cdot & \cdot & -\frac{d_-^2}{2} f_0 \\
+        \end{pmatrix}
+    \endgroup
+    \begin{pmatrix}
+        \bop_{i,+} \\
+        \bop_{i,1} \\
+        \bop_{i,-}
+    \end{pmatrix}^{\vphantom\dag}
+\end{align}
+where the functions $f_m = f_m(\Theta_0, \bar\Phi) = f_m(\Theta_0, \phi_{ij} - \Phi_0)$ depend on the electric field direction and the relative angle $\phi_{ij}$ between the dipoles, see \cref{ds:fmfunctions}.
+
+To simplify the notation, we introduce the expressions
+\begin{align}
+    t^\alpha &= \frac{\kappa d_\alpha^2}{2a^3} \\
+    w &= \frac{3\kappa d^+d^-}{2a^3}
+\end{align}
+
+\subsection{The +- model}
+\begin{align}
+    \hamil = \sum_{i\ne j} \frac{a^3}{\absv{\vecR_{ij}}^3}
+    \begin{pmatrix}
+        \bop_{j,+} \\
+        \bop_{j,-}
+    \end{pmatrix}^{\dag}
+    \begingroup
+        \renewcommand*{\arraystretch}{1.5}
+        \begin{pmatrix}
+            -t^+ f_0 & w f_2^* \\
+            w f_2 & -t^- f_0 \\
+        \end{pmatrix}
+    \endgroup
+    \begin{pmatrix}
+        \bop_{i,+} \\
+        \bop_{i,-}
+    \end{pmatrix}^{\vphantom\dag}
+\end{align}
+
+
+
+\section{Microscopic form of the parameters}
+\tlabel{microscopic}
+In the presence of the static electric field, we denote the lowest rotational states having $m=0, \pm 1$ by $\ketz$ and $\ketpm$, respectively.
+In addition, let $\ket{m=2}$ be the lowest $m=2$ state.
+A microwave with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$ couples the states $\ketp$ and $\ket{m=2}$.
+For a large detuning $\Delta \gg \Omega, V$, the number of $\ketp$ (and $\ketm$) excitations is conserved.
+In the rotating frame, within rotating wave approximation, the AC-dressed $\ketp$ state is given by
+\begin{align}
+    \ketp_\text{ac} &= \bb{1-\epsilon^2/2}\ketp - \epsilon \ket{m=2}
+\end{align}
+up to second order in $\epsilon=\Omega/2\Delta$.
+For sufficiently strong electric fields, the states $\ketz$ and $\ketm$ are essentially unaffected by the microwave.
+To avoid cluttering of notation, we also drop the \emph{ac} label of the $\ketp$ state.
+
+To derive the parameters of the bosonic Hamiltonian, we introduce the vacuum state $\ket{\text{vac}}=\prod_k \ketz_k$ and the single particle states $\ket{\Psi_{i,\pm}}=\bopd_{i,\pm} \ket{\text{vac}}$.
+Then, the hopping amplitudes are given by
+\begin{align}
+    t^{\alpha\beta}_{ij} &= \braketop{\Psi_{i,\alpha}}{H^\text{dd}}{\Psi_{j,\beta}}.
+\end{align}
+We set the spin-conserving term $t^{\pm\pm}_{ij}=-t^\pm \cdot a^3/|\vec{R}_{ij}|^3$ and the spin-flip tunneling $t^{-+}_{ij}=w \ef{2i \phi_{ij}} \cdot a^3/|\vec{R}_{ij}|^3$ to get the final expressions for the nearest-neighbor tunneling rates
+\begin{align}
+    t^+ &= \frac{\kappa d_{1}^2}{2a^3} (1 - \epsilon^2), \\
+    t^- &= \frac{\kappa d_{1}^2}{2a^3}, \\
+    w &= \frac{3 \kappa d_{1}^2}{2a^3} (1-\epsilon^2/2)
+\end{align}
+with the transition dipole element $d_{1}=\absv{\braketop{-}{d^{-\vphantom{0}}}{{0}}}$.
+The evaluation of the dipole matrix elements for finite electric fields is straightforward and has been described in detail~\cite{Micheli2007}.
+
+In the absence of other techniques to shift the energy, the expression for the offset between the $\ketp$ and $\ketm$ state is given by the AC Stark shift $\Omega^2/4\Delta\equiv 2\mu$.
+
+\subsection{Model with \texorpdfstring{$\ketp$}{+} and \texorpdfstring{$\keto$}{1} state}
+Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
+Then, the dipole-dipole interaction can be expressed as
+\begin{align}
+    H^\text{dd}_{ij} &= \frac{\kappa}{|\vec{R}_{ij}|^3} \bigg[ f_0(\Theta, \phi_{ij} - \Phi)\, \Big( d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j\big) \Big) \\
+                     &\hspace{1.38em} -\frac{3}{\sqrt{2}} \Big( f_1(\Theta, \phi_{ij} - \Phi) \, \big(d^0_i d^-_j + d^-_i d^0_j\big) + \hc \Big) \\
+                     &\hspace{2.2em} -\frac{3}{2} \big( f_2(\Theta, \phi_{ij} - \Phi) \, d^-_i d^-_j + \hc \big ) \bigg]
+\end{align}
+where
+\begin{align}
+    f_0(\Theta, \phi) &= 1-3\sin^2 \Theta \cos^2 \phi\, , \\
+    f_1(\Theta, \phi) &= \sin \Theta \cos \phi \bb{\cos \Theta \cos \phi + i \sin \phi} , \\
+    f_2(\Theta, \phi) &= \bb{\cos\Theta \cos\phi + i \sin \phi}^2 .
+\end{align}
+For $\Theta=0$, the interaction reduces to the expression given in \tref{ddint}.
+For the tunneling rates we find
+\begin{align}
+    t^{++}_{ij} &= -\frac{\kappa d_{1}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
+    t^{11}_{ij} &= \frac{\kappa d_{0}^2}{R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
+    t^{1+}_{ij} &= \frac{3\kappa d_{0}d_{1}}{\sqrt{2}R_{ij}^3} f_1(\Theta, \phi_{ij} - \Phi)
+\end{align}
+where $d_0=\absv{\braketop{1}{d^0}{0}}$. Note that $t^{1+}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice.
