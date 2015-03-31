@@ -119,8 +119,8 @@ To simplify the notation, we introduce the expressions
 
 
 \section{Microscopic form of the parameters}
-% $\ketp$ and $\ketm$ states:
-As described in the main text, in the presence of the static electric field, we denote the lowest rotational states having $m=0, \pm 1$ by $\ketz$ and $\ketpm$, respectively.
+\tlabel{microscopic}
+In the presence of the static electric field, we denote the lowest rotational states having $m=0, \pm 1$ by $\ketz$ and $\ketpm$, respectively.
 In addition, let $\ket{m=2}$ be the lowest $m=2$ state.
 A microwave with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$ couples the states $\ketp$ and $\ket{m=2}$.
 For a large detuning $\Delta \gg \Omega, V$, the number of $\ketp$ (and $\ketm$) excitations is conserved.
@@ -130,9 +130,9 @@ In the rotating frame, within rotating wave approximation, the AC-dressed $\ketp
 \end{align}
 up to second order in $\epsilon=\Omega/2\Delta$.
 For sufficiently strong electric fields, the states $\ketz$ and $\ketm$ are essentially unaffected by the microwave.
-% To avoid cluttering of notation, we drop the \emph{ac} index on the $\ketp$ state.
+To avoid cluttering of notation, we also drop the \emph{ac} label of the $\ketp$ state.
 
-To derive the parameters of the hopping Hamiltonian~(3) in the main text, we introduce the vacuum state $\ket{\text{vac}}=\prod_k \ketz_k$ and the single particle states $\ket{\Psi_{i,\pm}}=\bopd_{i,\pm} \ket{\text{vac}}$.
+To derive the parameters of the hopping Hamiltonian in \tref{hrealspace}, we introduce the vacuum state $\ket{\text{vac}}=\prod_k \ketz_k$ and the single particle states $\ket{\Psi_{i,\pm}}=\bopd_{i,\pm} \ket{\text{vac}}$.
 Then, the hopping amplitudes are given by
 \begin{align}
     t^{\alpha\beta}_{ij} &= \braketop{\Psi_{i,\alpha}}{H^\text{dd}}{\Psi_{j,\beta}}.
@@ -162,7 +162,7 @@ where
     f_1(\Theta, \phi) &= \sin \Theta \cos \phi \bb{\cos \Theta \cos \phi + i \sin \phi} , \\
     f_2(\Theta, \phi) &= \bb{\cos\Theta \cos\phi + i \sin \phi}^2 .
 \end{align}
-For $\Theta=0$, the interaction reduces to expression~(2) given in the main text.
+For $\Theta=0$, the interaction reduces to the expression given in \tref{ddint}.
 For the tunneling rates we find
 \begin{align}
     t^{++}_{ij} &= -\frac{\kappa d_{1}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
@@ -228,7 +228,7 @@ The interaction Hamiltonian reduces to
     \tlabel{hrealspace}
 \end{align}
 where we use the spinor notation $\psiopd_j = \big( \bopd_{j,+} , \bopd_{j,-} \big)$.
-The energy scale of the hopping rates $t^+$, $t^-$, and $w$ is given by $V$. The precise form depends on the microscopic parameters and is detailed in the supplementary material.
+The energy scale of the hopping rates $t^+$, $t^-$, and $w$ is given by $V$. The precise form depends on the microscopic parameters and is detailed in the \tref{microscopic}.
 Note that $t^{+} = t^{-}$ without the applied microwave.
 In momentum space with $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$, including the internal energy $H_{i}^{\text{rot}}$ of the excitations $|\pm\rangle_{i}$, the Hamiltonian can be rewritten as
 \begin{align}
@@ -268,6 +268,8 @@ The latter has a lower band with flatness $f\approx 1$.
 Note: The two '$\text{X}$' points $(\pi/a,0)$ and $(0, \pi/a)$ are not equivalent in this model as the electric field breaks the $x/y$ symmetry.
 }
 
+\section{Dispersion relation and Chern number}
+\tlabel{chernnumber}
 In the presence of time-reversal symmetry, represented by $\mathcal{T}=\sigma_x \mathcal{K}$ with $\mathcal{K}$ being complex conjugation, the system reduces to the one discussed in \refcite{Syzranov2014}.
 At the $\mathcal{T}$-invariant point, i.e. $t=\mu=0$, the two energy bands of the system exhibit a band touching at the high-symmetry points $\Gamma=(0,0)$ and $\text{M}=(\pi/a, \pi/a)$ where $\epsilon^2_\veck$ vanishes, see \tref{fig2a}.
 The touching at the $\Gamma$ point is linear due to the low-momentum behavior of $\epsilon^m_\veck$.
@@ -339,7 +341,7 @@ The idea is to find a specific arrangement of the orbitals such that we can cont
 
 Focusing on layer A (layer B being simply the complement), one possible arrangement is shown in \tref{fig-supplement/fig1a}.
 The ${+}$ (${-}$) orbitals are assigned to odd (even) columns along the $y$-direction.
-For the Chern number of such a single layer we find $C=1$, using methods analogous to the ones described in the main text.
+For the Chern number of such a single layer we find $C=1$, using methods analogous to the ones described in \tref{chernnumber}.
 The full system can be understood as two such layers, shifted by one lattice site in $x$-direction.
 With a unit cell twice the size of the original model, each layer contributes to one half of the full Brillouin zone, effectively doubling the Chern number to $C=2$.
 
