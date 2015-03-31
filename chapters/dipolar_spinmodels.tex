@@ -9,6 +9,7 @@ Proposals for simulating spin systems
     \item with polar molecules \cite{Micheli2006,Hauke2010,Gorshkov2011,Gorshkov2011b,Peter2012b,Syzranov2014,Peter2014}
 \end{itemize}
 
+
 \section{Physical implementations of dipolar systems}
 
 In this section we briefly review some of the possible realizations for dipolar spin
@@ -107,7 +108,6 @@ Conversely, if the dipoles point along the lattice direction, we can set $\theta
 \sfB~Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions \qu{downwards}.}
 
 
-\noindent
 Here we consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an external polarizing field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}, determined by the spherical angles $\Theta_0$ and $\Phi_0$:
 \begin{align}
     \vec{\hat{E}}=\begin{pmatrix}
@@ -185,7 +185,7 @@ In total, the tensorial part of the dipole-dipole interaction is given by
 The different dipolar models throughout this thesis will be largely determined by a particular choice of internal states of the dipoles. These states can be additionally \qu{dressed} by external external DC and AC fields, with the details depending on the particular physical realization.
 In the following, we look at several specific choices. Each of them corresponds to a rise in complexity compared to the previous one, but also intruduces additional properties and characteristics.
 
-\subsection{Two-level dipoles: Realizing Ising and XY interactions}
+\subsection{Realizing Ising and XY interactions}
 \tlabel{xxz}
 Here, we assume that we have chosen two states, denoted as $\ketz$ and $\keto$, which have the
 same $M$ quantum number (see~\tref{dipole-moments}).
@@ -196,6 +196,7 @@ We define the (transition) dipole elements
     d_1 = \smallbraketop{1}{d^0}{1},\qquad
     q_1 = |\smallbraketop{1}{d^0}{0}| = |\smallbraketop{0}{d^0}{1}|.
 \end{align}
+The evaluation of these dipole matrix elements for polar molecules in the presence of external fields is straightforward and has been described in detail elsewhere~\cite{Micheli2007}.
 Using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can now express the
 dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
 \begin{align}
@@ -205,16 +206,12 @@ dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
 where we have neglected all processes which are not energy-conserving,
 i.e. terms that do not conserve the number of excitations.
 Using $\sz = P^1 - P^0$ and $\id = P^1 + P^0$ we find
-\begin{align}
+\begin{align} \tlabel{xyfull}
     \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j)\\
               &\qquad\qquad + \frac{d_1^2 - d_0^2}{4} (\sz_i + \sz_j)  + \frac{(d_1+d_0)^2}{4} \Big].
 \end{align}
 Here, the first two terms describe Ising- and XY-type interactions between the two-level dipoles. The third term is equivalent to a magnetic field in $z$ direction and the last term is a constant energy offset. Typically, we will be interested in the interaction terms in the first line. Note, however, that the \qu{magnetic field} term and the constant offset depend on the positions of all other dipoles. If the system is not translationally invariant, these terms
 describe spatially dependent contributions.
-% \begin{align}
-% D_\text{int}&=\frac{(d_1-d_0)^2}{4} \sigma_z \sigma_z + \absvsq{d_{\up}} (\sigma_+ \sigma_- + \sigma_- \sigma_+)\\
-% &= (d_1-d_0)^2 S_z S_z + 2\absvsq{d_{\up}} (S_x S_x + S_y S_y)
-% \end{align}
 
 \paragraph{Dipolar XXZ Hamiltonian}
 Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can write the interaction Hamiltonian for all dipoles as
@@ -225,12 +222,11 @@ Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can
 \end{align}
 where $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. The lattice constant $a$ has been introduced for future convenience.
 This model is reminescent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. For special values of the $\theta$ parameter, this model describes an Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) or XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior} of this thesis.
-%Thus, $\tan \theta = 2q_1^2/(d_1-d_0)^2$.
 
-\subsection{Two-level dipoles: Angular momentum difference}
+\subsection{Angular momentum difference}
 \tlabel{twoleveldm}
 In this (related) case, we replace the upper state $\keto$ by the $M=1$ state $\ketp$, see \tref{dipole-moments}, and proceed similarly as before.
-The relevant dipole matrix elements are\footnote{The sign difference in the last term is due to $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = \smallbraketop{+}{- d^+}{0}^*$.Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements.}
+The relevant dipole matrix elements are\footnote{Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements. Be aware, however, that $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = -\smallbraketop{+}{d^+}{0}^*$ due to the definition of $d^\pm$.}
 \begin{align}
     d_0 = \smallbraketop{0}{d^0}{0},\qquad
     d_+ = \smallbraketop{+}{d^0}{+},\qquad
@@ -257,35 +253,36 @@ Then, including the energy non-conserving terms proportional to $\sminus_i\sminu
 \end{align}
 This type of interaction will be used in~\cref{dipolar_fermions}, where we make use of the dipolar relaxation terms.
 
-\subsection{Three-level dipoles: Spin-orbit coupling}
-Using a dipole with three internal states, we investigate a \textsf{V}-level scheme including the states $\ketz, \ketp$ and $\ketm$ with dipole matrix elements
+
+\section{Excitation hopping: mapping to hard-core bosons}
+
+\subsection{Two-level dipoles}
+%TODO
+%Holstein - Primakoff
+Take the spin model from \tref{xyfull}
 \begin{align}
+    H &= \frac{1}{2} \sum_{i\ne j} \frac{\kappa}{R_{ij}^3} \bc{ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) }
+\end{align}
+and introduce the HC operators $\bopd_i=\sigma^+_i$, $\bop_i=\sigma^-_i$. They fulfill
+Then,
+\begin{align}
+    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j)
+\end{align}
+
+\subsection{Three-level dipoles: spin-orbit coupling}
+Using a dipole with three internal states, we investigate a \textsf{V}-level scheme including the states $\ketz, \ketp$ and $\ketm$ with dipole matrix elements
+\begin{align} \tlabel{dipolemomentspm}
     d_0 = \smallbraketop{0}{d^0}{0}, \qquad
     d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
     q_\pm &= |\smallbraketop{\pm}{d^\pm}{0}|.
 \end{align}
-%
-% Then, we define $R=\ketbra{0}{{+}}$ and $L=\ketbra{0}{{-}}$, as well as projectors $P^0, P^\pm$.
-% \begin{align}
-%     d^0 &= d_0 P^0 + d_+ P^+ + d_- P^- \\
-%     d^+ &= d_{+0} R^\dag - d_{-0} L \\
-%     d^- &= d_{+0} R - d_{-0} L^\dag
-% \end{align}
-% using this, we can write
-% \begin{align}
-%     d^0_i d^0_j &= (d_0 P^0_i + d_+ P^+_i + d_- P^-_i)(d_0 P^0_j + d_+ P^+_j + d_- P^-_j) \\
-%     d^+_i d^-_j + d^-_i d^+_j &= d_{+0}^2 R^\dag_i R_j + d_{-0}^2 L^\dag_i L_j + \hc \\
-%     d^+_i d^+_j &= - d_{+0}d_{-0} R^\dag_i L_j
-% \end{align}
-% neglecting excitation-nonconserving terms
-%
-Then, we define $\bop_\pm=\ketbra{0}{{\pm}}$, and write the dipole operator in terms of the bosonic operators
+As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$, and write the dipole operator in terms of these:
 \begin{align}
     d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
     d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
     d^- &= - q_+ \bop_+  + q_- \bopd_-.
 \end{align}
-using this, we can write
+using this, we can write the relevant parts of the dipole-dipole interaction as
 \begin{align}
     d^0_i d^0_j &= d_0^2 + d_0(d_+-d_0) (\nop_{+,i}+\nop_{+,j}) + d_0(d_--d_0) (\nop_{-,i}+\nop_{-,j}) \\
                 &\quad + (d_+ - d_0)^2 \nop_{+,i} \nop_{+,j} + (d_- - d_0)^2 \nop_{-,i} \nop_{-,j} \\
@@ -293,11 +290,12 @@ using this, we can write
     d^+_i d^-_j &= - q_+^2 \bopd_{+,i} \bop_{+,j} - q_-^2 \bopd_{-,j} \bop_{-,i} \\
     d^+_i d^+_j &= - q_+q_- \, \bopd_{+,i} \bop_{-,j}
 \end{align}
-neglecting excitation-nonconserving terms. Then, dropping the constant terms and \qu{magnetic fields}, we find:
+where we have neglected any excitation-nonconserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find:
 \begin{align}
-    \Hdd_{ij} = \sum_{\alpha,\beta} \bc{ t_{ij}^{\alpha\beta} \bopd_{\alpha,i} \bop_{\beta,j} + V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j} }
+    H = \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j}  t_{ij}^{\alpha\beta} \bopd_{\alpha,i} \bop_{\beta,j}
+    +\frac{1}{2}\sum_{i\ne j} V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j}
 \end{align}
-where
+where summation over the $\alpha, \beta$ indices, labelling the internal state of the excitation, is assumed. The tunneling rates and interaction matrix elements are given by
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} & \frac{3q_+q_-}{2} \ef{-2i \phi_{ij}} \\
@@ -305,6 +303,31 @@ where
 \end{pmatrix}, \\
     V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0).
 \end{align}
+Introducing the lattice spacing $a$, we can define the nearest-neighbor tunneling rates
+\begin{align} \tlabel{nnrates}
+    t^+ = \frac{\kappa q_{+}^2}{2a^3},\qquad
+    t^- = \frac{\kappa q_{-}^2}{2a^3},\qquad
+    w = \frac{3 \kappa q_{+}q_{-}}{2a^3}.
+\end{align}
+Using these, the single-particle tunneling part of the Hamiltonian can be written as
+\begin{align}
+    H_\text{single} = \sum_{i\ne j} \frac{a^3}{R_{ij}^3}
+    \begin{pmatrix}
+        \bop_{i,+} \\
+        \bop_{i,-}
+    \end{pmatrix}^{\!\dag}
+    \begin{pmatrix}
+        -t^+ & w \ef{-2i \phi_{ij}} \\
+        w \ef{2i \phi{ij}} & -t^- \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        \bop_{j,+} \\
+        \bop_{j,-}
+    \end{pmatrix}^{\vphantom\dag}.
+\end{align}
+This model is the basis for the realization of topological band structures in \cref{topological_bands}.
+
+
 
 \paragraph{One-dimensional system}
 In one dimension, we can always choose $\phi_{ij}=0$. Furthermore, if $q_+=q_-$, the tunneling
@@ -321,35 +344,32 @@ tunneling part can be diagonalized:
     \end{pmatrix}.
 \end{align}
 If the energy of the $\ket{x}, \ket{y}$ manifold is low enough compared to the $\ketz$ state, this
-causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. This quantum phase transition has been investigated beyond mean-field theory in~\cite{Klinsmann2011,Klinsmann2014}.
+causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. This quantum phase transition has been investigated in \refscite{Klinsmann2011,Klinsmann2014}.
 % TODO: rewrite this paragraph
 
 \subsection{General case in a tilted external field}
-Including all states in \tref{dipole-moments} and a (possibly) tilted external field, we find
+% TODO: dipole moments
+Including all four states in \tref{dipole-moments} and a (possibly) tilted external field, we find the tunneling matrix elements
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} f_0 & \frac{3q_+ q_1}{\sqrt{2}} f_1^* & \frac{3q_+q_-}{2} f_2^* \\
-    \frac{3q_+q_1}{\sqrt{2}} f_1 & q_1^2 f_0 & \frac{3q_1q_-}{\sqrt{2}} f_1^* \\
-    \frac{3q_+q_-}{2} f_2 & \frac{3q_1q_-}{\sqrt{2}} f_1 & -\frac{q_-^2}{2} f_0
-\end{pmatrix}
+    \frac{3q_+q_1}{\sqrt{2}} f_1 & q_1^2 f_0 & -\frac{3q_1q_-}{\sqrt{2}} f_1^* \\
+    \frac{3q_+q_-}{2} f_2 & -\frac{3q_1q_-}{\sqrt{2}} f_1 & -\frac{q_-^2}{2} f_0
+\end{pmatrix}.
 \end{align}
-
-% \section{Single-excitation band structure}
-% Neglecting the interaction terms, we write the general single-particle Hamiltonian as
+Here, $f_m = f_m(\Theta_0, \phi_{ij}-\Phi_0)$ are the functions defined in \tref{fmfunctions}.
+% For the tunneling rates we find
 % \begin{align}
-%     H = \sum_{i,j,\alpha,\beta} t^{\alpha \beta}_{ij} \bopd_{i \alpha}\bop_{j \beta},\qquad t^{\alpha \beta}_{ij} \sim |\vecR_{ij}|^{-3} f_{(\beta-\alpha)}(\Theta_0, \Phi_{ij} - \Phi_0).
+%     t^{\pm \pm}_{ij} &= -\frac{\kappa q_{\pm}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
+%     t^{11}_{ij} &= \frac{\kappa q_{1}^2}{R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
+%     t^{1+}_{ij} &= \frac{3\kappa q_{1}q_{+}}{\sqrt{2}R_{ij}^3} f_1(\Theta, \phi_{ij} - \Phi), \\
+%     t^{1-}_{ij} &= -\frac{3\kappa q_{1}q_{-}}{\sqrt{2}R_{ij}^3} f_1^*(\Theta, \phi_{ij} - \Phi) \\
+%     t^{-+}_{ij} &= \frac{3\kappa q_{+}q_{-}}{2 R_{ij}^3} f_2(\Theta, \phi_{ij} - \Phi)
 % \end{align}
-% Here, the $f$ functions for negative $m$ are defined by $f_{-m}=f_m^*$.
+Note that $t^{1+}_{ij}=t^{1-}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice. % TODO
 
-% \todo{Fourier trafo}
-
-% We see that the relevant terms are given by
-% \begin{align}
-%     \sum_{\vecR\ne 0} \frac{\ef{i\veck\vecR}}{R^3} f_m(\Theta_0, \Phi_{\vecR} - \Phi_0)
-% \end{align}
-
-
-\section{Excitation hopping: mapping to hard-core bosons}
+% \paragraph{Gamma scheme} % TODO: do we need this paragraph?
+% Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
 
 % We assume a generic level structure of the kind shown in \tref{dipole-moments} with a ground state called $\ketz$ and three excited states $\keto, \ketpm$. The only requirement on these states is that
 % \begin{align}
@@ -357,13 +377,6 @@ Including all states in \tref{dipole-moments} and a (possibly) tilted external f
 % \end{align}
 % where $d_0, d_\pm$ are the dipole operators, defined with respect to the external field axis.
 % In particular, this requirement will be fulfilled for arbitrary electric field strengths. However, this also includes microwave dressed states, even with circularly polarized light, coupling states with different $m$.
-
-% To shorten the notation, we define the following transition dipole matrix elements:
-% \begin{align}
-%     d_0 &= \absv{ \smallbraketop{1}{d^0}{0} } \\
-%     d_+ &= \absv{ \smallbraketop{{+}}{d^+}{0} } \\
-%     d_- &= \absv{ \smallbraketop{{-}}{d^-}{0} }
-% \end{align}
 % Then, using \refandpage{ds:tensortilted} we can write the tunneling part as
 % \begin{align}
 %     H = \sum_{i\ne j} \frac{\kappa}{\absv{\vecR_{ij}}^3}
@@ -388,84 +401,15 @@ Including all states in \tref{dipole-moments} and a (possibly) tilted external f
 % \end{align}
 % where the functions $f_m = f_m(\Theta_0, \bar\Phi) = f_m(\Theta_0, \phi_{ij} - \Phi_0)$ depend on the external field direction and the relative angle $\phi_{ij}$ between the dipoles, see \cref{ds:fmfunctions}.
 
-To simplify the notation, we introduce the expressions
-\begin{align}
-    t^\alpha &= \frac{\kappa d_\alpha^2}{2a^3} \\
-    w &= \frac{3\kappa d^+d^-}{2a^3}
-\end{align}
+% To simplify the notation, we introduce the expressions
+% \begin{align}
+%     t^\alpha &= \frac{\kappa d_\alpha^2}{2a^3} \\
+%     w &= \frac{3\kappa d^+d^-}{2a^3}
+% \end{align}
 
-\subsection{Two-level dipoles}
-
-\subsection{Three-level dipoles}
-\paragraph{V scheme}
-% TODO
-\begin{align}
-    H = \sum_{i\ne j} \frac{a^3}{\absv{\vecR_{ij}}^3}
-    \begin{pmatrix}
-        \bop_{j,+} \\
-        \bop_{j,-}
-    \end{pmatrix}^{\dag}
-    \begingroup
-        \renewcommand*{\arraystretch}{1.5}
-        \begin{pmatrix}
-            -t^+ f_0 & w f_2^* \\
-            w f_2 & -t^- f_0 \\
-        \end{pmatrix}
-    \endgroup
-    \begin{pmatrix}
-        \bop_{i,+} \\
-        \bop_{i,-}
-    \end{pmatrix}^{\vphantom\dag}
-\end{align}
-
-In the presence of the static electric field, we denote the lowest rotational states having $m=0, \pm 1$ by $\ketz$ and $\ketpm$, respectively.
-In addition, let $\ket{m=2}$ be the lowest $m=2$ state.
-A microwave with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$ couples the states $\ketp$ and $\ket{m=2}$.
-For a large detuning $\Delta \gg \Omega, V$, the number of $\ketp$ (and $\ketm$) excitations is conserved.
-In the rotating frame, within rotating wave approximation, the AC-dressed $\ketp$ state is given by
-\begin{align}
-    \ketp_\text{ac} &= \bb{1-\epsilon^2/2}\ketp - \epsilon \ket{m=2}
-\end{align}
-up to second order in $\epsilon=\Omega/2\Delta$.
-For sufficiently strong electric fields, the states $\ketz$ and $\ketm$ are essentially unaffected by the microwave.
-To avoid cluttering of notation, we also drop the \emph{ac} label of the $\ketp$ state.
-
-To derive the parameters of the bosonic Hamiltonian, we introduce the vacuum state $\ket{\text{vac}}=\prod_k \ketz_k$ and the single particle states $\ket{\Psi_{i,\pm}}=\bopd_{i,\pm} \ket{\text{vac}}$.
-Then, the hopping amplitudes are given by
-\begin{align}
-    t^{\alpha\beta}_{ij} &= \braketop{\Psi_{i,\alpha}}{H^\text{dd}}{\Psi_{j,\beta}}.
-\end{align}
-We set the spin-conserving term $t^{\pm\pm}_{ij}=-t^\pm \cdot a^3/|\vec{R}_{ij}|^3$ and the spin-flip tunneling $t^{-+}_{ij}=w \ef{2i \phi_{ij}} \cdot a^3/|\vec{R}_{ij}|^3$ to get the final expressions for the nearest-neighbor tunneling rates
-\begin{align}
-    t^+ &= \frac{\kappa d_{1}^2}{2a^3} (1 - \epsilon^2), \\
-    t^- &= \frac{\kappa d_{1}^2}{2a^3}, \\
-    w &= \frac{3 \kappa d_{1}^2}{2a^3} (1-\epsilon^2/2)
-\end{align}
-with the transition dipole element $d_{1}=\absv{\braketop{-}{d^{-\vphantom{0}}}{{0}}}$.
-The evaluation of the dipole matrix elements for finite electric fields is straightforward and has been described in detail~\cite{Micheli2007}.
-
-In the absence of other techniques to shift the energy, the expression for the offset between the $\ketp$ and $\ketm$ state is given by the AC Stark shift $\Omega^2/4\Delta\equiv 2\mu$.
-
-
-\paragraph{Gamma scheme}
-Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
-Then, the dipole-dipole interaction can be expressed as
-\begin{align}
-    H^\text{dd}_{ij} &= \frac{\kappa}{|\vec{R}_{ij}|^3} \bigg[ f_0(\Theta, \phi_{ij} - \Phi)\, \Big( d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j\big) \Big) \\
-                     &\hspace{1.38em} -\frac{3}{\sqrt{2}} \Big( f_1(\Theta, \phi_{ij} - \Phi) \, \big(d^0_i d^-_j + d^-_i d^0_j\big) + \hc \Big) \\
-                     &\hspace{2.2em} -\frac{3}{2} \big( f_2(\Theta, \phi_{ij} - \Phi) \, d^-_i d^-_j + \hc \big ) \bigg]
-\end{align}
-where
-\begin{align}
-    f_0(\Theta, \phi) &= 1-3\sin^2 \Theta \cos^2 \phi\, , \\
-    f_1(\Theta, \phi) &= \sin \Theta \cos \phi \bb{\cos \Theta \cos \phi + i \sin \phi} , \\
-    f_2(\Theta, \phi) &= \bb{\cos\Theta \cos\phi + i \sin \phi}^2 .
-\end{align}
-For $\Theta=0$, the interaction reduces to the expression given in \tref{ddint}.
-For the tunneling rates we find
-\begin{align}
-    t^{++}_{ij} &= -\frac{\kappa d_{1}^2}{2R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
-    t^{11}_{ij} &= \frac{\kappa d_{0}^2}{R_{ij}^3} f_0(\Theta, \phi_{ij} - \Phi), \\
-    t^{1+}_{ij} &= \frac{3\kappa d_{0}d_{1}}{\sqrt{2}R_{ij}^3} f_1(\Theta, \phi_{ij} - \Phi)
-\end{align}
-where $d_0=\absv{\braketop{1}{d^0}{0}}$. Note that $t^{1+}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice.
+% To derive the parameters of the bosonic Hamiltonian, we introduce the vacuum state $\ket{\text{vac}}=\prod_k \ketz_k$ and the single particle states $\ket{\Psi_{i,\pm}}=\bopd_{i,\pm} \ket{\text{vac}}$.
+% Then, the hopping amplitudes are given by
+% \begin{align}
+    % t^{\alpha\beta}_{ij} &= \smallbraketop{\Psi_{i,\alpha}}{H^\text{dd}}{\Psi_{j,\beta}}.
+% \end{align}
+% We set the spin-conserving term $t^{\pm\pm}_{ij}=-t^\pm \cdot a^3/|\vec{R}_{ij}|^3$ and the spin-flip tunneling $t^{-+}_{ij}=w \ef{2i \phi_{ij}} \cdot a^3/|\vec{R}_{ij}|^3$ to get the final expressions for the nearest-neighbor tunneling rates
