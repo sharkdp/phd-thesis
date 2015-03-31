@@ -19,7 +19,7 @@ mention NV centers
 \subsection{Polar molecules}
 While we focus on polar molecules, the physics and energy scale are very similar
 in Rydberg atoms.
-\todo{Rotor states, DC and AC dressing}
+% TODO: Rotor states, DC and AC dressing
 
 KRb \cite{Ni2008b,Ospelkaus2010}
 NaK \cite{Wu2012a}
@@ -99,16 +99,16 @@ Conversely, if the dipoles point along the lattice direction, we can set $\theta
     D^{(1D,\parallel)}_{ij} &= -2 d_i^0 d_j^0 - \bb{d_i^+ d_j^- + d_i^- d_j^+} = -2 d_i^z d_j^z+ d_i^x d_j^x + d_i^y d_j^y
 \end{align}
 
-\subsection{Tilted electric field geometry}
+\subsection{Tilted field geometry}
 % TODO this figure somehow looks really ugly
 \doublefig{.4}{lattice-geometry}{ }
 {.4}{dipole-moments}{ }
-{\sfA~Illustration of the relevant axes and angles. The lattice lies in the $xy$ plane while the electric field is tilted from the $z$ axis by an angle $\Theta_0$ and rotated around the $z$ axis by an angle $\Phi_0$ with respect to the $x$ axis. The direction of the vector $\vec{R}$, connecting two dipoles, is determined by the polar angle $\Phi$.
+{\sfA~Illustration of the relevant axes and angles. The lattice lies in the $xy$ plane while the static external field $\vec{E}$ is tilted from the $z$ axis by an angle $\Theta_0$ and rotated around the $z$ axis by an angle $\Phi_0$ with respect to the $x$ axis. The direction of the vector $\vec{R}$, connecting two dipoles, is determined by the polar angle $\Phi$.
 \sfB~Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions \qu{downwards}.}
 
 
 \noindent
-Here we consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an DC electric field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}, determined by the spherical angles $\Theta_0, \Phi_0$:
+Here we consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an external polarizing field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}, determined by the spherical angles $\Theta_0, \Phi_0$:
 \begin{align}
     \vec{\hat{E}}=\begin{pmatrix}
         \sin\Theta_0\cos\Phi_0 \\
@@ -181,7 +181,7 @@ In total, the tensorial part of the dipole-dipole interaction from \tref{doperat
 % \end{align}
 
 
-\section{Choosing a particular model}
+\section{Dipolar spin models}
 The different models in this thesis will be largely determined by a particular choice of internal states.
 In addition to choosing a certain set of atomic or molecular states, external fields can modify these states..
 
@@ -230,7 +230,7 @@ where $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^
 This model is reminescent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. As special cases, this model includes the Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) and XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior}.
 %Thus, $\tan \theta = 2q_1^2/(d_1-d_0)^2$.
 
-\subsection{Two-level dipoles with different angular momentum}
+\subsection{Two-level dipoles: Angular momentum difference}
 \tlabel{twoleveldm}
 In this related case, we replace the upper state $\keto$ by the $M=1$ state $\ketp$ (see \tref{dipole-moments}) and proceed similar as before.
 The relevant dipole matrix elements are\footnote{The sign difference in the last term is due to $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = \smallbraketop{+}{- d^+}{0}^*$.Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements.}
@@ -258,7 +258,7 @@ Then, including the energy non-conserving terms proportional to $\sminus_i\sminu
     \Hdd_{ij} = \frac{\kappa \mu_\text{B}^2 g^2}{4 R_{ij}^3} \bc{ \sz_i \sz_j - \bb{\splus_i \sminus_j+ 3 \sminus_i\sminus_j \ef{+2i\phi} + \hc } }.
 \end{align}
 
-\subsection{Three-level dipoles}
+\subsection{Three-level dipoles: Spin-orbit coupling}
 We create a \textsf{V}-level scheme including the $\ketz, \ketp$ and $\ketm$ levels with
 dipole matrix elements
 \begin{align}
@@ -324,10 +324,10 @@ tunneling part can be diagonalized:
 \end{align}
 If the energy of the $\ket{x}, \ket{y}$ manifold is low enough compared to the $\ketz$ state, this
 causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. This quantum phase transition has been investigated beyond mean-field theory in~\cite{Klinsmann2011,Klinsmann2014}.
-\todo{rewrite this paragraph}
+% TODO: rewrite this paragraph
 
-\subsection{General case: Four-level dipoles in a tilted field}
-Including all states in \tref{dipole-moments} and a (possibly) tilted electric field, we find
+\subsection{General case in a tilted external field}
+Including all states in \tref{dipole-moments} and a (possibly) tilted external field, we find
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} f_0 & \frac{3q_+ q_1}{\sqrt{2}} f_1^* & \frac{3q_+q_-}{2} f_2^* \\
@@ -350,23 +350,14 @@ Including all states in \tref{dipole-moments} and a (possibly) tilted electric f
 %     \sum_{\vecR\ne 0} \frac{\ef{i\veck\vecR}}{R^3} f_m(\Theta_0, \Phi_{\vecR} - \Phi_0)
 % \end{align}
 
-% We have introduced the dipolar dispersion relation~\cite{Peter2012b,Syzranov2014,Peter2014}
-% \begin{align}
-%     \epsilon^m_{\veck} = \sum_{j\ne 0} \frac{a^3}{|\vec{R}_j|^3}\ef{i\veck \vec{R}_j + i m \phi_{j}}.
-% \end{align}
-% The precise determination of this function can be achieved by an Ewald summation technique providing a non-analytic low momentum behavior
-% $\epsilon^0_{\veck} \approx \epsilon^0_{\Gamma} - 2\pi |\veck|a$ and
-% $\epsilon^2_{\veck} \approx -\frac{2\pi}{3} |\veck|a \ef{2i \varphi}$.
-% Here, $\epsilon^0_{\Gamma} \approx 9.03$ and $\varphi$ is defined by $\hat{\veck}=(\cos \varphi, \sin \varphi)^t$.
 
-
-\section{Bosonic models for the excitations}
+\section{Excitation hopping: mapping to hard-core bosons}
 
 We assume a generic level structure of the kind shown in \tref{dipole-moments} with a ground state called $\ketz$ and three excited states $\keto, \ketpm$. The only requirement on these states is that
 \begin{align}
     \braketop{m+\delta}{d_\Delta}{m} \ll d_0 \text{ for } \delta \ne \Delta
 \end{align}
-where $d_0, d_\pm$ are the dipole operators, defined with respect to the electric field axis.
+where $d_0, d_\pm$ are the dipole operators, defined with respect to the external field axis.
 In particular, this requirement will be fulfilled for arbitrary electric field strengths. However, this also includes microwave dressed states, even with circularly polarized light, coupling states with different $m$.
 
 To shorten the notation, we define the following transition dipole matrix elements:
@@ -397,7 +388,7 @@ Then, using \refandpage{ds:tensortilted} we can write the tunneling part as
         \bop_{i,-}
     \end{pmatrix}^{\vphantom\dag}
 \end{align}
-where the functions $f_m = f_m(\Theta_0, \bar\Phi) = f_m(\Theta_0, \phi_{ij} - \Phi_0)$ depend on the electric field direction and the relative angle $\phi_{ij}$ between the dipoles, see \cref{ds:fmfunctions}.
+where the functions $f_m = f_m(\Theta_0, \bar\Phi) = f_m(\Theta_0, \phi_{ij} - \Phi_0)$ depend on the external field direction and the relative angle $\phi_{ij}$ between the dipoles, see \cref{ds:fmfunctions}.
 
 To simplify the notation, we introduce the expressions
 \begin{align}
@@ -405,7 +396,11 @@ To simplify the notation, we introduce the expressions
     w &= \frac{3\kappa d^+d^-}{2a^3}
 \end{align}
 
-\subsection{The +- model}
+\subsection{Two-level dipoles}
+
+\subsection{Three-level dipoles}
+\paragraph{V scheme}
+% TODO
 \begin{align}
     \hamil = \sum_{i\ne j} \frac{a^3}{\absv{\vecR_{ij}}^3}
     \begin{pmatrix}
@@ -425,10 +420,6 @@ To simplify the notation, we introduce the expressions
     \end{pmatrix}^{\vphantom\dag}
 \end{align}
 
-
-
-\section{Microscopic form of the parameters}
-\tlabel{microscopic}
 In the presence of the static electric field, we denote the lowest rotational states having $m=0, \pm 1$ by $\ketz$ and $\ketpm$, respectively.
 In addition, let $\ket{m=2}$ be the lowest $m=2$ state.
 A microwave with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$ couples the states $\ketp$ and $\ket{m=2}$.
@@ -457,7 +448,8 @@ The evaluation of the dipole matrix elements for finite electric fields is strai
 
 In the absence of other techniques to shift the energy, the expression for the offset between the $\ketp$ and $\ketm$ state is given by the AC Stark shift $\Omega^2/4\Delta\equiv 2\mu$.
 
-\subsection{Model with \texorpdfstring{$\ketp$}{+} and \texorpdfstring{$\keto$}{1} state}
+
+\paragraph{Gamma scheme}
 Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
 Then, the dipole-dipole interaction can be expressed as
 \begin{align}
