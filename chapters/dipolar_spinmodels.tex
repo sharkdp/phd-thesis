@@ -1,32 +1,22 @@
 \chapter{Realizing dipolar spin models}
 \label{dipolar_spinmodels}
 
-% \section{Dipolar spin systems}
-% \subsection{Lattice structures}
-% \subsubsection{One-dimensional}
-% \subsubsection{Two-dimensional}
-
-% \section{Topological band structures}
-% \subsection{Chern number}
-% \subsection{Edge states}
-% \subsection{Quantum Hall effect}
-
-\section{Dipolar systems: physical realizations}
-\todo{
-    This section has several goals. First, we describe a common framework for deriving the effective
-    models which are subject of \cref{anomalous_behavior,dipolar_fermions,topological_bands} of this thesis.
-}
-In this section we briefly review some of the possible realizations for dipolar spin
-systems in ultracold atomic and molecular systems and discuss some of the similarities as well as important differences.
+This introductory chapter is largely of technical nature and describes the detailed steps for the realization of dipolar spin systems, starting from the microscopic setup.
+The goal is to introduce a common framework for the derivation of the effective models which are subject of \cref{anomalous_behavior,dipolar_fermions,topological_bands} of this thesis.
 
 Proposals for simulating spin systems
 \begin{itemize}
     \item with polar molecules \cite{Micheli2006,Hauke2010,Gorshkov2011,Gorshkov2011b,Peter2012b,Syzranov2014,Peter2014}
 \end{itemize}
 
-\todo{NV centers, Rydberg atoms, polar molecules, dipolar atoms}
+\section{Physical implementations of dipolar systems}
 
-\subsection{Polar molecules and Rydberg atoms}
+In this section we briefly review some of the possible realizations for dipolar spin
+systems in ultracold atomic and molecular systems and discuss some of the similarities as well as important differences.
+
+mention NV centers
+
+\subsection{Polar molecules}
 While we focus on polar molecules, the physics and energy scale are very similar
 in Rydberg atoms.
 \todo{Rotor states, DC and AC dressing}
@@ -40,9 +30,10 @@ in optical lattice \cite{Chotia2012}
 seeing long-range dipolar effects:
 \cite{Yan2013}
 
-dipolar effects in Rydberg: \cite{Westermann2006,Nipper2012b}
-
 % \fig{.8}{pm-levelscheme}{kjsdf}
+
+\subsection{Rydberg atoms}
+dipolar effects in Rydberg: \cite{Westermann2006,Nipper2012b}
 
 \subsection{Atoms with high magnetic moments}
 review \cite{Lahaye2009}
@@ -51,11 +42,19 @@ Chromium \cite{Griesmaier2005a,Beaufils2008}, fermionic \cite{Naylor2015}
 Dysprosium \cite{Lu2011}, fermionic \cite{Lu2012}
 erbium \cite{Aikawa2012} fermionic \cite{Aikawa2014}
 
-\todo{permanent dipole moment, hyperfine ground state, Lande factor}
+write about: hyperfine ground state, Lande factor
+
+advantages:
+easier to cool than polar molecules
+no chemical reactions
+permanent dipole moments
+
+disadvantages:
+weaker dipole moments
 
 
 \section{Dipole-dipole interaction}
-The aim of this introductory section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$,
+The aim of this section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$,
 \begin{align} \tlabel{ddint}
 \Hdd(\vecR_{ij}) = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } }
 \end{align}
