@@ -281,13 +281,13 @@ Using a dipole with three internal states, we investigate a \textsf{V}-level sch
     d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
     q_\pm &= |\smallbraketop{\pm}{d^\pm}{0}|.
 \end{align}
-As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$, and write the dipole operator in terms of these:
+As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons ($+$ excitations and $-$ excitations) or of a single boson with an internal (spin) degree of freedom. Then, it is useful to write the dipole operator in terms of the bosonic operators:
 \begin{align}
     d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
     d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
     d^- &= - q_+ \bop_+  + q_- \bopd_-.
 \end{align}
-using this, we can write the relevant parts of the dipole-dipole interaction as
+Using this, we can express the relevant parts of the dipole-dipole interaction as
 \begin{align}
     d^0_i d^0_j &= d_0^2 + d_0(d_+-d_0) (\nop_{+,i}+\nop_{+,j}) + d_0(d_--d_0) (\nop_{-,i}+\nop_{-,j}) \\
                 &\quad + (d_+ - d_0)^2 \nop_{+,i} \nop_{+,j} + (d_- - d_0)^2 \nop_{-,i} \nop_{-,j} \\
@@ -295,12 +295,12 @@ using this, we can write the relevant parts of the dipole-dipole interaction as
     d^+_i d^-_j &= - q_+^2 \bopd_{+,i} \bop_{+,j} - q_-^2 \bopd_{-,j} \bop_{-,i} \\
     d^+_i d^+_j &= - q_+q_- \, \bopd_{+,i} \bop_{-,j}
 \end{align}
-where we have neglected any excitation-nonconserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find:
+where we have neglected any excitation-nonconserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find the many-body Hamiltonian
 \begin{align}
     H = \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j}  t_{ij}^{\alpha\beta} \bopd_{\alpha,i} \bop_{\beta,j}
     +\frac{1}{2}\sum_{i\ne j} V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j}
 \end{align}
-where summation over the $\alpha, \beta$ indices, labelling the internal state of the excitation, is assumed. The tunneling rates and interaction matrix elements are given by
+where summation over the $\alpha, \beta$ indices, labelling the internal state of the excitation, is assumed. This is a generalized (hard core) Bose-Hubbard Hamiltonian, including long-range hopping terms and long-range density-density interactions. In our case, the tunneling rates and interaction matrix elements are given by
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} & \frac{3q_+q_-}{2} \ef{-2i \phi_{ij}} \\
@@ -308,7 +308,7 @@ where summation over the $\alpha, \beta$ indices, labelling the internal state o
 \end{pmatrix}, \\
     V_{ij}^{\alpha\beta} &= \frac{\kappa}{R_{ij}^3} (d_\alpha-d_0)(d_\beta-d_0).
 \end{align}
-Introducing the lattice spacing $a$, we can define the nearest-neighbor tunneling rates
+By introducing the lattice spacing $a$, we can define the nearest-neighbor tunneling rates
 \begin{align} \tlabel{nnrates}
     t^+ = \frac{\kappa q_{+}^2}{2a^3},\qquad
     t^- = \frac{\kappa q_{-}^2}{2a^3},\qquad
@@ -330,7 +330,7 @@ Using these, the single-particle tunneling part of the Hamiltonian can be writte
         \bop_{j,-}
     \end{pmatrix}^{\vphantom\dag}.
 \end{align}
-This model is the basis for the realization of topological band structures in \cref{topological_bands}.
+This model is the basis for the realization of topological band structures in \cref{topological_bands}. The off-diagonal tunneling elements are a manifestation of the spin-orbit coupling which is present in these dipolar spin models.
 
 
 
