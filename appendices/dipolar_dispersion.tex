@@ -15,12 +15,12 @@ where $R=|\vecR|$ and the sum runs over all lattice sites except the origin.
 Using $\phi_{-\vecR} = \phi_\vecR + \pi$ and the inversion symmetry of Bravais lattices,
 it is easy to derive the following properties of the dispersion relation ($m$ is always even):
 \begin{align}
-    \eps_{-\veck}^m &= \epsk^m, \\
-    \eps_{\veck}^{-m} &= \bb{ \epsk^m }^*.
+    \eps_{-\veck}^m &= \epskm, \\
+    \epsk^{-m} &= \bb{ \epskm }^*.
 \end{align}
-The second property also shows that $\epsk^0 \in \mathbb{R}$.
+The second property also shows that $\epsZ^0 \in \mathbb{R}$.
 
-\figopt{.5}{epsk/epsk}{epsk}{Plot of the function $\epskm$ on a high-symmetry path in the Brillouin zone of the square lattice. The linear behavior at $\veck=\Gamma$ is apparent as well as the zeros of $\epsk^2$ at $\veck=\Gamma, M$.}{t}
+\fig{.5}{epsk/epsk}{Plot of the function $\epskm$ on a high-symmetry path in the Brillouin zone of the square lattice. The linear behavior at $\veck=\vecGamma$ is apparent as well as the zeros of $\epsk^2$ at $\veck=\vecGamma, \vecM$.}
 
 \section{Symmetries and zeros}
 Let $\sop$ be a symmetry operation which leaves the lattice invariant, i.e. $\sop \, \{ \vecR \} = \{ \vecR \}$.
@@ -33,10 +33,10 @@ Now let $\sop=C_p$ be a rotation by $2\pi/p$. Then, we find
 \begin{align}
     \eps_{\sop \veck}^m = \ef{2\pi i m/p} \epskm.
 \end{align}
-If $\veck^*$ is a high-symmetry point which is invariant under the rotation, that is
+If $\veck^*$ is a high-symmetry point which is left invariant under the rotation, that is
 $\sop\veck^* = \veck^* + \vec{G}$ with an arbitrary reciprocal lattice vector $\vec{G}$, we find $\eps_{\veck^*}^m = \ef{2\pi i m/p} \eps_{\veck^*}^m$, leading to a condition for zeros of the dispersion relation:
 \begin{align}
-    \epsilon^m_{\veck^*} = 0\qquad\text{if } m \notin p\mathbb{Z}.
+    \eps^m_{\veck^*} = 0\qquad\text{if } m \notin p\mathbb{Z}.
 \end{align}
 For $m=\pm 2$, we can use any symmetry $C_n$ with $n>2$.
 
@@ -45,12 +45,12 @@ For $m=\pm 2$, we can use any symmetry $C_n$ with $n>2$.
 % are: $\Gamma=(0,0), K=(\pi,\pi), X=(\pi,0)$. For the triangular lattice, we
 % have two points $\Gamma=(0,0)$ and $X=\bb{\pi, -\pi/\sqrt{3}}$.
 
-\paragraph{Triangular lattice:} The points $\Gamma$ as well as
-$K=(4\pi/3,0)$ and $K'=- K$ are invariant under $C_3$ rotations. Therefore,
-$\epsilon^2_\Gamma=\epsilon^2_K=\epsilon^2_{K'}=0$.
+\paragraph{Triangular lattice:} The points $\vecGamma=(0,0)$ as well as
+$\vecK=(4\pi/3,0)$ and $\vecK'=- \vecK$ are invariant under $C_3$ rotations. Therefore,
+$\epsZ^2=\epsK^2=\eps^2_{\vecK'}=0$ on the triangular lattice.
 
-\paragraph{Square lattice:} The points $\Gamma$ and $K=(\pi,\pi)$ are
-invariant under $C_4$, leading to $\epsilon^2_\Gamma=\epsilon^2_K=0$.
+\paragraph{Square lattice:} The points $\vecGamma$ and $\vecM=(\pi,\pi)$ are
+invariant under $C_4$ rotations, leading to the two zeros $\epsZ^2=\epsM^2=0$, see \tref{epsk/epsk}.
 
 
 \section{Low-momentum behavior}
@@ -67,7 +67,7 @@ corresponding angle between $\veck$ and the $x$-axis. Then
 \end{align}
 where we have to introduce a lower cutoff $R_c$ for the radial integration which
 we cannot determine. Consequently, this calculation is only useful
-if we find quantities like $\epsilon_{\veck}^m-\epsilon^m_0$ which (a) allow
+if we find quantities like $\epskm-\epsZ^m$ which (a) allow
 us to safely take the limit $z_c \goesto 0$ while keeping $R_c$ constant and
 (b) do not depend on $R_c$ in this limit.
 
@@ -79,29 +79,29 @@ diverges as $z_c^{-1}$ in the limit $z_c \goesto 0$. However, we can subtract th
 \begin{align}
     \epskm - \frac{2\pi}{R_c} \approx 2\pi k \bc{ \, \integralb{z_c}{\infty}{z} \frac{J_0(z)}{z^2} - \frac{1}{z_c} } = -2\pi k,
 \end{align}
-giving us the correct expression for the linear part in $k$, i.e. $\epsk^0=\eps_\Gamma^0 - 2\pi |\veck|$.
+giving us the correct expression for the linear part in $k$, i.e. $\epsk^0=\epsZ^0 - 2\pi |\veck|$.
 
 \paragraph{$m=2$:} For any $|m|>1$, the integral can be evaluated in the limit $z_c\goesto 0$. We find
 \begin{align}
-    \epsilon^m_{\veck} \approx \frac{2\pi (-1)^{m/2}}{m^2-1} k \ef{im \psi}
+    \epskm \approx \frac{2\pi (-1)^{m/2}}{m^2-1} k \ef{im \psi}
 \end{align}
-which allows us to determine $\epsilon^{\pm 2}_{\veck} \approx -\frac{2\pi}{3} |\veck| \ef{\pm 2 i \psi}$.
+which allows us to determine $\epsk^{\pm 2} \approx -\frac{2\pi}{3} |\veck| \ef{\pm 2 i \psi}$.
 
 % We can rewrite it in the following form
 % \begin{align}
-%     \epsilon^2_{\veck} = -\frac{2\pi}{3} \bb{\frac{k_x^2-k_y^2}{k} + i \frac{2k_x k_y}{k} } = -\frac{2\pi}{3} \frac{(k_x+i k_y)^2}{k} = -\frac{2\pi}{3} k \ef{2i \psi}
+%     \eps^2_{\veck} = -\frac{2\pi}{3} \bb{\frac{k_x^2-k_y^2}{k} + i \frac{2k_x k_y}{k} } = -\frac{2\pi}{3} \frac{(k_x+i k_y)^2}{k} = -\frac{2\pi}{3} k \ef{2i \psi}
 % \end{align}
 % where $\psi = \text{arg}(k_x+i k_y)$. We see that
 % \begin{align}
-%     \absv{\epsilon^2_{\veck}} = \frac{2\pi}{3} k
+%     \absv{\eps^2_{\veck}} = \frac{2\pi}{3} k
 %
 
 \section{Exact results and Ewald summation}
 \label{ewald}
-This section is mainly of interest for a numerically efficient determination of the function~$\epskm$.
+This section is mainly of interest for a numerically efficient determination of the function~$\epskm$ as well as a precise description of the low momentum behavior.
 To start, it is convenient to rewrite $\epskm$ such that the explicit angular dependence is removed from the sum. With $\vecR = (X, Y)^t$ and $\ef{im\phi_\vecR} = (X+iY)^m/R^m$ we can write
 \begin{align} \tlabel{epstochi}
-    \epsilon^m_{\veck}
+    \epskm
     &= \sum_{\vec{R}\ne 0} \frac{(X+i Y)^m}{R^{3+m}}\ef{i\vec{k}\vec{R}}
     = \sum_{\vec{R}\ne 0} \frac{(-i \partial_{k_x}+ \partial_{k_y})^m}{R^{3+m}} \ef{i\vec{k}\vec{R}} \\
     &= (-i)^m (\partial_{k_x}+ i \partial_{k_y})^m \chi^{3+m}(\veck)
@@ -112,26 +112,26 @@ In the following, we will see how to derive exact results for the function $\chi
 
 \subsection{Exact values on the square lattice}
 \tlabel{exact}
-At the $\Gamma = (0, 0)$ point, the exact value of the function
+At the $\vecGamma = (0, 0)$ point, the exact value of the function
 $\chi^s(0) = 4\beta(\sfrac{s}{2})\zeta(\sfrac{s}{2})$
 can be expressed with the help of the Riemann $\zeta$-function and the Dirichlet $\beta$-function~\cite{Glasser1973}.
 This immediately leads to
 \begin{align}
-    \eps^0_\Gamma = \chi^3(0) = 4 \zeta(\sfrac{3}{2}) \beta(\sfrac{3}{2})\approx 9.03.
+    \epsZ^0 = \chi^3(0) = 4 \zeta(\sfrac{3}{2}) \beta(\sfrac{3}{2})\approx 9.03.
 \end{align}
-To get the exact value at the $K=(\pi,\pi)$ point, we denote the two sublattices of the bipartite square lattice by $A$ and $B$. Both have a lattice constant of $\sqrt{2}$.
+To get the exact value at the $\vecM=(\pi,\pi)$ point, we denote the two sublattices of the bipartite square lattice by $A$ and $B$. Both have a lattice constant of $\sqrt{2}$.
 By $A$, we denote the sublattice that includes the origin and $B$ is the sublattice which includes the nearest neighbors of the origin. The full lattice is denoted by $A+B$.
-Then, $\eps^0_\Gamma = \eps^0_\Gamma(A+B) = \eps^0_\Gamma(A) + \eps^0_\Gamma(B)$
+Then, $\epsZ^0 = \epsZ^0(A+B) = \epsZ^0(A) + \epsZ^0(B)$
 and
-$\eps^0_K = \eps^0_\Gamma(A) - \eps^0_\Gamma(B)$. With $\eps^0_\Gamma(A)=2^{-3/2} \eps^0_\Gamma$, we find
+$\epsM^0 = \epsZ^0(A) - \epsZ^0(B)$. With $\epsZ^0(A)=2^{-3/2} \epsZ^0$, we find
 \begin{align}
-    \eps^0_K = 2\eps^0_\Gamma(A) - \eps^0_\Gamma = \bb{ 1/\sqrt{2} - 1 } \eps^0_\Gamma \approx -2.65.
+    \epsM^0 = 2\epsZ^0(A) - \epsZ^0 = \bb{ 1/\sqrt{2} - 1 } \epsZ^0 \approx -2.65.
 \end{align}
 Using a similar technique with four sublattices, we can also find
 \begin{align}
-    \eps^0_X = \frac{1}{4}\bb{ 1- \sqrt{2} } \eps^0_\Gamma \approx -0.94
+    \epsX^0 = \frac{1}{4}\bb{ 1- \sqrt{2} } \epsZ^0 \approx -0.94
 \end{align}
-at the $X=(\pi, 0)$ point. These exact values can serve as a useful benchmark for any kind of approximation.
+at the $\vecX=(\pi, 0)$ point. These exact values can serve as a useful benchmark for any kind of approximation.
 
 \subsection{Ewald summation}
 This section uses ideas from \refcite{Muller2010} and extends the results to $m\ne 0$.
@@ -159,12 +159,13 @@ Here, we have introduced the exponential integral function
     E_n(z) = \integralb{1}{\infty}{t} \frac{\ef{-z t}}{t^n}
 \end{align}
 Both sums in \tref{twosum} are fast-converging since high
-values of $\vecq$ ($\vec{R}$) are exponentially suppressed by $E_n$.
+values of $\vecq$ and $\vec{R}$, respectively, are exponentially suppressed by $E_n$.
+Using this expression, we can accurately plot the function $\epskm$ in the Brillouin zone, see \tref{epsk/epsk}.
 
 \subsection{Non-analytic behavior at low momenta}
 For $s=3, m=0$ we can simplify \tref{twosum}:
 \begin{align}
-    \eps^0_\veck = \chi^3(\veck) = 2\pi \bb{ \sum_{\vecq} E_{3/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\pi}} - \frac{2}{3} + \sum_{\vec{R}\ne 0} E_{-1/2}\!\bb{\pi R^2} \ef{i \veck \vec{R}} }
+    \epsk^0 = \chi^3(\veck) = 2\pi \bb{ \sum_{\vecq} E_{3/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\pi}} - \frac{2}{3} + \sum_{\vec{R}\ne 0} E_{-1/2}\!\bb{\pi R^2} \ef{i \veck \vec{R}} }
 \end{align}
 where we have explicitly chosen $\eta = \pi$. We can combine the two sums by writing the $\vecq=0$ term separately and by making the replacement $\vecq \goesto 2\pi\vec{R}$ for the rest of the $\vecq$-sum:
 \begin{align}
