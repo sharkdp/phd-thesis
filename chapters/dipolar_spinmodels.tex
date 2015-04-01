@@ -255,19 +255,24 @@ This type of interaction will be used in~\cref{dipolar_fermions}, where we make 
 
 
 \section{Excitation hopping: mapping to hard-core bosons}
-
-\subsection{Two-level dipoles}
-%TODO
-%Holstein - Primakoff
-Take the spin model from \tref{xyfull}
+For spin models it is often useful to think in terms of excitations above a certain well defined (ground) state~\cite{Holstein1940}.
+As an exemplary case, we take the spin $1/2$ model from \tref{hxxz} and write it in terms of
+$S^+ = (S^x_i+iS^y_i)/\hbar$ and $S^- = (S^x_i-iS^y_i)/\hbar$:
 \begin{align}
-    H &= \frac{1}{2} \sum_{i\ne j} \frac{\kappa}{R_{ij}^3} \bc{ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) }
+    H &= \frac{Ja^3}{\hbar^2} \sum_{i\ne j}  \frac{1}{R_{ij}^3} \bc{ \cos\theta\, S^z_i S^z_j  + \frac{1}{2}\sin\theta\, (S^+_i S^-_j + S^-_i S^+_j) }.
 \end{align}
-and introduce the HC operators $\bopd_i=\sigma^+_i$, $\bop_i=\sigma^-_i$. They fulfill
-Then,
+Assume that for some set of parameters, the system is in the state $\ket{G}=\prod_i \ketdn_i$ and we are interested in excitations.
+Then, for each site, we introduce the operator $\bop_i=S^-_i/\hbar = \ketbra{\downarrow}{\uparrow}_i$ as well as its adjoint $\bopd_i=S^+_i/\hbar$.
+It is easy to see that they satisfy the commutation relation $\smash{[\bop_i, \bopd_j]}=(1 - 2 \nop_i) \delta_{ij}$, where $\nop = \smash{\bopd_i \bop_i} = S^z_i/\hbar + 1/2$.
+For $i\ne j$, these are just bosonic commutation relations.
+However, on a single site, we find $\bop_i \bop_i = \smash{\bopd_i \bopd_i} = 0$ and $\smash{\{\bop_i, \bopd_i\}=1}$.
+When interpreting $\bopd_i$ as the creation of a single particle (excitation) at site $i$, these equations formalize the so-called hard core constraint: only a single excitation can be present at each site.
+The state $\ket{G}$ is the vacuum state for these excitations: $\bop_i\ket{G}=0$.
+Keeping the constraint in mind, we can treat these operators as bosonic creation and annihilation operators for single excitations and write the model as
 \begin{align}
-    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{4} \sz_i \sz_j  + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j)
+    H &= J \sum_{i\ne j}  \frac{a^3}{R_{ij}^3} \bc{ \cos\theta\, \nop_i \nop_j  + \frac{1}{2}\sin\theta \bb{\bopd_i\bop_j + \bop_i\bopd_j} }.
 \end{align}
+For a detailed treatment, see \cref{anomalous_behavior} and \cref{spinwave_analysis}. In the following, we will extend this notion to dipoles with more than two internal states.
 
 \subsection{Three-level dipoles: spin-orbit coupling}
 Using a dipole with three internal states, we investigate a \textsf{V}-level scheme including the states $\ketz, \ketp$ and $\ketm$ with dipole matrix elements
