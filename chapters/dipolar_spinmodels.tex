@@ -261,33 +261,32 @@ $S^+ = (S^x_i+iS^y_i)/\hbar$ and $S^- = (S^x_i-iS^y_i)/\hbar$:
 \begin{align}
     H &= \frac{Ja^3}{\hbar^2} \sum_{i\ne j}  \frac{1}{R_{ij}^3} \bc{ \cos\theta\, S^z_i S^z_j  + \frac{1}{2}\sin\theta\, (S^+_i S^-_j + S^-_i S^+_j) }.
 \end{align}
-Assume that for some set of parameters, the system is in the state $\ket{G}=\prod_i \ketdn_i$ and we are interested in excitations.
+Assume that for some set of parameters, the system is in the state $\ket{G}=\prod_i \ketdn_i$ and we are interested in the excitations.
 Then, for each site, we introduce the operator $\bop_i=S^-_i/\hbar = \ketbra{\downarrow}{\uparrow}_i$ as well as its adjoint $\bopd_i=S^+_i/\hbar$.
-It is easy to see that they satisfy the commutation relation $\smash{[\bop_i, \bopd_j]}=(1 - 2 \nop_i) \delta_{ij}$, where $\nop = \smash{\bopd_i \bop_i} = S^z_i/\hbar + 1/2$.
+It is easy to see that they satisfy the commutation relation $\smash{[\bop_i, \bopd_j]}=(1 - 2 \nop_i) \delta_{ij}$, where $\nop_i = \smash{\bopd_i \bop_i} = S^z_i/\hbar + 1/2$.
 For $i\ne j$, these are just bosonic commutation relations.
 However, on a single site, we find $\bop_i \bop_i = \smash{\bopd_i \bopd_i} = 0$ and $\smash{\{\bop_i, \bopd_i\}=1}$.
 When interpreting $\bopd_i$ as the creation of a single particle (excitation) at site $i$, these equations formalize the so-called hard core constraint: only a single excitation can be present at each site.
-The state $\ket{G}$ is the vacuum state for these excitations: $\bop_i\ket{G}=0$.
-Keeping the constraint in mind, we can treat these operators as bosonic creation and annihilation operators for single excitations and write the model as
+Keeping the constraint in mind, we can treat these operators as bosonic creation and annihilation operators for single excitations above the vacuum $\ket{G}$ with $\bop_i\ket{G}=0$ and write the model as
 \begin{align}
     H &= J \sum_{i\ne j}  \frac{a^3}{R_{ij}^3} \bc{ \cos\theta\, \nop_i \nop_j  + \frac{1}{2}\sin\theta \bb{\bopd_i\bop_j + \bop_i\bopd_j} }.
 \end{align}
-For a detailed treatment, see \cref{anomalous_behavior} and \cref{spinwave_analysis}. In the following, we will extend this notion to dipoles with more than two internal states.
+For a detailed treatment, see \cref{anomalous_behavior} and \cref{spinwave_analysis}. In the following, we will extend this idea to dipoles with more than two internal states.
 
 \subsection{Three-level dipoles: spin-orbit coupling}
-Using a dipole with three internal states, we investigate a \textsf{V}-level scheme including the states $\ketz, \ketp$ and $\ketm$ with dipole matrix elements
+First, we investigate a \textsf{V}-type level scheme including three internal states of a dipole, $\ketz, \ketp$ and $\ketm$, as shown in~\tref{dipole-moments}. The relevant dipole matrix elements are
 \begin{align} \tlabel{dipolemomentspm}
     d_0 = \smallbraketop{0}{d^0}{0}, \qquad
     d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
     q_\pm &= |\smallbraketop{\pm}{d^\pm}{0}|.
 \end{align}
-As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons ($+$ excitations and $-$ excitations) or of a single boson with an internal (spin) degree of freedom. Then, it is useful to write the dipole operator in terms of the bosonic operators:
+As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons ($+$ excitations and $-$ excitations) or think of a single boson with an internal spin degree of freedom. Then, it is useful to write the dipole operator in terms of the bosonic operators:
 \begin{align}
     d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
     d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
     d^- &= - q_+ \bop_+  + q_- \bopd_-.
 \end{align}
-Using this, we can express the relevant parts of the dipole-dipole interaction as
+Restricting ourselves to a two-dimensional geometry with a perpendicular polarization, we can express the relevant parts of the dipole-dipole interaction from \tref{dop2d} as
 \begin{align}
     d^0_i d^0_j &= d_0^2 + d_0(d_+-d_0) (\nop_{+,i}+\nop_{+,j}) + d_0(d_--d_0) (\nop_{-,i}+\nop_{-,j}) \\
                 &\quad + (d_+ - d_0)^2 \nop_{+,i} \nop_{+,j} + (d_- - d_0)^2 \nop_{-,i} \nop_{-,j} \\
@@ -298,9 +297,9 @@ Using this, we can express the relevant parts of the dipole-dipole interaction a
 where we have neglected any excitation-nonconserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find the many-body Hamiltonian
 \begin{align}
     H = \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j}  t_{ij}^{\alpha\beta} \bopd_{\alpha,i} \bop_{\beta,j}
-    +\frac{1}{2}\sum_{i\ne j} V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j}
+    +\frac{1}{2}\sum_{i\ne j} V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j}.
 \end{align}
-where summation over the $\alpha, \beta$ indices, labelling the internal state of the excitation, is assumed. This is a generalized (hard core) Bose-Hubbard Hamiltonian, including long-range hopping terms and long-range density-density interactions. In our case, the tunneling rates and interaction matrix elements are given by
+Here, a summation over the $\alpha, \beta$ indices, which label the internal state of the excitation, is assumed. This is a generalized (hard core) Bose-Hubbard Hamiltonian, including long-range hopping terms and long-range density-density interactions. In our case, the tunneling rates and interaction matrix elements are given by
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} & \frac{3q_+q_-}{2} \ef{-2i \phi_{ij}} \\
@@ -315,7 +314,7 @@ By introducing the lattice spacing $a$, we can define the nearest-neighbor tunne
     w = \frac{3 \kappa q_{+}q_{-}}{2a^3}.
 \end{align}
 Using these, the single-particle tunneling part of the Hamiltonian can be written as
-\begin{align}
+\begin{align} \tlabel{pmmodel}
     H_\text{single} = \sum_{i\ne j} \frac{a^3}{R_{ij}^3}
     \begin{pmatrix}
         \bop_{i,+} \\
@@ -338,23 +337,22 @@ This model is the basis for the realization of topological band structures in \c
 In one dimension, we can always choose $\phi_{ij}=0$. Furthermore, if $q_+=q_-$, the tunneling
 elements simplify to
 \begin{align}
-    t_{ij} &= \frac{\kappa q^2}{2R_{ij}^3} (3\sigma_x-\sigma_z).
+    t_{ij} &= \frac{\kappa q^2}{2R_{ij}^3} (3\sigma_x-\id).
 \end{align}
 By transforming to $\ket{x}=(\ketp-\ketm)/\sqrt{2}$ and $\ket{y}=(\ketp+\ketm)/\sqrt{2}$, the
 tunneling part can be diagonalized:
 \begin{align}
     t_{ij} &= \frac{\kappa q^2}{R_{ij}^3} \begin{pmatrix}
-    -1 & 0 \\
-    0 & 2
+    -2 & 0 \\
+    0 & 1
     \end{pmatrix}.
 \end{align}
 If the energy of the $\ket{x}, \ket{y}$ manifold is low enough compared to the $\ketz$ state, this
-causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. This quantum phase transition has been investigated in \refscite{Klinsmann2011,Klinsmann2014}.
-% TODO: rewrite this paragraph
+causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. The accompanying quantum phase transition has been investigated in \refscite{Klinsmann2011,Klinsmann2014}.
 
 \subsection{General case in a tilted external field}
-% TODO: dipole moments
-Including all four states in \tref{dipole-moments} and a (possibly) tilted external field, we find the tunneling matrix elements
+Finally, we briefly discuss the most general case when all four states in \tref{dipole-moments} are involved. We assume the geometry from \tref{lattice-geometry} with a possibly tilted external field.
+Introducing a bosonic operator $\bop_1=\ketbra{1}{0}$ for the additional state, we can write the tunneling rates in the basis $\{{+}, 1, {-}\}$:
 \begin{align}
     t_{ij} &= \frac{\kappa}{R_{ij}^3} \begin{pmatrix}
     -\frac{q_+^2}{2} f_0 & \frac{3q_+ q_1}{\sqrt{2}} f_1^* & \frac{3q_+q_-}{2} f_2^* \\
@@ -371,7 +369,7 @@ Here, $f_m = f_m(\Theta_0, \phi_{ij}-\Phi_0)$ are the functions defined in \tref
 %     t^{1-}_{ij} &= -\frac{3\kappa q_{1}q_{-}}{\sqrt{2}R_{ij}^3} f_1^*(\Theta, \phi_{ij} - \Phi) \\
 %     t^{-+}_{ij} &= \frac{3\kappa q_{+}q_{-}}{2 R_{ij}^3} f_2(\Theta, \phi_{ij} - \Phi)
 % \end{align}
-Note that $t^{1+}_{ij}=t^{1-}_{ij}=0$ for $\Theta=0$, leading to the gapless spectrum for an electric field perpendicular to the lattice. % TODO
+Note that $f_1(\Theta_0, \phi_{ij}-\Phi_0)=0$ for an external field which is perpendicular to the two-dimensional plane ($\Theta=0$). This leads to an effective decoupling of the $\keto$ state from the other two, taking us back to the model in \tref{pmmodel}.
 
 % \paragraph{Gamma scheme} % TODO: do we need this paragraph?
 % Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
