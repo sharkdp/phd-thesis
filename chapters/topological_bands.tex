@@ -58,54 +58,26 @@ In the following, we focus on the lowest state $\ketz$ with $m=0$ and the two de
 The first excited $m=0$ state, called $\keto$, will be used later.
 
 The full system, including pairwise dipole-dipole interactions between the polar mole\-cules, is described by $H=\sum_i H^{\text{rot}}_i + \frac{1}{2}\sum_{i\ne j}H^{\text{dd}}_{ij}$.
-In the two-dimensional setup with the electric field perpendicular to the lattice, the interaction can be expressed as
+As we have seen in \refandpage{ds:dop2d}, the interaction for the two-dimensional setup with the electric field perpendicular to the lattice can be expressed as
 \begin{align}
     H^{\text{dd}}_{ij}=\frac{\kappa}{|\vec{R}_{ij}|^3} &\Big[d^0_i d^0_j + \frac{1}{2}\big(d^+_i d^-_j + d^-_i d^+_j) - \frac{3}{2}\big(d^-_i d^-_j \ef{2i\phi_{ij}} + d^+_i d^+_j \ef{-2i\phi_{ij}}\big)\Big] \tlabel{ddint}
 \end{align}
 with $\kappa=1/4\pi\epsilon_0$.
-Here, $\phi_{ij}$ denotes the in-plane polar angle of the vector $\vec{R}_{ij} \equiv |\vec{R}_{ij}| \cdot (\cos \phi_{ij}, \sin \phi_{ij})^t$ which connects the two molecules at lattice sites $i$ and $j$, and the operators $d^0=d^z$ and $d^\pm=\mp (d^x\pm i d^y)/\sqrt{2}$ are the spherical components of the dipole operator.
-The intrinsic spin-orbit coupling is visible in the second line in \tref{ddint}, where a change in internal angular momentum by $\pm 2$ is associated with a change in orbital angular momentum encoded in the phase factor $e^{\mp 2i \phi_{ij}}$.
+As before, $\phi_{ij}$ denotes the in-plane polar angle of the vector $\vec{R}_{ij} \equiv |\vec{R}_{ij}| \cdot (\cos \phi_{ij}, \sin \phi_{ij})^t$ which connects the two molecules at lattice sites $i$ and $j$, and the operators $d^0=d^z$ and $d^\pm=\mp (d^x\pm i d^y)/\sqrt{2}$ are the spherical components of the dipole operator.
+The intrinsic spin-orbit coupling is visible in the last terms in \tref{ddint}, where a change in internal angular momentum by $\pm 2$ is associated with a change in orbital angular momentum encoded in the phase factor $e^{\mp 2i \phi_{ij}}$.
 
 For molecules with a permanent dipole moment $d$ in an optical lattice with spacing $a$, the characteristic interaction energy $V=\kappa d^2/a^3$ is much weaker than the rotational splitting $B$.
 For strong electric fields, the energy separation between the states $\ketpm_i$ and $\keto_i$ is also much larger than the interaction energy.
 Then the number of $\ketpm$ excitations is conserved.
-This allows us to map the Hamiltonian to a bosonic model: The lowest energy state with all molecules in the $\ketz$ state is the vacuum state, while excitations of a polar molecule into the state $\ket\pm_i$ are described by hard-core boson operators $\smash{\bopd_{i,\pm} =\ket{\pm}_i\!\bra{0}_i }$.
+This allows us to map the Hamiltonian to a bosonic model: The lowest energy state $\prod_i \ketz_i$ with all molecules in the ground rotational state is the vacuum state, while excitations of a polar molecule into the state $\ket\pm_i$ are described by hard-core boson operators $\smash{\bopd_{i,\pm} =\ket{\pm}_i\!\bra{0}_i }$.
 Note that these effective bosonic particles have a spin angular momentum of $m =\pm 1$.
 
-A crucial aspect for the generation of topological bands with a nonzero Chern number is the breaking of time-reversal symmetry.
-In our setup, this is achieved by coupling the state $|+\rangle_{i}$ to the rotational state $\ket{m=2}_{i}$ with an off-resonant microwave field, see \tref{fig1/fig1b}.
-This coupling lifts the degeneracy between the two excitations $|\pm\rangle_{i}$ and provides an energy splitting denoted by $2 \mu$. Note that the coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$.
-The energy shift between the $\ketp$ and $\ketm$ state can be independently controlled via magnetic fields~\cite{Ospelkaus2010,Yan2013}.
-
 \section{Bosonic model}
-
-%TODO START
-\subsection{Parameters in the presence of the microwave field}
-A microwave with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$ couples the states $\ketp$ and $\ket{m=2}$, the energetically lowest state with $m=2$.
-For a large detuning $\Delta \gg \Omega, V$, the number of $\ketp$ (and $\ketm$) excitations is conserved.
-In the rotating frame, within rotating wave approximation, the AC-dressed $\ketp$ state is given by
-\begin{align}
-    \ketp_\text{ac} &= \bb{1-\epsilon^2/2}\ketp - \epsilon \ket{m=2}
-\end{align}
-up to second order in $\epsilon=\Omega/2\Delta$.
-For sufficiently strong electric fields, the states $\ketz$ and $\ketm$ are essentially unaffected by the microwave.
-To avoid cluttering of notation, we also drop the \emph{ac} label of the $\ketp$ state.
-
-Then, the transition dipole moment for the $\ketp$ state is slightly reduced, compared to the $\ketm$ state. Using the definition in \cref{ds:dipolemomentspm}, we have $q_+ = q_- (1-\epsilon^2/2)$. In turn, the nearest-neighbor tunneling rates from \cref{ds:nnrates} are given by
-\begin{align}
-    t^+ = \frac{\kappa q_{-}^2}{2a^3} (1 - \epsilon^2),\qquad
-    t^- = \frac{\kappa q_{-}^2}{2a^3},\qquad
-    w = \frac{3 \kappa q_{-}^2}{2a^3} (1-\epsilon^2/2).
-\end{align}
-In the absence of other techniques to shift the energy, the expression for the offset between the $\ketp$ and $\ketm$ state is given by the AC Stark shift $\Omega^2/4\Delta\equiv 2\mu$.
-%TODO END
-
-\subsection{TODO}
 
 The dipole-dipole interaction gives rise to an effective hopping Hamiltonian for the bosonic particles due to the dipolar exchange terms:
 $d^+_id^-_j$, for example, leads to a (long-range) tunneling $\bopd_{i,+}\bop_{j,+}$ for the ${+}$-bosons while the term $d^-_i d^-_j \ef{2i\phi_{i j}}$ generates spin-flip tunneling processes $\bopd_{i,-}\bop_{j,+} \ef{2i\phi_{ij}}$ with a phase that depends on the direction of tunneling.
 For the study of the single particle band structure we can drop the term proportional to $d^0 d^0$ which describes a static dipolar interaction between the bosons.
-The interaction Hamiltonian reduces to
+Then, as shown in \refandpage{ds:pmmodel}, the interaction Hamiltonian reduces to
 \begin{align}
     H^{\text{dd}} = \sum_{i\ne j}
     \frac{a^3}{|\vec{R}_{ij}|^3}\;
@@ -121,9 +93,34 @@ The interaction Hamiltonian reduces to
     \tlabel{hrealspace}
 \end{align}
 where we use the spinor notation $\psiopd_j = \big( \bopd_{j,+} , \bopd_{j,-} \big)$.
-The energy scale of the hopping rates $t^+$, $t^-$, and $w$ is given by $V$. The precise form depends on the microscopic parameters and was described in TODO. % TODO
-Note that $t^{+} = t^{-}$ without the applied microwave.
-In momentum space with $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$, including the internal energy $H_{i}^{\text{rot}}$ of the excitations $|\pm\rangle_{i}$, the Hamiltonian can be rewritten as
+The energy scale of the hopping rates $t^+$, $t^-$, and $w$ is given by $V=\kappa d^2/a^3$. The exact expressions depend on the microscopic parameters and will be given in the next section.
+
+\subsection{Time-reversal symmetry breaking by the microwave field}
+A crucial aspect for the generation of topological bands with a nonzero Chern number is the breaking of time-reversal symmetry.
+In our setup, this is achieved by coupling the state $|+\rangle$ to the rotational state $\ket{m=2}$ with an off-resonant microwave field with Rabi frequency $\Omega \equiv 2 E_\text{ac} \absv{\braketop{m=2}{d^+}{{+}}}$ and detuning $\Delta$, see \tref{fig1/fig1b}.
+For a large detuning $\Delta \gg \Omega, V$, the number of $\ketp$ (and $\ketm$) excitations is still conserved.
+In the rotating frame, within rotating wave approximation, the AC-dressed $\ketp$ state is given by
+\begin{align}
+\ketp_\text{ac} &= (1-\epsilon^2/2)\ketp - \epsilon \ket{m=2}
+\end{align}
+up to second order in $\epsilon=\Omega/2\Delta$.
+Note that the coupling of the $\ketm$ state to the third $m=0$ state can be neglected due to a large detuning from the difference in Stark shifts between $m=0$ and $m=2$.
+Therefore, the states $\ketz$ and $\ketm$ are essentially unaffected by the microwave.
+To avoid cluttering of notation, we also drop the \emph{ac} label of the $\ketp$ state.
+
+Then, the transition dipole moment for the $\ketp$ state is slightly reduced, compared to the $\ketm$ state. Using the definition in \cref{ds:dipolemomentspm}, we have $q_+ = |\smallbraketop{+}{d^+}{0}|= q_- (1-\epsilon^2/2)$. In turn, the nearest-neighbor tunneling rates from \cref{ds:nnrates} are given by
+\begin{align}
+    t^+ = \frac{\kappa q_{-}^2}{2a^3} (1 - \epsilon^2),\qquad
+    t^- = \frac{\kappa q_{-}^2}{2a^3},\qquad
+    w = \frac{3 \kappa q_{-}^2}{2a^3} (1-\epsilon^2/2).
+\end{align}
+Note that $t^{+} = t^{-}$ without the applied microwave (time-reversaly symmetric point).
+The microwave coupling also lifts the degeneracy between the two excitations $|\pm\rangle_{i}$ and provides an energy splitting given by the AC Stark shift, equal to $2\mu \equiv \Omega^2/4\Delta$.
+We remark that this energy shift $2\mu$ can also be independently controlled via magnetic fields~\cite{Ospelkaus2010,Yan2013}.
+
+\section{Topological band structure}
+\tlabel{chernnumber}
+In momentum space with $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$, including the internal energy $H_{i}^{\text{rot}}$ of the excitations $|\pm\rangle_{i}$, the Hamiltonian \labeltref{hrealspace} can be rewritten as
 \begin{align}
     H &= \sum_{\veck} \psiopd_{\veck} \big({n^{0\vphantom\dagger}_{\veck} \: \mathds{1} + \vec{n}^{\vphantom \dagger}_{\veck}\cdot\vecsigma}\big) \psiop_{\veck}
     \tlabel{hkspace}
@@ -136,11 +133,11 @@ The real vector characterizes the spin-orbit coupling terms and takes the form
         w \Re \epsk^2 \\
         w \Im \epsk^2 \\
         \mu + t\, \epsk^0
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{align}
-with $t = (t^--t^+)/2 > 0$.
-The spin-independent hopping is determined by $n^0_{\veck} = -\bar{t}\, \epsk^0$ with ${\bar t} = (t^{+}+t^{-})/2$.
-Here, we see again the dipolar dispersion relation~\cite{Muller2010,Peter2012b,Syzranov2014,Peter2014}
+Here, we have introduced the difference in tunneling rates $t = (t^--t^+)/2 > 0$.
+The spin-independent hopping is determined by $n^0_{\veck} = -\bar{t}\, \epsk^0$ with the average tunneling rate ${\bar t} = (t^{+}+t^{-})/2$.
+The behavior of both $n^0_\veck$ and $\vec{n}^{\vphantom 0}_\veck$ is determined by the previously used dipolar dispersion relation, extended to include a nonzero angular momentum transfer~$m$~\cite{Muller2010,Peter2012b,Syzranov2014,Peter2014}
 \begin{align}
     \epskm = \sum_{j\ne 0} \frac{a^3}{|\vec{R}_j|^3}\ef{i\veck \vec{R}_j + i m \phi_{j}}.
 \end{align}
@@ -161,8 +158,6 @@ The latter has a lower band with flatness $f\approx 1$.
 Note: The two '$\text{X}$' points $(\pi/a,0)$ and $(0, \pi/a)$ are not equivalent in this model as the electric field breaks the $x/y$ symmetry.
 }
 
-\section{Dispersion relation: topological bands}
-\tlabel{chernnumber}
 In the presence of time-reversal symmetry, represented by $\mathcal{T}=\sigma_x \mathcal{K}$ with $\mathcal{K}$ being complex conjugation, the system reduces to the one discussed in \refcite{Syzranov2014}.
 At the $\mathcal{T}$-invariant point, i.e. $t=\mu=0$, the two energy bands of the system exhibit a band touching at the high-symmetry points $\vecGamma=(0,0)$ and $\vecM=(\pi/a, \pi/a)$ where $\epsk^2$ vanishes, see \tref{fig2a}.
 The touching at the $\Gamma$ point is linear due to the low-momentum behavior of $\epsk^m$.
@@ -234,8 +229,6 @@ The resulting single layer model is reminiscent of the famous Haldane model~\cit
 Using a site-dependent microwave dressing, it has been shown that a model similar to our single-layer system can be realized, giving rise to a $\nu=1/2$ fractional Chern insulating phase~\cite{Yao2012,Yao2013}.
 It is rather remarkable that uniform dipole-dipole interactions give rise to a model usually requiring strong modulations on the order of the lattice spacing.
 
-On the honeycomb lattice, a single layer can be constructed which retains the original symmetry of the lattice, see \tref{fig-supplement/fig1b}. Here, the two bands of the single layer also have $C=\pm 1$ but occupy the same Brillouin zone as the double layer system. Consequently, the four bands of the full system are constructed from the combination of two $C=1$ and two $C=-1$ bands, giving rise to a multitude of different topological phases.
-
 \section{Flat bands}
 One of the challenges is to find a specific setup that optimizes the flatness of the topological bands.
 This can be achieved either by focusing on different lattice structures (see \tref{honeycomb}) or by an alternative choice for the two excitations.
@@ -248,8 +241,14 @@ The dispersion relation for $\Theta=0$ and $\pi/4$ is shown in~\tref{fig2b}.
 The lower band has a flatness ratio of $f = \text{bandgap}/\text{bandwidth} \approx 1$.
 %While not being as good as the ratios achieved in related proposals~\cite{Yao2012,Yao2013,Neupert2011,Trescher2012,Wang2011a,Yang2012}, we stress that only a single parameter $\Theta$ is `fine-tuned' here. The values of $t^+, t^1$ and $w$ for weak fields are fixed by the dipole-dipole interaction.
 
+% TODO: write down the +/1 model here
+
 
 \section{Dependence on the lattice geometry}
+
+% TODO write about the different angles in the different lattices and how
+% they modify the tunneling phases. maybe show a picture of the triangular
+% path from the talk.
 
 \subsection{Honeycomb lattice}
 \tlabel{honeycomb}
@@ -266,10 +265,14 @@ A flatness $f < 0$ indicates that the maximum of the lowest band is higher than 
 In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient for a nonzero Chern number; $t\ne 0$ is not necessarily needed.
 \tref{fig3/fig3b} shows the dispersion relation with a lowest band of flatness $f\approx 6.4$ and a Chern number $C=-1$.
 
-The relation to the bilayer system allows us to explain the behavior of this model on different 2D lattices.
-Assigning ${+}$ and ${-}$ orbitals to the two distinct sublattices yields a single layer with a Chern number of $C=1$.
+\paragraph{Double-layer picture}
+The relation to the bilayer system allows us to explain the different behavior compared to the square lattice.
+Applying the same procedure, a single layer can be constructed which retains the original symmetry of the honeycomb lattice, see \tref{fig-supplement/fig1b}.
+Here, the two bands of the single layer also have a Chern number of $C=\pm 1$.
 In contrast to the square lattice, however, the Brillouin zone of a single layer is the same as for the full (double layer) system with both orbitals at each site.
-As a result, the lowest (of four) bands in the honeycomb lattice can have a Chern number of $C=1$~\footnote{The inter-layer coupling in the bilayer honeycomb system is crucial to open a gap.}.
+Consequently, the four bands of the full system are constructed from the combination of two $C=1$ and two $C=-1$ bands.
+As a result, the lowest band in the honeycomb lattice can have a Chern number of $C=1$.
+Note that the inter-layer coupling in the bilayer honeycomb system is crucial to open a gap.
 
 \section{Influence of disorder}
 
