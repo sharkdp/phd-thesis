@@ -35,7 +35,7 @@ The interactions between the particles are described by the dipolar interaction 
 as defined in \cref{ds:ddint}, where $\vecR=\vecR_i-\vecR_j$ is the relative distance between the two particles.
 Note that a weak $s$-wave scattering length does not change the general behavior of our transfer scheme and is ignored in the following.
 For two internal levels, we can write the
-dipole moment $\vecd =  \mu_\text{B}g \vec{S} / \hbar = \mu_\text{B}g \vecsigma/2$ in terms of the Land\'e factor $g$ and the Pauli matrices $\vecsigma$.
+dipole moment $\vecd =  \muB g \vec{S} / \hbar = \muB g \vecsigma/2$ in terms of the Land\'e factor $g$ and the Pauli matrices $\vecsigma$.
 
 In two dimensions, using the spin raising and lowering operators $\sigma^{\pm} = (\sigma^x \pm i \sigma^y)/2$, the interaction between these two-level dipoles reduces to
 \begin{align}
@@ -43,7 +43,7 @@ In two dimensions, using the spin raising and lowering operators $\sigma^{\pm} =
 \sigma^z_i \sigma^z_j - (\sigma^+_i \sigma^-_j +3 \ef{2i\phi} \sigma^-_i \sigma^-_j  +\hc)
 \right],
 \end{align}
-which is the expression given in \refandpage{ds:hdd2dmagnetic}. Here, $R$ and $\phi$ are polar coordinates in the $xy$ plane and $\Cdd = \kappa \mu_\text{B}^2 g^2 / 4$ characterizes the strength of the interaction.
+which is the expression given in \refandpage{ds:hdd2dmagnetic}. Here, $R$ and $\phi$ are polar coordinates in the $xy$ plane and $\Cdd = \kappa \muB^2 g^2 / 4$ characterizes the strength of the interaction.
 Note that this expression can also be derived from the full interaction \labeltref{dfvdd} by integrating out the fast motion perpendicular to the $xy$ plane in the limit $\omega_z\rightarrow\infty$.
 
 The dipolar interaction features three different processes. The first term proportional to $\sigma^z_i\sigma^z_j$ describes spin-preserving collisions, while the second term \smash{$\sigma^+_i\sigma^-_j$} accounts for spin-exchange collisions. These terms conserve separately the total spin and the total angular momentum.  Finally, the third operator \smash{$\ef{2i\phi} \sigma^-_i \sigma^-_j$} describes the relaxation process that transfers spin to orbital angular momentum, see \tref{fig1b},\subref*{df:fig1c}. The sum $L+S$ is still conserved and the spin flip leads to an orbital motion with an increase of relative angular momentum of $2\hbar$.
@@ -132,7 +132,7 @@ Starting from expression \labeltref{etotnl} for the energy, we are now able to d
 %\begin{align} \tlabel{minimize}
 $E(N_\up,L_\up) + E(N_\down,L_\down) + \Delta\cdot N_\down$
 %\end{align}
-where we have introduced the Zeeman energy shift $\Delta=\mu_\text{B} g B$ (energy measured with respect to the energy of the lower Zeeman state). We assume that every particle eventually takes part in the transfer process (adiabaticity) and consequently one quanta of angular momentum is transferred per particle. Starting from the nonrotating state at $L=0$, this imposes the transfer condition $L_\up + L_\down = L = N_\down\hbar$. Adding this condition with another Lagrange multiplier, one can quantify the transfer process as a function of $\Delta$, see \tref{fig3a}. Coming from high fields where $\Delta > \Ef$, the transfer starts right at the Fermi energy. Note that during the transfer, while $\Ef > \Delta > -\Ef$, both components ($\up$, $\down$) rotate in the same direction. Eventually all particles get transferred to the lower spin state and the total angular momentum equals $L=L_\down=N\hbar$.
+where we have introduced the Zeeman energy shift $\Delta=\muB g B$ (energy measured with respect to the energy of the lower Zeeman state). We assume that every particle eventually takes part in the transfer process (adiabaticity) and consequently one quanta of angular momentum is transferred per particle. Starting from the nonrotating state at $L=0$, this imposes the transfer condition $L_\up + L_\down = L = N_\down\hbar$. Adding this condition with another Lagrange multiplier, one can quantify the transfer process as a function of $\Delta$, see \tref{fig3a}. Coming from high fields where $\Delta > \Ef$, the transfer starts right at the Fermi energy. Note that during the transfer, while $\Ef > \Delta > -\Ef$, both components ($\up$, $\down$) rotate in the same direction. Eventually all particles get transferred to the lower spin state and the total angular momentum equals $L=L_\down=N\hbar$.
 
 \section{Numerical simulation}
 \doublefig{0.4}{fig3b}{ }{0.4}{fig3c}{ }{\sfA~Full simulation of the transfer scheme for $N=4,6$, and $8$~particles in the adiabatic limit $\gamma\rightarrow 0$. As the Zeeman splitting $\Delta$ is tuned through zero, the angular momentum increases in steps of $2\hbar$, indicating the transfer of two particle at a time. The interaction strength is given by $\dlCdd=0.1$. \sfB~Angular momentum at the end of the transfer for $N=6$ particles at different values of the Landau-Zener parameter $\lambda=\dlCdd^2/\dl{\gamma}$. The data points for different rates collapse onto a single curve. The solid line is a probabilistic model, fitted to the data points.}
