@@ -91,15 +91,15 @@ dipolar effects in Rydberg: \cite{Westermann2006,Nipper2012b}
 
 
 \section{Dipole-dipole interaction}
-The aim of this section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$,
+The aim of this section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$, namely
 \begin{align} \tlabel{ddint}
-\Hdd(\vecR_{ij}) = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } }
+\Hdd_{ij} = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } }
 \end{align}
 in a spherical tensor representation~\cite{Micheli2007,Gorshkov2011c} which will be useful throughout this thesis.
-\Tref{ddint} is given in terms of the vector $\vecR_{ij} = \vecR_j - \vecR_i$ and its normalized form $\hat{\vecR}_{ij}$.
+\Tref{ddint} is given in terms of the relative vector $\vecR_{ij} = \vecR_j - \vecR_i$ and its normalized form $\hat{\vecR}_{ij}$.
 The constant prefactor is given by $\kappa = 1/4\pi\epsilon$ for electric dipoles and by
 $\kappa = \mu_0 / 4\pi$ for magnetic dipoles.
-We focus on the distance-independent part $D_{ij} \equiv \Hdd \absv{\vecR_{ij}}^3/\kappa=\vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij})$ of the dipole-dipole interaction which can be written in terms of the spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with components
+In the following, we focus on the distance-independent part $D_{ij} \equiv \Hdd_{ij} \cdot \absv{\vecR_{ij}}^3/\kappa=\vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij})$ of the dipole-dipole interaction which can be written in terms of the spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with the components
 \begin{align}
 T^2_0(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{6}} (d_i^+ d_j^- + 2d_i^0 d_j^0 + d_i^{-} d_j^{+}), \\
 T^2_{\pm 1}(\vecd^i, \vecd^j) &= \frac{1}{\sqrt{2}} (d_i^{\pm} d_j^0 + d_i^0 d_j^{\pm}), \\
@@ -122,6 +122,7 @@ Here, $C^l_m(\theta,\phi)=\sqrt{\frac{4\pi}{2l+1}} Y^l_m(\theta,\phi)$ are the m
 \end{align}
 It is worth noting that the $T^2_{m=0}(\vecd_i, \vecd_j)$-terms in the first row conserve the ``internal'' angular momentum while the $m=1$ ($m=2$) terms in the second (third) row increase or decrease the internal angular momentum by one (two) quanta.
 
+\subsection{High-symmetry alignments}
 For most applications, we will be concerned with two-dimensional systems where the dipoles are aligned perpendicular to the plane. Then, the dipoles are also perpendicular to the interconnecting axis $\vecR_{ij}$, implying $\theta = \pi/2$. In this case, the $m=1$ terms drop out and the tensorial part reduces to
 \begin{align} \tlabel{dop2d}
     D^\text{(2D)}_{ij} = d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} -\frac{3}{2} \bb{ d_i^- d_j^- \ef{+2i\phi} + d_i^+ d_j^+ \ef{-2i\phi} }
@@ -144,7 +145,7 @@ Conversely, if the dipoles point along the lattice direction, we can set $\theta
 \sfB~Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions \qu{downwards}.}
 
 
-Here we consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an external polarizing field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}, determined by the spherical angles $\Theta_0$ and $\Phi_0$:
+If we are not in a high-symmetry geometry, we can consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an external polarizing field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}, determined by the spherical angles $\Theta_0$ and $\Phi_0$:
 \begin{align}
     \vec{\hat{E}}=\begin{pmatrix}
         \sin\Theta_0\cos\Phi_0 \\
@@ -152,8 +153,8 @@ Here we consider a more general situation (see \tref{lattice-geometry}) with a t
         \cos\Theta_0
     \end{pmatrix}.
 \end{align}
-As before, we are interested in the interaction between two dipoles which are separated
-by the vector
+As before, we are interested in the interaction between two dipoles which are now separated
+by the in-plane vector
 \begin{align}
 \vecR_{ij} = \begin{pmatrix}R_{ij} \cos\Phi_{ij} \\ R_{ij} \sin\Phi_{ij} \\ 0\end{pmatrix}.
 \end{align}
@@ -171,9 +172,9 @@ By defining the difference $\bar\Phi=\Phi_{ij}-\Phi_0$, we can express the relev
 which are easily seen to reduce to the expressions \labeltref{dop2d} in the case of a perpendicular external field with $\Theta_0=0$, implying $\theta=\pi/2$ and $\bar\Phi=\Phi_{ij}$.
 In total, the tensorial part of the dipole-dipole interaction is given by
 \begin{align} \tlabel{tensortilted}
-    D_{ij}(\Theta_0, \bar\Phi) = f_0(\Theta_0, \bar \Phi) &\big[ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} \big] \\
-      \qquad-\frac{3}{\sqrt{2}} &\Big[ f_1(\Theta_0, \bar \Phi)  (d_i^0 d_j^- + d_i^- d_j^0) - f_1(\Theta_0, -\bar \Phi) (d_i^0 d_j^+ + d_i^+ d_j^0) \Big]\\
-      \qquad-\frac{3}{2} &\Big[ f_2(\Theta_0, \bar \Phi) d_i^- d_j^- + f_2(\Theta_0, -\bar \Phi) d_i^+ d_j^+\Big].
+    D_{ij}(\Theta_0, \bar\Phi) = f_0(\Theta_0, \bar \Phi) &\BC{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
+    \qquad-\frac{3}{\sqrt{2}} &\BC{ f_1(\Theta_0, \bar \Phi)  (d_i^0 d_j^- + d_i^- d_j^0) - f_1(\Theta_0, -\bar \Phi) (d_i^0 d_j^+ + d_i^+ d_j^0) }\\
+    \qquad-\frac{3}{2} &\BC{ f_2(\Theta_0, \bar \Phi) d_i^- d_j^- + f_2(\Theta_0, -\bar \Phi) d_i^+ d_j^+ }.
 \end{align}
 % The dipole-dipole interaction is symmetric under spatial inversion, implying:
 % \begin{align}
@@ -250,19 +251,19 @@ Here, the first two terms describe Ising- and XY-type interactions between the t
 describe spatially dependent contributions.
 
 \paragraph{Dipolar XXZ Hamiltonian}
-Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can write the interaction Hamiltonian for all dipoles as
+Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can write the interaction Hamiltonian for a system of interacting dipoles as
 \begin{align} \tlabel{hxxz}
     H &= \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j} \frac{\kappa}{\hbar^2 R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{2} S^z_i S^z_j  + q_1^2 (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
          % &= \sum_{i\ne j} \frac{a^3}{R_{ij}^3} \Big[ \frac{\kappa (d_1-d_0)^2}{2a^3} S^z_i S^z_j  + \frac{\kappa q_1^2}{a^3} (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
          &= \frac{Ja^3}{\hbar^2} \sum_{i\ne j} \frac{\cos\theta\, S^z_i S^z_j  + \sin\theta\, (S^x_i S^x_j + S^y_i S^y_j)}{R_{ij}^3}
 \end{align}
 where $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. The lattice constant $a$ has been introduced for future convenience.
-This model is reminescent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. For special values of the $\theta$ parameter, this model describes an Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) or XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior} of this thesis.
+This model is reminescent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. For particular values of the $\theta$ parameter, this model describes an Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) or XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior} of this thesis.
 
 \subsection{Angular momentum difference}
 \tlabel{twoleveldm}
-In this (related) case, we replace the upper state $\keto$ by the $M=1$ state $\ketp$, see \tref{dipole-moments}, and proceed similarly as before.
-The relevant dipole matrix elements are\footnote{Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements. Be aware, however, that $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = -\smallbraketop{+}{d^+}{0}^*$ due to the definition of $d^\pm$.}
+Staying in the regime of two-level dipoles, we can reach a different but related situation, if the upper state $\keto$ is replaced by the $M=1$ state $\ketp$, see \tref{dipole-moments}.
+Proceeding similarly as before, we define the relevant dipole matrix elements\footnote{Note that we can choose the phases of $\ketz$ and $\ketp$ freely, allowing us to choose real values for the transition dipole elements. Be aware, however, that $\smallbraketop{0}{d^-}{+} = \smallbraketop{+}{(d^-)^\dag}{0}^* = -\smallbraketop{+}{d^+}{0}^*$ due to the definition of $d^\pm$.}
 \begin{align}
     d_0 = \smallbraketop{0}{d^0}{0},\qquad
     d_+ = \smallbraketop{+}{d^0}{+},\qquad
@@ -287,7 +288,7 @@ Then, including the energy non-conserving terms proportional to $\sminus_i\sminu
 \begin{align} \tlabel{hdd2dmagnetic}
     \Hdd_{ij} = \frac{\kappa \muB^2 g^2}{4 R_{ij}^3} \bc{ \sz_i \sz_j - \bb{\splus_i \sminus_j+ 3 \sminus_i\sminus_j \ef{+2i\phi} + \hc } }.
 \end{align}
-This type of interaction will be used in~\cref{dipolar_fermions}, where we make use of the dipolar relaxation terms.
+This type of interaction between two magnetic dipoles will be utilized in~\cref{dipolar_fermions}, where we make use of the dipolar relaxation terms.
 
 
 \section{Excitation hopping: mapping to hard-core bosons}
@@ -316,7 +317,7 @@ First, we investigate a \textsf{V}-type level scheme including three internal st
     d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
     q_\pm &= |\smallbraketop{\pm}{d^\pm}{0}|.
 \end{align}
-As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons ($+$ excitations and $-$ excitations) or think of a single boson with an internal spin degree of freedom. Then, it is useful to write the dipole operator in terms of the bosonic operators:
+As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons (`$+$' excitations and `$-$' excitations) or think of a single boson with an internal spin degree of freedom. It is useful to write the spherical components of the dipole operator in terms of the bosonic operators:
 \begin{align}
     d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
     d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
