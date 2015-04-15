@@ -3,12 +3,12 @@
 
 \begin{document}
 
-% \input{frontmatter/titlepage}
+\input{frontmatter/titlepage}
 
 \cleardoublepage
 
 \input{frontmatter/publications}
-% \input{frontmatter/zusammenfassung}
+\input{frontmatter/zusammenfassung}
 
 \microtypesetup{protrusion=false}
 \tableofcontents
@@ -18,22 +18,21 @@
 
 \includechapter{in}{introduction}
 \includechapter{ds}{dipolar_spinmodels}
-% \includechapter{ab}{anomalous_behavior}
-% \includechapter{df}{dipolar_fermions}
-% \includechapter{tb}{topological_bands}
-% \includechapter{rl}{rydberg_losses}
+\includechapter{ab}{anomalous_behavior}
+\includechapter{df}{dipolar_fermions}
+\includechapter{tb}{topological_bands}
 
 \begin{appendices}
 \crefalias{chapter}{appendixchapter}
 
     \includeappendix{dd}{dipolar_dispersion}
-    % \includeappendix{sa}{spinwave_analysis}
-    % \includeappendix{xy}{xy_model}
-    % \includeappendix{me}{matrix_elements}
+    \includeappendix{sa}{spinwave_analysis}
+    \includeappendix{xy}{xy_model}
+    \includeappendix{me}{matrix_elements}
 
 \end{appendices}
 
 \input{endmatter/bibliography}
-% \input{endmatter/acknowledgements}
+\input{endmatter/acknowledgements}
 
 \end{document}

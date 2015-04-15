@@ -12,6 +12,7 @@
     ,english
     ,pagesize
     ,numbers=noenddot
+    ,chapterprefix=true
     % ,draft
 ]{scrbook}
 
@@ -144,19 +145,19 @@
 
 
 %%% Chapter pages
+\colorlet{chaptergray}{gray!50}
 
-% We know that usage of titlesec together with KOMA is not recommended.
-% Switch off this warning:
-\usepackage{silence}
-\WarningFilter{scrbook}{Usage of package `titlesec'}
+% Right-align chapter titles
+\let\raggedchapter\raggedleft
 
-\usepackage{titlesec}
-\colorlet{chaptergrey}{gray!50}
-\titleformat{\chapter}[display]
-            {\sffamily\bfseries}
-            {\raggedleft\color{chaptergrey}\fontsize{3.5cm}{1em}\selectfont\thechapter}
-            {0pt}
-            {\leavevmode\\\huge\raggedleft}
+% Big gray chapter number
+\addtokomafont{chapterprefix}{\color{chaptergray}\fontsize{3.5cm}{1em}\selectfont}
+\renewcommand*{\chapterformat}{\thechapter}
+
+% Vertical spacing
+\renewcommand{\chapterheadstartvskip}{\vspace{3cm}}
+\renewcommand{\chapterheadmidvskip}{\\\vspace{0.5cm}}
+\renewcommand{\chapterheadendvskip}{\vspace{1.5cm}}
 
 
 %%% Languages
