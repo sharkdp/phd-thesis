@@ -13,8 +13,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="468.32693"
-   height="278.57193"
-   viewBox="0 0 468.32695 278.57192"
+   height="330"
+   viewBox="0 0 468.32695 329.99999"
    id="svg29209"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -316,7 +316,7 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-173.47805,-589.48317)">
+     transform="translate(-173.47805,-538.0551)">
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -340,27 +340,27 @@
        inkscape:connector-curvature="0"
        id="path93226"
        d="m 348.1524,822.517 91.2854,0"
-       style="fill:none;stroke:#000000;stroke-width:2.591;stroke-miterlimit:4;stroke-dasharray:none" />
+       style="fill:none;stroke:#000000;stroke-width:2.59100008;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:2.591;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:2.59100008;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 348.1524,634.4469 91.2854,0"
        id="path93228"
        inkscape:connector-curvature="0" />
     <g
        transform="translate(-2101.9126,-815.3629)"
        id="g122880"
-       style="stroke-width:2.591;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke-width:2.59100008;stroke-miterlimit:4;stroke-dasharray:none">
       <path
          inkscape:connector-curvature="0"
          id="path93524"
          d="m 2596.8975,1486.274 91.2856,0"
-         style="fill:#ff6b6b;fill-opacity:1;stroke:#000000;stroke-width:2.591;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:#ff6b6b;fill-opacity:1;stroke:#000000;stroke-width:2.59100008;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <g
          id="g111146"
          transform="matrix(3.592094,0,0,3.592094,1813.9643,1037.2896)"
          ns0:preamble="/home/shark/fe/header.tex"
          ns0:text="$\\ket{{+}}$"
-         style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+         style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
         <defs
            id="defs111148">
           <g
@@ -419,10 +419,10 @@
         </defs>
         <g
            id="g111172"
-           style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+           style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
           <g
              id="g111174"
-             style="fill:#000000;fill-opacity:1;stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+             style="fill:#000000;fill-opacity:1;stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
             <use
                id="use111176"
                y="134.765"
@@ -430,11 +430,11 @@
                xlink:href="#textext-9a229859-1"
                width="1380.7705"
                height="1001.0065"
-               style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none" />
           </g>
           <g
              id="g111178"
-             style="fill:#000000;fill-opacity:1;stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+             style="fill:#000000;fill-opacity:1;stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
             <use
                id="use111180"
                y="134.765"
@@ -442,11 +442,11 @@
                xlink:href="#textext-9a229859-4"
                width="1380.7705"
                height="1001.0065"
-               style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none" />
           </g>
           <g
              id="g111182"
-             style="fill:#000000;fill-opacity:1;stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+             style="fill:#000000;fill-opacity:1;stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
             <use
                id="use111184"
                y="134.765"
@@ -454,7 +454,7 @@
                xlink:href="#textext-9a229859-2"
                width="1380.7705"
                height="1001.0065"
-               style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none" />
           </g>
         </g>
       </g>
@@ -462,18 +462,18 @@
     <g
        transform="translate(-2181.9126,-815.3629)"
        id="g122903"
-       style="stroke-width:2.591;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke-width:2.59100008;stroke-miterlimit:4;stroke-dasharray:none">
       <path
          inkscape:connector-curvature="0"
          id="path93230"
          d="m 2383.2324,1486.274 91.2854,0"
-         style="fill:none;stroke:#000000;stroke-width:2.591;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;stroke:#000000;stroke-width:2.59100008;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <g
          ns0:text="$\\ket{{-}}$"
          ns0:preamble="/home/shark/fe/header.tex"
          transform="matrix(3.592094,0,0,3.592094,1600.2982,1037.2896)"
          id="g115670"
-         style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+         style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
         <defs
            id="defs115672">
           <g
@@ -522,9 +522,9 @@
         </defs>
         <g
            id="g115692"
-           style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none">
+           style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none">
           <g
-             style="fill:#000000;fill-opacity:1;stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none"
+             style="fill:#000000;fill-opacity:1;stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none"
              id="g115694">
             <use
                height="1001.0065"
@@ -533,7 +533,7 @@
                x="223.43201"
                y="134.765"
                id="use115696"
-               style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none" />
             <use
                height="1001.0065"
                width="1380.7705"
@@ -541,7 +541,7 @@
                x="226.19962"
                y="134.765"
                id="use115698"
-               style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none" />
             <use
                height="1001.0065"
                width="1380.7705"
@@ -549,7 +549,7 @@
                x="233.94852"
                y="134.765"
                id="use115700"
-               style="stroke-width:0.72130629;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="stroke-width:0.72130626;stroke-miterlimit:4;stroke-dasharray:none" />
           </g>
         </g>
       </g>
