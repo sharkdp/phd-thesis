@@ -69,7 +69,7 @@ The intrinsic spin-orbit coupling is visible in the last terms in \tref{ddint}, 
 For molecules with a permanent dipole moment $d$ in an optical lattice with spacing $a$, the characteristic interaction energy $V=\kappa d^2/a^3$ is much weaker than the rotational splitting $B$.
 For strong electric fields, the energy separation between the states $\ketpm_i$ and $\keto_i$ is also much larger than the interaction energy.
 Then the number of $\ketpm$ excitations is conserved.
-This allows us to map the Hamiltonian to a bosonic model: The lowest energy state $\prod_i \ketz_i$ with all molecules in the ground rotational state is the vacuum state, while excitations of a polar molecule into the state $\ket\pm_i$ are described by hard-core boson operators $\smash{\bopd_{i,\pm} =\ket{\pm}_i\!\bra{0}_i }$.
+As described in \cref{ds:threelevel}, this allows us to map the Hamiltonian to a bosonic model: The lowest energy state $\prod_i \ketz_i$ with all molecules in the ground rotational state is the vacuum state, while excitations of a polar molecule into the state $\ket\pm_i$ are described by hard-core boson operators $\smash{\bopd_{i,\pm} =\ket{\pm}_i\!\bra{0}_i }$.
 Note that these effective bosonic particles have a spin angular momentum of $m =\pm 1$.
 
 \section{Bosonic model}
@@ -80,7 +80,7 @@ For the study of the single particle band structure we can drop the term proport
 Then, as shown in \refandpage{ds:pmmodel}, the interaction Hamiltonian reduces to
 \begin{align}
     H^{\text{dd}} = \sum_{i\ne j}
-    \frac{a^3}{|\vec{R}_{ij}|^3}\;
+    \frac{a^3}{R_{ij}^3}\;
     \psiopd_i\!
     \begingroup
         \renewcommand*{\arraystretch}{1.2}
@@ -141,7 +141,7 @@ The behavior of both $n^0_\veck$ and $\vec{n}^{\vphantom 0}_\veck$ is determined
 \begin{align}
     \epskm = \sum_{j\ne 0} \frac{a^3}{|\vec{R}_j|^3}\ef{i\veck \vec{R}_j + i m \phi_{j}}.
 \end{align}
-The precise determination of this function can be achieved by an Ewald summation technique providing a non-analytic low momentum behavior
+The precise determination of this function can be achieved by an Ewald summation technique, providing a non-analytic low momentum behavior
 $\epsk^0 \approx \epsZ^0 - 2\pi |\veck|a$ and
 $\epsk^2 \approx -\frac{2\pi}{3} |\veck|a \ef{2i \varphi}$.
 Here, $\epsZ^0 \approx 9.03$ and $\varphi$ is defined by $\hat{\veck}=(\cos \varphi, \sin \varphi)^t$.

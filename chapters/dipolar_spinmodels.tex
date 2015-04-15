@@ -310,13 +310,14 @@ Keeping the constraint in mind, we can treat these operators as bosonic creation
 For a detailed treatment, see \cref{anomalous_behavior} and \cref{spinwave_analysis}. In the following, we will extend this idea to dipoles with more than two internal states.
 
 \subsection{Three-level dipoles: spin-orbit coupling}
+\tlabel{threelevel}
 First, we investigate a \textsf{V}-type level scheme including three internal states of a dipole, $\ketz, \ketp$ and $\ketm$, as shown in~\tref{dipole-moments}. The relevant dipole matrix elements are
 \begin{align} \tlabel{dipolemomentspm}
     d_0 = \smallbraketop{0}{d^0}{0}, \qquad
     d_\pm = \smallbraketop{\pm}{d^0}{\pm}, \qquad
     q_\pm &= |\smallbraketop{\pm}{d^\pm}{0}|.
 \end{align}
-As before, we define hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons (`$+$' excitations and `$-$' excitations) or think of a single boson with an internal spin degree of freedom. It is useful to write the spherical components of the dipole operator in terms of the bosonic operators:
+As before, we define a vacuum state $\ket{G}=\prod_i \ketz_i$ as well as hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons (`$+$' excitations and `$-$' excitations) or think of a single boson with an internal spin degree of freedom. It is useful to write the spherical components of the dipole operator in terms of the bosonic operators:
 \begin{align}
     d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
     d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
