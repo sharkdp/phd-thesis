@@ -21,7 +21,7 @@ review \cite{Lahaye2009}
 \subsection{Atoms with high magnetic moments}
 
 Highly dipolar atoms where among the first experimental realizations
-of ultracold dipolar systems~\cite{Griesmaier2005a}. These atoms habe
+of ultracold dipolar systems~\cite{Griesmaier2005a}. These atoms have
 large magnetic dipole moments $xxx$ due to their particular electronic
 structure. In the meantime, a large number of different atoms have been
 successfully cooled. Chromium with a magnetic moment of $6\muB$ with
@@ -198,7 +198,7 @@ In total, the tensorial part of the dipole-dipole interaction is given by
 %     f_0(\Theta_0^*, \bar \Phi) = 1-\cos^2\bar \Phi
 % \end{align}
 
-% \paragraph{In-plane field}
+% \paragraph{In-plane field:}
 % For $\Theta_0=\pi/2$, the expressions above reduce to
 % \begin{align}
 %     1-3\cos^2\theta &= 1-3\cos^2\bar\Phi \\
@@ -206,7 +206,7 @@ In total, the tensorial part of the dipole-dipole interaction is given by
 %     \sin^2\theta \ef{\pm 2i\phi} &= - \sin^2 \bar\Phi
 % \end{align}
 
-% \paragraph{One-dimensional setup}
+% \paragraph{One-dimensional setup:}
 % For a 1D setup we can set $\Phi_0=0$. The angle $\Phi$ is limited
 % to the values $0$ or $\pi$, indicated by $\sin\Phi=0$ and
 % $\cos\Phi=\pm 1=\text{sign}(X)$. Then, the expressions above reduce to
@@ -219,7 +219,7 @@ In total, the tensorial part of the dipole-dipole interaction is given by
 
 \section{Dipolar spin models}
 The different dipolar models throughout this thesis will be largely determined by a particular choice of internal states of the dipoles. These states can be additionally \qu{dressed} by external DC and AC fields, with the details depending on the particular physical realization.
-In the following, we look at several specific choices. Each of them corresponds to a rise in complexity compared to the previous one, but also intruduces additional properties and characteristics.
+In the following, we look at several specific choices. Each of them corresponds to a rise in complexity compared to the previous one, but also introduces additional properties and characteristics.
 
 \subsection{Realizing Ising and XY interactions}
 \tlabel{xxz}
@@ -249,7 +249,7 @@ Using $\sz = P^1 - P^0$ and $\id = P^1 + P^0$ we find
 Here, the first two terms describe Ising- and XY-type interactions between the two-level dipoles. The third term is equivalent to a magnetic field in $z$ direction and the last term is a constant energy offset. Typically, we will be interested in the interaction terms in the first line. Note, however, that the \qu{magnetic field} term and the constant offset depend on the positions of all other dipoles. If the system is not translationally invariant, these terms
 describe spatially dependent contributions.
 
-\paragraph{Dipolar XXZ Hamiltonian}
+\paragraph{Dipolar XXZ Hamiltonian:}
 Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can write the interaction Hamiltonian for a system of interacting dipoles as
 \begin{align} \tlabel{hxxz}
     H &= \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j} \frac{\kappa}{\hbar^2 R_{ij}^3} \Big[ \frac{(d_1-d_0)^2}{2} S^z_i S^z_j  + q_1^2 (S^x_i S^x_j + S^y_i S^y_j) \Big] \\
@@ -257,7 +257,7 @@ Using the spin one-half operators $S^\alpha_i = \hbar \sigma^\alpha_i/2$, we can
          &= \frac{Ja^3}{\hbar^2} \sum_{i\ne j} \frac{\cos\theta\, S^z_i S^z_j  + \sin\theta\, (S^x_i S^x_j + S^y_i S^y_j)}{R_{ij}^3}
 \end{align}
 where $J\cos\theta = \kappa (d_1-d_0)^2/2a^3$ and $J\sin\theta = \kappa q_1^2/a^3$. The lattice constant $a$ has been introduced for future convenience.
-This model is reminescent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. For particular values of the $\theta$ parameter, this model describes an Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) or XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior} of this thesis.
+This model is reminiscent of the famous XXZ Hamiltonian, where the nearest neighbor interactions are replaced by the dipolar $R_{ij}^{-3}$ interaction. For particular values of the $\theta$ parameter, this model describes an Ising model ($\theta = 0, \pi$), Heisenberg model ($\theta=\pm \pi/2$) or XY model ($\theta=\pi/4, 3\pi/4$). The modifications due to the dipolar interaction are subject of \cref{anomalous_behavior} of this thesis.
 
 \subsection{Angular momentum difference}
 \tlabel{twoleveldm}
@@ -276,7 +276,7 @@ In contrast to the previous section, the term $d^0_i d^0_j$ only generates an in
 \end{align}
 This allows us to tune the model in \tref{hxxz} to different $\theta$ values.
 
-\paragraph{Magnetic dipoles}
+\paragraph{Magnetic dipoles:}
 Using the magnetic dipole moment $\vec{d}=\muB g \vecsigma / 2$ of a dipolar atom with spin $S=1/2$,
 the dipole matrix elements are given by
 \begin{align}
@@ -332,7 +332,7 @@ Restricting ourselves to a two-dimensional geometry with a perpendicular polariz
     d^+_i d^-_j &= - q_+^2 \bopd_{+,i} \bop_{+,j} - q_-^2 \bopd_{-,j} \bop_{-,i} \\
     d^+_i d^+_j &= - q_+q_- \, \bopd_{+,i} \bop_{-,j}
 \end{align}
-where we have neglected any excitation-nonconserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find the many-body Hamiltonian
+where we have neglected any excitation-non conserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find the many-body Hamiltonian
 \begin{align}
     H = \frac{1}{2} \sum_{i\ne j} \Hdd_{ij} = \sum_{i\ne j}  t_{ij}^{\alpha\beta} \bopd_{\alpha,i} \bop_{\beta,j}
     +\frac{1}{2}\sum_{i\ne j} V_{ij}^{\alpha\beta} \nop_{\alpha,i} \nop_{\beta,j}.
@@ -371,7 +371,7 @@ This model is the basis for the realization of topological band structures in \c
 
 
 
-\paragraph{One-dimensional system}
+\paragraph{One-dimensional system:}
 In one dimension, we can always choose $\phi_{ij}=0$. Furthermore, if $q_+=q_-$, the tunneling
 elements simplify to
 \begin{align}
@@ -409,7 +409,7 @@ Here, $f_m = f_m(\Theta_0, \phi_{ij}-\Phi_0)$ are the functions defined in \tref
 % \end{align}
 Note that $f_1(\Theta_0, \phi_{ij}-\Phi_0)=0$ for an external field which is perpendicular to the two-dimensional plane ($\Theta=0$). This leads to an effective decoupling of the $\keto$ state from the other two, taking us back to the model in \tref{pmmodel}.
 
-% \paragraph{Gamma scheme}
+% \paragraph{Gamma scheme:}
 % Using the $\ketp$ and the $\keto$ state (first excited $m=0$ state), the microwave field is no longer necessary, as the model intrinsically breaks time-reversal symmetry. However, the electric field has to be rotated away from the $z$ axis to open a gap in the spectrum. Let $\Theta, \Phi$ denote the angles of the electric field axis in a spherical coordinate system with the lattice in the equatorial plane.
 
 % We assume a generic level structure of the kind shown in \tref{dipole-moments} with a ground state called $\ketz$ and three excited states $\keto, \ketpm$. The only requirement on these states is that
