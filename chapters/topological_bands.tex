@@ -190,6 +190,40 @@ Note that the non-trivial topology solely results from dipolar spin-orbit coupli
 
 
 
+
+\section{Flat bands}
+One of the challenges is to find a specific setup that optimizes the flatness of the topological bands.
+This can be achieved either by focusing on different lattice structures (see next section) or by an alternative choice for the two excitations.
+Instead of considering $\ketp$ and $\ketm$, we choose a model including the $\ketp$ and $\keto$ states.
+This is possible for weak electric fields, if the $\ketm$ state is shifted by a microwave field, or by exploiting the coupling between the nuclear spins of the polar molecules and the rotational degree of freedom~\cite{Ospelkaus2010,Yan2013}.
+This model intrinsically breaks time-reversal symmetry and has the advantage that the $\ketp$ and $\keto$ states have different signs for the tunneling strength, making the $\mathcal{T}$-breaking parameter $t=(t^+-t^1)/2$ large compared to $\bar{t}=(t^++t^1)/2$. % in fact, we know that t/tbar = 3t^+/(-t^+) = -3
+For an electric field direction perpendicular to the lattice, this system is gapless.
+Opening the gap is achieved by rotating the electric field away from the $z$-axis by an angle $\Theta$.
+The dispersion relation for $\Theta=0$ and $\pi/4$ is shown in~\tref{fig2b}.
+The lower band has a flatness ratio of $f = \text{bandgap}/\text{bandwidth} \approx 1$.
+
+% TODO: write down the +/1 model here
+
+
+\section{Dependence on the lattice geometry}
+
+% TODO write about the different angles in the different lattices and how
+% they modify the tunneling phases. maybe show a picture of the triangular
+% path from the talk.
+
+\fig{.8}{fig3/fig3c}{Topological phase diagram in the honeycomb lattice for $t/\bar{t}=0.54$. The labels give the Chern numbers of the four bands (bar indicates negative number) from bottom to top while the solid lines correspond to touching points between two bands. The color indicates the flatness $f$ of the lowest band. The arrow shows the parameters of the flat-band model in~\tref{fig3/fig3b}.}
+
+Returning to the simple setup in \tref{fig1/fig1b}, the influence of the lattice geometry on the topological properties can be exemplified by studying the case of the honeycomb lattice.
+Due to the two distinct sublattices, we generally obtain four bands in the presence of broken time-reversal symmetry.
+Depending on the microscopic parameters, the bands exhibit a rich topological structure, characterized by their Chern numbers.
+Note that the Chern numbers are calculated with a numerical method similar to the one for the disordered system.
+In \tref{fig3/fig3c}, we show a two-dimensional cut through the topological phase diagram, spanned by the parameters $t/\bar{t}, w/\bar{t}$ and $\mu/\bar{t}$.
+We find a multitude of different topological phases with large areas of flatness $f > 0$ for the lowest band.
+A flatness $f < 0$ indicates that the maximum of the lowest band is higher than the minimum of the second band.
+In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient for a nonzero Chern number; $t\ne 0$ is not necessarily needed.
+\Tref{fig3/fig3b} shows the dispersion relation with a lowest band of flatness $f\approx 6.4$ and a Chern number $C=-1$.
+The different behavior of the same model on the square and hexagonal lattice will be explained in \tref{doublelayerhex}.
+
 \section{Classification and double-layer picture}
 % TODO: write about symmetry classes.. we are in class 'A'
 
@@ -205,7 +239,7 @@ The second layer is given by a $60^\circ$ rotation.
 
 Topological band structures can be classified by considering equivalence classes of models that can be continuously deformed into each other without closing the energy gap~\cite{Hasan2010}.
 In particular, the Chern number of a single band can only change if it touches another band.
-Using this idea, we show that our model in its $C=2$ phase is adiabatically equivalent to a system of two uncoupled copies of a $C=1$ layer.
+Using this idea, we show that the square-lattice model in its $C=2$ phase is adiabatically equivalent to a system of two uncoupled copies of a $C=1$ layer.
 
 To see this, imagine separating the two orbitals $\ketp$ and $\ketm$ per site spatially along the $z$-direction (without changing any tunneling rates) such that we obtain two separate square lattice layers, called A and B.
 Sorting all terms in the Hamiltonian into intra- and inter-layer processes, we can write
@@ -229,44 +263,9 @@ The resulting single layer model is reminiscent of the famous Haldane model~\cit
 Using a site-dependent microwave dressing, it has been shown that a model similar to our single-layer system can be realized, giving rise to a $\nu=1/2$ fractional Chern insulating phase~\cite{Yao2012,Yao2013}.
 It is rather remarkable that uniform dipole-dipole interactions give rise to a model usually requiring strong modulations on the order of the lattice spacing.
 
-\section{Flat bands}
-One of the challenges is to find a specific setup that optimizes the flatness of the topological bands.
-This can be achieved either by focusing on different lattice structures (see \tref{honeycomb}) or by an alternative choice for the two excitations.
-Instead of considering $\ketp$ and $\ketm$, we choose a model including the $\ketp$ and $\keto$ states.
-This is possible for weak electric fields, if the $\ketm$ state is shifted by a microwave field, or by exploiting the coupling between the nuclear spins of the polar molecules and the rotational degree of freedom~\cite{Ospelkaus2010,Yan2013}.
-This model intrinsically breaks time-reversal symmetry and has the advantage that the $\ketp$ and $\keto$ states have different signs for the tunneling strength, making the $\mathcal{T}$-breaking parameter $t=(t^+-t^1)/2$ large compared to $\bar{t}=(t^++t^1)/2$. % in fact, we know that t/tbar = 3t^+/(-t^+) = -3
-For an electric field direction perpendicular to the lattice, this system is gapless.
-Opening the gap is achieved by rotating the electric field away from the $z$-axis by an angle $\Theta$.
-The dispersion relation for $\Theta=0$ and $\pi/4$ is shown in~\tref{fig2b}.
-The lower band has a flatness ratio of $f = \text{bandgap}/\text{bandwidth} \approx 1$.
-%While not being as good as the ratios achieved in related proposals~\cite{Yao2012,Yao2013,Neupert2011,Trescher2012,Wang2011a,Yang2012}, we stress that only a single parameter $\Theta$ is `fine-tuned' here. The values of $t^+, t^1$ and $w$ for weak fields are fixed by the dipole-dipole interaction.
-
-% TODO: write down the +/1 model here
-
-
-\section{Dependence on the lattice geometry}
-
-% TODO write about the different angles in the different lattices and how
-% they modify the tunneling phases. maybe show a picture of the triangular
-% path from the talk.
-
-\subsection{Honeycomb lattice}
-\tlabel{honeycomb}
-
-\fig{.8}{fig3/fig3c}{Topological phase diagram in the honeycomb lattice for $t/\bar{t}=0.54$. The labels give the Chern numbers of the four bands (bar indicates negative number) from bottom to top while the solid lines correspond to touching points between two bands. The color indicates the flatness $f$ of the lowest band. The arrow shows the parameters of the flat-band model in~\tref{fig3/fig3b}.}
-
-Returning to the simple setup in \tref{fig1/fig1b}, the influence of the lattice geometry can be exemplified by going to the honeycomb lattice.
-Due to the two distinct sublattices, we generally obtain four bands in the presence of broken time-reversal symmetry.
-Depending on the microscopic parameters, the bands exhibit a rich topological structure, characterized by their Chern numbers.
-Note that the Chern numbers are calculated with a numerical method similar to the one for the disordered system.
-In \tref{fig3/fig3c}, we show a two-dimensional cut through the topological phase diagram, spanned by the parameters $t/\bar{t}, w/\bar{t}$ and $\mu/\bar{t}$.
-We find a multitude of different topological phases with large areas of flatness $f > 0$ for the lowest band.
-A flatness $f < 0$ indicates that the maximum of the lowest band is higher than the minimum of the second band.
-In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient for a nonzero Chern number; $t\ne 0$ is not necessarily needed.
-\tref{fig3/fig3b} shows the dispersion relation with a lowest band of flatness $f\approx 6.4$ and a Chern number $C=-1$.
-
-\paragraph{Double-layer picture}
-The relation to the bilayer system allows us to explain the different behavior compared to the square lattice.
+\subsection{Hexagonal lattice}
+\tlabel{doublelayerhex}
+The relation to the bilayer system also allows us to explain the different behavior on the hexagonal lattice.
 Applying the same procedure, a single layer can be constructed which retains the original symmetry of the honeycomb lattice, see \tref{fig-supplement/fig1b}.
 Here, the two bands of the single layer also have a Chern number of $C=\pm 1$.
 In contrast to the square lattice, however, the Brillouin zone of a single layer is the same as for the full (double layer) system with both orbitals at each site.
