@@ -155,20 +155,20 @@ If we are not in a high-symmetry geometry, we can consider a more general situat
 As before, we are interested in the interaction between two dipoles which are now separated
 by the in-plane vector
 \begin{align}
-\vecR_{ij} = \begin{pmatrix}R_{ij} \cos\Phi_{ij} \\ R_{ij} \sin\Phi_{ij} \\ 0\end{pmatrix}.
+\vecR_{ij} = \begin{pmatrix}R_{ij} \cos\phi_{ij} \\ R_{ij} \sin\phi_{ij} \\ 0\end{pmatrix}.
 \end{align}
 For the angle $\theta$ between the dipole orientation $\vec{\hat{E}}$ and the interconnection line between the dipoles $\hat{\vecR}_{ij}$, we find the relation
 \begin{align}
-    \cos\theta = \vec{\hat{E}} \cdot \hat{\vecR}_{ij} &= \sin\Theta_0\bb{\cos\Phi_0\cos\Phi_{ij}+\sin\Phi_0\sin\Phi_{ij}}\\
-                                                      &=\sin\Theta_0\cos(\Phi_{ij}-\Phi_0).
+    \cos\theta = \vec{\hat{E}} \cdot \hat{\vecR}_{ij} &= \sin\Theta_0\bb{\cos\Phi_0\cos\phi_{ij}+\sin\Phi_0\sin\phi_{ij}}\\
+                                                      &=\sin\Theta_0\cos(\phi_{ij}-\Phi_0).
 \end{align}
-By defining the difference $\bar\Phi=\Phi_{ij}-\Phi_0$, we can express the relevant terms in the dipole-dipole interaction from \tref{doperator} as
+By defining the difference $\bar\Phi=\phi_{ij}-\Phi_0$, we can express the relevant terms in the dipole-dipole interaction from \tref{doperator} as
 \begin{align} \tlabel{fmfunctions}
     f_0(\Theta_0, \bar \Phi)&\equiv 1-3\cos^2\theta = 1-3\sin^2\Theta_0\cos^2\bar\Phi, \vphantom{\bb{\bar \Phi}} \\
     f_1(\Theta_0, \bar \Phi)&\equiv \sin\theta\cos\theta \ef{i\phi} = \sin\Theta_0 \cos\bar\Phi \bb{\cos\Theta_0 \cos\bar\Phi + i \sin \bar\Phi}, \\
     f_2(\Theta_0, \bar \Phi)&\equiv\sin^2\theta \ef{2i\phi} = \bb{\cos\Theta_0 \cos\bar\Phi + i \sin \bar\Phi}^2.
 \end{align}
-which are easily seen to reduce to the expressions \labeltref{dop2d} in the case of a perpendicular external field with $\Theta_0=0$, implying $\theta=\pi/2$ and $\bar\Phi=\Phi_{ij}$.
+which are easily seen to reduce to the expressions \labeltref{dop2d} in the case of a perpendicular external field with $\Theta_0=0$, implying $\theta=\pi/2$ and $\bar\Phi=\phi_{ij}$.
 In total, the tensorial part of the dipole-dipole interaction is given by
 \begin{align} \tlabel{tensortilted}
     D_{ij}(\Theta_0, \bar\Phi) = f_0(\Theta_0, \bar \Phi) &\BC{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
@@ -389,6 +389,7 @@ If the energy of the $\ket{x}, \ket{y}$ manifold is low enough compared to the $
 causes excitations to condense in the $\ket{x}$ state, building a ferroelectric state of matter. The accompanying quantum phase transition has been investigated in \refscite{Klinsmann2011,Klinsmann2014}.
 
 \subsection{General case in a tilted external field}
+\tlabel{generalTilted}
 Finally, we briefly discuss the most general case when all four states in \tref{dipole-moments} are involved. We assume the geometry from \tref{lattice-geometry} with a possibly tilted external field.
 Introducing a bosonic operator $\bop_1=\ketbra{1}{0}$ for the additional state, we can write the tunneling rates in the basis $\{{+}, 1, {-}\}$:
 \begin{align}
