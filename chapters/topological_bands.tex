@@ -194,13 +194,32 @@ One of the challenges is to find a specific setup that optimizes the flatness of
 This can be achieved either by focusing on different lattice structures (see next section) or by an alternative choice for the two excitations.
 Instead of considering $\ketp$ and $\ketm$, we choose a model including the $\ketp$ and $\keto$ states.
 This is possible for weak electric fields, if the $\ketm$ state is shifted by a microwave field, or by exploiting the coupling between the nuclear spins of the polar molecules and the rotational degree of freedom~\cite{Ospelkaus2010,Yan2013}.
+As described in \cref{ds:generalTilted} (excluding the $\ketm$ state), this leads to the single-particle Hamiltonian
+\begin{align}
+    H^{\text{dd}} = \sum_{i\ne j}
+    \frac{a^3}{R_{ij}^3}\;
+    \psiopd_i\!
+    \begingroup
+        \renewcommand*{\arraystretch}{1.2}
+        \begin{pmatrix}
+            -t^+ f_0 & w f_1^* \\
+            w f_1    & -t^1 f_0
+        \end{pmatrix}
+    \endgroup\!
+    \psiop_j \,,
+    \tlabel{hrealspace}
+\end{align}
+where $f_m = f_m(\phi_{ij} - \Phi_0, \Theta_0)$ are the functions defined in \refandpage{ds:fmfunctions}, depending on the electric field direction $\Theta_0, \Phi_0$ and the tunneling rates
+\begin{align}
+    t^{+} = \frac{\kappa q_{+}^2}{2 a^3}, \quad
+    t^{1} = -\frac{\kappa q_{1}^2}{a^3}, \quad
+    w = \frac{3\kappa q_+ q_-}{\sqrt{2} a^3}.
+\end{align}
 This model intrinsically breaks time-reversal symmetry and has the advantage that the $\ketp$ and $\keto$ states have different signs for the tunneling strength, making the $\mathcal{T}$-breaking parameter $t=(t^+-t^1)/2$ large compared to $\bar{t}=(t^++t^1)/2$. % in fact, we know that t/tbar = 3t^+/(-t^+) = -3
-For an electric field direction perpendicular to the lattice, this system is gapless.
+For an electric field direction perpendicular to the lattice, this system is gapless because $f_1(\phi_{ij}, 0) = 0$.
 Opening the gap is achieved by rotating the electric field away from the $z$-axis by an angle $\Theta$.
 The dispersion relation for $\Theta=0$ and $\pi/4$ is shown in~\tref{fig2b}.
 The lower band has a flatness ratio of $f = \text{bandgap}/\text{bandwidth} \approx 1$.
-
-% TODO: write down the +/1 model here
 
 
 \section{Dependence on the lattice geometry}
