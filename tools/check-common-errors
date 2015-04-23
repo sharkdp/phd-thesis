@@ -25,4 +25,7 @@ tgrep '\ba the\b' "${files[@]}"
 tgrep '\ban the\b' "${files[@]}"
 
 category "Paragraph without colon"
-tgrep "\\paragraph{[^}]*[^:]}" "${files[@]}"
+tgrep "\\\\paragraph{[^}]*[^:]}" "${files[@]}"
+
+category "Citation with space instead of ~"
+tgrep " \\\\cite{" "${files[@]}"
