@@ -28,4 +28,5 @@ category "Paragraph without colon"
 tgrep "\\\\paragraph{[^}]*[^:]}" "${files[@]}"
 
 category "Citation with space instead of ~"
-tgrep " \\\\cite{" "${files[@]}"
+tgrep "[^~]\\\\cite{" "${files[@]}"
+tgrep "^\\\\cite{" "${files[@]}"
