@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=(chapters/*.tex appendices/*.tex)
+files=(chapters/*.tex appendices/*.tex frontmatter/*.tex endmatter/*.tex)
 
 function category() {
     echo
@@ -30,3 +30,21 @@ tgrep "\\\\paragraph{[^}]*[^:]}" "${files[@]}"
 category "Citation with space instead of ~"
 tgrep "[^~]\\\\cite{" "${files[@]}"
 tgrep "^\\\\cite{" "${files[@]}"
+
+category "empty cite"
+tgrep "\\\\cite{}" "${files[@]}"
+
+category "todo, TODO"
+tgrep "todo" "${files[@]}"
+
+category "oops: paper, manuscript, letter, supplement"
+tgrep "paper" "${files[@]}"
+tgrep "manuscript" "${files[@]}"
+tgrep "letter" "${files[@]}"
+tgrep "supplement" "${files[@]}"
+
+category "old-style labels"
+tgrep "eq:" "${files[@]}"
+tgrep "ap:" "${files[@]}"
+tgrep "fig:" "${files[@]}"
+tgrep "table:" "${files[@]}"
