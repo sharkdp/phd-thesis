@@ -299,32 +299,61 @@ Then, the Chern number can be calculated as
 \begin{align}
     C &= \frac{1}{2\pi}\iint\!\mathrm{d}\theta_x \mathrm{d}\theta_y \, F(\theta_x, \theta_y), \tlabel{manybodychern}
 \end{align}
-where $F(\theta_x,\theta_y)=\smash{\Im\!\big({\big\langle\frac{\partial \Psi}{\partial \theta_y}\big|\frac{\partial \Psi}{\partial \theta_x}\big\rangle - \big\langle\frac{\partial \Psi}{\partial \theta_x}\big|\frac{\partial \Psi}{\partial \theta_y}\big\rangle}\big)}$ is the many-body Berry curvature depending on the boundary condition twists.
+where $F(\theta_x, \theta_y)$ is the many-body Berry curvature depending on the boundary condition twists:
+\begin{align}
+    F(\theta_x,\theta_y)=\Im\!\bb{ {\Big\langle\frac{\partial \Psi}{\partial \theta_y}\Big|\frac{\partial \Psi}{\partial \theta_x}\Big\rangle - \Big\langle\frac{\partial \Psi}{\partial \theta_x}\Big|\frac{\partial \Psi}{\partial \theta_y}\Big\rangle} }.
+\end{align}
 Note that \tref{manybodychern} reduces to \tref{chern} in the translationally invariant case.
 For the numerical computations, we use a discretized version~\cite{Fukui2005}.
 The results for the disordered system are summarized in~\tref{fig3/fig3a}.
 We find that the long-range tunneling stabilizes the topological phase for defect densities $\rho\lesssim 0.45$.
 The long-range tunneling ${\sim}|\vec{R}|^{-3}$ is found to significantly enhance the stability compared to a model with artificial truncation at the next-to-nearest neighbor level.
 
-
 \begin{figure}
-    \fcapside[\FBwidth]{\caption{\tlabel{fig4/fig4a}Dispersion relation for the $\ketp$ and $\keto$ states on a cylindrical square lattice geometry with infinite extent in $x$ direction and $31$ sites in $y$ direction. Four edge states cross the bandgap in the $C=2$ phase (two for each edge), in accordance with the bulk-edge correspondence~\cite{Hatsugai1993}.}}
+    \fcapside[\FBwidth]{\caption{\tlabel{fig4/fig4a}Dispersion relation for the $\ketp$ and $\keto$ states on a cylindrical square lattice geometry with infinite extent in $x$ direction and $31$ sites in $y$ direction. Four edge states cross the bandgap in the $C=2$ phase (two for each edge), in accordance with the bulk-edge correspondence~\cite{Hatsugai1993}. The decay of the edge states at the two indicated points is shown in \tref{fig4/fig4a}.}}
 {\igopt{width=7cm}{fig4/fig4a}}
 \end{figure}
 
-\doublefig{.4}{fig4/fig4b}{ }{.35}{fig4/fig4c}{ }{\sfA~Exponentially decaying amplitude of the two edge states in logarithmic scale, corresponding to the points shown in the spectrum in~\tref{fig4/fig4a}. \sfB~Edge state amplitude $|\psi_+(x,y)|^2 + |\psi_-(x,y)|^2$ on a finite $50 \times 50$ square lattice with a filling fraction of $0.8$ (missing sites are indicated by crosses).}
-
 \section{Edge states}
+\begin{figure}
+    \fcapside[\FBwidth]{\caption{\tlabel{fig4/fig4b}Exponentially decaying amplitude of the two edge states corresponding to the points shown in the spectrum in~\tref{fig4/fig4a}. Due to the opposite group velocity on opposing sites of the cylinder, the two edge states have the same chirality.}}
+{\igopt{width=6cm}{fig4/fig4b}}
+\end{figure}
 One way to detect the topological band structure experimentally is to create a local excitation close to the edge of the system.
-In \tref{fig4/fig4a} we show the edge states in the $C=2$ phase on the square lattice.
-The states are exponentially localized on the boundary of the system and the propagation of a single excitation along the edge can be used as an indication of the topological nature of the bands~\cite{Hafezi2013}.
-In \tref{fig4/fig4c}, we show the robustness of the edge states against missing molecules.
-The edge state is also visible in a spectroscopic analysis, as a single mode between the broad continuum of the two bands (see~\tref{fig4/fig4a}).
+In the topologically nontrivial phase, the excitation will move along the edge in a specific direction due to the chiral nature of the edge state, a behavior that can be used as an indication of the topological nature of the bands~\cite{Hafezi2013}.
+A convenient way to investigate the structure of the edge states is a cylindrical geometry which is infinite in one direction ($x$) and has a finite number of lattice sites in the other ($y$).
+Then, the momentum $k_x$ in the infinite direction can still be used to characterize the states.
+In \tref{fig4/fig4a} we show the spectrum for such a geometry in the $C=2$ phase on the square lattice for the $\ketp, \keto$ model.
+The remnants of the two-dimensional bulk bands are still visible as a projection consisting of a bundle of single one-dimensional bands.
+Four edge states cross the bandgap in accordance with the bulk-edge correspondence, as there are two states for each edge of the system.
+These would also be visible in a spectroscopic analysis, as a single mode between the broad continuum of the two bands.
+A characteristic property of edge states is the exponential decay from the boundary into the bulk of the system, see \tref{fig4/fig4b}.
+
+\Cref{tb:edge/edge-square-disordered,tb:edge/edge-honeycomb-disordered} depict the two-dimensional structure of the edge-states in a small finite system for the square and honeycomb lattices. \Cref{tb:edge/edge-square-disordered,tb:edge/edge-honeycomb-disordered} show the same system with a fraction of $\rho=0.2$ of the lattice sites removed, demonstrating the robustness of the edge states against missing molecules.
 For more details on the edge states in our system, see~\cite{Weber2015}.
 
-\doublefig{.38}{edge/edge-square}{ }{.45}{edge/edge-honeycomb}{ }{Edge states on finite rectangular patches. (a)~Edge state on the square lattice in the $C=2$ phase with opposite orbitals on horizontal and vertical edges. The second edge state has inverted orbitals. (b)~Edge state on the honeycomb lattice between the lower two $C=1$ and $C=0$ bands.}
-
-\doublefig{.38}{edge/edge-square-disordered}{ }{.45}{edge/edge-honeycomb-disordered}{ }{Edge states in the disordered system with a defect density of $\rho=0.2$. (a)~Example on the square lattice for a certain disorder realization. (b)~Edge state on the honeycomb lattice which travels along an interior edge which developed due to the missing lattice sites.}
+\begin{figure}[t]
+    \centering
+    \subfloat[]{
+        \ig{.38}{edge/edge-square}
+        \tlabel{edge/edge-square}
+    }
+    \hspace{1.5cm}
+    \subfloat[]{
+        \ig{.45}{edge/edge-honeycomb}
+        \tlabel{edge/edge-honeycomb}
+    } \\
+    \subfloat[]{
+        \ig{.38}{edge/edge-square-disordered}
+        \tlabel{edge/edge-square-disordered}
+    }
+    \hspace{1.5cm}
+    \subfloat[]{
+        \ig{.45}{edge/edge-honeycomb-disordered}
+        \tlabel{edge/edge-honeycomb-disordered}
+    }
+    \caption{Edge state amplitudes $|\psi_+(x,y)|^2$ (red) and $|\psi_-(x,y)|^2$ (blue) on finite rectangular patches. \sfA~On the square lattice for the $\ketp, \ketm$ model in the $C=2$ phase with opposite orbitals on horizontal and vertical edges. The second edge state (not shown) has inverted orbitals. \sfB~Edge state on the honeycomb lattice between the lower two $C=-1$ and $C=0$ bands, for the same parameters as in \tref{fig3/fig3b}. \sfC~Edge-state in the disordered system with a defect density of $\rho= 0.2$ on the square lattice for a certain disorder realization. \sfD~Edge state on the honeycomb lattice which travels along an interior edge which developed due to the missing lattice sites (defect density $\rho=0.2$).}
+\end{figure}
 
 \section{Many-body system}
 Finally, the most spectacular evidence of the topological nature would be the appearance of fractional Chern insulators in the interacting many-body system at a fixed density of excitations.
