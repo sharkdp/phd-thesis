@@ -172,7 +172,7 @@ By defining the difference $\bar\Phi=\phi_{ij}-\Phi_0$, we can express the relev
 which are easily seen to reduce to the expressions \labeltref{dop2d} in the case of a perpendicular external field with $\Theta_0=0$, implying $\theta=\pi/2$ and $\bar\Phi=\phi_{ij}$.
 In total, the tensorial part of the dipole-dipole interaction is given by
 \begin{align} \tlabel{tensortilted}
-    D_{ij}(\Theta_0, \bar\Phi) = f_0(\Theta_0, \bar \Phi) &\BC{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
+    D_{ij} = f_0(\Theta_0, \bar \Phi) &\BC{ d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} } \\
     \qquad-\frac{3}{\sqrt{2}} &\BC{ f_1(\Theta_0, \bar \Phi)  (d_i^0 d_j^- + d_i^- d_j^0) - f_1(\Theta_0, -\bar \Phi) (d_i^0 d_j^+ + d_i^+ d_j^0) }\\
     \qquad-\frac{3}{2} &\BC{ f_2(\Theta_0, \bar \Phi) d_i^- d_j^- + f_2(\Theta_0, -\bar \Phi) d_i^+ d_j^+ }.
 \end{align}
@@ -237,8 +237,8 @@ The evaluation of these dipole matrix elements for polar molecules in the presen
 Using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can now express the
 dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
 \begin{align}
-    \Hdd_{ij} &= \frac{\kappa}{R_{ij}^3} \Big[ d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j + d_1d_0 (P^1_i P^0_j + P^0_i P^1_j)
-              + q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) \Big]
+    \Hdd_{ij} = \frac{\kappa}{R_{ij}^3} \Big[ d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j &+ d_1d_0 (P^1_i P^0_j + P^0_i P^1_j) \\
+              &+ q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) \Big]
 \end{align}
 where we have neglected all processes which are not energy-conserving,
 i.e. terms that do not conserve the number of excitations.
@@ -285,7 +285,7 @@ the dipole matrix elements are given by
     d_+ &= \smallbraketop{+}{d^0}{+} = +\muB g/2, \vphantom{\sqrt{2}} \\
     q_+ &= |\smallbraketop{+}{d^+}{0}| = \smallbraketop{+}{\sqrt{2} \sigma^+}{0} = +\muB g/\sqrt{2}.
 \end{align}
-Then, including the energy non-conserving terms proportional to $\sminus_i\sminus_j$, the Hamiltonian reduces to
+Then, including the terms that do not conserve the energy, proportional to $\sminus_i\sminus_j$, the Hamiltonian reduces to
 \begin{align} \tlabel{hdd2dmagnetic}
     \Hdd_{ij} = \frac{\kappa \muB^2 g^2}{4 R_{ij}^3} \bc{ \sz_i \sz_j - \bb{\splus_i \sminus_j+ 3 \sminus_i\sminus_j \ef{+2i\phi} + \hc } }.
 \end{align}
@@ -321,7 +321,8 @@ First, we investigate a \textsf{V}-type level scheme including three internal st
 \end{align}
 As before, we define a vacuum state $\ket{G}=\prod_i \ketz_i$ as well as hardcore bosonic operators $\bop_\pm=\ketbra{0}{{\pm}}$ and $\nop_{\pm}=\bopd_{\pm}\bop_{\pm}$. We can either think of two different kinds of bosons (`$+$' excitations and `$-$' excitations) or think of a single boson with an internal spin degree of freedom. It is useful to write the spherical components of the dipole operator in terms of the bosonic operators:
 \begin{align}
-    d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) = d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
+    d^0 &= d_+ \nop_+ + d_- \nop_- + d_0 (1-\nop_+-\nop_-) \\
+        &= d_0 + (d_+-d_0) \nop_+ + (d_--d_0) \nop_-, \\
     d^+ &= q_+ \bopd_+ - q_- \bop_-, \\
     d^- &= - q_+ \bop_+  + q_- \bopd_-.
 \end{align}
