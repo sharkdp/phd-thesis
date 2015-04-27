@@ -2,10 +2,15 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 
 
+%%% Arbitrary font sizes for math symbols (main text uses lmodern)
+\RequirePackage{fix-cm}
+
+
 %%% KOMA class
 \documentclass[
      a4paper
-    ,12pt
+    ,fontsize=13pt
+    ,DIV=12
     ,titlepage=true
     ,fleqn
     ,oneside % change this for print
@@ -17,6 +22,8 @@
     % ,draft
 ]{scrbook}
 
+\linespread{1.1}\selectfont
+\typearea[current]{calc}
 
 %%% Fonts, encoding
 \usepackage[utf8]{inputenc}
