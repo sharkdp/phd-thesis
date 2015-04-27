@@ -1,8 +1,13 @@
-%%% warn about LaTeX 'sins'
+%%% Pre-documentclass hacks
+
+% warn about LaTeX 'sins'
 \RequirePackage[l2tabu, orthodox]{nag}
 
+% Silence KOMA warning about 13pt
+\RequirePackage{silence}
+\WarningFilter{scrbook}{Using fallback calculation to setup font sizes}
 
-%%% Arbitrary font sizes for math symbols (main text uses lmodern)
+% Arbitrary font sizes for math symbols (main text uses lmodern)
 \RequirePackage{fix-cm}
 
 
@@ -22,8 +27,6 @@
     % ,draft
 ]{scrbook}
 
-\linespread{1.1}\selectfont
-\typearea[current]{calc}
 
 %%% Fonts, encoding
 \usepackage[utf8]{inputenc}
@@ -80,6 +83,8 @@
 \usepackage{microtype}
 \usepackage[iso]{datetime}
 \usepackage[automark,headsepline=.6pt,draft=false]{scrlayer-scrpage}
+\linespread{1.1}\selectfont
+\typearea[current]{calc}
 
 
 %%% Colors
@@ -189,8 +194,7 @@
 \ObsoleteEnv[probably not what you wanted]{align*}{align}
 
 
-%%% pdf
-
+%%% PDF
 % see http://tex.stackexchange.com/q/183149
 % and http://tex.stackexchange.com/a/198590
 \begingroup\expandafter\expandafter\expandafter\endgroup
@@ -201,7 +205,6 @@
 
 % set PDF version to 1.7
 \pdfoptionpdfminorversion=7
-
 
 
 \AtEndPreamble{
