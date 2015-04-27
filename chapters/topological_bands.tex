@@ -224,6 +224,7 @@ In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient
 The different behavior of the same model on the square and hexagonal lattice will be explained in \tref{doublelayerhex}.
 
 \section{Classification and double-layer picture}
+\tlabel{doublelayer}
 
 \doublefig{.36}{fig5/fig5a}{ }{.28}{fig5/fig5b}{ }{
 Hopping strengths and flux pattern of a single layer in different lattices.
@@ -360,3 +361,14 @@ Finally, the most spectacular evidence of the topological nature would be the ap
 In our system, the hard-core constraint naturally provides a strong on-site interaction for the bosons.
 In addition, the remaining static dipolar interactions are a tunable knob to control the interaction strength.
 The most promising candidate for a hard-core bosonic fractional Chern insulator in a band with $C=2$ appears for a filling of $\nu = 2/3$, as suggested by numerical calculations~\cite{Moller2009,Wang2012a}, in agreement with the general classification scheme for interacting bosonic topological phases~\cite{Lu2012a,Chen2013}.
+A continuum trial wavefunction for such a state would be the Halperin $(l;m;n)$ state~\cite{Halperin1984,Wu2013,Yao2013,Wang2012a,Wang2011} with
+\begin{align}
+    \Psi_{(l;m;n)} &= \mathcal{N}
+    \prod_{i\ne j} \big(z_i^\downarrow - z_j^\downarrow\big)^l
+    \prod_{i\ne j} \big(z_i^\uparrow -   z_j^\uparrow  \big)^m
+    \prod_{i, j} \big(z_i^\uparrow -   z_j^\downarrow\big)^n
+    \ef{-\frac{1}{4}\sum_{j,\alpha} \absvsq{z^\alpha_j} }.
+\end{align}
+This state is a natural extension of the Laughlin wave function to a double-layer system where $z_i^\downarrow=x_i^\downarrow+i y_i^\downarrow$ and $z_i^\uparrow$ are the complex coordinates in the lower and upper layer and $\mathcal{N}$ is a normalization constant.
+Here, the two layers are given by the deconstruction described in \tref{doublelayer}.
+For our hard-core bosonic system, one would expect a $(2;2;1)$ state where $l=2, m=2$ is the lowest non-trivial state which is compatible with the bosonic statistics and $n=1$ enforces the inter-layer hard-core constraint.
