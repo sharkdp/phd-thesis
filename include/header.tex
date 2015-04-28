@@ -3,22 +3,22 @@
 % warn about LaTeX 'sins'
 \RequirePackage[l2tabu, orthodox]{nag}
 
-% Silence KOMA warning about 13pt
+% Silence harmless KOMA warnings about 13pt.
+% see: http://tex.stackexchange.com/q/240992/42128
 \RequirePackage{silence}
 \WarningFilter{scrbook}{Using fallback calculation to setup font sizes}
-
-% Arbitrary font sizes for math symbols (main text uses lmodern)
-\RequirePackage{fix-cm}
+\WarningFilter{latexfont}{Font shape `OT1/cmr/m/n' in size <13> not available}
+\WarningFilter{latexfont}{Size substitutions with differences}
 
 
 %%% KOMA class
 \documentclass[
-     a4paper
+     paper=a4
     ,fontsize=13pt
     ,DIV=12
     ,titlepage=true
     ,fleqn
-    ,oneside % change this for print
+    ,twoside=false % change this for print
     ,open=right
     ,english
     ,pagesize
