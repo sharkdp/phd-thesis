@@ -295,7 +295,7 @@ This type of interaction between two magnetic dipoles will be utilized in~\cref{
 \section{Excitation hopping: mapping to hard-core bosons}
 For spin models it is often useful to think in terms of excitations above a certain well defined (ground) state~\cite{Holstein1940}.
 As an exemplary case, we take the spin $1/2$ model from \tref{hxxz} and write it in terms of
-$S^+ = (S^x_i+iS^y_i)/\hbar$ and $S^- = (S^x_i-iS^y_i)/\hbar$:
+$S^\pm =S ^x_i\pm iS^y_i$:
 \begin{align}
     H &= \frac{Ja^3}{\hbar^2} \sum_{i\ne j}  \frac{1}{R_{ij}^3} \bc{ \cos\theta\, S^z_i S^z_j  + \frac{1}{2}\sin\theta\, (S^+_i S^-_j + S^-_i S^+_j) }.
 \end{align}
@@ -332,7 +332,7 @@ Restricting ourselves to a two-dimensional geometry with a perpendicular polariz
                 &\quad + (d_+ - d_0)^2 \nop_{+,i} \nop_{+,j} + (d_- - d_0)^2 \nop_{-,i} \nop_{-,j} \\
                 &\quad + (d_+ - d_0)(d_- - d_0) (\nop_{+,i} \nop_{-,j} + \nop_{-,i} \nop_{+,j}) \\
     d^+_i d^-_j &= - q_+^2 \bopd_{+,i} \bop_{+,j} - q_-^2 \bopd_{-,j} \bop_{-,i} \\
-    d^+_i d^+_j &= - q_+q_- \, \bopd_{+,i} \bop_{-,j}
+    d^+_i d^+_j &= - q_+q_- (\bopd_{+,i} \bop_{-,j} + \bopd_{+,j} \bop_{-,i})
 \end{align}
 where we have neglected any excitation-non conserving terms. Further dropping the constant terms and \qu{magnetic field} terms, we find the many-body Hamiltonian
 \begin{align}
