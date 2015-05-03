@@ -48,3 +48,6 @@ tgrep "eq:" "${files[@]}"
 tgrep "ap:" "${files[@]}"
 tgrep "fig:" "${files[@]}"
 tgrep "table:" "${files[@]}"
+
+category "Use of 'an' without following vowel"
+tgrep "\\b[Aa]n [^aeiouAEIOU]" "${files[@]}"
