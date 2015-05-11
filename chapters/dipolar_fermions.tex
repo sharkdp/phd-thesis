@@ -9,10 +9,7 @@ Several schemes have been proposed to simulate the effect of magnetic fields for
 In this chapter we propose a new scheme to access the regime of fast rotation for a dipolar Fermi gas such as $^{161}\text{Dy}$ or $^{167}\text{Er}$, where quantum degeneracy has been demonstrated recently~\cite{Lu2012,Aikawa2014}. Starting from a spin-polarized state, dipolar interactions can lead to spin relaxation with a net angular momentum transfer~\cite{Hensler2003}. This is known as the Einstein--de Haas effect~\cite{Einstein1915} and has been proposed to create rotating Bose-Einstein condensates~\cite{Santos2006,Kawaguchi2006}. We suggest to use this mechanism in a trapped, quasi-two-dimensional system to control the amount of angular momentum, and -- by repeated application of the transfer scheme -- reach the lowest Landau level (LLL). This scheme allows for direct control over the total angular momentum instead of the rotation frequency and circumvents the prime experimental difficulties toward the realization of the quantum Hall regime in harmonically trapped gases.
 
 \section{Setup}
-\begin{figure}
-    \fcapside[\FBwidth]{\caption{\tlabel{fig1a}Dipolar particles, trapped in a quasi-2D geometry with a radial confinement $\omega$. When the external magnetic field $\vec{B}$ is tuned in resonance, dipolar interactions \Vdd can induce spin relaxation processes, leading to a net angular momentum increase of $1\hbar$ per particle.}}
-{\igopt{width=7cm}{fig1a}}
-\end{figure}
+\sidefig{7cm}{fig1a}{Dipolar particles, trapped in a quasi-2D geometry with a radial confinement $\omega$. When the external magnetic field $\vec{B}$ is tuned in resonance, dipolar interactions \Vdd can induce spin relaxation processes, leading to a net angular momentum increase of $1\hbar$ per particle.}
 
 We consider a system of $N$ fermionic atoms with magnetic dipole moments $\vecd$. While extensions to schemes with polar molecules are possible, the permanent dipole moments of the atoms lead to some simplifications.
 To shorten the discussion, we consider only two internal levels (pseudospin 1/2). The particles are confined in a quasi-two-dimensional harmonic trap with a radial frequency $\omega$ and an axial frequency $\omega_z$. For strong $z$ confinement $\hbar\omega_z \gg \Ef$, where $\Ef$ is the Fermi energy derived below, the system is effectively two dimensional, see~\tref{fig1a}.
@@ -69,7 +66,7 @@ To reach the LLL regime, we have to repeat the transfer scheme at least $\liqhe/
 
 \section{Modeling the transfer process}
 
-\fig{0.5}{fig2}{Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\tref{etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
+\fig{0.55}{fig2}{Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\tref{etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
 
 To quantify a single transfer process, our first aim is to calculate the total energy of $N$ harmonically trapped fermions for a fixed total angular momentum $L$ (polarized state, one spin component). For the noninteracting system, the energy can be obtained by simple summations. We start with the ground state for $L=0$, where all energy shells up to the Fermi energy are completely filled. The energy of the single particle states~$\ket{n,m}$ is given by $E_{nm}=\hbar\omega(2n+\absv{m}+1)$. To avoid cluttering of notation, we introduce dimensionless quantities indicated by a $\dl{\ }$ sign. These quantities are measured in oscillatory units. That is, energy in units of $\hbar\omega$, angular momentum in units of $\hbar$, lengths in units of $l_\text{HO}$ and time in units of $\omega^{-1}$. The degeneracy of each energy level is simply given by $g(\dl{E}) = \dl{E}$.
 With $N=\sum g(\dl{E}) = \dlEf(\dlEf+1)/2$ the Fermi energy is determined by
@@ -111,9 +108,9 @@ has a singularity for $\dl{\Omega}=\Omega/\omega=1$ and large values of $L$ can 
 \fig{0.5}{fig3a}{Description of the transfer in the analytical model with $N=100$ particles for decreasing energy splitting $\Delta$ between the two components $\up$ and $\down$. The transfer starts at $\Delta=\Ef$ with particles continuously being transferred into the $\down$ state as $\Delta$ is lowered to $-\Ef$. Notice that during the transfer, both components rotate in the same direction. The crossing $N_\up=N_\down$ is not precisely at $\Delta=0$ due to the initial bias.}
 
 Starting from expression \labeltref{etotnl} for the energy, we are now able to describe the transfer process in the adiabatic limit. Let $N_\up$ be the number of particles in the spin-up state and $N_\down = N-N_\up$ the particles in the spin-down state. We describe both components separately and write the total energy as
-%\begin{align} \tlabel{minimize}
-$E(N_\up,L_\up) + E(N_\down,L_\down) + \Delta\cdot N_\down$
-%\end{align}
+\begin{align} \tlabel{minimize}
+E(N_\up,L_\up) + E(N_\down,L_\down) + \Delta\cdot N_\down
+\end{align}
 where we have introduced the Zeeman energy shift $\Delta=\muB g B$ (energy measured with respect to the energy of the lower Zeeman state). We assume that every particle eventually takes part in the transfer process (adiabaticity) and consequently one quanta of angular momentum is transferred per particle. Starting from the nonrotating state at $L=0$, this imposes the transfer condition $L_\up + L_\down = L = N_\down\hbar$. Adding this condition with another Lagrange multiplier, one can quantify the transfer process as a function of $\Delta$, see \tref{fig3a}. Coming from high fields where $\Delta > \Ef$, the transfer starts right at the Fermi energy. Note that during the transfer, while $\Ef > \Delta > -\Ef$, both components ($\up$, $\down$) rotate in the same direction. Eventually all particles get transferred to the lower spin state and the total angular momentum equals $L=L_\down=N\hbar$.
 
 \section{Numerical simulation}

@@ -78,6 +78,13 @@
 % w1, f1, c1, w2, f2, c2, main caption
 \renewcommand{\doublefig}[7]{\doublefigopt{#1}{#2}{#2}{#3}{#4}{#5}{#5}{#6}{#7}}
 
+% sidefigure (width, file, caption)
+\newcommand{\sidefig}[3]{
+    \begin{figure}
+        \fcapside[\FBwidth]{\caption{\tlabel{#2}#3}}{\igopt{width=#1}{#2}}
+    \end{figure}
+}
+
 \newcommand{\sfA}{\textbf{(a)}}
 \newcommand{\sfB}{\textbf{(b)}}
 \newcommand{\sfC}{\textbf{(c)}}
