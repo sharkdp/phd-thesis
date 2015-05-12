@@ -20,8 +20,4 @@ Note: If you do not have `pplatex` installed, you have to remove the file `.late
 
 Ubuntu
 ------
-On Ubuntu, you can install an up-to-date version of Tex Live using [install-tl-ubuntu](https://github.com/scottkosty/install-tl-ubuntu) (remove previous texlive packages).
-Then, use the package manager to install `biber` and `latexmk`:
-```sh
-apt-get install biber latexmk
-```
+On Ubuntu, you can install an up-to-date version of TeX Live using [install-tl-ubuntu](https://github.com/scottkosty/install-tl-ubuntu) (remove previous texlive packages). This includes a version of `biber` and `latexmk`.
