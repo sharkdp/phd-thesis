@@ -10,8 +10,6 @@ clean:
 	rm -rf dist
 	mkdir dist
 
-spellcheck:
-	bash tools/spellcheck.sh
-
-common-errors-check:
-	bash tools/common-errors-check.sh || true
+check:
+	bash tools/spellcheck
+	bash tools/check-common-errors || true
