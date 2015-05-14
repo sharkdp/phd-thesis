@@ -17,6 +17,47 @@ Here, we show that a system of polar molecules gives rise to topological band st
 The main advantages of our realization are its robustness and the low experimental requirements, while many alternative theoretical proposals with cold gases require strong spatially inhomogeneous laser fields with variations on the scale of one lattice constant~\cite{Liu2010,Stanescu2010,Goldman2013,Li2008,Yao2012,Yao2013,Goldman2013,Jaksch2003}.
 We point out that our proposal can also be applied to Rydberg atoms in similar setups~\cite{Barredo2014,Piotrowicz2013,Nogrette2014}.
 
+\section{Introduction to topological band structures}
+
+As an introduction to topological band structures, we shortly review the theory for a generic two-band model.
+For a detailed overview of this topic, see~\refscite{Hasan2010,Bernevig2013}.
+Consider the following tunneling Hamiltonian
+\begin{align}
+    H = \sum_{i\ne j} \psiopd_i t_{ij} \psiop_j
+\end{align}
+where $\psiopd_i = (\bopd_{i,+}, \bopd_{i,-})$ is a spinor-operator acting on lattice site $i$ at position $\vecR_i$, involving two creation operators, which are related to an internal degree of freedom or to the specific position in a model with a two-site unit cell like graphene.
+The tunneling elements are described by the two-by-two matrix $t_{ij}$.
+Since we are only interested in the topological properties, we can assume that $t_{ij}$ is traceless.
+Assuming translational symmetry, the model can be block-diagonalized in momentum space by introducing $\psiop_{\veck}=\frac{1}{\sqrt{N_s}}\sum_{j} \psiop_{j}\ef{i\veck\vec{R}_j}$:
+\begin{align}
+    H=\sum_\veck \psiopd_{\veck} H(\veck) \psiop_{\veck}.
+\end{align}
+Since the Bloch-Hamiltonian $H(\veck) = \vec{n}_\veck \cdot \vecsigma$ is a traceless Hermitian two-by-two matrix, it can always be written as the product of a three-dimensional real vector $\vec{n}_{\veck}$ and the vector of Pauli matrices $\vecsigma$.
+Note that the vector $\vec{n}_\veck \in \mathds{R}^3$ includes the full information about this system.
+In particular, the dispersion relation is simply given by $E_\veck = \pm |\vec{n}_\veck|$.
+An almost trivial observation in topological band theory is the realization that $\vec{n}_\veck$ contains more information than just the dispersion relation.
+To see this, we assume that (for a certain set of parameters) the model has no band-crossing, such that the vector $\vec{n}_\veck \ne 0$ for all $\veck$ in the Brillouin zone.
+Then, we can \qu{factor out} the information about the dispersion relation and consider the normalized vector $\hat{\vec{n}}_\veck = \vec{n}_\veck/|\vec{n}_\veck|$.
+Mathematically, this is a mapping $\hat{n}\colon T^2 \goesto S^2$ from a two-torus $T^2$ (the structure of the two-dimensional Brillouin zone) to the two-sphere $S^2$ (because the three-dimensional vector is normalized).
+Such a function can be classified with topological methods.
+It might be difficult to visualize a mapping $T^2 \goesto S^2$, so we will continue this discussion with a conceptually easier mapping $S^2 \to S^2$ from a sphere to itself.
+It can be shown that the classification of these two mappings is in fact equivalent~\cite{}.
+In algebraic topology, continuous functions with the general structure $S^k \goesto S^n$ are classified by the $k$-th homotopy group of the $n$-sphere, denoted by $\pi_k(S^n)$.
+Functions $f\colon S^1 \goesto S^1$ from the unit-circle to itself, for example, are classified by the first homotopy group (called the fundamental group).
+It is well known that $\pi_1(S^1) \cong \mathds{Z}$ because these mappings can be classified by a winding number
+\begin{align}
+    \nu = \frac{1}{2\pi}\integralb{0}{2\pi}{k} \partial_k f(k), %= \frac{f(2\pi)-f(0)}{2\pi},
+\end{align}
+that counts how many times the origin is encircled as we integrate over $k \in S^1$.
+For our two-dimensional model, we are interested in the second-homotopy group of the two-sphere.
+It turns out that $\pi_2(S^2) \cong \mathds{Z}$.
+Consequently, different mappings $\hat{\vec{n}}_\veck$ (that is, different band structures) can be classified by a topological index $C \in \mathds{Z}$: the Chern number.
+In a similar way to the one-dimensional example, the Chern number can be calculated as a winding number of the vector $\hat{\vec{n}}_\veck$:
+\begin{align}
+    C &= \frac{1}{4\pi}\integralb{\text{BZ}}{}{^2\veck} ( \partial_{k_x} \hat{\vec{n}}_{\veck} \times \partial_{k_y} \hat{\vec{n}}_{\veck} ) \cdot \hat{\vec{n}}_{\veck} \, . \tlabel{chern}
+\end{align}
+
+
 \section{Setup}
 
 \doublefig{.43}{fig1/fig1a}{ }{.32}{fig1/fig1b}{ }{\sfA~Setup: Each lattice site of a two-dimensional optical lattice is occupied by a single polar molecule.
