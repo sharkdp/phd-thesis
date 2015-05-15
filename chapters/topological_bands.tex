@@ -84,10 +84,19 @@ For the two-band model, the Berry curvature is given by
     B(\veck) = \frac{1}{2} ( \partial_{k_x} \hat{\vec{n}}_{\veck} \times \partial_{k_y} \hat{\vec{n}}_{\veck} ) \cdot \hat{\vec{n}}_{\veck}
 \end{align}
 Comparing this with \tref{chern}, we see that the Chern number can be seen as the total Berry curvature $\gamma(T^2)$ in the Brillouin zone divided by $2\pi$.
-Now let $\mathcal{S}$ be a region $\mathcal{S} \subset T^2$ and $\overline{\mathcal{S}} = T^2 \setminus \mathcal{S}$ be its complement.
-Then, the sum of the Berry phases $\gamma(\mathcal{S})$ along $\partial \mathcal{S}$ and $\gamma(\overline{\mathcal{S}})$ along the reversed path $\partial \overline{\mathcal{S}}$ has to be an integer multiple of $2\pi$.
-On the other hand, $\gamma(\mathcal{S}) + \gamma(\overline{\mathcal{S}}) = \gamma(T^2) = 2\pi C$, so the Chern number is an integer.
+Now let $\mathcal{S}$ be a region $\mathcal{S} \subset T^2$ and $\mathcal{S}^c = T^2 \setminus \mathcal{S}$ be its complement.
+Then, the sum of the Berry phases $\gamma(\mathcal{S})$ along $\partial \mathcal{S}$ and $\gamma(\mathcal{S}^c)$ along the reversed path $\partial \mathcal{S}^c$ has to be an integer multiple of $2\pi$.
+On the other hand, $\gamma(\mathcal{S}) + \gamma(\mathcal{S}^c) = \gamma(T^2) = 2\pi C$, so the Chern number is an integer.
 
+
+An important aspect for topological phases is the role of symmetries~\cite{Schnyder2008}. For our purposes, we are mainly interested in time-reversal symmetry.
+A Hamiltonian $H$ is time-reversal symmetric, if there exists an anti-unitary operator $\mathcal{T}$ such that $\mathcal{T}^{-1} H \mathcal{T} = H$.
+For the Bloch Hamiltonian, this translates to the condition $U^\dag H_\veck^* U = H_{-\veck}$, where $U$ is a unitary operator.
+Such a condition forces the vector $n_\veck$ to lie in a plane. % TODO
+For $U=\sigma_x$, for example, we have $n^z_\veck = 0$ whereas for $U=\id$ we have $n^y_\veck=0$.
+Consequently, the mapping $\vec{n}_\veck$ cannot cover the whole sphere and the Chern number is zero.
+A more physical way to see this, is that the Berry curvature (and hence the Chern number) is odd under time-reversal.
+Time-reversal symmetry breaking is a necessary requirement for a nonzero Chern number.
 
 
 \section{Setup}
