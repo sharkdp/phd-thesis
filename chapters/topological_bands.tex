@@ -35,7 +35,7 @@ Assuming translational symmetry, the model can be block-diagonalized in momentum
 \end{align}
 Since the Bloch-Hamiltonian is a traceless Hermitian two-by-two matrix, it can always be written as the product $H_\veck = \vec{n}_\veck \cdot \vecsigma$ of a three-dimensional real vector $\vec{n}_{\veck}$ and the vector of Pauli matrices $\vecsigma$.
 Note that the vector $\vec{n}_\veck \in \mathds{R}^3$ includes the full information about this system.
-In particular, the two band dispersion relation is simply given by $E_\veck = \pm |\vec{n}_\veck|$.
+In particular, the two band dispersion relation is simply given by $E_{\veck,\pm} = \pm |\vec{n}_\veck|$.
 
 \fig{.8}{chern2/wrapping}{Visualization of (an equivalence class of) mappings $T^2\goesto S^2$ from a torus to a sphere with a nontrivial winding number $C=2$. We start by placing the sphere inside the torus, which has been cut along the blue circle. Twisting the upper half of the torus by $2\pi$ and folding down, we can seal the torus along the blue circle and contract the glued joint to a single point. Now, each point on the torus $T^2$ lies on (points to) a specific position on the surface of the sphere. The torus covers the sphere twice, hence the winding number of two.}
 
@@ -70,6 +70,20 @@ It guarantees the existence of edge states at the boundaries between different t
 In particular, for a finite two-band system, the number of states at the edge of the system is equal to the Chern number (imagine the vacuum outside as being topologically trivial).
 A related consequence of the nonzero Chern number appears in a fermionic system with a completely filled lowest band (Chern insulator).
 Here, the Hall conductance is directly related to the Chern number via $\sigma_{xy} = \frac{e^2}{h} C$.
+
+Another way to look at the topological properties of the band structure is by means of Berry phases.
+Given the Bloch eigenstates $\ket{u_\veck}$ of the lower band with $H_\veck\ket{u_\veck} = E_{\veck,-} \ket{u_\veck}$, we can define the Berry vector potential by
+$\vec{A}(\veck) = i \braketop{u_\veck}{\nabla_\veck}{u_\veck}$.
+Using this, we can calculate the Berry phase along a closed path $\partial\mathcal{S}$ in the Brillouin zone via
+\begin{align}
+    \gamma = \int_{\partial\mathcal{S}} \mathrm{d}\veck \cdot \vec{A}(\veck) = \int_\mathcal{S} \mathrm{d}^2 \, \veck B(\veck)
+\end{align}
+where $B(\veck) = (\nabla_\veck \times \vec{A}(\veck))_z = \partial_{k_x} A^y(\veck) - \partial_{k_y} A^x(\veck)$ is the Berry curvature.
+For the two-band model, the Berry curvature is given by
+\begin{align}
+    B(\veck) = \frac{1}{2} ( \partial_{k_x} \hat{\vec{n}}_{\veck} \times \partial_{k_y} \hat{\vec{n}}_{\veck} ) \cdot \hat{\vec{n}}_{\veck}
+\end{align}
+In this light, the Chern number can be seen as the total Berry curvature in the Brillouin zone divided by $2\pi$.
 
 
 \section{Setup}
