@@ -137,21 +137,23 @@ First, using the relation
 we can rewrite
 \begin{align}
     \chi^s(\veck)&=\frac{1}{\Gamma(s/2)}\sum_{\vec{R}\ne 0} \bb{\int_0^\eta + \int_\eta^\infty}\! \mathrm{d}\lambda\, \lambda^{s/2-1} \ef{-\lambda R^2 + i \veck \vec{R}} \\
-                 &= \frac{\eta^{s/2}}{\Gamma(s/2)}\sum_{\vec{R}\ne 0} \bb{\integralb{1}{\infty}{\lambda} \lambda^{-s/2-1} \ef{-\eta R^2 / \lambda} + \integralb{1}{\infty}{\lambda} \lambda^{s/2-1} \ef{-\eta \lambda R^2}} \ef{i\veck \vec{R}}
+                 &= \frac{\eta^{s/2}}{\Gamma(s/2)}\sum_{\vec{R}\ne 0} \Bigg(\integralb{1}{\infty}{\lambda} \lambda^{-s/2-1} \ef{-\eta R^2 / \lambda} \\
+                 &\qquad\qquad\qquad+\integralb{1}{\infty}{\lambda} \lambda^{s/2-1} \ef{-\eta \lambda R^2} \Bigg) \ef{i\veck \vec{R}}
 \end{align}
 where we have substituted $\lambda \rightarrow \eta/\lambda$ in the first and $\lambda \rightarrow \eta \lambda$ in the second integral.
 The parameter $\eta > 0$ determines the border between the real-space and the $k$-space summation.
 Using the Poisson summation formula we transform
 \begin{align}
-    \sum_{\vec{R}\ne 0} \ef{-\eta R^2/\lambda + i \veck \vec{R}} = \sum_{\vec{R}} (\dots) - 1 = \frac{\pi\lambda}{\eta} \sum_{\vecq} \ef{-\frac{\lambda}{4\eta} \absvsq{\vecq+\veck}} - 1
+    \sum_{\vec{R}\ne 0} \ef{-\eta R^2/\lambda + i \veck \vec{R}} = \sum_{\vec{R}} (\dots) - 1 = \frac{\pi\lambda}{\eta} \sum_{\vecq} \ef{-\frac{\lambda}{4\eta} \absvsq{\vecq+\veck}} - 1,
 \end{align}
 which leads to
 \begin{align} \tlabel{twosum}
-    \chi^s(\veck) &= \frac{\eta^{s/2}}{\Gamma(s/2)} \bb{\frac{\pi}{\eta} \sum_{\vecq} E_{s/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\eta}} - \frac{2}{s} + \sum_{\vec{R}\ne 0} E_{1-s/2}\!\bb{R^2 \eta} \ef{i \veck \vec{R}} }.
+    \chi^s(\veck) &= \frac{\eta^{s/2}}{\Gamma(s/2)} \bigg(\frac{\pi}{\eta} \sum_{\vecq} E_{s/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\eta}} - \frac{2}{s} \\
+                  &\qquad\qquad\,\,\,+ \sum_{\vec{R}\ne 0} E_{1-s/2}\!\bb{R^2 \eta} \ef{i \veck \vec{R}} \bigg).
 \end{align}
 Here, we have introduced the exponential integral function
 \begin{align}
-    E_n(z) = \integralb{1}{\infty}{t} \frac{\ef{-z t}}{t^n}
+    E_n(z) = \integralb{1}{\infty}{t} \frac{\ef{-z t}}{t^n}.
 \end{align}
 Both sums in \tref{twosum} are fast-converging since high
 values of $\vecq$ and $\vec{R}$, respectively, are exponentially suppressed by $E_n$.
@@ -160,7 +162,7 @@ Using this expression, we can accurately plot the function $\epskm$ in the Brill
 \subsection{Non-analytic behavior at low momenta}
 For $s=3, m=0$ we can simplify \tref{twosum}:
 \begin{align}
-    \epsk^0 = \chi^3(\veck) = 2\pi \bb{ \sum_{\vecq} E_{3/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\pi}} - \frac{2}{3} + \sum_{\vec{R}\ne 0} E_{-1/2}\!\bb{\pi R^2} \ef{i \veck \vec{R}} }
+    \epsk^0 = \chi^3(\veck) = 2\pi \bb{ \sum_{\vecq} E_{3/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\pi}}\! - \frac{2}{3} + \!\sum_{\vec{R}\ne 0}\! E_{-1/2}\!\bb{\pi R^2} \ef{i \veck \vec{R}} }
 \end{align}
 where we have explicitly chosen $\eta = \pi$. We can combine the two sums by writing the $\vecq=0$ term separately and by making the replacement $\vecq \goesto 2\pi\vec{R}$ for the rest of the $\vecq$-sum:
 \begin{align}
@@ -170,7 +172,7 @@ where we have explicitly chosen $\eta = \pi$. We can combine the two sums by wri
 Expanding the definitions of the exponential integral function, this can be written as
 \begin{align} \tlabel{epsqewald}
     \epsk^0 &= -2 \pi  |\veck| \operatorname{erfc}( |\veck|/2 \sqrt{\pi} ) + 4 \pi \bb{ e^{-\frac{|\veck|^2}{4 \pi }}-\frac{1 }{3} } \\
-            &\qquad+ 2\pi \sum_{\vecR\ne 0} \integralb{1}{\infty}{\lambda} \bc{ \lambda^{-3/2} \ef{-\pi\lambda\absvsq{\vecR+\veck/2\pi}} + \lambda^{1/2} \ef{-\pi \lambda R^2+ i\veck \vecR} }
+            &\qquad+ 2\pi \sum_{\vecR\ne 0} \integralb{1}{\infty}{\lambda} \bc{ \lambda^{-3/2} \ef{-\pi\lambda\absvsq{\vecR+\veck/2\pi}} + \lambda^{1/2} \ef{-\pi \lambda R^2+ i\veck \vecR} }.
 \end{align}
 This is the result stated in \refandpage{ab:Ewaldsummation}.
 For general (even) $m$, i.e. for any odd $s=3+m$, we can expand
@@ -179,10 +181,10 @@ For general (even) $m$, i.e. for any odd $s=3+m$, we can expand
 \end{align}
 which means that the $\vecq=0$ term has a contribution
 \begin{align}
-\frac{\eta^{s/2}}{\Gamma(s/2)} \frac{\pi}{\eta} \Gamma(1-s/2) \bb{\frac{\absvsq{\veck}}{4\eta}}^{s/2-1} = \frac{2^{2-s}\pi\, \Gamma(1-s/2)}{\Gamma(s/2)} \absv{\veck}^{s-2}
+\frac{\eta^{s/2}}{\Gamma(s/2)} \frac{\pi}{\eta} \Gamma(1-s/2) \bb{\frac{\absvsq{\veck}}{4\eta}}^{s/2-1} = \frac{2^{2-s}\pi\, \Gamma(1-s/2)}{\Gamma(s/2)} \absv{\veck}^{s-2}.
 \end{align}
 Substituting $s=3+m$ and taking $m$ derivatives, the prefactor of the linear term becomes
 \begin{align}
-    \frac{\pi\, (1+m)!! \,\Gamma[-(m+1)/2]}{\Gamma[(3+m)/2]} = 2\pi \frac{(-2)^{1+m/2} (1+m/2)!}{(2+m)!}
+    \frac{\pi\, (1+m)!! \,\Gamma[-(m+1)/2]}{\Gamma[(3+m)/2]} = 2\pi \frac{(-2)^{1+m/2} (1+m/2)!}{(2+m)!}.
 \end{align}
 For $m=0$ the prefactor is given by $-2\pi$, see \tref{epsqewald}, and for $m=2$ we find $2\pi/3$. Both results are in accordance with the estimation in \tref{lowmomentum}.
