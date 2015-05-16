@@ -2,7 +2,7 @@
 \label{rydberg_losses}
 
 This chapter contains a brief description and a technical addendum to a side-project concerning a single Rydberg electron that is coupled to a Bose Einstein condensate~\cite{Balewski2013}.
-In the experiment, performed by Jonathan Balewski and coworkers, a single atom within a Rubidium condensate is excited to a high-$n$ Rydberg state whose extend includes several thousands of ground state atoms.
+In the experiment, performed by Jonathan Balewski and coworkers, a single atom within a Rubidium condensate is excited to a \mbox{high-$n$} Rydberg state whose extend includes several thousands of ground state atoms.
 Due to the interaction with the ground state atoms, the electron creates excitations in the BEC which eventually can be measured as particle loss.
 Understanding the nature of the excitations and computing the particle losses is the scope of this chapter.
 For a detailed overview on this topic, see \refscite{Balewski2013,Balewski2014} as well as~\refscite{Karpiuk2014,Gaj2014}.
@@ -21,7 +21,7 @@ Neglecting constant energy shifts and two-particle excitations, we can write the
 H_\text{int}\approx\frac{g\sqrt{N_0}}{V} \sum_{\vecq\ne 0} \rho^{\phantom\dagger}_{\vecq} \big(\bogu_{q}-\bogv_{q}\big) \big(\bopd_{\vecq}+\bop_{-\vecq}\big).
 \end{align}
 \section{Atom losses}
-To estimate the number of excitations induced by the presence of the Rydberg electron, which has a finite lifetime of $\tau=1/\gamma$, we first consider the probability to excite a certain mode with quasi momentum~$\vecq$, when a perturbation of the type $H_\text{int} \ef{-\gamma t}$ is applied. In lowest order we have
+To estimate the number of excitations induced by the presence of the Rydberg electron which has a finite lifetime of $\tau=1/\gamma$, we first consider the probability to excite a certain mode with quasi momentum~$\vecq$, when a perturbation of the type $H_\text{int} \ef{-\gamma t}$ is applied. In lowest order we have
 \begin{align}
 P_{0\rightarrow\vecq}&=\Bigg|-\frac{i}{\hbar}\integralb{0}{\infty}{t}\ef{i\omega_{q}t-\gamma t}\braketop{\vecq}{H_\text{int}}{0}\Bigg|^2.
 \end{align}
@@ -29,7 +29,7 @@ Here, $\ket{0}$ describes the many particle ground state and $\ket{\vecq}=\bopd_
 \begin{align}
     E_{q}=\hbar\omega_{q}=\sqrt{\epsilon_{q}^2+2n_0g_c\epsilon_{q}}.
 \end{align}
-Here, we have introduced the recoil energy $\epsilon_{q}=\hbar^2 q^2/2m_\text{Rb}$, the BEC density $n_0=N_0/V$ and the atom-atom coupling constant $g_c=4\pi \hbar ^2a_{\text{Rb}}/m_{\text{Rb}}$ with the s-wave scattering length $a_{\text{Rb}}$.
+We have introduced the recoil energy $\epsilon_{q}=\hbar^2 q^2/2m_\text{Rb}$, the BEC density $n_0=N_0/V$ and the atom-atom coupling constant $g_c=4\pi \hbar ^2a_{\text{Rb}}/m_{\text{Rb}}$ with the s-wave scattering length $a_{\text{Rb}}$.
 For the probability we find
 \begin{align}
 P_{0\rightarrow\vecq}=\frac{g^2 \rho_{\vecq}^2 }{V^2\hbar^2}   \integral{\omega}S(\vecq,\omega)\absvsq{C(\omega)} = \frac{g^2 \rho_{\vecq}^2}{V^2\hbar^2} N_0 \frac{\epsilon_{q}}{E_{q}} \absvsq{C(\omega_q)},
@@ -104,7 +104,8 @@ L_{n-1}^1\!\bb{x}=\sum_{\alpha=1}^{n} \binom{n}{\alpha} \frac{(-x)^{\alpha-1}}{(
 \end{align}
 we can expand the square $L^1_{n-1}(x)^2$:
 \begin{align}
-\rho_k=\frac{2}{k n} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} \frac{(-1)^{\alpha+\beta}}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \integralb{0}{\infty}{x} \sin\!\bb{\frac{kx}{4n}} \ef{-x} x^{\alpha+\beta-1}.
+    \rho_k=\frac{2}{k n} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} &\frac{(-1)^{\alpha+\beta}}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \\
+&\qquad\cdot \integralb{0}{\infty}{x} \sin\!\bb{\frac{kx}{4n}} \ef{-x} x^{\alpha+\beta-1}.
 \end{align}
 We can now evaluate the remaining integral
 \begin{align}
@@ -113,7 +114,8 @@ We can now evaluate the remaining integral
 \end{align}
 leading to
 \begin{align}
-    \rho_k=\frac{1}{2n^2} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} (-1)^{\alpha+\beta} \frac{(\alpha+\beta-1)!}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \Imf{ \frac{1}{\kappa\bb{ 1-i\kappa }^{\alpha+\beta}} }
+    \rho_k=\frac{1}{2n^2} \sum_{\alpha=1}^{n}\sum_{\beta=1}^{n} &(-1)^{\alpha+\beta} \frac{(\alpha+\beta-1)!}{(\alpha-1)! (\beta-1)!} \binom{n}{\alpha}\binom{n}{\beta} \\
+    &\qquad\cdot \Imf{ \frac{1}{\kappa\bb{ 1-i\kappa }^{\alpha+\beta}} }
 \end{align}
 where we have defined $\kappa=\frac{k}{4n}$ to simplify the structure.
 We can now expand this expression into a series around $\kappa=0$.
