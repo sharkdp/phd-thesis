@@ -44,13 +44,13 @@ To see this, we assume that (for a certain set of parameters) the model has no b
 Then, we can \qu{factor out} the information about the dispersion relation and consider the normalized vector $\hat{\vec{n}}_\veck = \vec{n}_\veck/|\vec{n}_\veck|$.
 Mathematically, this is a mapping $\hat{\vec{n}}\colon T^2 \to S^2$ from a two-torus $T^2$ (the structure of the two-dimensional Brillouin zone) to the two-sphere $S^2$ (because the three-dimensional vector is normalized).
 Continuous functions of this kind can be classified with topological methods.
-It is possible to visualize a mapping $T^2 \to S^2$ (see \tref{chern2/wrapping} for an example), but it is easier to continue this discussion with a conceptually easier mapping $S^2 \to S^2$ from a sphere to itself.
+It is possible to visualize a mapping $T^2 \to S^2$ (see \tref{chern2/wrapping} for an example), but it is easier to continue this discussion with a conceptually simpler mapping $S^2 \to S^2$ from a sphere to itself.
 It can be shown that the classification is in fact equivalent~\cite{Moore2011}.
 In algebraic topology, continuous functions with the general structure $S^k \to S^n$ are classified by the $k$-th homotopy group of the $n$-sphere, denoted by $\pi_k(S^n)$.
-Functions $f\colon S^1 \to S^1$ from the unit-circle to itself, for example, are classified by the first homotopy group (called the fundamental group).
+Functions $f\colon S^1 \to S^1$ from the unit-circle to itself, for example, are classified by the first homotopy group (called the fundamental group) of $S^1$.
 It is well known that $\pi_1(S^1) \cong \mathds{Z}$, because mappings of this kind can be classified by a winding number
 \begin{align}
-    \nu = \frac{1}{2\pi}\integralb{0}{2\pi}{k} \partial_k f(k) = \frac{f(2\pi)-f(0)}{2\pi}
+    \nu = \frac{1}{2\pi}\integralb{0}{2\pi}{k} \partial_k f(k) = \frac{f(2\pi)-f(0)}{2\pi} \in \mathds{Z}
 \end{align}
 that counts how many times the origin is encircled as we integrate over $k \in S^1$.
 For our two-dimensional model, we are interested in the second-homotopy group of the two-sphere.
@@ -296,9 +296,6 @@ In contrast to the square lattice, an energy splitting $\mu \ne 0$ is sufficient
 \Tref{fig3/fig3b} shows the dispersion relation with a lowest band of flatness $f\approx 6.4$ and a Chern number $C=-1$.
 The different behavior of the same model on the square and hexagonal lattice will be explained in \tref{doublelayerhex}.
 
-\section{Classification and double-layer picture}
-\tlabel{doublelayer}
-
 \doublefig{.36}{fig5/fig5a}{ }{.28}{fig5/fig5b}{ }{
 Hopping strengths and flux pattern of a single layer in different lattices.
 Tunneling elements without arrow are real numbers.
@@ -308,6 +305,9 @@ The second layer is given by a translation along the second primitive vector.
 \sfB~Honeycomb lattice: By distributing the $\ketp, \ketm$ orbitals to the two distinct sublattices it is possible to retain the symmetry of the lattice.
 The second layer is given by a $60^\circ$ rotation.
 }
+
+\section{Classification and double-layer picture}
+\tlabel{doublelayer}
 
 Topological band structures can be classified by considering equivalence classes of models that can be continuously deformed into each other without closing the energy gap~\cite{Hasan2010}.
 In particular, the Chern number of a single band can only change if it touches another band.
@@ -439,5 +439,5 @@ A continuum trial wavefunction for such a state would be the Halperin $(l;m;n)$ 
     \ef{-\frac{1}{4}\sum_{j,\alpha} \absvsq{z^\alpha_j} }.
 \end{align}
 This state is a natural extension of the Laughlin wave function to a double-layer system where $z_i^\downarrow=x_i^\downarrow+i y_i^\downarrow$ and $z_i^\uparrow$ are the complex coordinates in the lower and upper layer and $\mathcal{N}$ is a normalization constant.
-Here, the two layers are given by the deconstruction described in \tref{doublelayer}.
-For our hard-core bosonic system, one would expect a $(2;2;1)$ state where $l=2, m=2$ is the lowest non-trivial state which is compatible with the bosonic statistics and $n=1$ enforces the inter-layer hard-core constraint.
+In our system, the two layers are given by the deconstruction described in \tref{doublelayer}.
+Since we are dealing with hard-core bosons, one would expect a $(2;2;1)$ state where $l=2, m=2$ is the lowest non-trivial state which is compatible with the bosonic statistics and $n=1$ enforces the inter-layer hard-core constraint.
