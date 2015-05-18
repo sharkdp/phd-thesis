@@ -20,7 +20,7 @@ Neglecting constant energy shifts and two-particle excitations, we can write the
 \begin{align}
 H_\text{int}\approx\frac{g\sqrt{N_0}}{V} \sum_{\vecq\ne 0} \rho^{\phantom\dagger}_{\vecq} \big(\bogu_{q}-\bogv_{q}\big) \big(\bopd_{\vecq}+\bop_{-\vecq}\big).
 \end{align}
-\section{Atom losses}
+\section{BEC excitations and atom losses}
 To estimate the number of excitations induced by the presence of the Rydberg electron which has a finite lifetime of $\tau=1/\gamma$, we first consider the probability to excite a certain mode with quasi momentum~$\vecq$, when a perturbation of the type $H_\text{int} \ef{-\gamma t}$ is applied. In lowest order we have
 \begin{align}
 P_{0\rightarrow\vecq}&=\Bigg|-\frac{i}{\hbar}\integralb{0}{\infty}{t}\ef{i\omega_{q}t-\gamma t}\braketop{\vecq}{H_\text{int}}{0}\Bigg|^2.
@@ -80,7 +80,7 @@ Finally, \tref{losses} shows the quantity $L/\tau^2$ in a comparison between exp
 
 \fig{.7}{losses}{Atom losses divided by the square of the Rydberg lifetime $\tau$. Comparison between experiment~\cite{Balewski2014} and theory. For the solid line, a lifetime of $\tau=10\si{\micro\second}$ is assumed while the crosses take the measured Rydberg lifetime into account.}
 
-\section{Fourier transform of the electronic density}
+\section{Fourier transform of the Rydberg electronic density}
 To find the number of losses in \tref{losseseq}, the Fourier transform of the electronic density in the Rydberg state is required. To calculate this quantity, we start with the wave function of the Hydrogen $n$s state which is given by
 \begin{align}
 \Psi(r)=\frac{\ef{-\frac{r}{n}}}{\sqrt{\pi\, n^5}} \, L_{n-1}^1\!\bb{\frac{2 r}{n}}.

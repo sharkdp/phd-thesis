@@ -22,6 +22,7 @@ Note that a weak $s$-wave scattering length does not change the general behavior
 For two internal levels, we can write the
 dipole moment $\vecd =  \muB g \vec{S} / \hbar = \muB g \vecsigma/2$ in terms of the Land\'e factor $g$ and the Pauli matrices $\vecsigma$.
 
+\section{The transfer process}
 In two dimensions, using the spin raising and lowering operators $\sigma^{\pm} = (\sigma^x \pm i \sigma^y)/2$, the interaction between these two-level dipoles reduces to
 \begin{align}
 \Vdd(R,\phi) =  \frac{\Cdd}{R^3} \left[
@@ -64,7 +65,7 @@ High angular momentum states are indeed related to the quantum Hall regime, as t
 Here $z_k=(X_k+i Y_k)/l_\text{HO}$ are complex coordinates of the particles, $\mathcal{A}$ is the antisymmetrizer, $\mathcal{N}$ is a normalization constant, and \smash{$l_\text{HO}=\sqrt{\hbar/m\omega}$} is the harmonic oscillator length. This wave function is equivalent to the Laughlin wave function for integer filling $\nu=1$, with   \smash{$l_\text{HO}=\sqrt{\hbar/m\omega}$} replacing the magnetic length \smash{$\sqrt{2}l_m=\sqrt{2\hbar c/eB}$} for electronic systems. Quite generally, the states with $n=0$ and $m\ge 0$ correspond to the states in the lowest Landau level, see \tref{fig1d}.
 To reach the LLL regime, we have to repeat the transfer scheme at least $\liqhe/N\hbar=(N-1)/2$ times.
 
-\section{Modeling the transfer process}
+\subsection{Modeling the transfer}
 
 \fig{0.55}{fig2}{Exact ground state energy (dots) for $N=10$ particles at fixed angular momentum $L$, compared to the approximate expression (solid line) as given in~\tref{etotnl}. For $L>\liqhe=45\hbar$, the energy increases linearly. Inset shows $L$ as a function of the rotation frequency $\Omega$ in the analytic model. $L$ diverges at the critical rotation frequency $\Omega=\omega$, when the rotation exceeds the trap frequency.}
 
@@ -166,7 +167,7 @@ where the length $l_\text{DDI} = m\kappa d^2/\hbar^2$ parametrizes the strength 
 A particularly interesting property of the integer quantum Hall state, potentially useful to detect the successful generation, is the perfectly flat density $n=1/\pi l_\text{HO}^2$ within a circular region of radial size $\sqrt{N}l_\text{HO}$, shown in~\tref{density-comparison}.
 
 
-\section{Creation of fractional Quantum Hall states}
+\section{Fractional Quantum Hall states}
 By simply continuing the transfer scheme, it is possible to reach states with $L>\liqhe$.
 In this regime, highly correlated ground states appear that are closely connected to fractional quantum Hall effect (FQHE) states.
 We consider a situation where we start from an unpolarized state and run the initial half-cycle to the polarized state (transferring $F\cdot N$ angular momentum). The subsequent $k$ cycles transfer $2F \cdot N$ of angular momentum. A FQHE state with a filling of $\nu=\sfrac{1}{m}$ has a total angular momentum of $m\cdot \liqhe$. \Tref{fqhenumbers} shows a few possible scenarios for the generation of fractional states for small numbers of particles and a perfectly working transfer scheme.
@@ -213,10 +214,10 @@ g(N,N) \sim \frac{1}{4N\sqrt{3}} \ef{\pi \sqrt{\frac{2N}{3}}}.
 
 \doublefig{.454}{fqhe-comparison}{ }{.436}{lll-excitations}{ }{\sfA~Density distributions for interacting ground states of $N=6$ particles at total angular momentum $L=\liqhe, 2\liqhe$ and $3\liqhe$. The Laughlin wave function at $m=3$ ($\nu=1/3$) is shown for comparison. \sfB~Ground state energy and excitation spectrum of $N=5$ particles for increasing angular momentum. The inset shows the opening gap at $L=3\liqhe$, corresponding to a filling of $\nu = 1/3$.}
 
-\subsection{Interacting states in the lowest Landau level}
+\subsection{Exact diagonalization in the lowest Landau level}
 The dipolar interaction lifts this huge degeneracy and highly correlated ground states appear~\cite{Cooper2005,Baranov2005,Osterloh2007,Qiu2011,Grass2011,Zhang2014}. In our setup, it is possible to directly tune to certain angular momentum values instead of obtaining $L$ from a given rotation frequency $\Omega$.
-We can calculate the ground state for small particle numbers by exact diagonalization in the degenerate subspace.
+We can calculate the ground state at a fixed angular momentum $L$ for small particle numbers by exact diagonalization in the degenerate subspace.
 Again, we assume that the strength of the interaction $\dlCdd=(\Cdd/l_\text{HO}^3)/\hbar\omega \ll 1$ is weak compared to the Landau level splitting.
 The matrix elements of the dipolar interaction in the lowest Landau level are given in \cref{me:vlll}.
 
-\Tref{fqhe-comparison} shows the density distribution of the interacting ground states for six particles. While the density is flat in the center for $L=\liqhe$, the distribution spreads to higher radii for increasing $L$. The density distribution at $L=3\liqhe$ is close to the corresponding Laughlin wave function at a filling of $\nu=1/3$. \Tref{lll-excitations} shows the ground state energy and the excitation spectrum for five particles at different total angular momentum. The decreasing energy is a consequence of the spreading density at higher angular momentum. At $L=3\liqhe$ it is possible to see evidence for a gap opening. For details, we refer to \refscite{Qiu2011,Osterloh2007}.
+\Tref{fqhe-comparison} shows the density distribution of the interacting ground states for six particles. While the density is flat in the center for $L=\liqhe$, the distribution spreads to higher radii for increasing $L$. The density distribution at $L=3\liqhe$ is close to the corresponding Laughlin wave function at a filling of $\nu=1/3$. \Tref{lll-excitations} shows the ground state energy and the excitation spectrum for five particles at different total angular momentum. The decreasing energy is a consequence of the spreading density at higher angular momentum. At $L=3\liqhe$ it is possible to see evidence for a gap opening. For details like overlap calculations, we refer to \refscite{Qiu2011,Osterloh2007}.
