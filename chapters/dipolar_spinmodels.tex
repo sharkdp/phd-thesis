@@ -29,7 +29,7 @@ as well as important differences. A detailed review on dipolar systems can be fo
 
 \subsection{Atoms with high magnetic moments}
 
-Highly dipolar atoms where among the first experimental realizations of ultracold dipolar
+Highly dipolar atoms were among the first experimental realizations of ultracold dipolar
 systems~\cite{Griesmaier2005a}. These atoms have large magnetic dipole moments due to their
 particular electronic structure. In the recent years, a large number of different dipolar atoms
 have been successfully cooled. Chromium with a magnetic moment of $6\muB$ is successfully
@@ -45,7 +45,7 @@ states which contribute to a rich internal structure that can be controlled via 
 and optical pumping techniques. Compared to polar molecules, magnetic atoms have a permanent
 dipole moment, even at zero field. This is useful for certain applications which involve dipolar
 relaxation such as demagnetization cooling~\cite{Hensler2003,Fattori2006,Volchkov2013}. Other
-advantages compared to polar molecules are the generally easier structure which makes them easier
+advantages compared to polar molecules are the generally simpler structure which makes them easier
 to cool and manipulate as well as the absence of chemical reactions present in polar
 molecules~\cite{Ospelkaus2010a,Quemener2012}.
 
@@ -94,7 +94,7 @@ realization of spin systems~\cite{Barredo2014,Weber2015}.
 \section{Dipole-dipole interaction}
 The aim of this section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$, namely
 \begin{align} \tlabel{ddint}
-\Hdd_{ij} = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } }
+\Hdd_{ij} = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } },
 \end{align}
 in a spherical tensor representation~\cite{Micheli2007,Gorshkov2011c} which will be useful throughout this thesis.
 \Tref{ddint} is given in terms of the relative vector $\vecR_{ij} = \vecR_j - \vecR_i$ and its normalized form $\hat{\vecR}_{ij}$.
@@ -126,7 +126,7 @@ It is worth noting that the $T^2_{m=0}(\vecd_i, \vecd_j)$-terms in the first row
 \subsection{High-symmetry alignments}
 For most applications, we will be concerned with two-dimensional systems where the dipoles are aligned perpendicular to the plane. Then, the dipoles are also perpendicular to the interconnecting axis $\vecR_{ij}$, implying $\theta = \pi/2$. In this case, the $m=1$ terms drop out and the tensorial part reduces to
 \begin{align} \tlabel{dop2d}
-    D^\text{(2D)}_{ij} = d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} -\frac{3}{2} \bb{ d_i^- d_j^- \ef{+2i\phi} + d_i^+ d_j^+ \ef{-2i\phi} }
+    D^\text{(2D)}_{ij} = d_i^0 d_j^0 + \frac{1}{2}\bb{d_i^+ d_j^- + d_i^- d_j^+} -\frac{3}{2} \bb{ d_i^- d_j^- \ef{+2i\phi} + d_i^+ d_j^+ \ef{-2i\phi} }.
 \end{align}
 For a one-dimensional geometry there are two high-symmetry alignments. If the dipoles are perpendicular to the lattice direction (say, the $x$-direction) we can set $\phi=0$, further simplifying $D_{ij}$ to
 \begin{align}
@@ -135,7 +135,7 @@ For a one-dimensional geometry there are two high-symmetry alignments. If the di
 \end{align}
 Conversely, if the dipoles point along the lattice direction, we can set $\theta=0$ in \tref{doperator} to get
 \begin{align}
-    D^{(1D,\parallel)}_{ij} &= -2 d_i^0 d_j^0 - \bb{d_i^+ d_j^- + d_i^- d_j^+} = -2 d_i^z d_j^z+ d_i^x d_j^x + d_i^y d_j^y
+    D^{(1D,\parallel)}_{ij} &= -2 d_i^0 d_j^0 - \bb{d_i^+ d_j^- + d_i^- d_j^+} = -2 d_i^z d_j^z+ d_i^x d_j^x + d_i^y d_j^y.
 \end{align}
 
 \subsection{Tilted field geometry}
@@ -145,7 +145,8 @@ Conversely, if the dipoles point along the lattice direction, we can set $\theta
 \sfB~Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions going \qu{downwards}.}
 
 
-If we are not in a high-symmetry geometry, we can consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an external polarizing field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}, determined by the spherical angles $\Theta_0$ and $\Phi_0$:
+If we are not in a high-symmetry geometry, we can consider a more general situation (see \tref{lattice-geometry}) with a two-dimensional system in the $xy$ plane and an external polarizing field $\vec{E}$ pointing in an arbitrary direction~\cite{Gorshkov2011c}.
+Let the external field direction be determined by the spherical angles $\Theta_0$ and $\Phi_0$:
 \begin{align}
     \vec{\hat{E}}=\begin{pmatrix}
         \sin\Theta_0\cos\Phi_0 \\
@@ -224,21 +225,21 @@ In the following, we look at several specific choices. Each of them corresponds 
 
 \subsection{Realizing Ising and XY interactions}
 \tlabel{xxz}
-Here, we assume that we have chosen two states, denoted as $\ketz$ and $\keto$, which have the
-same $M$ quantum number (see~\tref{dipole-moments}).
+We start with the simplest case where we have chosen two states, denoted as $\ketz$ and $\keto$, which have the same $M$ quantum number (see~\tref{dipole-moments}).
 Then, only the $d^0_id^0_j$ part of the dipolar interaction is relevant.
-We define the (transition) dipole elements
+We define the dipole elements
 \begin{align}
     d_0 = \smallbraketop{0}{d^0}{0},\qquad
     d_1 = \smallbraketop{1}{d^0}{1},\qquad
-    q_1 = |\smallbraketop{1}{d^0}{0}| = |\smallbraketop{0}{d^0}{1}|.
+    q_1 = |\smallbraketop{1}{d^0}{0}| = |\smallbraketop{0}{d^0}{1}|,
 \end{align}
-The evaluation of these dipole matrix elements for polar molecules in the presence of external fields is straightforward and has been described in detail elsewhere~\cite{Micheli2007}.
+where $d_\alpha$ denotes a static dipole moment and $q_\alpha$ a transition dipole element.
+The evaluation of these matrix elements for polar molecules in the presence of external fields is straightforward and has been described in detail elsewhere~\cite{Micheli2007}.
 Using the projectors $P^0 = \ketbra{0}{0}$ and $P^1 = \ketbra{1}{1}$, we can now express the
 dipole-dipole interaction \labeltref{dop2d} in the $\ketz, \keto$ subspace as
 \begin{align}
     \Hdd_{ij} = \frac{\kappa}{R_{ij}^3} \Big[ d_1^2 P^1_i P^1_j + d_0^2 P^0_i P^0_j &+ d_1d_0 (P^1_i P^0_j + P^0_i P^1_j) \\
-              &+ q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) \Big]
+              &+ q_1^2 (\splus_i \sminus_j + \sminus_i \splus_j) \Big],
 \end{align}
 where we have neglected all processes which are not energy-conserving,
 i.e. terms that do not conserve the number of excitations.
