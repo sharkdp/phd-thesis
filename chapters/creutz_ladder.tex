@@ -1,309 +1,99 @@
-\chapter{Creutz ladder model with dipolar spins}
+\chapter[Realizing the Creutz ladder model with dipolar spins]{Realizing the Creutz ladder model\texorpdfstring{\\}{ }with dipolar spins}
 \label{creutz_ladder}
 
 
+\newcommand{\ep}{\operatorname{\epsilon}}
 \newcommand{\et}{\operatorname{\eta}}
 \newcommand{\tbar}{\bar{t}}
 
+\newcommand{\ladderKet}[2]{\ensuremath{\textstyle|\genfrac{}{}{0pt}{}{#1}{#2}\rangle}}
+\newcommand{\upp}{\ladderKet{+}{}}
+\newcommand{\dnp}{\ladderKet{}{+}}
+\newcommand{\upm}{\ladderKet{-}{}}
+\newcommand{\dnm}{\ladderKet{}{-}}
 
-\newcommand{\orbital}[2]{TODO}
-\newcommand{\op}{\orbital{plus}{+}}
-\newcommand{\om}{\orbital{minus}{-}}
+\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a spacing of $h$ between the two chains.}
 
-\newcommand{\ladderKet}[3]{TODO}
-\newcommand{\upp}{\ladderKet{0.7ex}{+}{plus}}
-\newcommand{\dnp}{\ladderKet{-0.7ex}{+}{plus}}
-\newcommand{\upm}{\ladderKet{0.7ex}{-}{minus}}
-\newcommand{\dnm}{\ladderKet{-0.7ex}{-}{minus}}
-
-\section{Setup}
-% \begin{figure}[th]
-%     \centering
-%     \begin{tikzpicture}[scale=3.5]
-%         \pgfmathsetmacro{\widthA}{1}
-%         \pgfmathsetmacro{\widthH}{0.8}
-%         \pgfmathsetmacro{\angleD}{atan(\widthH / \widthA)}
-
-%         % Rectangles
-%         \foreach \s in {0, ..., 3}
-%             \draw [very thick] (\s * \widthA, 0) rectangle (\s * \widthA + \widthA, \widthH);
-
-%         % Geometry labels
-%         \node [below] at (\widthA / 2, 0) {$a$};
-%         \node [left] at (0, \widthH / 2) {$h$};
-
-%         % Delta angle
-%         \draw [] (0, 0) -- (\widthA, \widthH);
-%         \draw (\widthA / 3, 0) arc (0:\angleD:\widthA / 3);
-%         \node [] at (\widthA * 0.4, \widthH * 0.15) {$\delta$};
-
-%         % Tunneling labels
-%         \node [below] at (\widthA * 2.5, 0) {$w_h$};
-%         \node [left] at (\widthA * 2, \widthH / 2) {$w_v$};
-%         \draw [color=plus,thick] (2 * \widthA, 0) -- (3 * \widthA, \widthH);
-%         \node [below] at (\widthA * 2.65, \widthH / 2) {$w_d \ef{\pm 2i\delta}$};
-
-%         % Molecules
-%         \foreach \x in {0, ..., 4} {
-%             \foreach \y in {0, 1}
-%                 \node at (\x * \widthA, \y * \widthH) [fill=gray,circle,draw,inner sep=0] {$\pm$};
-%         };
-%     \end{tikzpicture}
-%     \caption{Setup for the double-Creutz ladder\label{setup}}
-% \end{figure}
-
-We consider the system depicted in~\cref{setup}.
-Polar molecules are fixed on a double-chain of lattice spacing $a$ and a separation of $h$ between the two chains.
-The level scheme is the one described in \href{http://arxiv.org/abs/1410.5667}{arXiv:1410.5667}: every molecule can be excited into the states $\ketp$ or $\ketm$.
-
-\section{Bloch Hamiltonian}
-In the basis \upp, \upm, \dnp, \dnm, the Bloch Hamiltonian for this setup has the following form
+We consider the one-dimensional system depicted in~\tref{setup}.
+Single dipoles are pinned at each lattice site of a double-chain with a lattice spacing $a$ and a separation of $h$ between the two chains.
+The level scheme is the same as in \cref{topological_bands} (see \refandpage{tb:fig1/fig1a}). Every dipole initially starts in the ground state $\ketz$ and can be excited into one of the two orbitals $\ketp$ or $\ketm$.
+We use the notation $\ladderKet{\alpha}{}_i = \ket{\alpha}_{i,\text{upper}} \ket{0}_{i,\text{lower}}$ to indicate a state at lattice site $i$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
+Conversely, $\ladderKet{}{\alpha}_i$ describes an excitation on the lower chain.
+Then, the Bloch Hamiltonian in the basis \upp, \upm, \dnp, \dnm, takes the form
 \begin{align}
     H(k) =
     \begin{pmatrix}
-        -t_+ \eps_k + \mu & w \eps_k & -t_+ \et^0_k & w \et^{-2}_k \\
-        w \eps_k & -t_- \eps_k - \mu & w \et^{+2}_k & -t_- \et^0_k \\
-        -t_+ \et^0_{k} & w \et^{+2}_{k}  & -t_+ \eps_k + \mu & w \eps_k \\
-        w \et^{-2}_{k} & -t_- \et^0_{k} & w \eps_k & -t_- \eps_k - \mu
-    \end{pmatrix}
+        -t \ep_k  & w \ep_k & -t \et^0_k & w \et^{-2}_k \\
+        w \ep_k & -t \ep_k  & w \et^{+2}_k & -t \et^0_k \\
+        -t \et^0_{k} & w \et^{+2}_{k}  & -t \ep_k  & w \ep_k \\
+        w \et^{-2}_{k} & -t \et^0_{k} & w \ep_k & -t \ep_k
+    \end{pmatrix}.
 \end{align}
-Here, we have defined
+where $t$ is the orbital-preserving tunneling strength ($t = t^+ = t^-$) and $w$ is the spin-changing tunneling rate, as defined in \cref{tb:tunnelingRates}.
+The one-dimensional form of the dipolar dispersion comes in two forms, where
 \begin{align}
-    \eps_k &= a^3 \sum_{x\ne 0} \frac{\ef{i k x}}{|x|^3} = 2 \sum_{j>0} \frac{\cos(k a j)}{|j|^3} \\
+    \ep_k &= a^3 \sum_{x\ne 0} \frac{\ef{i k x}}{|x|^3} = 2 \sum_{j>0} \frac{\cos(k a j)}{|j|^3}
+\end{align}
+includes all intra-chain processes and
+\begin{align}
     \et^m_k &= a^3 \sum_{x} \frac{\ef{i k x + i m \phi_x}}{\bb{x^2 + h^2}^{3/2}}
     = \frac{1}{(h/a)^3} + \sum_{j>0} \frac{2\cos(ka j+m\phi_j)}{\bb{j^2+(h/a)^2}^{3/2}}
 \end{align}
-where $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$. Note, that $\eps_k=\eps_{-k}$ and $\et^m_k=\et^{-m}_{-k}$.
+covers all inter-chain processes with $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ the angle between the horizontal and the interconnection line between the two dipoles.
+Note, that we have the relations $\ep_k=\ep_{-k}$ and $\et^m_k=\et^{-m}_{-k}$.
 
-\subsection{Structure of the Hamiltonian}
-We can write the Hamiltonian in the form
+\section{Symmetries}
+The described system has an inversion symmetry (or $180^\circ$ rotation symmetry), described by $H(-k) = \mathcal{P} H(k) \mathcal{P}$ where the unitary operation $\mathcal{P} = \sigma_x \otimes \id$ flips the upper and lower chains.
+Additionally, the system is time reversal symmetric, i.e. $H(-k)=\mathcal{T} H(k) \mathcal{T}^{-1}$.
+Here, time-reversal is described by the anti-unitary operator $\mathcal{T}=U_\mathcal{T} \mathcal{K}$ satisfying $\mathcal{T}^2 = \id$. $\mathcal{K}$ is complex conjugation and $\mathcal{U}_\mathcal{T} = \id \otimes \sigma_x$ is a unitary operator that exchanges the two orbitals.
+
+The combination of these two symmetries gives rise to an operator $\mathcal{P}\mathcal{T} = \sigma_x \otimes \sigma_x \, \mathcal{K}$ which commutes with the Hamiltonian:
 \begin{align}
-    H(k) =
-    \begin{pmatrix}
-        S_k & T_k \\
-        T_k^t & S_k \\
-    \end{pmatrix}
+    [\mathcal{P}\mathcal{T}, H(k)] = 0\qquad \Rightarrow \qquad [\sigma_x \otimes \sigma_x, H(k)]= 0.
 \end{align}
-with the two real $2\times2$ matrices $S_k$ and $T_k$.
-$S_k$ is symmetric and $T_k$ satisfies $T_k^t=T_{-k}$.
-
-
-\subsection{Symmetries}
-Here, we use the notation from the 2D paper $\tbar = (t^-+t^+)/2$ and $t=(t^--t^+)/2$.
-\paragraph{Inversion symmetry}
-The system has inversion symmetry ($180^\circ$ rotation symmetry), given by:
-\begin{align}
-    H(-k) &= \mathcal{P} H(k) \mathcal{P} \\
-    \mathcal{P} &= \sigma_x \otimes \id =
-    \begin{pmatrix}
-        0 & 0 & 1 & 0 \\
-        0 & 0 & 0 & 1 \\
-        1 & 0 & 0 & 0 \\
-        0 & 1 & 0 & 0
-    \end{pmatrix}
-\end{align}
-with $\mathcal{P}^2=\id$.
-This symmetry can be broken -- for example -- by an on-site-potential depending on the sublattice (chain).
-
-\paragraph{NOTE} Since the Hamiltonian is real, the operator $\mathcal{P}\mathcal{K}$, with $\mathcal{K}$ being complex
-conjugation, can be considered as (another) time-reversal operation in the sense of the
-classification scheme.
-
-
-\paragraph{Time-reversal symmetry}
-For $t=\mu=0$, the system is time reversal symmetric with $\mathcal{T}=U_\mathcal{T} \mathcal{K}$:
-\begin{align}
-    H(-k)&=\mathcal{T} H(k) \mathcal{T}^{-1} = U_\mathcal{T}H(k)^* U_\mathcal{T}^\dagger \\
-    U_\mathcal{T} &= \id \otimes \sigma_x =
-    \begin{pmatrix}
-        0 & 1 & 0 & 0 \\
-        1 & 0 & 0 & 0 \\
-        0 & 0 & 0 & 1 \\
-        0 & 0 & 1 & 0
-    \end{pmatrix}
-\end{align}
-with $\mathcal{T}^2=\id$.
-
-In combination with the inversion symmetry, at $t=\mu=0$, the Hamiltonian commutes with $\mathcal{P}\mathcal{T} = \sigma_x \otimes \sigma_x \, \mathcal{K}$:
-\begin{align}
-    [\mathcal{P}\mathcal{T}, H(k)] = 0\qquad \Rightarrow \qquad [\sigma_x \otimes \sigma_x, H(k)]= 0
-\end{align}
-
-\paragraph{Particle-hole symmetry}
-For $\bar{t}=0$, the system is particle-hole symmetric:
-\begin{align}
-    -H(-k) &= \mathcal{C}^{-1} H(k) \mathcal{C} =  U_\mathcal{C} H^*(k) U_\mathcal{C}^\dagger \\
-    U_\mathcal{C} &= \id \otimes \sigma_y
-\end{align}
-with $\mathcal{C}^2=-1$.
-
-In combination with inversion symmetry, this leads to a sublattice symmetry with
-\begin{align}
-    \mathcal{S}_\mathcal{P} = U_\mathcal{C} \mathcal{P} = \sigma_x \otimes \sigma_y
-\end{align}
-which anti-commutes with the Hamiltonian.
-
-In combination with TRS (at $\tbar=t=\mu=0$), PHS leads to a sublattice-symmetry with
-\begin{align}
-    \mathcal{S}_\mathcal{T} = U_\mathcal{C}U_\mathcal{T} =  \id\otimes (-i\sigma_z)
-\end{align}
-which anti-commutes with the Hamiltonian.
-
-Also note that the product of the two operators which anti-commute with H is just the operator which commutes with H: $S_\mathcal{T}S_\mathcal{P} = \mathcal{T}\mathcal{P}$.
-
-\section{Zak phase}
-The Zak phase is defined by
-\begin{align}
-    \gamma_\nu = i\integralb{-\pi/a}{\pi/a}{k} \braketop{u_\nu(k)}{\partial_k}{u_\nu(k)}
-\end{align}
-where $\ket{u_\nu(k)}$ is the Bloch eigenstate of the $\nu$-th band.
-If a one-dimensional system is inversion symmetric, the Zak phase can only be\footnote{Zak, PRL 1988} $\gamma=0$ or $\gamma=\pi$.
-
-\section{Topological phase diagram}
-(In this section, we set $\tbar=0$, as it has no influence for the topological structure).
-We investigate the structure of the Hamiltonian at the two time-reversal invariant momenta $k=0$ and $k=\pi/a$.
-The structure of the Hamiltonian (at these points) simplifies to:
-\begin{align}
-    H(k) =
-    \begin{pmatrix}
-        S_k & T_k \\
-        T_k^t & S_k \\
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-        S_k & T_k \\
-        T_k & S_k \\
-    \end{pmatrix}
-\end{align}
-Then, we can use:
-\begin{align}
-    \det
-    \begin{pmatrix}
-        S_k & T_k \\
-        T_k & S_k
-    \end{pmatrix}
-    = \det (S_k+T_k) \det (S_k-T_k)
-\end{align}
-Both $A$ and $B$ are traceless in our case, so we can see that the eigenvalues come in two pairs with $E_1 = -E_4$ and $E_2 = -E_3$. First, we are interested in the touching of the lower two bands (then, the upper two will also touch).
-This is the case if $\det (S_k+T_k) = \det (S_k-T_k)$. We find
-\begin{align}
-    (t(\eps_k+\eta_k^0)+\mu)^2 + w^2 \absvsq{\eps_k+\eta^{2}_k} = (t(\eps_k-\eta_k^0)+\mu)^2 + w^2 \absvsq{\eps_k-\eta^{2}_k}
-\end{align}
-After simplification, we have
-\begin{align}
-    t^2\eps_k\et_k^0+t\mu \et_k^0 + w^2 \eps_k \et_k^ = 0
-\end{align}
-From this, we can derive the following boundaries for the topological phase diagram:
-\begin{align}
-    \mu_1 &= -\frac{\eps_0}{t}\bb{t^2+w^2 \frac{\et_0^2}{\et_0^0}} \\
-    \mu_2 &= -\frac{\eps_\pi}{t}\bb{t^2+w^2 \frac{\et_\pi^2}{\et_\pi^0}}
-\end{align}
-We can explicitly write
-\begin{align}
-    \eps_0 &= 2\zeta(3) \approx 2.40 \\
-    \eps_\pi &= -3 \zeta(3) / 2 \approx -1.80
-\end{align}
-The topological phase diagram crucially depends on the two parameters $w^2 \et^2_0/\et^0_0$ and $w^2 \et^2_\pi/\et^0_\pi$.
-
-\subsection{Vanishing spin-orbit coupling}
-For $w=0$, we find only two straight lines in the phase diagram, corresponding to
-\begin{align}
-    \mu_1 &= -\eps_0 t \\
-    \mu_2 &= -\eps_\pi t
-\end{align}
-
-
-% \newpage
-
-
-% We immediately find
-% \begin{align}
-%     E_{1/2}(k) = -\sqrt{\bb{t(\eps_k \pm \et^0_k)+\mu}^2+w^2\absvsq{\eps_k\pm \et_k^2}}
-% \end{align}
-% At the $k=0$ point, we have the relations
-% \begin{align}
-%     \eps_0 &= 2\zeta_3 \\
-%     \et^0_0&=\sum_{j} \frac{1}{(j^2+(h/a)^2)^{3/2}}
-% \end{align}
-
-% \subsection{Alternative basis}
-% In the basis U+, L+, U-, L- with U/L = upper/lower, the Bloch Hamiltonian has the following form:
-% \begin{align}
-%     H(k) =
-%     \begin{pmatrix}
-%         t \eps_k  & t \et^0_k & w \eps_k & w \et^{-2}_k \\
-%         t \et^0_{-k} & t \eps_k   & w \et^{-2}_{-k} & w \eps_k \\
-%         w \eps_k & w \et^{+2}_k & -t \eps_k  & -t \et^0_k \\
-%         w \et^{+2}_{-k} & w \eps_k & -t \et^0_{-k} & -t \eps_k
-%     \end{pmatrix}
-% \end{align}
-% we have set $\mu = 0$. Now we define:
-% \begin{align}
-%     \Omega^m_k =
-%     \begin{pmatrix}
-%         \eps_k & \et^{m}_k \\
-%         \et^{m}_{-k} & \eps_k
-%     \end{pmatrix}
-% \end{align}
-% (notice the $-k$ in the lower left) and write
-% \begin{align}
-%     H(k)/t =
-%     \begin{pmatrix}
-%         \Omega^0_k & \omega\Omega^{-2}_k \\
-%         \omega\Omega^{+2}_k & -\Omega^0_k
-%     \end{pmatrix}
-% \end{align}
-% where $\omega = w/t$. The matrix $\Omega^m_k$ has the following property:
-% \begin{align}
-%     \bb{\Omega^{m}_k}^\dagger = \Omega^{-m}_k
-% \end{align}
-% In addition, at the time-reversal invariant momenta $k=0, \pi$, the matrix becomes symmetric: $(\Omega^m_k)^t=\Omega^m_k$.
-
-\section{Minimal cutoff}
-Including just the necessary terms in the long-range tunneling, we have
-\begin{align}
-    \eps_k &= 2 \cos(ka) \\
-    \et^m_k &= \frac{1}{(h/a)^3} + \frac{2}{(l/a)^3}\cos(k a+ m\delta)
-\end{align}
-where $l^2=a^2+h^2$ and $\tan \delta = h/a$ (see~\cref{setup}).
+Here, the second commutation relation follows from the fact that $H(k)$ is real.
 
 
 \section{Mapping to two Creutz ladders}
-In the following, we assume that $t=\mu=0$. We consider a geometry with a rectangular ladder where the spacing is given by $a$ and the separation between the chains is given by the height $h$.
-We only keep NN and NNN terms in the remaining spin-orbit tunneling terms.
-In the basis $\upp, \dnm, \dnp, \upm$, the Bloch Hamiltonian has the form
-\begin{align}
-    H(k) =
-    \begin{pmatrix}
-        0 & \et^{-2}_{k} & 0 & \eps_k \\
-        \et^{-2}_{k} & 0 & \eps_k & 0 \\
-        0 & \eps_k & 0 & \et^{+2}_{k} \\
-        \eps_k & 0 & \et^{+2}_k & 0
-    \end{pmatrix}
-\end{align}
-where $\eps_k = 2 w_h \cos(ka)$ and $\eta_k^m = -w_v + 2 w_d \cos(ka + m\delta)$. The term $w_h$ describes the horizontal (intra-chain) tunneling, $w_v$ is the vertical (inter-chain) coupling and $w_d$ is the strength of the diagonal (inter-chain) tunneling. The angle $\delta$ is given by $\tan \delta = h/a$.
-
-We first treat the vertical coupling $w_v$. On each link of the chain the $w_v$ term leads to a binding and anti-binding ``molecule'' of the shape
+We can now use the symmetry of the system to block-diagonalize the Hamiltonian. We change to a basis which diagonalizes the operator $\sigma_x \otimes \sigma_x$ that commutes with the Hamiltonian:
 \begin{align}
     \ketup_\pm = \frac{1}{\sqrt{2}} \bb{ \upp \pm \dnm } \\
     \ketdn_\pm = \frac{1}{\sqrt{2}} \bb{ \dnp \pm \upm }
 \end{align}
-Rotating into this new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$, we find the Bloch Hamiltonian
-in block diagonalized form\footnote{These states are eigenstates of the operator $\mathcal{P}\mathcal{T}=\sigma_x \otimes \sigma_x$ which commutes with the Hamiltonian for $\mu=t=0$.}
+Notice how these four states are invariant (or pick up a phase of $-1$) under a combined flip of the chains and the orbitals.
+In this new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes the form
 \begin{align}
-    H(k) =
+    H(k) &=
     \begin{pmatrix}
-        -\et_k^{-2} & -\eps_k & 0 & 0 \\
-        -\eps_k & -\et_k^{+2} & 0 & 0 \\
-        0 & 0 & \et^{-2}_{k} & \eps_k \\
-        0 & 0 & \eps_k & \et^{+2}_k
-    \end{pmatrix} =
-    \begin{pmatrix}
-        -H_+(k) & 0 \\
-        0 & H_+(k)
-    \end{pmatrix}
+        -t\ep_k -w\et_k^{-2} & -t\et_k^0 -w\ep_k &  &  \\
+        -t\et^0_k - w\ep_k & -t \ep_k - w\et_k^{+2} &  &  \\
+         &  & -t\ep_k +w\et_k^{-2} & -t\et_k^0 +w\ep_k \\
+         &  & -t\et^0_k + w\ep_k & -t \ep_k + w\et_k^{+2}
+    \end{pmatrix} \\
+    &= - t \, \id \otimes M_k - w \, \sigma_z \otimes N_k.
 \end{align}
-In the following, we will concentrate on the ``binding'' part with the states $\ketup_+, \ketdn_+$. We can write the lower block as:
+We see that the Hamiltonian factors into two blocks with $H_\pm(k) = -t M_k \pm w N_k$ where
+\begin{align}
+    M_k = \begin{pmatrix}
+        \ep_k & \et_k^0 \\
+        \et_k^0 & \ep_k
+    \end{pmatrix},\qquad
+    N_k = \begin{pmatrix}
+    \et_k^{-2} & \ep_k \\
+    \ep_k & \et_k^{+2}
+    \end{pmatrix}.
+\end{align}
+
+% We first treat the vertical coupling $w_v$. On each link of the chain the $w_v$ term leads to a binding and anti-binding ``molecule'' of the shape
+
+\subsection{Single block}
+
+\fig{.7}{creutz}{Tunneling links for the two states $\ketup_+, \ketdn_+$. Notice that the two \qu{chains} live in some abstract space (not to be confused with the real-space chains). The flux through each plaquette is $4\delta$.}
+
+To understand the structure of the Hamiltonian, let us first assume that $t=0$. We can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
+Furthermore, we introduce a cut-off in the dipolar tunneling such that only the relevant terms remain.
+Then, we have $\ep_k = 2 w_h \cos(ka)$ and $\eta_k^m = -w_v + 2 w_d \cos(ka + m\delta)$. The term $w_h$ describes the horizontal (intra-chain) tunneling, $w_v$ is the vertical (inter-chain) coupling and $w_d$ is the strength of the diagonal (inter-chain) tunneling. The angle $\delta$ is given by $\tan \delta = h/a$ (see \tref{setup}).
+Then, we can write the lower block as:
 \begin{align}
     H_+(k) = &\begin{pmatrix}
         -w_v + 2w_d \cos(ka-2\delta) & 2w_h \cos(ka) \\
@@ -313,173 +103,158 @@ In the following, we will concentrate on the ``binding'' part with the states $\
     &+\sigma_z \times 2w_d \sin(2\delta) \sin(ka) \\
     &+\sigma_x \times 2w_h \cos(ka)
 \end{align}
+The resulting model is depicted in~\tref{creutz}.
+This $2\times 2$ sector of the full Hamiltonian is equivalent to a Creutz ladder model~\cite{Creutz1999,Tovmasyan2013a}. The parameters of the original model are given by $K=w_h, M=0, r=w_d/w_h$ and $\theta=2\delta$. The magnetic flux per plaquette is given by $2\theta=4\delta$. The Creutz ladder model supports two perfectly flat bands for $M=0, r=1$ and $\theta=\pi/2$. In our case this translates to the condition $w_h=w_d$ and $\delta=\pi/4$.
 
-% \begin{figure}[th]
-%     \centering
-%     \begin{tikzpicture}[scale=3.5]
-%         \pgfmathsetmacro{\widthA}{1}
-%         \pgfmathsetmacro{\widthH}{0.8}
-%         \pgfmathsetmacro{\angleD}{atan(\widthH / \widthA)}
-
-%         % Rectangles
-%         \foreach \s in {0, ..., 3} {
-%             \draw [very thick] (\s * \widthA, 0)       -- (\s * \widthA + \widthA, 0);
-%             \draw [very thick] (\s * \widthA, \widthH) -- (\s * \widthA + \widthA, \widthH);
-%             \draw [dashed] (\s * \widthA, \widthH)     -- (\s * \widthA + \widthA, 0);
-%             \draw [dashed] (\s * \widthA, 0)           -- (\s * \widthA + \widthA, \widthH);
-%             \draw [very thick,-{Stealth}] (\s * \widthA, \widthH) -- (\s * \widthA + 0.5 * \widthA, \widthH);
-%             \draw [very thick,-{Stealth}] (\s * \widthA + \widthA, 0)       -- (\s * \widthA + 0.5 \widthA, 0);
-%         }
-
-%         % Tunneling labels
-%         \node at (\widthA * 1.35, 0.2 * \widthH) {$w_h$};
-%         \node at (\widthA * 1.90, 0.2 * \widthH) {$w_h$};
-%         \node [below] at (1.5 \widthA, 0) {$w_d \ef{2i\delta}$};
-%         \node [above] at (1.5 \widthA, \widthH) {$w_d \ef{2i\delta}$};
-
-%         % Molecules
-%         \foreach \x in {0, ..., 4} {
-%             \node at (\x * \widthA, \widthH) [fill=lightgray,circle,draw,inner sep=0] {$\uparrow$};
-%             \node at (\x * \widthA, 0) [fill=lightgray,circle,draw,inner sep=0] {$\downarrow$};
-%         };
-%     \end{tikzpicture}
-%     \caption{\label{creutz}Tunneling links for $\ketup_+, \ketdn_+$. The flux through each plaquette is $4\delta$.}
-% \end{figure}
-
-The resulting model is depicted in~\cref{creutz}.
-This sector of the full Hamiltonian is equivalent to a Creutz ladder\footnote{M. Creutz, Phys. Rev. Lett. 83, 2636 (1999).} with parameters\footnote{For the paper M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$} $K=w_h, M=0, r=w_d/w_h$ and $\theta=2\delta$. The magnetic flux per plaquette is given by $2\theta=4\delta$. The Creutz ladder supports two perfectly flat bands for $M=0, r=1$ and $\theta=\pi/2$. In our parameters this happens for $w_h=w_d$ and $\delta=\pi/4$.
+% [For the paper M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$]
 
 % \fig{0.8}{dispersion-creutz}{Dispersion relation for the double-Creutz-ladder.
 % The lower band has a flatness ratio of $\sim 2$. The plot on the right shows the spectrum of an open ladder with two edge states in each of the two band gaps.}
 
-\subsection{Symmetries}
-The model is time reversal symmetric with $\mathcal{T}=\sigma_x \mathcal{K}$:
-\begin{align}
-    \mathcal{T}H_+(k)\mathcal{T}^{-1}= H_+(-k)
-\end{align}
-For $w_v=0$ (energy offset) and $\delta=\pi/4$, the system is additionally particle-hole symmetric\footnote{This only works because of the cutoff!}:
-\begin{align}
-    \mathcal{C}H_+(k)\mathcal{C}^{-1}= -H_+(-k)
-\end{align}
-with $\mathcal{C}= \sigma_z \mathcal{K}$. This leads to a chiral symmetry $\mathcal{S} = i\sigma_y$ which anti-commutes with the Hamiltonian.
+% \subsection{Symmetries}
+% The model is time reversal symmetric with $\mathcal{T}=\sigma_x \mathcal{K}$:
+% \begin{align}
+%     \mathcal{T}H_+(k)\mathcal{T}^{-1}= H_+(-k)
+% \end{align}
+% For $w_v=0$ (energy offset) and $\delta=\pi/4$, the system is additionally particle-hole symmetric (This only works because of the cutoff!):
+% \begin{align}
+%     \mathcal{C}H_+(k)\mathcal{C}^{-1}= -H_+(-k)
+% \end{align}
+% with $\mathcal{C}= \sigma_z \mathcal{K}$. This leads to a chiral symmetry $\mathcal{S} = i\sigma_y$ which anti-commutes with the Hamiltonian.
 
-In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
+% In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
 
-\subsection{Edge states}
-In the flat band limit, the edge state (on the left side) is given by
-\begin{align}
-    \ket{E}_+ = \ketup_+ + i \ketdn_+ = \upp + \dnm + i\dnp + i\upm
-\end{align}
-The edge state of the ``anti-binding'' ladder is given by
-\begin{align}
-    \ket{E}_- = \ketup_- + i \ketdn_- = \upp - \dnm + i\dnp - i\upm
-\end{align}
+% \subsection{Edge states}
+% In the flat band limit, the edge state (on the left side) is given by
+% \begin{align}
+%     \ket{E}_+ = \ketup_+ + i \ketdn_+ = \upp + \dnm + i\dnp + i\upm
+% \end{align}
+% The edge state of the ``anti-binding'' ladder is given by
+% \begin{align}
+%     \ket{E}_- = \ketup_- + i \ketdn_- = \upp - \dnm + i\dnp - i\upm
+% \end{align}
 
 
-\subsection{Adding \texorpdfstring{$\tbar$}{t-bar} terms}
-Adding NN and NNN terms with $t_+=t_-\ne 0$, we find an on-site-coupling:
-\begin{align}
-    \braketop{\downarrow_+}{H}{\uparrow_+} = -\tbar_v
-\end{align}
-as well as the following tunneling contributions
-\begin{align}
-    \bra{\uparrow_+}_{i}H\ket{\uparrow_+}_{i+1} &= -\tbar_h \\
-    \bra{\downarrow_+}_{i}H\ket{\downarrow_+}_{i+1} &= -\tbar_h \\
-    \bra{\uparrow_+}_{i}H\ket{\downarrow_+}_{i+1} &= -\tbar_d
-\end{align}
-The Creutz-ladder parameters are now modified:
-\begin{align}
-    M &= -\tbar_v \\
-    K &= w_h - \tbar_d\\
-    K r \ef{i \theta} &= w_d \ef{2i\delta} - \tbar_h
-\end{align}
-the last equation yields
-\begin{align}
-    r &= \sqrt{\frac{(w_d\cos 2\delta - \tbar_h)^2 + (w_d \sin 2\delta)^2}{(w_h-\tbar_d)^2}} \\
-    \theta &= \atan \frac{\sin 2\delta}{\cos 2\delta-\tbar_h/w_d}
-\end{align}
+% \subsection{Adding \texorpdfstring{$\tbar$}{t-bar} terms}
+% Adding NN and NNN terms with $t_+=t_-\ne 0$, we find an on-site-coupling:
+% \begin{align}
+%     \braketop{\downarrow_+}{H}{\uparrow_+} = -\tbar_v
+% \end{align}
+% as well as the following tunneling contributions
+% \begin{align}
+%     \bra{\uparrow_+}_{i}H\ket{\uparrow_+}_{i+1} &= -\tbar_h \\
+%     \bra{\downarrow_+}_{i}H\ket{\downarrow_+}_{i+1} &= -\tbar_h \\
+%     \bra{\uparrow_+}_{i}H\ket{\downarrow_+}_{i+1} &= -\tbar_d
+% \end{align}
+% The Creutz-ladder parameters are now modified:
+% \begin{align}
+%     M &= -\tbar_v \\
+%     K &= w_h - \tbar_d\\
+%     K r \ef{i \theta} &= w_d \ef{2i\delta} - \tbar_h
+% \end{align}
+% the last equation yields
+% \begin{align}
+%     r &= \sqrt{\frac{(w_d\cos 2\delta - \tbar_h)^2 + (w_d \sin 2\delta)^2}{(w_h-\tbar_d)^2}} \\
+%     \theta &= \atan \frac{\sin 2\delta}{\cos 2\delta-\tbar_h/w_d}
+% \end{align}
 
-\section{Basis transformation for the full Hamiltonian}
-Writing the full Bloch Hamiltonian in the basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$, we find
-\begin{align}
-    H(k) &=
-    \begin{pmatrix}
-        -\tbar\eps_k -w\et_k^{-2} & -\tbar\et_k^0 -w\eps_k & \mu+t\eps_k & t\et_k^0 \\
-        -\tbar\et^0_k - w\eps_k & -\tbar \eps_k - w\et_k^{+2} & t\et_k^0 & \mu + t\eps_k \\
-        \mu+t\eps_k & t\et_k^0 & -\tbar\eps_k +w\et_k^{-2} & -\tbar\et_k^0 +w\eps_k \\
-        t\et_k^0 & \mu + t\eps_k & -\tbar\et^0_k + w\eps_k & -\tbar \eps_k + w\et_k^{+2}
-    \end{pmatrix} \\
-    &= \id \otimes (-\tbar \, M_k) + \sigma_x \otimes (t M_k + \mu) - \sigma_z \otimes (w N_k)
-\end{align}
-where
-\begin{align}
-    M_k = \begin{pmatrix}
-        \eps_k & \et_k^0 \\
-        \et_k^0 & \eps_k
-    \end{pmatrix},\qquad
-    N_k = \begin{pmatrix}
-    \et_k^{-2} & \eps_k \\
-    \eps_k & \et_k^{+2}
-    \end{pmatrix}
-\end{align}
+% \section{Basis transformation for the full Hamiltonian}
+% Writing the full Bloch Hamiltonian in the basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$, we find
+% \begin{align}
+%     H(k) &=
+%     \begin{pmatrix}
+%         -\tbar\ep_k -w\et_k^{-2} & -\tbar\et_k^0 -w\ep_k & \mu+t\ep_k & t\et_k^0 \\
+%         -\tbar\et^0_k - w\ep_k & -\tbar \ep_k - w\et_k^{+2} & t\et_k^0 & \mu + t\ep_k \\
+%         \mu+t\ep_k & t\et_k^0 & -\tbar\ep_k +w\et_k^{-2} & -\tbar\et_k^0 +w\ep_k \\
+%         t\et_k^0 & \mu + t\ep_k & -\tbar\et^0_k + w\ep_k & -\tbar \ep_k + w\et_k^{+2}
+%     \end{pmatrix} \\
+%     &= \id \otimes (-\tbar \, M_k) + \sigma_x \otimes (t M_k + \mu) - \sigma_z \otimes (w N_k)
+% \end{align}
+% where
+% \begin{align}
+%     M_k = \begin{pmatrix}
+%         \ep_k & \et_k^0 \\
+%         \et_k^0 & \ep_k
+%     \end{pmatrix},\qquad
+%     N_k = \begin{pmatrix}
+%     \et_k^{-2} & \ep_k \\
+%     \ep_k & \et_k^{+2}
+%     \end{pmatrix}
+% \end{align}
 
-\subsection{New representation of the symmetry operators}
-\begin{align}
-    \mathcal{P} &= \id \otimes \sigma_x \\
-    \mathcal{T} &= -\sigma_z \otimes \sigma_x \\
-    \mathcal{P}\mathcal{T} &= -\sigma_z \otimes \id \text{ (now diagonal)} \\
-    \mathcal{C} &= \sigma_y \otimes \sigma_x \\
-    \mathcal{S}_\mathcal{T} &= \sigma_x \otimes \id \\
-    \mathcal{S}_\mathcal{P} &= \sigma_y \otimes \id
-\end{align}
+% \subsection{New representation of the symmetry operators}
+% \begin{align}
+%     \mathcal{P} &= \id \otimes \sigma_x \\
+%     \mathcal{T} &= -\sigma_z \otimes \sigma_x \\
+%     \mathcal{P}\mathcal{T} &= -\sigma_z \otimes \id \text{ (now diagonal)} \\
+%     \mathcal{C} &= \sigma_y \otimes \sigma_x \\
+%     \mathcal{S}_\mathcal{T} &= \sigma_x \otimes \id \\
+%     \mathcal{S}_\mathcal{P} &= \sigma_y \otimes \id
+% \end{align}
 
-\subsection{Time-reversal invariant point: two Creutz ladders}
-For $t=\mu=0$, the Hamiltonian block-diagonalizes into the two sectors corresponding to the two Creutz ladders. We have
-\begin{align}
-    H(k) = \id \otimes (-\tbar M_k) - \sigma_z \otimes (w N_k)
-\end{align}
-We focus on a single Creutz ladder (lower block). Then, we find
-\begin{align}
-    H_-(k) &= -\tbar M_k + w N_k \\
-           &= \bc{-\tbar \eps_k + \frac{w}{2} \bb{\et^{-2}_k + \et^{+2}_k}}\id + \frac{w}{2}\bb{\et^{-2}_k - \et^{+2}_k} \sigma_z + (-\tbar \et^0_k + w \eps_k) \sigma_x \\
-           &= \bb{-\tbar \eps_k + w \et^{s}_k} \id + w\et^{a}_k \sigma_z + (-\tbar \et^0_k + w \eps_k) \sigma_x
-\end{align}
-The band energies are given by
-\begin{align}
-    E_\pm = -\tbar \eps_k + w \et^s_k \pm \sqrt{(w \et^a_k)^2+(-\tbar\et^0_k+w\eps_k)^2}
-\end{align}
+% \subsection{Time-reversal invariant point: two Creutz ladders}
+% For $t=\mu=0$, the Hamiltonian block-diagonalizes into the two sectors corresponding to the two Creutz ladders. We have
+% \begin{align}
+%     H(k) = \id \otimes (-\tbar M_k) - \sigma_z \otimes (w N_k)
+% \end{align}
+% We focus on a single Creutz ladder (lower block). Then, we find
+% \begin{align}
+%     H_-(k) &= -\tbar M_k + w N_k \\
+%            &= \bc{-\tbar \ep_k + \frac{w}{2} \bb{\et^{-2}_k + \et^{+2}_k}}\id + \frac{w}{2}\bb{\et^{-2}_k - \et^{+2}_k} \sigma_z + (-\tbar \et^0_k + w \ep_k) \sigma_x \\
+%            &= \bb{-\tbar \ep_k + w \et^{s}_k} \id + w\et^{a}_k \sigma_z + (-\tbar \et^0_k + w \ep_k) \sigma_x
+% \end{align}
+% The band energies are given by
+% \begin{align}
+%     E_\pm = -\tbar \ep_k + w \et^s_k \pm \sqrt{(w \et^a_k)^2+(-\tbar\et^0_k+w\ep_k)^2}
+% \end{align}
 
-\subsection{Flat band}
-The term $w \et^a_k$ is much smaller than $-\tbar\eta_k^0+w \eps_k$. We rotate into a new basis
-$\ket{\psi}_\pm = (\ketup_- \pm \ketdn_-)/\sqrt{2}$ where the role of $\sigma_x$ and $\sigma_z$ are interchanged. Now the Hamiltonian has the shape
-\begin{align}
-    H_-(k) &= \bb{ -\tbar \eps_k + w \et^{s}_k }\id +(-\tbar \et^0_k + w \eps_k) \sigma_z +  w\et^{a}_k \sigma_x
-\end{align}
-The small term is the coupling between the two bands. Ignoring this coupling, the lower band will be flat if
-\begin{align}
-    E_-(k) = -\tbar \eps_k + w \et^s_k - (-\tbar \et^0_k + w \eps_k) = E_-(0)
-\end{align}
-Rearranging, we find
-\begin{align}
-    \frac{\tbar}{w} = \frac{-E_-(0)/w + \et^s_k \pm \eps_k}{\eps_k \pm \et^0_k}
-\end{align}
-It turns out, that the function on the right hand side can be made quite flat for a certain value of $\tbar/w$.
+% \subsection{Flat band}
+% The term $w \et^a_k$ is much smaller than $-\tbar\eta_k^0+w \ep_k$. We rotate into a new basis
+% $\ket{\psi}_\pm = (\ketup_- \pm \ketdn_-)/\sqrt{2}$ where the role of $\sigma_x$ and $\sigma_z$ are interchanged. Now the Hamiltonian has the shape
+% \begin{align}
+%     H_-(k) &= \bb{ -\tbar \ep_k + w \et^{s}_k }\id +(-\tbar \et^0_k + w \ep_k) \sigma_z +  w\et^{a}_k \sigma_x
+% \end{align}
+% The small term is the coupling between the two bands. Ignoring this coupling, the lower band will be flat if
+% \begin{align}
+%     E_-(k) = -\tbar \ep_k + w \et^s_k - (-\tbar \et^0_k + w \ep_k) = E_-(0)
+% \end{align}
+% Rearranging, we find
+% \begin{align}
+%     \frac{\tbar}{w} = \frac{-E_-(0)/w + \et^s_k \pm \ep_k}{\ep_k \pm \et^0_k}
+% \end{align}
+% It turns out, that the function on the right hand side can be made quite flat for a certain value of $\tbar/w$.
 
-\section{Edge state properties}
-% \fig{0.9}{energy-diff}{Scaling of the energy difference between the two edge states, proportional to $1/L^3$.}
-\subsection{State}
-There are two states on each edge with approximate energies $\pm w_v$. In the following, we will focus on one particular edge states (with energy $-w_v$). In the presence of long-range tunneling,
-the amplitudes of each edge state decay with $1/x^3$ into the bulk.
-Correspondingly, the coupling $\sim \sum \frac{1}{x^3(L-x)^3}$ between the two edge states is proportional to $1/L^3$ (see \cref{fig:scaling}).
+% \section{Edge state properties}
+% % \fig{0.9}{energy-diff}{Scaling of the energy difference between the two edge states, proportional to $1/L^3$.}
+% \subsection{State}
+% There are two states on each edge with approximate energies $\pm w_v$. In the following, we will focus on one particular edge states (with energy $-w_v$). In the presence of long-range tunneling,
+% the amplitudes of each edge state decay with $1/x^3$ into the bulk.
+% Correspondingly, the coupling $\sim \sum \frac{1}{x^3(L-x)^3}$ between the two edge states is proportional to $1/L^3$ (see \tref{scaling}).
 
-If the dipolar interaction is cutoff at a finite distance $R_c < L$, the edge state decays exponentially into the bulk.
+% If the dipolar interaction is cutoff at a finite distance $R_c < L$, the edge state decays exponentially into the bulk.
 
-% \begin{figure}
-%     \ig{0.32}{scaling-cutoff120}
-%     \ig{0.32}{scaling-cutoff5}
-%     \ig{0.32}{scaling-randomOnsite}
-%     \caption{(a) Algebraic scaling of the energy difference between the left and the right edge state. (b) Exponential scaling for cutoff $5a$. (c) Splitting for random on-site potential which destroys inversion symmetry.\label{fig:scaling}}
-% \end{figure}
+% % \begin{figure}
+% %     \ig{0.32}{scaling-cutoff120}
+% %     \ig{0.32}{scaling-cutoff5}
+% %     \ig{0.32}{scaling-randomOnsite}
+% %     \caption{(a) Algebraic scaling of the energy difference between the left and the right edge state. (b) Exponential scaling for cutoff $5a$. (c) Splitting for random on-site potential which destroys inversion symmetry.\tlabel{scaling}}
+% % \end{figure}
 
-% \fig{.7}{top}{Topological phase diagram for the double Creutz ladder system as a function of $\tbar/w$ and $h/a$. Thick lines indicate band touchings at the $k=0$ or $k=\pi/a$ point. The shaded areas have nontrivial winding numbers for the upper, lower or both Creutz ladders.}
+% % \fig{.7}{top}{Topological phase diagram for the double Creutz ladder system as a function of $\tbar/w$ and $h/a$. Thick lines indicate band touchings at the $k=0$ or $k=\pi/a$ point. The shaded areas have nontrivial winding numbers for the upper, lower or both Creutz ladders.}
+
+% \section{Zak phase}
+% The Zak phase is defined by
+% \begin{align}
+%     \gamma_\nu = i\integralb{-\pi/a}{\pi/a}{k} \braketop{u_\nu(k)}{\partial_k}{u_\nu(k)}
+% \end{align}
+% where $\ket{u_\nu(k)}$ is the Bloch eigenstate of the $\nu$-th band.
+% If a one-dimensional system is inversion symmetric, the Zak phase can only be~\cite{Zak1989} $\gamma=0$ or $\gamma=\pi$.
+
+% \section{Minimal cutoff}
+% Including just the necessary terms in the long-range tunneling, we have
+% \begin{align}
+%     \ep_k &= 2 \cos(ka) \\
+%     \et^m_k &= \frac{1}{(h/a)^3} + \frac{2}{(l/a)^3}\cos(k a+ m\delta)
+% \end{align}
+% where $l^2=a^2+h^2$ and $\tan \delta = h/a$ (see~\cref{setup}).
 
