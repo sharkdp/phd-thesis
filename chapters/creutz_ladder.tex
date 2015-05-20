@@ -5,20 +5,21 @@
 \newcommand{\ep}{\operatorname{\epsilon}}
 \newcommand{\et}{\operatorname{\eta}}
 
-\newcommand{\ladderKet}[2]{\ensuremath{\textstyle|\genfrac{}{}{0pt}{}{#1}{#2}\rangle}}
+\newcommand{\ladderKet}[2]{\textstyle|\genfrac{}{}{0pt}{}{#1}{#2}\rangle}
 \newcommand{\upp}{\ladderKet{+}{}}
 \newcommand{\dnp}{\ladderKet{}{+}}
 \newcommand{\upm}{\ladderKet{-}{}}
 \newcommand{\dnm}{\ladderKet{}{-}}
 
-\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a spacing of $h$ between the two chains.}
+\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a distance $h$ between the two chains. A unit cell at site $i$ includes both the upper and lower dipole.}
 
-We consider the one-dimensional system depicted in~\tref{setup}.
-Single dipoles are pinned at each lattice site of a double-chain with a lattice spacing $a$ and a separation of $h$ between the two chains.
-The level scheme is the same as in \cref{topological_bands} (see \refandpage{tb:fig1/fig1a}). Every dipole initially starts in the ground state $\ketz$ and can be excited into one of the two orbitals $\ketp$ or $\ketm$.
+Consider the one-dimensional system depicted in~\tref{setup}.
+Single dipoles are located at each site of a double-chain lattice with spacing $a$ and a separation of $h$ between the two chains.
+The level scheme is the one discussed in \cref{topological_bands}, but without any microwave field (see \refandpage{tb:fig1/fig1b}). Every dipole initially starts in the ground state $\ketz$ and can be excited into one of the two orbitals $\ketp$ or $\ketm$.
 We use the notation $\ladderKet{\alpha}{}_i = \ket{\alpha}_{i,\text{upper}} \ket{0}_{i,\text{lower}}$ to indicate a state at lattice site $i$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
 Conversely, $\ladderKet{}{\alpha}_i$ describes an excitation on the lower chain.
-Then, the Bloch Hamiltonian in the basis \upp, \upm, \dnp, \dnm, takes the form
+Then, we can describe the local basis for each lattice site with four different states $\upp, \upm, \dnp, \dnm$.
+Introducing hard-core bosons for each of these states and transforming to momentum space in the same way as in \cref{topological_bands}, we find that the Bloch Hamiltonian takes the form
 \begin{align}
     H(k) =
     \begin{pmatrix}
@@ -28,39 +29,39 @@ Then, the Bloch Hamiltonian in the basis \upp, \upm, \dnp, \dnm, takes the form
         w \et^{-2}_{k} & -t \et^0_{k} & w \ep_k & -t \ep_k
     \end{pmatrix}.
 \end{align}
-where $t$ is the orbital-preserving tunneling strength ($t = t^+ = t^-$) and $w$ is the spin-changing tunneling rate, as defined in \cref{tb:tunnelingRates}.
-The one-dimensional form of the dipolar dispersion comes in two forms, where
+Here, $t$ is the orbital-preserving tunneling strength ($t \equiv t^+ = t^-$) and $w$ is the spin-changing tunneling rate, as defined in \cref{tb:tunnelingRates}.
+The one-dimensional variant of the dipolar dispersion relation comes in two forms. The function
 \begin{align}
     \ep_k &= a^3 \sum_{x\ne 0} \frac{\ef{i k x}}{|x|^3} = 2 \sum_{j>0} \frac{\cos(k a j)}{|j|^3}
 \end{align}
-includes all intra-chain processes and
+includes all intra-chain processes and the function
 \begin{align}
     \et^m_k &= a^3 \sum_{x} \frac{\ef{i k x + i m \phi_x}}{\bb{x^2 + h^2}^{3/2}}
     = \frac{1}{(h/a)^3} + \sum_{j>0} \frac{2\cos(ka j+m\phi_j)}{\bb{j^2+(h/a)^2}^{3/2}}
 \end{align}
-covers all inter-chain processes with $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ the angle between the horizontal and the interconnection line between the two dipoles.
-Note, that we have the relations $\ep_k=\ep_{-k}$ and $\et^m_k=\et^{-m}_{-k}$.
+covers all inter-chain processes with $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ the angle between the horizontal lattice axis and the interconnection line between the two dipoles.
+Note, that $\ep_k=\ep_{-k} \in \mathds{R}$ is symmetric in $k$ and $\et^m_k \in \mathds{R}$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
 
 \section{Symmetries}
-The described system has an inversion symmetry (or $180^\circ$ rotation symmetry), described by $H(-k) = \mathcal{P} H(k) \mathcal{P}$ where the unitary operation $\mathcal{P} = \sigma_x \otimes \id$ flips the upper and lower chains.
-Additionally, the system is time reversal symmetric, i.e. $H(-k)=\mathcal{T} H(k) \mathcal{T}^{-1}$.
-Here, time-reversal is described by the anti-unitary operator $\mathcal{T}=U_\mathcal{T} \mathcal{K}$ satisfying $\mathcal{T}^2 = \id$. $\mathcal{K}$ is complex conjugation and $\mathcal{U}_\mathcal{T} = \id \otimes \sigma_x$ is a unitary operator that exchanges the two orbitals.
-
+The described system has an inversion symmetry (or $180^\circ$ rotation symmetry), described by $H(-k) = \mathcal{P} H(k) \mathcal{P}$, where the unitary operation $\mathcal{P} = \sigma_x \otimes \id$ flips the upper and lower chains.
+In addition, the system is time-reversal symmetric, i.e. $H(-k)=\mathcal{T} H(k) \mathcal{T}^{-1}$.
+Here, time-reversal is described by the anti-unitary operator $\mathcal{T}=U_\mathcal{T} \mathcal{K}$, where $\mathcal{K}$ is complex conjugation and $\mathcal{U}_\mathcal{T} = \id \otimes \sigma_x$ is a unitary operator that exchanges the two orbitals.
+The time-reversal operation satisfies $\mathcal{T}^2 = \id$.
 The combination of these two symmetries gives rise to an operator $\mathcal{P}\mathcal{T} = \sigma_x \otimes \sigma_x \, \mathcal{K}$ which commutes with the Hamiltonian:
 \begin{align}
     [\mathcal{P}\mathcal{T}, H(k)] = 0\qquad \Rightarrow \qquad [\sigma_x \otimes \sigma_x, H(k)]= 0.
 \end{align}
-Here, the second commutation relation follows from the fact that $H(k)$ is real.
+The second commutation relation follows from the fact that $H(k)$ is real-valued.
 
 
 \section{Mapping to two Creutz ladders}
-We can now use the symmetry of the system to block-diagonalize the Hamiltonian. We change to a basis which diagonalizes the operator $\sigma_x \otimes \sigma_x$ that commutes with the Hamiltonian:
+Using the knowledge about the symmetry, we can block-diagonalize the Hamiltonian. To do so, we change to a basis which diagonalizes the operator $\sigma_x \otimes \sigma_x$ that commutes with the Hamiltonian. We define
 \begin{align}
-    \ketup_\pm = \frac{1}{\sqrt{2}} \bb{ \upp \pm \dnm } \\
-    \ketdn_\pm = \frac{1}{\sqrt{2}} \bb{ \dnp \pm \upm }
+    \ketup_\pm = \frac{1}{\sqrt{2}} \bb{ \upp \pm \dnm }, \\
+    \ketdn_\pm = \frac{1}{\sqrt{2}} \bb{ \dnp \pm \upm }.
 \end{align}
-Notice how these four states are invariant (or pick up a phase of $-1$) under a combined flip of the chains and the orbitals.
-In this new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes the form
+Notice how these four states are invariant (up to a phase) under a combined flip of the chains $\ladderKet{\alpha}{} \leftrightarrow \ladderKet{}{\alpha}$ and the orbitals $+ \leftrightarrow -$.
+In the new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes the form
 \begin{align}
     H(k) &=
     \begin{pmatrix}
@@ -71,7 +72,7 @@ In this new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes
     \end{pmatrix} \\
     &= - t \, \id \otimes M_k - w \, \sigma_z \otimes N_k.
 \end{align}
-We see that the Hamiltonian factors into two blocks with $H_\pm(k) = -t M_k \pm w N_k$ where
+We see that the Hamiltonian factors into two blocks with $H_\mp(k) = -t M_k \mp w N_k$ where we have defined
 \begin{align}
     M_k = \begin{pmatrix}
         \ep_k & \et_k^0 \\
@@ -87,12 +88,22 @@ We see that the Hamiltonian factors into two blocks with $H_\pm(k) = -t M_k \pm 
 
 \subsection{Single block}
 
-\fig{.7}{creutz}{Tunneling links for the two states $\ketup_+, \ketdn_+$. Notice that the two \qu{chains} live in some abstract space (not to be confused with the real-space chains). The flux through each plaquette is $4\delta$.}
+\fig{.7}{creutz}{Tunneling links for the two states $\ketup_+$ and $\ketdn_+$. Notice that the two depicted chains live in an abstract space which is not to be confused with the real space of the original ladder. The tunneling along a single chain is determined by the \emph{diagonal} elements of the real-space model while the inter-chain hopping is given by the \emph{horizontal} elements. A constant magnetic flux of $4\delta$ threads through each plaquette in this abstract.}
 
-To understand the structure of the Hamiltonian, let us first assume that $t=0$. We can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
-Furthermore, we introduce a cut-off in the dipolar tunneling such that only the relevant terms remain.
-Then, we have $\ep_k = 2 w_h \cos(ka)$ and $\eta_k^m = -w_v + 2 w_d \cos(ka + m\delta)$. The term $w_h$ describes the horizontal (intra-chain) tunneling, $w_v$ is the vertical (inter-chain) coupling and $w_d$ is the strength of the diagonal (inter-chain) tunneling. The angle $\delta$ is given by $\tan \delta = h/a$ (see \tref{setup}).
-Then, we can write the lower block as:
+To understand the structure of the Hamiltonian, we can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
+For simplicity, let us first assume that $t=0$.
+Furthermore, we introduce a cut-off in the dipolar tunneling such that only terms within one plaquette remain: horizontal, vertical and diagonal processes.
+Then, we have
+\begin{align}
+    \ep_k &= 2 w_h \cos(ka), \\
+    \eta_k^m &= -w_v + 2 w_d \cos(ka + m\delta).
+\end{align}
+Here, the term $w_h = w$ describes the horizontal (intra-chain) tunneling, $w_v = w \cot^3(\delta)$ is the vertical (inter-chain) coupling and $w_d = w \cos^3(\delta)$ is the strength of the diagonal (inter-chain) tunneling.
+The angle $\delta$ is given by $\tan \delta = h/a$ (see \tref{setup}).
+We can depict the model in this new basis by considering a ladder in an abstract space, where the upper chain is made up of $\ketup_+$ states and the lower chain is made up of $\ketdn_+$ states.
+The resulting tunneling elements are shown in~\tref{creutz}.
+Notice how the phases induced by the dipolar exchange interactions lead to the appearance of a \emph{constant} magnetic field with a flux of $4\delta$ per unit cell, completely determined by the geometric angle of the original real-space model.
+Using the explicit expressions for $\ep_k$ and $\et^m_k$, we can write the lower block of the Hamiltonian as
 \begin{align}
     H_+(k) = &\begin{pmatrix}
         -w_v + 2w_d \cos(ka-2\delta) & 2w_h \cos(ka) \\
@@ -100,12 +111,17 @@ Then, we can write the lower block as:
     \end{pmatrix} \\
     = &+\id \; \times (-w_v + 2w_d \cos(2\delta) \cos(ka)) \\
     &+\sigma_z \times 2w_d \sin(2\delta) \sin(ka) \\
-    &+\sigma_x \times 2w_h \cos(ka)
+    &+\sigma_x \times 2w_h \cos(ka).
 \end{align}
-The resulting model is depicted in~\tref{creutz}.
-This $2\times 2$ sector of the full Hamiltonian is equivalent to a Creutz ladder model~\cite{Creutz1999,Tovmasyan2013a}. The parameters of the original model are given by $K=w_h, M=0, r=w_d/w_h$ and $\theta=2\delta$. The magnetic flux per plaquette is given by $2\theta=4\delta$. The Creutz ladder model supports two perfectly flat bands for $M=0, r=1$ and $\theta=\pi/2$. In our case this translates to the condition $w_h=w_d$ and $\delta=\pi/4$.
+This two-by-two sector of the full Hamiltonian is identical to a cross-linked ladder model in a magnetic field which has been introduced by Creutz in \refcite{Creutz1999} (see also~\cite{Tovmasyan2013a}).
+For the simplified case we have considered so far ($t=0$ and artificial cut-off), the parameters of the original model are given by $K=w_h=w, M=0$ and $r=w_d/w_h=\cos^3(\delta)$.
+The magnetic flux per unit cell in the Creutz model is given by $2\theta$ which translates to $4\delta$ in our model (see \tref{creutz}).
 
-% [For the paper M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$]
+\section{Topological structure}
+The Creutz ladder model supports two perfectly flat bands for $M=0, r=1$ and $\theta=\pi/2$.
+In our case this translates to the condition $w_h=w_d$ and $\delta=\pi/4$.
+
+% [For M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$]
 
 % \fig{0.8}{dispersion-creutz}{Dispersion relation for the double-Creutz-ladder.
 % The lower band has a flatness ratio of $\sim 2$. The plot on the right shows the spectrum of an open ladder with two edge states in each of the two band gaps.}
