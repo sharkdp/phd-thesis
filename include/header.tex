@@ -125,6 +125,11 @@
     ,unicode=true
 ]{hyperref}
 
+\iftoggle{print}{
+    % Use a two-sided layout for the print version
+    \hypersetup{hidelinks}
+}{}
+
 
 %%% Bibliography
 \usepackage{csquotes}
