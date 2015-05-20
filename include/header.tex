@@ -18,7 +18,6 @@
     ,DIV=12
     ,titlepage=true
     ,fleqn
-    ,twoside=false % change this for print
     ,open=right
     ,english
     ,pagesize
@@ -26,6 +25,27 @@
     ,chapterprefix=true
     % ,draft
 ]{scrbook}
+
+
+%%% Print or PDF version?
+\RequirePackage{etoolbox}
+\newtoggle{print}
+\settoggle{print}{false} % use this to toggle between the two layouts
+
+\iftoggle{print}{
+    % Use a two-sided layout for the print version
+    \KOMAoption{twoside=true}
+}{
+    % Use a centered type area for the PDF version. We use twoside=semi
+    % to preserve the page numbers between the print layout and PDF layout.
+    \KOMAoption{twoside=semi}
+
+    % Patch the headers and footers to be centered
+    \usepackage[automark]{scrlayer-scrpage}
+    \clearpairofpagestyles
+    \chead{\leftmark}
+    \cfoot{\pagemark}
+}
 
 
 %%% Fonts, encoding
