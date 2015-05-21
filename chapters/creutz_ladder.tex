@@ -84,11 +84,9 @@ We see that the Hamiltonian factors into two blocks with $H_\mp(k) = -t M_k \mp 
     \end{pmatrix}.
 \end{align}
 
-% We first treat the vertical coupling $w_v$. On each link of the chain the $w_v$ term leads to a binding and anti-binding ``molecule'' of the shape
-
 \subsection{Single block}
 
-\fig{.7}{creutz}{Tunneling links for the two states $\ketup_+$ and $\ketdn_+$. Notice that the two depicted chains live in an abstract space which is not to be confused with the real space of the original ladder. The tunneling along a single chain is determined by the \emph{diagonal} elements of the real-space model while the inter-chain hopping is given by the \emph{horizontal} elements. A constant magnetic flux of $4\delta$ threads through each plaquette in this abstract.}
+\fig{.7}{creutz}{Tunneling links for the two states $\ketup_+$ and $\ketdn_+$. Notice that the two depicted chains live in an abstract space which is not to be confused with the real space of the original ladder. The tunneling along a single chain is determined by the \emph{diagonal} elements of the real-space model while the inter-chain hopping is given by the \emph{horizontal} elements. A constant magnetic flux of $4\delta$ threads through each plaquette or unit cell in this abstract space.}
 
 To understand the structure of the Hamiltonian, we can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
 For simplicity, let us first assume that $t=0$.
@@ -104,7 +102,7 @@ We can depict the model in this new basis by considering a ladder in an abstract
 The resulting tunneling elements are shown in~\tref{creutz}.
 Notice how the phases induced by the dipolar exchange interactions lead to the appearance of a \emph{constant} magnetic field with a flux of $4\delta$ per unit cell, determined entirely by the geometric angle of the original real-space model.
 Using the explicit expressions for $\ep_k$ and $\et^m_k$, we can write the lower block of the Hamiltonian as
-\begin{align}
+\begin{align} \tlabel{hplus}
     H_+(k) = &\begin{pmatrix}
         -w_v + 2w_d \cos(ka-2\delta) & 2w_h \cos(ka) \\
         2w_h\cos(ka) & -w_v + 2w_d \cos(ka+2\delta)
@@ -117,9 +115,29 @@ This two-by-two sector of the full Hamiltonian is identical to a cross-linked la
 For the simplified case we have considered so far ($t=0$ and artificial cut-off), the parameters of the original model are given by $K=w_h=w, M=0$ and $r=w_d/w_h=\cos^3(\delta)$.
 The magnetic flux per unit cell in the Creutz model is given by $2\theta$ which translates to $4\delta$ in our model (see \tref{creutz}).
 
+From the expansion into the $\id, \sigma_z, \sigma_x$ components in \tref{hplus}, we can directly get the dispersion relation
+\begin{align} \tlabel{disp}
+    E_\pm(k) = -w_v &+ 2w_d \cos(2\delta)\cos(ka) \\
+                    &\pm \sqrt{ \bb{ 2w_d\sin(2\delta)\sin(ka) }^2 + \bb{ 2w_h\cos(ka) }^2 }.
+\end{align}
+
+\subsection{Perfectly flat bands}
+The ladder system supports two perfectly flat bands. To see this, we first set the displacement between the two chains equal to the lattice constant, i.e. $h=a$.
+Then, the angle $\delta$ is given by $\pi/4$ which results in a flux of $\pi$ per unit cell.
+\Tref{disp} simplifies to
+\begin{align}
+    E_\pm(k) = -w_v \pm \sqrt{ \bb{ 2w_d\sin(ka) }^2 + \bb{ 2w_h\cos(ka) }^2 }.
+\end{align}
+We can now see that the system has flat bands if $w_d = w_h$, in which case the energy is given by $E_\pm(k) = -w_v \pm 2 w_h$.
+The dispersion relation for $w_d=w_h$ and $w_d = 2^{-3/2} w_h$ is shown in \tref{disp_single/disp_single}.
+
+In the flat band case, the horizontal tunneling elements in \tref{creutz} are given by $i w_h$, whereas the cross-link tunneling elements are given by $w_h$.
+This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketdn_{j}$ for any $|i-j|\ge 2$.
+Consequently, all states are localized to single plaquettes.
+
+\fig{.45}{disp_single/disp_single}{Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal.}
+
 \section{Topological structure}
-The Creutz ladder model supports two perfectly flat bands for $M=0, r=1$ and $\theta=\pi/2$.
-In our case this translates to the condition $w_h=w_d$ and $\delta=\pi/4$.
 
 % [For M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$]
 
