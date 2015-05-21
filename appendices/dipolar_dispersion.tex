@@ -7,13 +7,13 @@ This appendix is concerned with the properties of the dipolar dispersion relatio
     \epskm = \sum_{j\ne 0} \frac{a^3}{|\vecR_j|^3}\ef{i\veck \vecR_j + i m \phi_{j}},\qquad m \in \{0, \pm 2\}
 \end{align}
 on a general two-dimensional Bravais lattice.
-Here, $a$ is the lattice constant, $\vecR_j=(X_j, Y_j)^t$ is the position of the $j$-th lattice site and $\phi_j = \arg(X_j+i Y_j)$ is the polar angle in the lattice plane, i.e. the angle between the vector $\vecR$ and the positive $x$ axis. Note that $\epsk^{\pm 2}$ changes under a redefinition of the angle $\phi_j \goesto \phi_j + \phi_0$. The absolute value $\absv{\epsk^{\pm 2}}$ is invariant, however. For the remainder of this section we will measure lengths in units of $a$ and suppress the $j$ index, such that
+Here, $a$ is the lattice constant, $\vecR_j=(X_j, Y_j)^t$ is the position of the $j$-th lattice site and $\phi_j = \arg(X_j+i Y_j)$ is the polar angle in the lattice plane, i.e.~the angle between the vector $\vecR$ and the positive $x$ axis. Note that $\epsk^{\pm 2}$ changes under a redefinition of the angle $\phi_j \goesto \phi_j + \phi_0$. The absolute value $\absv{\epsk^{\pm 2}}$ is invariant, however. For the remainder of this section we will measure lengths in units of $a$ and suppress the $j$ index, such that
 \begin{align}
     \epskm = \sum_{\vec{R}\ne0} \frac{1}{R^3}\ef{i\veck \vecR + i m \phi_{\vecR}},
 \end{align}
 where $R=|\vecR|$ and the sum runs over all lattice sites except the origin.
 Using $\phi_{-\vecR} = \phi_\vecR + \pi$ and the inversion symmetry of Bravais lattices,
-it is easy to derive the following properties of the dispersion relation ($m$ is always even):
+we can derive the following properties of the dispersion relation ($m$ is always even):
 \begin{align}
     \eps_{-\veck}^m &= \epskm, \\
     \epsk^{-m} &= \bb{ \epskm }^*.
@@ -23,7 +23,7 @@ The second property also shows that $\epsZ^0 \in \mathbb{R}$.
 \sidefig{.45\textwidth}{epsk/epsk}{Plot of the function $\epskm$ on a high-symmetry path in the Brillouin zone of the square lattice. The linear behavior at $\veck=\vecGamma$ is apparent as well as the zeros of $\epsk^2$ at $\veck=\vecGamma, \vecM$.}
 
 \section{Symmetries and zeros}
-Let $\sop$ be a symmetry operation which leaves the lattice invariant, i.e. $\sop \, \{ \vecR \} = \{ \vecR \}$.
+Let $\sop$ be a symmetry operation which leaves the lattice invariant, i.e.~$\sop \, \{ \vecR \} = \{ \vecR \}$.
 Since the scalar product is left invariant,
 we can derive the property
 \begin{align}
@@ -74,7 +74,7 @@ diverges as $z_c^{-1}$ in the limit $z_c \goesto 0$. However, we can subtract th
 \begin{align}
     \epskm - \frac{2\pi}{R_c} \approx 2\pi k \bc{ \, \integralb{z_c}{\infty}{z} \frac{J_0(z)}{z^2} - \frac{1}{z_c} } = -2\pi k,
 \end{align}
-giving us the correct expression for the linear part in $k$, i.e. $\epsk^0=\epsZ^0 - 2\pi |\veck|$.
+giving us the correct expression for the linear part in $k$, i.e.~$\epsk^0=\epsZ^0 - 2\pi |\veck|$.
 
 \paragraph{$m=2$:} For any $|m|>1$, the integral can be evaluated in the limit $z_c\goesto 0$. We find
 \begin{align}
@@ -175,7 +175,7 @@ Expanding the definitions of the exponential integral function, this can be writ
             &\qquad+ 2\pi \sum_{\vecR\ne 0} \integralb{1}{\infty}{\lambda} \bc{ \lambda^{-3/2} \ef{-\pi\lambda\absvsq{\vecR+\veck/2\pi}} + \lambda^{1/2} \ef{-\pi \lambda R^2+ i\veck \vecR} }.
 \end{align}
 This is the result stated in \refandpage{ab:Ewaldsummation}.
-For general (even) $m$, i.e. for any odd $s=3+m$, we can expand
+For general (even) $m$, i.e.~for any odd $s=3+m$, we can expand
 \begin{align}
     E_{s/2}(z) = \Gamma(1-s/2)\, z^{s/2-1} + \sum_{k=0}^\infty \frac{(-1)^{k+1} z^k}{k! (1+k-s/2)}
 \end{align}
