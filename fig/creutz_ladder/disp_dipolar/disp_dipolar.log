@@ -1,9 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.15)  21 MAY 2015 22:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.15)  21 MAY 2015 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single.tex
-(/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single.tex
+**/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar.te
+x
+
+(/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texmf-dist/tex/latex/base/minimal.cls
@@ -155,8 +157,9 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )))
-(/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single.aux)
-\openout1 = `disp_single.aux'.
+(/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar.aux
+)
+\openout1 = `disp_dipolar.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
 LaTeX Font Info:    ... okay on input line 62.
@@ -271,45 +274,46 @@ e
 \gptboxheight=\skip44
 \gptboxwidth=\skip45
 \gptboxtext=\box29
-LaTeX Font Info:    Try loading font information for U+msa on input line 168.
+LaTeX Font Info:    Try loading font information for U+msa on input line 172.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 168.
+LaTeX Font Info:    Try loading font information for U+msb on input line 172.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-</home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single-inc.p
-df, id=1, 325.215pt x 216.81pt>
-File: /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single-
-inc.pdf Graphic file (type pdf)
+</home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar-inc
+.pdf, id=1, 325.215pt x 216.81pt>
+File: /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipola
+r-inc.pdf Graphic file (type pdf)
 
-<use /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single-i
-nc.pdf>
+<use /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar
+-inc.pdf>
 Package pdftex.def Info: /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_
-single/disp_single-inc.pdf used on input line 169.
+dipolar/disp_dipolar-inc.pdf used on input line 173.
 (pdftex.def)             Requested size: 325.2142pt x 216.80946pt.
  [1{/home/shark/.texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </home/s
-hark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single-inc.pdf>]
-(/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/disp_single.aux)
+hark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar-inc.pdf>]
+(/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar.aux
+)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
  2959 strings out of 493109
- 39428 string characters out of 6140856
+ 39455 string characters out of 6140856
  102444 words of memory out of 5000000
  6381 multiletter control sequences out of 15000+600000
  9048 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,31p,302b,192s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,31p,304b,192s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_single/
-disp_single.pdf (1 page, 27893 bytes).
+Output written on /home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar
+/disp_dipolar.pdf (1 page, 29105 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  15 compressed objects within 1 object stream
