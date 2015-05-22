@@ -115,7 +115,7 @@ From the expansion into the $\id, \sigma_z, \sigma_x$ components, we can directl
 \subsection{Perfectly flat bands}
 The Creutz ladder supports two perfectly flat bands. To see this, we first set the displacement between the two chains equal to the lattice constant, i.e. $h=a$.
 Then, the angle $\delta$ is given by $\pi/4$ which results in a flux of $\pi$ per unit cell.
-Then, \tref{disp} simplifies to
+In this case, \tref{disp} simplifies to
 \begin{align}
     E_\pm(k) = -w_v \pm \sqrt{ \bb{ 2w_d\sin(ka) }^2 + \bb{ 2w_h\cos(ka) }^2 }.
 \end{align}
@@ -123,7 +123,7 @@ We can see that the system has flat bands if $w_d = w_h$, in which case the ener
 The dispersion relation for $w_d=w_h$ and $w_d = 2^{-3/2} w_h$ is shown in \tref{disp_single/disp_single}.
 
 In the flat band case, the horizontal tunneling elements in \tref{creutz} are given by $i w_h$, whereas the cross-link tunneling elements are given by $w_h$.
-This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketup_{i \pm 2}$ or $\ketdn_{i\pm 2}$ as shown in \tref{interference}.
+This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketup_{i \pm 2}$ or $\ketdn_{i\pm 2}$, as shown in \tref{interference}.
 Consequently, the excitations are localized on single plaquettes. Each plaquette hosts two states given by
 \begin{align}
     \ket{P_j^\pm} = \frac{1}{2} \bb{ i \ketup_j + \ketdn_j \pm \ketup_{j+1} \pm i \ketdn_{j+1} }
@@ -161,7 +161,7 @@ Consequently, the excitations are localized on single plaquettes. Each plaquette
 % In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
 
 \subsection{Edge states}
-A finite system of length $L$ has $L$ lattice sites but only $L-1$ plaquettes.
+A finite system of length $L$ has $2L$ lattice sites but only $L-1$ plaquettes, i.e. $2L - 2$ states.
 Consequently, two states can not be represented by $\ket{P_i^\pm}$.
 These two states are edge states at each end of the ladder. In the flat-band limit, the left-hand side edge state is given by
 \begin{align}
@@ -199,9 +199,9 @@ Then, we can write the block $H_+(k)$ from \tref{hblock} as
 \begin{align} \tlabel{hplusfull}
     H_+(k) &= -t M_k + w N_k \\
            % &= \bc{-t \ep_k + \frac{w}{2} \bb{\et^{-2}_k + \et^{+2}_k}}\id + \frac{w}{2}\bb{\et^{-2}_k - \et^{+2}_k} \sigma_z + (-t \et^0_k + w \ep_k) \sigma_x \\
-           &= \bb{-t \ep_k + w \et^{s}_k} \id - w\et^{a}_k \sigma_z + (w \ep_k - t \et^0_k) \sigma_x
+           &= \bb{-t \ep_k + w \et^{s}_k} \id - w\et^{a}_k \sigma_z + (w \ep_k - t \et^0_k) \sigma_x.
 \end{align}
-where we have introduced
+We have introduced the symmetric and anti-symmetric combinations
 \begin{align}
     \et^s = \frac{1}{2} \bb{ \et^2_k + \et^{-2}_{k} }, \qquad
     \et^a = \frac{1}{2} \bb{ \et^2_k - \et^{-2}_{k} }.
@@ -249,7 +249,7 @@ If $t/w$ is not at one of the critical values, we can normalize the vector and d
 \begin{align}
     \nu = \frac{1}{2\pi} \integralb{-\pi/a}{\pi/a}{k} \bb{ \hat{n}^x_k \partial_k \hat{n}^z_k - \hat{n}^z_k \partial_k \hat{n}^x_k }.
 \end{align}
-For values $t/w$ between the two critical values, each ladder has a non-trivial winding number $\nu = 1$.
+For values $t/w$ between the two critical values, each ladder has a non-trivial winding number of $\nu = 1$.
 The resulting topological phase diagram for both sectors is shown in \tref{phasediag}.
 It has overlapping regions where both of the ladders are in the topologically nontrivial phase.
 
