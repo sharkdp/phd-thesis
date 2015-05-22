@@ -19,8 +19,8 @@ set xrange [0:1.5708];
 
 set xtics ('$0$' 0, '$\pi/4$' 0.7854, '$\pi/2$' 1.5708);
 
-set label '$\nu_+ = 1$' at .8, 3.5 front;
-set label '$\nu_- = 1$' at .8, -3.5 front;
+set label '$\nu_- = 1$' at .8, 3.5 front;
+set label '$\nu_+ = 1$' at .8, -3.5 front;
 set label '$\nu_+ = \nu_- = 1$' at .9, 0 front;
 
 set tmargin 1.4;
