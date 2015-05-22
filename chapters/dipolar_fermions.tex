@@ -72,7 +72,7 @@ To reach the LLL regime, we have to repeat the transfer scheme at least $\liqhe/
 To quantify a single transfer process, our first aim is to calculate the total energy of $N$ harmonically trapped fermions for a fixed total angular momentum $L$ (polarized state, one spin component). For the noninteracting system, the energy can be obtained by simple summations. We start with the ground state for $L=0$, where all energy shells up to the Fermi energy are completely filled. The energy of the single particle states~$\ket{n,m}$ is given by $E_{nm}=\hbar\omega(2n+\absv{m}+1)$. To avoid cluttering of notation, we introduce dimensionless quantities indicated by a $\dl{\ }$ sign. These quantities are measured in oscillatory units. That is, energy in units of $\hbar\omega$, angular momentum in units of $\hbar$, lengths in units of $l_\text{HO}$ and time in units of $\omega^{-1}$. The degeneracy of each energy level is simply given by $g(\dl{E}) = \dl{E}$.
 With $N=\sum g(\dl{E}) = \dlEf(\dlEf+1)/2$ the Fermi energy is determined by
 \begin{align}
-\dlEf &= \frac{1}{2}\bb{\sqrt{8N+1}-1} \xrightarrow{N\gg 1} \sqrt{2N}
+\dlEf &= \frac{1}{2}\bb{\sqrt{8N+1}-1} \xrightarrow{N\gg 1} \sqrt{2N}.
 \end{align}
 The total energy for $N$ particles is then given by
 \begin{align} \tlabel{energyzero}
@@ -138,12 +138,12 @@ We can derive a very simple model that accounts for this behavior and describes 
 To derive the total amount of angular momentum after the transfer we assume that each 2-particle process is described by an independent Landau-Zener (avoided) crossing, neglecting any interference effects. For each Landau-Zener process, we define the probability to transfer the $n$-th pair of particles by $P_n = 1-\ef{-\lambda/\lambda_n}$ with $\lambda=\dlCdd^2/\dl{\gamma}$ the Landau-Zener parameter and $\lambda_n$ an effective coupling strength, describing the $n$-th pair-transfer process. The total angular momentum for $N$ particles after one cycle is then given by weighting each possible outcome ($\dl{L}=0,\dl{L}=2,\dots,\dl{L}=N$) by the respective probability
 \begin{align}
 \dl{L}_N&=\sum_{n=1}^{N/2-1} 2n \,P_1\cdots P_n (1-P_{n+1})+N P_1\cdots P_{N/2}\\
-&=2P_1\bb{1+P_2\bb{1+P_3\bb{1+\dots\bb{1+P_{N/2}}}}}
+&=2P_1\bb{1+P_2\bb{1+P_3\bb{1+\dots\bb{1+P_{N/2}}}}}.
 \end{align}
 For $N=6$ particles this reduces to
 \begin{align}
 \dl{L}_6&=2 P_1(1+P_2(1+P_3))\\
-&=2 \big(1-e^{-\lambda/\lambda_1}\big) \big(1+\big(1-e^{-\lambda/\lambda_2}\big) \big(2-e^{-\lambda/\lambda_3}\big)\big)
+&=2 \big(1-e^{-\lambda/\lambda_1}\big) \big(1+\big(1-e^{-\lambda/\lambda_2}\big) \big(2-e^{-\lambda/\lambda_3}\big)\big).
 \end{align}
 The assumption of independent crossings can now be justified a-posteriori. By fitting $\dl{L}_6$ to the simulation data we find $\lambda_1=0.0056$, $\lambda_2=0.025$, $\lambda_3=1.74$ with $\lambda_1 \ll \lambda_2 \ll \lambda_3$. While we suspect this approximation to break down for larger $N$, the model describes the transfer for small particle numbers in good agreement with the simulation.
 
@@ -206,8 +206,8 @@ of integer partitions of the number $\Delta L$ into at most $N$ integers.
 Each term in such an integer partition is related to the angular momentum offset of a particle from its initial position at $\Delta L = 0$.
 As an example, consider the case of $N=3$ particles and a total angular momentum of $L=\liqhe + \Delta L = 3+4$. Then, we have an excess angular momentum of $\Delta L=4$ and the degeneracy of the state is given by $g(3,4)=4$ with the following four possible integer partitions and their related states $\ket{m_1,m_2,m_3}$:
 \begin{align}
-4 &\longleftrightarrow \ket{0,1,6} &\qquad 2+2 \longleftrightarrow \ket{0,3,4}\\
-1+3 &\longleftrightarrow \ket{0,2,5}&\qquad 1+1+2 \longleftrightarrow \ket{1,2,4}
+4 &\longleftrightarrow \ket{0,1,6}, &\qquad 2+2 \longleftrightarrow \ket{0,3,4},\\
+1+3 &\longleftrightarrow \ket{0,2,5}, &\qquad 1+1+2 \longleftrightarrow \ket{1,2,4}.
 \end{align}
 For $N = 4$ particles (or more) with the same $\Delta L=4$, there would be one additional integer partition $1+1+1+1$, leading to five degenerate states.
 In general, this degeneracy grows exponentially with the number of particles and angular momentum, as the asymptotic behavior for $\Delta L = N$ shows~\cite{Hardy1918}
