@@ -124,7 +124,10 @@ The dispersion relation for $w_d=w_h$ and $w_d = 2^{-3/2} w_h$ is shown in \tref
 
 In the flat band case, the horizontal tunneling elements in \tref{creutz} are given by $i w_h$, whereas the cross-link tunneling elements are given by $w_h$.
 This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketup_{i \pm 2}$ or $\ketdn_{i\pm 2}$ as shown in \tref{interference}.
-Consequently, all states are localized to single plaquettes.
+Consequently, the excitations are localized on single plaquettes. Each plaquette hosts two states given by
+\begin{align}
+    \ket{P_j^\pm} = \frac{1}{2} \bb{ i \ketup_j + \ketdn_j \pm \ketup_{j+1} \pm i \ketdn_{j+1} }
+\end{align}
 
 \doublefig{.42}{disp_single/disp_single}{ }{.4}{interference}{ }{\sfA~Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal. \sfB~Destructive interference of the two paths from $A$ to $B$ in the flat band limit for $\delta=\pi/4$ and $w_d=w_h$. Indicated tunneling elements are in units of $w$.}
 
@@ -158,15 +161,13 @@ Consequently, all states are localized to single plaquettes.
 % In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
 
 \subsection{Edge states}
-In the flat band limit, the edge state of the $H_+$-ladder (on the left side) is given by
+A finite system of length $L$ has $L$ lattice sites but only $L-1$ plaquettes.
+Consequently, two states can not be represented by $\ket{P_i^\pm}$.
+These two states are edge states at each end of the ladder. In the flat-band limit, the left-hand side edge state is given by
 \begin{align}
-    \ket{E}_+ = \frac{1}{\sqrt{2}} \bb{ \ketup_+ + i \ketdn_+ } = \frac{1}{2} \bb{ \upp + \dnm + i\dnp + i\upm }
+    \ket{E}_+ = \frac{1}{\sqrt{2}} \bb{ \ketup_+ + i \ketdn_+ } = \frac{1}{2} \bb{ \upp + \dnm + i\dnp + i\upm }.
 \end{align}
-whereas the edge state of the $H_-$-ladder is given by
-\begin{align}
-    \ket{E}_- = \frac{1}{\sqrt{2}} \bb{ \ketup_- + i \ketdn_- } = \frac{1}{2} \bb{ \upp - \dnm + i\dnp - i\upm }
-\end{align}
-
+We can see that the edge state shares the excitation among all four orbitals in the original basis.
 
 % \subsection{Adding $t$ contributions}
 % Adding NN and NNN terms with $t_+=t_-\ne 0$, we find an on-site-coupling:
@@ -228,7 +229,7 @@ By replacing $w$ with $-w$, we immediately get the dispersion relation for the u
 
 \fig{.7}{phasediag}{Topological phase diagram for the double Creutz ladder system as a function of the angle $\delta = \arctan(h/a)$ and the ratio of tunneling rates $t/w$. The lines indicate band touchings at the $k=0$ or $k=\pi/a$ point for the $H_-$-ladder (blue) and $H_+$-ladder (green). The shaded areas have nontrivial winding numbers $\nu_\pm$ for one of the Creutz ladders or both of them.}
 
-Following the strategy of \cref{tb:chernnumber}, \tref{hplusfull} can be written in the form $H_+(k) = n^0_k \cdot \id + \vec{n}_k \cdot \vecsigma$. Here, $n^0_k$ is the diagonal part and $\vec{n}_k$ is given by
+Following the strategy of \cref{tb:chernnumber}, \tref{hplusfull} can be written in the form $H_+(k) = n^0_k \cdot \id + \vec{n}_k \cdot \vecsigma$. Here, $n^0_k = \frac{1}{2} \operatorname{tr} H_+(k)$ is the diagonal part and $\vec{n}_k$ is given by
 \begin{align}
     \vec{n}_k = \begin{pmatrix}
         w \ep_k - t \et^0_k \\

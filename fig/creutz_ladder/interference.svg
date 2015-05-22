@@ -25,12 +25,12 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4641528"
-     inkscape:cx="59.380805"
-     inkscape:cy="128.69645"
+     inkscape:zoom="11.713222"
+     inkscape:cx="156.92912"
+     inkscape:cy="35.963928"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="false"
+     showgrid="true"
      inkscape:snap-bbox="true"
      inkscape:snap-object-midpoints="true"
      inkscape:object-nodes="true"
@@ -1325,7 +1325,7 @@
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#008033;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker85175)"
-       d="m 380.99626,372.73717 -30.99625,-0.37492 -49.00375,0.37492"
+       d="m 380.00001,372.36224 -30.00001,0 -50.00001,0"
        id="path11874"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
