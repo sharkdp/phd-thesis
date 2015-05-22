@@ -34,7 +34,7 @@ The one-dimensional variant of the dipolar dispersion relation comes in two form
 \begin{align}
     \ep_k &= a^3 \sum_{x\ne 0} \frac{\ef{i k x}}{|x|^3} = 2 \sum_{j>0} \frac{\cos(k a j)}{|j|^3}
 \end{align}
-includes all intra-chain processes and the function
+includes all processes within a single chain and the function
 \begin{align}
     \et^m_k &= a^3 \sum_{x} \frac{\ef{i k x + i m \phi_x}}{\bb{x^2 + h^2}^{3/2}}
     = \frac{i^m}{(h/a)^3} + \sum_{j>0} \frac{2\cos(ka j+m\phi_j)}{\bb{j^2+(h/a)^2}^{3/2}}
@@ -54,13 +54,12 @@ The combination of these two symmetries gives rise to an operator $\mathcal{P}\m
 The second commutation relation follows from the fact that $H(k)$ is real-valued.
 
 
-\section{Mapping to two Creutz ladders}
 Using the knowledge about the symmetry, we can block-diagonalize the Hamiltonian. To do so, we change to a basis which diagonalizes the operator $\sigma_x \otimes \sigma_x$ that commutes with the Hamiltonian. We define
 \begin{align}
     \ketup_\pm = \frac{1}{\sqrt{2}} \bb{ \upp \pm \dnm }, \\
     \ketdn_\pm = \frac{1}{\sqrt{2}} \bb{ \dnp \pm \upm }.
 \end{align}
-Notice how these four states are invariant (up to a phase) under a combined flip of the chains $\ladderKet{\alpha}{} \leftrightarrow \ladderKet{}{\alpha}$ and the orbitals $+ \leftrightarrow -$.
+Notice how these four states are invariant up to a phase under a combined flip of the chains $\ladderKet{\alpha}{} \leftrightarrow \ladderKet{}{\alpha}$ and the orbitals $+ \leftrightarrow -$.
 In the new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes the form
 \begin{align} \tlabel{hblock}
     H(k) &=
@@ -72,7 +71,7 @@ In the new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes 
     \end{pmatrix} \\
     &= - t \, \id \otimes M_k - w \, \sigma_z \otimes N_k.
 \end{align}
-We see that the Hamiltonian factors into two blocks with $H_\mp(k) = -t M_k \mp w N_k$ where we have defined
+We see that the Hamiltonian factors into two blocks $H_\mp(k) = -t M_k \mp w N_k$, where we have defined the two matrices
 \begin{align}
     M_k = \begin{pmatrix}
         \ep_k & \et_k^0 \\
@@ -84,19 +83,23 @@ We see that the Hamiltonian factors into two blocks with $H_\mp(k) = -t M_k \mp 
     \end{pmatrix}.
 \end{align}
 
-\subsection{Idealized model}
+\section{Idealized model: mapping to the Creutz ladder}
 
 \fig{.7}{creutz}{Tunneling links for the two states $\ketup_+$ and $\ketdn_+$. Notice that the two depicted chains live in an abstract space which is not to be confused with the real space of the original ladder. The tunneling along a single chain is determined by the \emph{diagonal} elements of the real-space model while the inter-chain hopping is given by the \emph{horizontal} elements. A constant magnetic flux of $4\delta$ threads through each plaquette or unit cell in this abstract space.}
 
-To understand the structure of the Hamiltonian, we can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
-For simplicity, let us first assume that $t=0$.
+To understand the structure of the Hamiltonian, let us first assume that $t=0$.
+We can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
 Furthermore, we introduce a cut-off $R_c \lesssim 2a$ in the dipolar tunneling such that only terms within one plaquette remain, see \tref{setup}.
-The term $w_h = w$ describes the horizontal (intra-chain) tunneling, $w_v = w \cot^3(\delta)$ is the vertical (inter-chain) coupling and $w_d = w \cos^3(\delta)$ is the strength of the diagonal (inter-chain) tunneling.
-The angle $\delta$ is given by $\tan \delta = h/a$ (see \tref{setup}).
+We use the symbols $w_h = w$ to denote the horizontal (intra-chain) tunneling, $w_v = w \cot^3(\delta)$ for the vertical (inter-chain) coupling and $w_d = w \cos^3(\delta)$ for the strength of the diagonal (inter-chain) tunneling.
+The angle $\delta$ is given by $\tan \delta = h/a$.
 
-We can also depict the model in the new basis by considering a ladder in an abstract space, where the upper chain is made up of $\ketup_+$ states and the lower chain is made up of $\ketdn_+$ states.
-The resulting tunneling elements are shown in~\tref{creutz}.
+We can visualize the model in the new basis by considering a ladder in an abstract space, where the upper chain is made up of $\ketup_+$ states and the lower chain is made up of $\ketdn_+$ states.
+The resulting system with tunneling elements between the new basis states is shown in~\tref{creutz}.
 Notice how the phases induced by the dipolar exchange interactions lead to the appearance of a \emph{constant} artificial magnetic field with a flux of $4\delta$ per unit cell, determined entirely by the geometric angle of the original real-space model.
+
+It turns out that the model in this abstract space is identical to a cross-linked ladder model in a magnetic field; a system that has been introduced by Creutz~\cite{Creutz1999} (see also related work by Tovmasyan~\etal~\cite{Tovmasyan2013a}).
+For the simplified case we have considered so far ($t=0$ and artificial cut-off), the parameters of the original model are given by $K=w_h=w, M=0$ and $r=w_d/w_h=\cos^3(\delta)$.
+The magnetic flux per unit cell in the Creutz model is given by $2\theta$ which translates to $4\delta$ in our model.
 
 By performing the summation for the dipolar dispersion relation up to the cut-off radius explicitly, we get
 \begin{align}
@@ -113,11 +116,7 @@ Using these expressions, we can write the lower block of the Hamiltonian as
     &+\sigma_z \times 2w_d \sin(2\delta) \sin(ka) \\
     &+\sigma_x \times 2w_h \cos(ka).
 \end{align}
-It turns out that this two-by-two sector of the full Hamiltonian is identical to a cross-linked ladder model in a magnetic field which has been introduced by Creutz~\cite{Creutz1999} (see also related work by Tovmasyan~\etal~\cite{Tovmasyan2013a}).
-For the simplified case we have considered so far ($t=0$ and artificial cut-off), the parameters of the original model are given by $K=w_h=w, M=0$ and $r=w_d/w_h=\cos^3(\delta)$.
-The magnetic flux per unit cell in the Creutz model is given by $2\theta$ which translates to $4\delta$ in our model (see \tref{creutz}).
-
-From the expansion into the $\id, \sigma_z, \sigma_x$ components in \tref{hplus}, we can directly get the dispersion relation
+From the expansion into the $\id, \sigma_z, \sigma_x$ components, we can directly get the dispersion relation
 \begin{align} \tlabel{disp}
     E_\pm(k) = -w_v &+ 2w_d \cos(2\delta)\cos(ka) \\
                     &\pm \sqrt{ \bb{ 2w_d\sin(2\delta)\sin(ka) }^2 + \bb{ 2w_h\cos(ka) }^2 }.
@@ -126,31 +125,31 @@ From the expansion into the $\id, \sigma_z, \sigma_x$ components in \tref{hplus}
 \subsection{Perfectly flat bands}
 The Creutz ladder supports two perfectly flat bands. To see this, we first set the displacement between the two chains equal to the lattice constant, i.e. $h=a$.
 Then, the angle $\delta$ is given by $\pi/4$ which results in a flux of $\pi$ per unit cell.
-\Tref{disp} simplifies to
+Then, \tref{disp} simplifies to
 \begin{align}
     E_\pm(k) = -w_v \pm \sqrt{ \bb{ 2w_d\sin(ka) }^2 + \bb{ 2w_h\cos(ka) }^2 }.
 \end{align}
-We can now see that the system has flat bands if $w_d = w_h$, in which case the energy is given by $E_\pm(k) = -w_v \pm 2 w_h$.
+We can see that the system has flat bands if $w_d = w_h$, in which case the energy is given by $E_\pm(k) = -w_v \pm 2 w_h$.
 The dispersion relation for $w_d=w_h$ and $w_d = 2^{-3/2} w_h$ is shown in \tref{disp_single/disp_single}.
 
 In the flat band case, the horizontal tunneling elements in \tref{creutz} are given by $i w_h$, whereas the cross-link tunneling elements are given by $w_h$.
-This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketdn_{j}$ for any $|i-j|\ge 2$.
+This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketup_j$ or $\ketdn_j$ for any $|i-j|\ge 2$.
 Consequently, all states are localized to single plaquettes.
 % TODO show interference in fig:creutz, explain the localization in the text
 
-\doublefig{.42}{disp_single/disp_single}{ }{.42}{disp_dipolar/disp_dipolar}{ }{Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal.}
+\doublefig{.42}{disp_single/disp_single}{ }{.42}{disp_dipolar/disp_dipolar}{ }{\sfA~Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal. \sfB~TODO}
 % TODO: left figure shows two spectra, right figure shows single spectrum
 
-\subsection{Topological structure}
-\Tref{hplus} can be written in as $H_+(k) = n^0_k \cdot \id + \vec{n}_k \cdot \vecsigma$. Here, $n^0_k$ is the diagonal part and $\vec{n}_k$ is given by
-\begin{align}
-    \vec{n}_k = \begin{pmatrix}
-        2 w_h \cos(ka) \\
-        0 \\
-        2 w_d \sin(2\delta) \sin(ka)
-    \end{pmatrix}.
-\end{align}
-To determine the topological phase diagram, we look for points where $\vec{n}_k=0$. Clearly, the $z$-component is zero for $k = 0$ and $k=\pi/a$.
+% \subsection{Topological structure}
+% \Tref{hplus} can be written in as $H_+(k) = n^0_k \cdot \id + \vec{n}_k \cdot \vecsigma$. Here, $n^0_k$ is the diagonal part and $\vec{n}_k$ is given by
+% \begin{align}
+%     \vec{n}_k = \begin{pmatrix}
+%         2 w_h \cos(ka) \\
+%         0 \\
+%         2 w_d \sin(2\delta) \sin(ka)
+%     \end{pmatrix}.
+% \end{align}
+% To determine the topological phase diagram, we look for points where $\vec{n}_k=0$. Clearly, the $z$-component is zero for $k = 0$ and $k=\pi/a$.
 
 % [For M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$]
 
@@ -207,7 +206,7 @@ whereas the edge state of the $H_-$-ladder is given by
 
 \section{The full model}
 Leaving the idealized model, we remove the artificial cut-off and also add the spin-preserving tunneling terms proportional to $t$.
-Then, according to \tref{hblock}, the block $H_+(k)$ is given by
+Then, we can write the block $H_+(k)$ from \tref{hblock} as
 \begin{align} \tlabel{hplusfull}
     H_+(k) &= -t M_k + w N_k \\
            % &= \bc{-t \ep_k + \frac{w}{2} \bb{\et^{-2}_k + \et^{+2}_k}}\id + \frac{w}{2}\bb{\et^{-2}_k - \et^{+2}_k} \sigma_z + (-t \et^0_k + w \ep_k) \sigma_x \\
@@ -250,8 +249,8 @@ Following the strategy of \cref{tb:chernnumber}, \tref{hplusfull} can be written
     \end{pmatrix}.
 \end{align}
 To determine the topological phase diagram, we look for points where $\vec{n}_k=0$.
-The odd function $\et^a_k$ in the $z$-component is zero only for $k = 0$ and $k=\pi/a$.
-Consequently, the bandgap closes for $n^x_0 = 0$ and $n^x_{\pi} = 0$, leading to the two conditions
+The odd function $\et^a_k$ in the $z$-component can only be zero at $k = 0$ and $k=\pi/a$.
+Consequently, the bandgap closes if $n^x_0 = 0$ or $n^x_{\pi} = 0$, leading to the two conditions
 \begin{align}
     t/w  &= \frac{\eps_0}{\et^0_0} = \frac{2\zeta(3)}{\et^0_0}, \\
     t/w  &= \frac{\eps_{\pi}}{\et^0_{\pi}} = - \frac{3 \zeta(3)}{2 \et^0_{\pi}}.
@@ -267,21 +266,21 @@ It has overlapping regions where both of the ladders are in the topologically no
 
 
 
-\subsection{Flat band}
-The term $w \et^a_k$ is much smaller than $-t\eta_k^0+w \ep_k$. We rotate into a new basis
-$\ket{\psi}_\pm = (\ketup_- \pm \ketdn_-)/\sqrt{2}$ where the role of $\sigma_x$ and $\sigma_z$ are interchanged. Now the Hamiltonian has the shape
-\begin{align}
-    H_-(k) &= \bb{ -t \ep_k + w \et^{s}_k }\id +(-t \et^0_k + w \ep_k) \sigma_z -  w\et^{a}_k \sigma_x
-\end{align}
-The small term is the coupling between the two bands. Ignoring this coupling, the lower band will be flat if
-\begin{align}
-    E_-(k) = -t \ep_k + w \et^s_k - (-t \et^0_k + w \ep_k) = E_-(0)
-\end{align}
-Rearranging, we find
-\begin{align}
-    \frac{t}{w} = \frac{-E_-(0)/w + \et^s_k \pm \ep_k}{\ep_k \pm \et^0_k}
-\end{align}
-It turns out, that the function on the right hand side can be made quite flat for a certain value of $t/w$.
+% \subsection{Topologically trivial flat band}
+% The term $w \et^a_k$ is much smaller than $-t\eta_k^0+w \ep_k$. We rotate into a new basis
+% $\ket{\psi}_\pm = (\ketup_- \pm \ketdn_-)/\sqrt{2}$ where the role of $\sigma_x$ and $\sigma_z$ are interchanged. Now the Hamiltonian has the shape
+% \begin{align}
+%     H_-(k) &= \bb{ -t \ep_k + w \et^{s}_k }\id +(-t \et^0_k + w \ep_k) \sigma_z -  w\et^{a}_k \sigma_x
+% \end{align}
+% The small term is the coupling between the two bands. Ignoring this coupling, the lower band will be flat if
+% \begin{align}
+%     E_-(k) = -t \ep_k + w \et^s_k - (-t \et^0_k + w \ep_k) = E_-(0)
+% \end{align}
+% Rearranging, we find
+% \begin{align}
+%     \frac{t}{w} = \frac{-E_-(0)/w + \et^s_k \pm \ep_k}{\ep_k \pm \et^0_k}
+% \end{align}
+% It turns out, that the function on the right hand side can be made quite flat for a certain value of $t/w$.
 
 % \section{Edge state properties}
 % % \fig{0.9}{energy-diff}{Scaling of the energy difference between the two edge states, proportional to $1/L^3$.}
