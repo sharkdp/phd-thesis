@@ -33,7 +33,8 @@ covers all inter-chain processes with $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/
 Note, that both functions are real-valued ($m = 0, \pm 2$) and $\ep_k=\ep_{-k}$ is symmetric in $k$ whereas $\et^m_k$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
 
 \section{Symmetries}
-The described system has an inversion symmetry (or $180^\circ$ rotation symmetry), described by $H(-k) = \mathcal{P} H(k) \mathcal{P}$, where the unitary operation $\mathcal{P} = \sigma_x \otimes \id$ flips the upper and lower chains.
+\tlabel{symmetries}
+The described system has an inversion symmetry (or $180^\circ$ rotation symmetry), described by $H(-k) = \mathcal{P} H(k) \mathcal{P}^{-1}$, where the unitary operation $\mathcal{P} = \sigma_x \otimes \id$ flips the upper and lower chains.
 In addition, the system is time-reversal symmetric, i.e.~$H(-k)=\mathcal{T} H(k) \mathcal{T}^{-1}$.
 Here, time-reversal is described by the anti-unitary operator $\mathcal{T}=U_\mathcal{T} \mathcal{K}$, where $\mathcal{K}$ is complex conjugation and $\mathcal{U}_\mathcal{T} = \id \otimes \sigma_x$ is a unitary operator that exchanges the two orbitals.
 The time-reversal operation satisfies $\mathcal{T}^2 = \id$.
@@ -246,16 +247,31 @@ Consequently, the bandgap closes if $n^x_0 = 0$ or $n^x_{\pi} = 0$, leading to t
 \end{align}
 Similar conditions hold for the $H_-$ block, where the signs are simply reversed.
 If $t/w$ is not at one of the critical values, we can normalize the vector and define the winding number
-\begin{align}
+\begin{align} \tlabel{winding}
     \nu = \frac{1}{2\pi} \integralb{-\pi/a}{\pi/a}{k} \bb{ \hat{n}^x_k \partial_k \hat{n}^z_k - \hat{n}^z_k \partial_k \hat{n}^x_k }.
 \end{align}
 For values $t/w$ between the two critical values, each ladder has a non-trivial winding number of $\nu = 1$.
 The resulting topological phase diagram for both sectors is shown in \tref{phasediag}.
 It has overlapping regions where both of the ladders are in the topologically nontrivial phase.
 
-\subsection{Edge state properties}
+
+\subsection{Symmetry protection}
+In both blocks of the full Hamiltonian, the symmetries found in \tref{symmetries} are given by $\mathcal{P} = \sigma_x$ and $\mathcal{T}=\sigma_x \mathcal{K}$.
+For the winding number in \tref{winding} to be a well-defined topological index, we rely on the fact that the $\vec{n}_k$ vector lies in the $xz$ plane, i.e. $n_y(k)=0$.
+This is a consequence of time-reversal symmetry and inversion symmetry.
+For a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to the following conditions on the $\vec{n}_k$ vector:
+\begin{align}
+    &\mathcal{P}       &\quad         &\mathcal{T} \\
+    n^x_{-k} &= +n^x_k &\quad n^x_{-k} &= +n^x_k \\
+    n^y_{-k} &= -n^y_k &\quad n^y_{-k} &= +n^y_k \\
+    n^z_{-k} &= -n^z_k &\quad n^z_{-k} &= -n^z_k
+\end{align}
+Consequently, $n^x_k$ needs to be an even function of $k$, $n^z_k$ needs to be an odd function of $k$ and $n^y_k = 0$ for all $k$.
+If the condition $n^y_k = 0$ is violated by breaking one of the two symmetries, the winding number $\nu$ is no longer a useful index, as it can change without a closing of the bandgap.
 
 \sidefig{.4\textwidth}{disp_dipolar/disp_dipolar}{Dispersion relation of the full dipolar model for realistic parameters with $h/a = 0.72$ and $t/w = 1/3$. Both ladders (blue and green bands) are in the topological phase with $\nu=1$. Note that the bands are allowed to cross due to the block-diagonal structure of the full Hamiltonian. The point-spectrum on the right side shows the energies of a finite ladder with the same parameters and a length of $L=100$. Two edge states appear in the bandgap of each sector.}
+
+\subsection{Edge state properties}
 
 \Tref{disp_dipolar/disp_dipolar} shows the dispersion relation of the full dipolar model in the region where $\nu_+ = \nu_- = 1$.
 The point spectrum for a finite ladder of length $L$ shows the appearance of four edge states; two for each sector of the Hamiltonian.
