@@ -1,6 +1,16 @@
 \chapter[Realizing the Creutz ladder model with dipolar spins]{Realizing the Creutz ladder model\texorpdfstring{\\}{ }with dipolar spins}
 \label{creutz_ladder}
 
+In this part we apply the ideas of \cref{topological_bands} to one-dimensional systems.
+Using a lattice with a double-chain structure, we show how dipolar exchange interactions can lead to the simulation of a homogeneous magnetic field and a symmetry-protected topological phase.
+The appearance of a constant magnetic field in a time-reversal invariant system is only possible because the system decomposes into two completely separate sectors.
+Each of them acquires a magnetic field of equal strength but opposite sign, in a similar way to the quantum spin Hall effect~\cite{Kane2005a}.
+Furthermore, we show that each sector is a realization of a cross-linked ladder model introduced by Creutz~\cite{Creutz1999,Bermudez2009,Tovmasyan2013a,Takayoshi2013,Sticlet2014}.
+This model has a topological phase with a perfectly flat band and symmetry protected edge states.
+We examine the properties of the double Creutz ladder and describe the modifications due to the long-range dipolar hoppings.
+
+\section{Setup}
+
 \fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a distance $h$ between the two chains. A unit cell at site $i$ includes both the upper and lower dipole. Horizontal ($h$), vertical ($v$) and diagonal ($d$) tunneling links are indicated for the idealized model with a cut-off and $t=0$.}
 
 Consider the one-dimensional system depicted in~\tref{setup}.
@@ -88,7 +98,7 @@ We can visualize the model in the new basis by considering a ladder in an abstra
 The resulting system with tunneling elements between the new basis states is shown in~\tref{creutz}.
 Notice how the phases induced by the dipolar exchange interactions lead to the appearance of a \emph{constant} artificial magnetic field with a flux of $4\delta$ per unit cell, determined entirely by the geometric angle of the original real-space model.
 
-It turns out that the model in this abstract space is identical to a cross-linked ladder model in a magnetic field; a system that has been introduced by Creutz~\cite{Creutz1999} (see also related work by Tovmasyan~\etal~\cite{Tovmasyan2013a}).
+It turns out that the model in this abstract space is identical to a cross-linked ladder model in a magnetic field; a system that has been introduced by Creutz~\cite{Creutz1999}.
 For the simplified case we have considered so far ($t=0$ and artificial cut-off), the parameters of the original model are given by $K=w_h=w, M=0$ and $r=w_d/w_h=\cos^3(\delta)$.
 The magnetic flux per unit cell in the Creutz model is given by $2\theta$ which translates to $4\delta$ in our model.
 
@@ -194,7 +204,7 @@ We can see that the edge state shares the excitation among all four orbitals in 
 % \end{align}
 
 
-\section{The full model}
+\section{The full dipolar model}
 Leaving the idealized model, we remove the artificial cut-off and also add the spin-preserving tunneling terms proportional to $t$.
 Then, we can write the block $H_+(k)$ from \tref{hblock} as
 \begin{align} \tlabel{hplusfull}
@@ -255,6 +265,8 @@ The resulting topological phase diagram for both sectors is shown in \tref{phase
 It has overlapping regions where both of the ladders are in the topologically nontrivial phase.
 
 
+\sidefig{.4\textwidth}{disp_dipolar/disp_dipolar}{Dispersion relation of the full dipolar model for realistic parameters with $h/a = 0.72$ and $t/w = 1/3$. Both ladders (blue and green bands) are in the topological phase with $\nu=1$. Note that the bands are allowed to cross due to the block-diagonal structure of the full Hamiltonian. The point-spectrum on the right side shows the energies of a finite ladder with the same parameters and a length of $L=100$. Two edge states appear in the bandgap of each sector.}
+
 \subsection{Symmetry protection}
 In both blocks of the full Hamiltonian, the symmetries found in \tref{symmetries} are given by $\mathcal{P} = \sigma_x$ and $\mathcal{T}=\sigma_x \mathcal{K}$.
 For the winding number in \tref{winding} to be a well-defined topological index, we rely on the fact that the $\vec{n}_k$ vector lies in the $xz$ plane, i.e. $n_y(k)=0$.
@@ -269,9 +281,9 @@ For a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to
 Consequently, $n^x_k$ needs to be an even function of $k$, $n^z_k$ needs to be an odd function of $k$ and $n^y_k = 0$ for all $k$.
 If the condition $n^y_k = 0$ is violated by breaking one of the two symmetries, the winding number $\nu$ is no longer a useful index, as it can change without a closing of the bandgap.
 
-\sidefig{.4\textwidth}{disp_dipolar/disp_dipolar}{Dispersion relation of the full dipolar model for realistic parameters with $h/a = 0.72$ and $t/w = 1/3$. Both ladders (blue and green bands) are in the topological phase with $\nu=1$. Note that the bands are allowed to cross due to the block-diagonal structure of the full Hamiltonian. The point-spectrum on the right side shows the energies of a finite ladder with the same parameters and a length of $L=100$. Two edge states appear in the bandgap of each sector.}
-
 \subsection{Edge state properties}
+
+\sidefig{.5\textwidth}{scaling/scaling}{Scaling behavior of the energy difference $\Delta E$ between the left and the right edge state. In the full dipolar model without any cut-off ($R_c=\infty$), the energy scales algebraically with $L^{-3}$ (green line is a fit to $\Delta E_1/L^3$). If a cut-off $R_c = 5a < L$ is introduced, the scaling turns exponential. For a disordered system with a random on-site potential $\mu_\text{rand}/w \approx 0.01$, the edge states split off with a constant $\Delta E$.}
 
 \Tref{disp_dipolar/disp_dipolar} shows the dispersion relation of the full dipolar model in the region where $\nu_+ = \nu_- = 1$.
 The point spectrum for a finite ladder of length $L$ shows the appearance of four edge states; two for each sector of the Hamiltonian.
@@ -284,22 +296,3 @@ Finally, if the inversion symmetry is broken, the edge states split off.
 Such a symmetry breaking could be introduced by a random on-site potential, for example.
 The energy scaling results are summarized in \tref{scaling/scaling}.
 
-
-\sidefig{.5\textwidth}{scaling/scaling}{Scaling behavior of the energy difference $\Delta E$ between the left and the right edge state. In the full dipolar model without any cut-off ($R_c=\infty$), the energy scales algebraically with $L^{-3}$ (green line is a fit to $\Delta E_1/L^3$). If a cut-off $R_c = 5a < L$ is introduced, the scaling turns exponential. For a disordered system with a random on-site potential $\mu_\text{rand}/w \approx 0.01$, the edge states split off with a constant $\Delta E$.}
-
-
-% \subsection{Topologically trivial flat band}
-% The term $w \et^a_k$ is much smaller than $-t\eta_k^0+w \ep_k$. We rotate into a new basis
-% $\ket{\psi}_\pm = (\ketup_- \pm \ketdn_-)/\sqrt{2}$ where the role of $\sigma_x$ and $\sigma_z$ are interchanged. Now the Hamiltonian has the shape
-% \begin{align}
-%     H_-(k) &= \bb{ -t \ep_k + w \et^{s}_k }\id +(-t \et^0_k + w \ep_k) \sigma_z -  w\et^{a}_k \sigma_x
-% \end{align}
-% The small term is the coupling between the two bands. Ignoring this coupling, the lower band will be flat if
-% \begin{align}
-%     E_-(k) = -t \ep_k + w \et^s_k - (-t \et^0_k + w \ep_k) = E_-(0)
-% \end{align}
-% Rearranging, we find
-% \begin{align}
-%     \frac{t}{w} = \frac{-E_-(0)/w + \et^s_k \pm \ep_k}{\ep_k \pm \et^0_k}
-% \end{align}
-% It turns out, that the function on the right hand side can be made quite flat for a certain value of $t/w$.
