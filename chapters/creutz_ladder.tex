@@ -16,7 +16,7 @@ We examine the properties of the double Creutz ladder and describe the modificat
 Consider the one-dimensional system depicted in~\tref{setup}.
 Single dipoles are located at each site of a double-chain lattice with spacing $a$ and a separation of $h$ between the two chains.
 The level scheme is the one discussed in \cref{topological_bands}, but without any microwave field (see \refandpage{tb:fig1/fig1b}). Every dipole initially starts in the ground state $\ketz$ and can be excited into one of the two orbitals $\ketp$ or $\ketm$.
-We use the notation $\ladderKet{\alpha}{}_j = \ket{\alpha}_{j,\text{upper}} \ket{0}_{j,\text{lower}}$ to indicate a state at lattice site $j$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
+We are only interested in the single-excitation dynamics and use the notation $\ladderKet{\alpha}{}_j = \ket{\alpha}_{j,\text{upper}} \ket{0}_{j,\text{lower}}$ to indicate a state at lattice site $j$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
 Conversely, $\ladderKet{}{\alpha}_j$ describes an excitation on the lower chain.
 Then, the four states $\upp_j, \upm_j, \dnp_j, \dnm_j$ define a complete local basis at each lattice site.
 Introducing hard-core bosons for each of these states and transforming to momentum space in the same way as in \cref{topological_bands}, we find that the Bloch Hamiltonian takes the form
@@ -40,14 +40,14 @@ includes all processes within a single chain and the function
     = \frac{i^m}{(h/a)^3} + \sum_{j>0} \frac{2\cos(ka j+m\phi_j)}{\bb{j^2+(h/a)^2}^{3/2}}
 \end{align}
 covers all inter-chain processes. Here, $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ is the polar angle of the position $(x, h)$ of the dipole on the opposite chain.
-Note, that both functions are real-valued since $m = 0, \pm 2$. Moreover, $\ep_k=\ep_{-k}$ is symmetric in $k$ whereas $\et^m_k$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
+Note that both functions are real-valued since $m = 0, \pm 2$. Moreover, $\ep_k=\ep_{-k}$ is symmetric in $k$ whereas $\et^m_k$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
 
 \section{Symmetries}
 \tlabel{symmetries}
 The described system has an inversion symmetry (or $180^\circ$ rotation symmetry), described by $H(-k) = \mathcal{P} H(k) \mathcal{P}^{-1}$, where the unitary operation $\mathcal{P} = \sigma_x \otimes \id$ flips the upper and lower chains.
 In addition, the system is time-reversal symmetric, i.e.~$H(-k)=\mathcal{T} H(k) \mathcal{T}^{-1}$.
 Here, time-reversal is described by the anti-unitary operator $\mathcal{T}=U_\mathcal{T} \mathcal{K}$, where $\mathcal{K}$ is complex conjugation and $\mathcal{U}_\mathcal{T} = \id \otimes \sigma_x$ is a unitary operator that exchanges the two orbitals.
-The time-reversal operation satisfies $\mathcal{T}^2 = \id$.
+The time-reversal operation satisfies $\mathcal{T}^2 = +\id$.
 The combination of these two symmetries gives rise to an operator $\mathcal{P}\mathcal{T} = \sigma_x \otimes \sigma_x \, \mathcal{K}$ which commutes with the Bloch-Hamiltonian:
 \begin{align}
     [\mathcal{P}\mathcal{T}, H(k)] = 0\qquad \Rightarrow \qquad [\sigma_x \otimes \sigma_x, H(k)]= 0.
@@ -58,7 +58,7 @@ Using the knowledge about the symmetry, we can block-diagonalize the Hamiltonian
     \ketup_\pm = \frac{1}{\sqrt{2}} \bb{ \upp \pm \dnm }, \\
     \ketdn_\pm = \frac{1}{\sqrt{2}} \bb{ \dnp \pm \upm }.
 \end{align}
-Notice how these four states are invariant up to a phase under a combined flip of the chains $\ladderKet{\alpha}{} \leftrightarrow \ladderKet{}{\alpha}$ and the orbitals $+ \leftrightarrow -$.
+Notice how these four states are invariant up to a phase under a combined flip of the chains $\ladderKet{\alpha}{} \leftrightarrow \ladderKet{}{\alpha}$ \emph{and} the orbitals $+ \leftrightarrow -$.
 In the new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes the form
 \begin{align} \tlabel{hblock}
     H(k) &=
@@ -68,9 +68,9 @@ In the new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes 
          &  & -t\ep_k +w\et_k^{-2} & -t\et_k^0 +w\ep_k \\
          &  & -t\et^0_k + w\ep_k & -t \ep_k + w\et_k^{+2}
     \end{pmatrix} \\
-    &= - t \, \id \otimes M_k - w \, \sigma_z \otimes N_k.
+    &= - t \, \id \otimes M_k - w \, \sigma_z \otimes N_k
 \end{align}
-We see that the Hamiltonian factors into two blocks $H_\mp(k) = -t M_k \mp w N_k$ which are given in terms of the two matrices
+where the left side of the tensor product selects the block ($+$ or $-$ sign) and the right side selects $\ketup$ or $\ketdn$. The two blocks $H_\mp(k) = -t M_k \mp w N_k$ are given in terms of the two matrices
 \begin{align}
     M_k = \begin{pmatrix}
         \ep_k & \et_k^0 \\
@@ -132,13 +132,14 @@ We can see that the system has flat bands if $w_d = w_h$, in which case the ener
 The dispersion relation for $w_d=w_h$ and $w_d = 2^{-3/2} w_h$ is shown in \tref{disp_single/disp_single}.
 
 In the flat band case, the horizontal tunneling elements in \tref{creutz} are given by $i w_h$, whereas the cross-link tunneling elements are given by $w_h$.
-This leads to a destructive interference of all paths going from $\ketup_i$ to $\ketup_{i \pm 2}$ or $\ketdn_{i\pm 2}$, as shown in \tref{interference}.
-Consequently, the excitations are localized on single plaquettes. Each plaquette hosts two states given by
+This leads to a destructive interference of all paths going from $\ketup_j$ to $\ketup_{j \pm 2}$ or $\ketdn_{j\pm 2}$, as shown in \tref{interference} (we suppress the $+$ index on the states as we only work in a single block).
+Consequently, the excitations are localized on single plaquettes. Each plaquette hosts two states
 \begin{align}
     \ket{P_j^\pm} = \frac{1}{2} \bb{ i \ketup_j + \ketdn_j \pm \ketup_{j+1} \pm i \ketdn_{j+1} }.
 \end{align}
+with exact energies $E_\pm=\smallbraketop{P_j^\pm}{H}{P_j^\pm}=-w_v \pm 2 w_h$.
 
-\doublefig{.42}{disp_single/disp_single}{ }{.4}{interference}{ }{\sfA~Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal. \sfB~Destructive interference of the two paths from $A$ to $B$ in the flat band limit for $\delta=\pi/4$ and $w_d=w_h$. Indicated tunneling elements are in units of $w$.}
+\doublefig{.42}{disp_single/disp_single}{ }{.4}{interference}{ }{\sfA~Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal. \sfB~Destructive interference of the two paths going from $j$ to $j+2$ in the flat band limit for $\delta=\pi/4$ and $w_d=w_h$, cf. original figure by Creutz~\cite{Creutz1999}. The indicated tunneling elements are in units of $w$.}
 
 
 % \subsection{Symmetries}
@@ -155,38 +156,15 @@ Consequently, the excitations are localized on single plaquettes. Each plaquette
 % In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
 
 \subsection{Edge states}
-A finite system of length $L$ has $2L$ lattice sites but only $L-1$ plaquettes. This means that only $2L - 2$ states can be described in terms of the plaquette states $\ket{P_i^\pm}$.
+A finite system of length $L$ has $2L$ lattice sites but only $L-1$ plaquettes. This means that only $2L - 2$ states can be described in terms of the plaquette states $\ket{P_j^\pm}$.
 Consequently, two states are left over.
 These are the two edge states at each end of the ladder. In the flat-band limit, the left-hand side edge state is given by \qu{half} a plaquette state
 \begin{align}
-    \ket{E}_+ = \frac{1}{\sqrt{2}} \bb{ \ketup_+ + i \ketdn_+ } = \frac{1}{2} \bb{ \upp + \dnm + i\dnp + i\upm }.
+    \ket{E}_+ = \frac{1}{\sqrt{2}} \bb{ \ketup_{1,+} + i \ketdn_{1,+} } = \frac{1}{2} \bb{ \upp_1 + \dnm_1 + i\dnp_1 + i\upm_1 }.
 \end{align}
-We can see that the edge state shares the excitation among all four orbitals in the original basis.
+We can see that the excitation is shared among all four orbitals in the original basis.
 The exact localization at the edge is only true for the flat-band limit.
 In the following, we look at the full model including the long-range dipolar hopping.
-
-% \subsection{Adding $t$ contributions}
-% Adding NN and NNN terms with $t_+=t_-\ne 0$, we find an on-site-coupling:
-% \begin{align}
-%     \braketop{\downarrow_+}{H}{\uparrow_+} = -t_v
-% \end{align}
-% as well as the following tunneling contributions
-% \begin{align}
-%     \bra{\uparrow_+}_{i}H\ket{\uparrow_+}_{i+1} &= -t_h \\
-%     \bra{\downarrow_+}_{i}H\ket{\downarrow_+}_{i+1} &= -t_h \\
-%     \bra{\uparrow_+}_{i}H\ket{\downarrow_+}_{i+1} &= -t_d
-% \end{align}
-% The Creutz-ladder parameters are now modified:
-% \begin{align}
-%     M &= -t_v \\
-%     K &= w_h - t_d\\
-%     K r \ef{i \theta} &= w_d \ef{2i\delta} - t_h
-% \end{align}
-% the last equation yields
-% \begin{align}
-%     r &= \sqrt{\frac{(w_d\cos 2\delta - t_h)^2 + (w_d \sin 2\delta)^2}{(w_h-t_d)^2}} \\
-%     \theta &= \atan \frac{\sin 2\delta}{\cos 2\delta-t_h/w_d}
-% \end{align}
 
 
 \section{The full dipolar model}
@@ -235,10 +213,10 @@ Following the strategy of \cref{tb:chernnumber}, \tref{hplusfull} can be written
 \end{align}
 To determine the topological phase diagram, we look for points where $\vec{n}_k=0$.
 The odd function $\et^a_k$ in the $z$-component can only be zero at $k = 0$ and $k=\pi/a$.
-Consequently, the bandgap closes if $n^x_0 = 0$ or $n^x_{\pi} = 0$, leading to the two conditions
+Consequently, the bandgap closes if $n^x_0 = 0$ or $n^x_{\pi/a} = 0$, leading to the two conditions
 \begin{align}
     t/w  &= \frac{\eps_0}{\et^0_0} = \frac{2\zeta(3)}{\et^0_0}, \\
-    t/w  &= \frac{\eps_{\pi}}{\et^0_{\pi}} = - \frac{3 \zeta(3)}{2 \et^0_{\pi}}.
+    t/w  &= \frac{\eps_{\pi/a}}{\et^0_{\pi/a}} = - \frac{3 \zeta(3)}{2 \et^0_{\pi/a}}.
 \end{align}
 Similar conditions hold for the $H_-$ block, where the signs are simply reversed.
 If $t/w$ is not at one of the critical values, we can normalize the vector and define the winding number
@@ -253,15 +231,14 @@ It has overlapping regions where both of the ladders are in the topologically no
 \sidefig{.4\textwidth}{disp_dipolar/disp_dipolar}{Dispersion relation of the full dipolar model for realistic parameters with $h/a = 0.72$ and $t/w = 1/3$. Both ladders (blue and green bands) are in the topological phase with $\nu=1$. Note that the bands are allowed to cross due to the block-diagonal structure of the full Hamiltonian. The point-spectrum on the right side shows the energies of a finite ladder with the same parameters and a length of $L=100$. Two edge states appear in the bandgap of each sector.}
 
 \subsection{Symmetry protection}
-In both blocks of the full Hamiltonian, the symmetries found in \tref{symmetries} are given by $\mathcal{P} = \sigma_x$ and $\mathcal{T}=\sigma_x \mathcal{K}$.
-For the winding number in \tref{winding} to be a well-defined topological index, we rely on the fact that the $\vec{n}_k$ vector lies in the $xz$ plane, i.e. $n_y(k)=0$.
-This is a consequence of time-reversal symmetry and inversion symmetry:
-for a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to the following conditions on the $\vec{n}_k$ vector.
+In both blocks of the full Hamiltonian, the symmetries found in \tref{symmetries} are given by $\mathcal{P} = \sigma_x$ and $\mathcal{T}=\sigma_x \mathcal{K}$ with respect to the new basis.
+For the winding number in \tref{winding} to be a well-defined topological index, we rely on the fact that the $\vec{n}_k$ vector lies in the $xz$ plane, i.e. $n_y(k)=0$. As we shall see shortly, this is a consequence of time-reversal symmetry and inversion symmetry.
+For a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to the following conditions on the $\vec{n}_k$ vector:
 \begin{align}
     &\mathcal{P}       &\quad         &\mathcal{T} \\
-    n^x_{-k} &= +n^x_k &\quad n^x_{-k} &= +n^x_k \\
-    n^y_{-k} &= -n^y_k &\quad n^y_{-k} &= +n^y_k \\
-    n^z_{-k} &= -n^z_k &\quad n^z_{-k} &= -n^z_k
+    n^x_{-k} &= +n^x_k, &\quad n^x_{-k} &= +n^x_k, \\
+    n^y_{-k} &= -n^y_k, &\quad n^y_{-k} &= +n^y_k, \\
+    n^z_{-k} &= -n^z_k, &\quad n^z_{-k} &= -n^z_k.
 \end{align}
 Consequently, $n^x_k$ needs to be an even function of $k$, $n^z_k$ needs to be an odd function of $k$ and $n^y_k = 0$ for all $k$.
 If the condition $n^y_k = 0$ is violated by breaking one of the two symmetries, the winding number $\nu$ is no longer a useful index, as it can change without a closing of the bandgap.
@@ -277,7 +254,7 @@ In the presence of long-range dipolar hopping, the edge states are not exactly l
 In consequence, the coupling between the two edge states is proportional to $1/L^3$.
 This leads to an energy difference $\Delta E$ which scales like $1/L^3$ with the length of the ladder.
 Conversely, the edge state amplitude decays exponentially into the bulk if the dipolar interaction is artificially cut off at a finite distance $R_c < L$, leading to an exponentially small energy difference.
-Finally, if the inversion symmetry is broken, the edge states split off independently of $L$, with a constant energy offset $\Delta E$.
+Finally, if the inversion symmetry is broken, the edge states split off independently of $L$ with a constant energy offset $\Delta E$.
 Such a symmetry breaking could be introduced by a random on-site potential, for example.
 The energy scaling results are summarized in \tref{scaling/scaling}.
 
