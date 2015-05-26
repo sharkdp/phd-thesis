@@ -26,7 +26,7 @@ set style line 74 linecolor rgb '#0088aa' dashtype (20,8) linewidth 2;
 set tmargin 1.3;
 set rmargin 1.5;
 
-set label '$k$' at graph 1.02, 0.04;
+set label '$k$' at graph 1.02, 0.03;
 set label '$E_\pm(k)/w$' at graph 0.01, 1.04;
 
 plot '/home/shark/Dropbox/PhD/thesis/fig/creutz_ladder/disp_dipolar/disp_dipolar_1.csv' w l ls 71 not, \

@@ -11,14 +11,14 @@ We examine the properties of the double Creutz ladder and describe the modificat
 
 \section{Setup}
 
-\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a distance $h$ between the two chains. A unit cell at site $i$ includes both the upper and lower dipole. Horizontal ($h$), vertical ($v$) and diagonal ($d$) tunneling links are indicated for the idealized model with a cut-off $R_c=\sqrt{a^2+h^2}$ and $t=0$.}
+\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a distance $h$ between the two chains. A unit cell at site $j$ includes both the upper and lower dipole. Horizontal ($h$), vertical ($v$) and diagonal ($d$) tunneling links are indicated for the idealized model with a cut-off $R_c=\sqrt{a^2+h^2}$ and $t=0$.}
 
 Consider the one-dimensional system depicted in~\tref{setup}.
 Single dipoles are located at each site of a double-chain lattice with spacing $a$ and a separation of $h$ between the two chains.
 The level scheme is the one discussed in \cref{topological_bands}, but without any microwave field (see \refandpage{tb:fig1/fig1b}). Every dipole initially starts in the ground state $\ketz$ and can be excited into one of the two orbitals $\ketp$ or $\ketm$.
-We use the notation $\ladderKet{\alpha}{}_i = \ket{\alpha}_{i,\text{upper}} \ket{0}_{i,\text{lower}}$ to indicate a state at lattice site $i$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
-Conversely, $\ladderKet{}{\alpha}_i$ describes an excitation on the lower chain.
-Then, the four states $\upp_i, \upm_i, \dnp_i, \dnm_i$ define a complete local basis at each lattice site.
+We use the notation $\ladderKet{\alpha}{}_j = \ket{\alpha}_{j,\text{upper}} \ket{0}_{j,\text{lower}}$ to indicate a state at lattice site $j$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
+Conversely, $\ladderKet{}{\alpha}_j$ describes an excitation on the lower chain.
+Then, the four states $\upp_j, \upm_j, \dnp_j, \dnm_j$ define a complete local basis at each lattice site.
 Introducing hard-core bosons for each of these states and transforming to momentum space in the same way as in \cref{topological_bands}, we find that the Bloch Hamiltonian takes the form
 \begin{align}
     H(k) =
@@ -39,7 +39,7 @@ includes all processes within a single chain and the function
     \et^m_k &= a^3 \sum_{x} \frac{\ef{i k x + i m \phi_x}}{\bb{x^2 + h^2}^{3/2}}
     = \frac{i^m}{(h/a)^3} + \sum_{j>0} \frac{2\cos(ka j+m\phi_j)}{\bb{j^2+(h/a)^2}^{3/2}}
 \end{align}
-covers all inter-chain processes. Here, $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ is the angle between the horizontal lattice axis and the interconnection line between the two dipoles.
+covers all inter-chain processes. Here, $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ is the polar angle of the position $(x, h)$ of the dipole on the opposite chain.
 Note, that both functions are real-valued since $m = 0, \pm 2$. Moreover, $\ep_k=\ep_{-k}$ is symmetric in $k$ whereas $\et^m_k$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
 
 \section{Symmetries}
@@ -48,7 +48,7 @@ The described system has an inversion symmetry (or $180^\circ$ rotation symmetry
 In addition, the system is time-reversal symmetric, i.e.~$H(-k)=\mathcal{T} H(k) \mathcal{T}^{-1}$.
 Here, time-reversal is described by the anti-unitary operator $\mathcal{T}=U_\mathcal{T} \mathcal{K}$, where $\mathcal{K}$ is complex conjugation and $\mathcal{U}_\mathcal{T} = \id \otimes \sigma_x$ is a unitary operator that exchanges the two orbitals.
 The time-reversal operation satisfies $\mathcal{T}^2 = \id$.
-The combination of these two symmetries gives rise to an operator $\mathcal{P}\mathcal{T} = \sigma_x \otimes \sigma_x \, \mathcal{K}$ which commutes with the Hamiltonian:
+The combination of these two symmetries gives rise to an operator $\mathcal{P}\mathcal{T} = \sigma_x \otimes \sigma_x \, \mathcal{K}$ which commutes with the Bloch-Hamiltonian:
 \begin{align}
     [\mathcal{P}\mathcal{T}, H(k)] = 0\qquad \Rightarrow \qquad [\sigma_x \otimes \sigma_x, H(k)]= 0.
 \end{align}
@@ -255,8 +255,8 @@ It has overlapping regions where both of the ladders are in the topologically no
 \subsection{Symmetry protection}
 In both blocks of the full Hamiltonian, the symmetries found in \tref{symmetries} are given by $\mathcal{P} = \sigma_x$ and $\mathcal{T}=\sigma_x \mathcal{K}$.
 For the winding number in \tref{winding} to be a well-defined topological index, we rely on the fact that the $\vec{n}_k$ vector lies in the $xz$ plane, i.e. $n_y(k)=0$.
-This is a consequence of time-reversal symmetry and inversion symmetry.
-For a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to the following conditions on the $\vec{n}_k$ vector:
+This is a consequence of time-reversal symmetry and inversion symmetry:
+for a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to the following conditions on the $\vec{n}_k$ vector.
 \begin{align}
     &\mathcal{P}       &\quad         &\mathcal{T} \\
     n^x_{-k} &= +n^x_k &\quad n^x_{-k} &= +n^x_k \\
@@ -268,16 +268,16 @@ If the condition $n^y_k = 0$ is violated by breaking one of the two symmetries, 
 
 \subsection{Edge state properties}
 
-\sidefig{.5\textwidth}{scaling/scaling}{Scaling behavior of the energy difference $\Delta E$ between the left and the right edge state. In the full dipolar model without any cut-off ($R_c=\infty$), the energy scales algebraically with $L^{-3}$ (green line is a fit to $\Delta E_1/L^3$). If a cut-off $R_c = 5a < L$ is introduced, the scaling turns exponential. For a disordered system with a random on-site potential $\mu_\text{rand}/w \approx 0.01$, the edge states split off with a constant $\Delta E$.}
+\sidefig{.5\textwidth}{scaling/scaling}{Scaling behavior of the energy difference $\Delta E$ between the two edge states. In the full dipolar model without any cut-off ($R_c=\infty$), the energy scales algebraically with $L^{-3}$ (green line is a fit to $\Delta E_1/L^3$). If a cut-off $R_c = 5a < L$ is introduced, the scaling turns exponential. For a disordered system with a random on-site potential $\mu_\text{rand}/w \approx 0.01$, the edge states split off with a constant $\Delta E$.}
 
 \Tref{disp_dipolar/disp_dipolar} shows the dispersion relation of the full dipolar model in the region where $\nu_+ = \nu_- = 1$.
-The point spectrum for a finite ladder of length $L$ shows the appearance of four edge states; two for each sector of the Hamiltonian.
+The point spectrum for a finite ladder of length $L$ shows the appearance of four edge states; two for each block of the Hamiltonian.
 In the following, we focus on the two edge states with the lower energy.
 In the presence of long-range dipolar hopping, the edge states are not exactly localized at the edge, but the amplitudes decay with $1/x^3$ into the bulk.
 In consequence, the coupling between the two edge states is proportional to $1/L^3$.
 This leads to an energy difference $\Delta E$ which scales like $1/L^3$ with the length of the ladder.
 Conversely, the edge state amplitude decays exponentially into the bulk if the dipolar interaction is artificially cut off at a finite distance $R_c < L$, leading to an exponentially small energy difference.
-Finally, if the inversion symmetry is broken, the edge states split off.
+Finally, if the inversion symmetry is broken, the edge states split off independently of $L$, with a constant energy offset $\Delta E$.
 Such a symmetry breaking could be introduced by a random on-site potential, for example.
 The energy scaling results are summarized in \tref{scaling/scaling}.
 
