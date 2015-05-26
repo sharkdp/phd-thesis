@@ -11,14 +11,14 @@ We examine the properties of the double Creutz ladder and describe the modificat
 
 \section{Setup}
 
-\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a distance $h$ between the two chains. A unit cell at site $i$ includes both the upper and lower dipole. Horizontal ($h$), vertical ($v$) and diagonal ($d$) tunneling links are indicated for the idealized model with a cut-off and $t=0$.}
+\fig{.7}{setup}{Setup for the realization of the Creutz ladder. One dipole is pinned at each lattice site of a double chain with lattice spacing $a$ in horizontal direction and a distance $h$ between the two chains. A unit cell at site $i$ includes both the upper and lower dipole. Horizontal ($h$), vertical ($v$) and diagonal ($d$) tunneling links are indicated for the idealized model with a cut-off $R_c=\sqrt{a^2+h^2}$ and $t=0$.}
 
 Consider the one-dimensional system depicted in~\tref{setup}.
 Single dipoles are located at each site of a double-chain lattice with spacing $a$ and a separation of $h$ between the two chains.
 The level scheme is the one discussed in \cref{topological_bands}, but without any microwave field (see \refandpage{tb:fig1/fig1b}). Every dipole initially starts in the ground state $\ketz$ and can be excited into one of the two orbitals $\ketp$ or $\ketm$.
 We use the notation $\ladderKet{\alpha}{}_i = \ket{\alpha}_{i,\text{upper}} \ket{0}_{i,\text{lower}}$ to indicate a state at lattice site $i$ where the dipole on the upper chain has been excited into the orbital $\alpha \in \{+, -\}$ and the dipole on the lower chain is still in the ground state.
 Conversely, $\ladderKet{}{\alpha}_i$ describes an excitation on the lower chain.
-Then, we can describe the local basis for each lattice site with four different states $\upp, \upm, \dnp, \dnm$.
+Then, the four states $\upp_i, \upm_i, \dnp_i, \dnm_i$ define a complete local basis at each lattice site.
 Introducing hard-core bosons for each of these states and transforming to momentum space in the same way as in \cref{topological_bands}, we find that the Bloch Hamiltonian takes the form
 \begin{align}
     H(k) =
@@ -39,8 +39,8 @@ includes all processes within a single chain and the function
     \et^m_k &= a^3 \sum_{x} \frac{\ef{i k x + i m \phi_x}}{\bb{x^2 + h^2}^{3/2}}
     = \frac{i^m}{(h/a)^3} + \sum_{j>0} \frac{2\cos(ka j+m\phi_j)}{\bb{j^2+(h/a)^2}^{3/2}}
 \end{align}
-covers all inter-chain processes with $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ the angle between the horizontal lattice axis and the interconnection line between the two dipoles.
-Note, that both functions are real-valued ($m = 0, \pm 2$) and $\ep_k=\ep_{-k}$ is symmetric in $k$ whereas $\et^m_k$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
+covers all inter-chain processes. Here, $\phi_x = \arg(x+ i h)=\phi_j=\arg(j+ i h/a)$ is the angle between the horizontal lattice axis and the interconnection line between the two dipoles.
+Note, that both functions are real-valued since $m = 0, \pm 2$. Moreover, $\ep_k=\ep_{-k}$ is symmetric in $k$ whereas $\et^m_k$ satisfies the relation $\et^m_k=\et^{-m}_{-k}$.
 
 \section{Symmetries}
 \tlabel{symmetries}
@@ -53,9 +53,7 @@ The combination of these two symmetries gives rise to an operator $\mathcal{P}\m
     [\mathcal{P}\mathcal{T}, H(k)] = 0\qquad \Rightarrow \qquad [\sigma_x \otimes \sigma_x, H(k)]= 0.
 \end{align}
 The second commutation relation follows from the fact that $H(k)$ is real-valued.
-
-
-Using the knowledge about the symmetry, we can block-diagonalize the Hamiltonian. To do so, we change to a basis which diagonalizes the operator $\sigma_x \otimes \sigma_x$ that commutes with the Hamiltonian. We define
+Using the knowledge about the symmetry, we can block-diagonalize the Hamiltonian. To do so, we change to a basis which diagonalizes the operator $\sigma_x \otimes \sigma_x$. We define
 \begin{align}
     \ketup_\pm = \frac{1}{\sqrt{2}} \bb{ \upp \pm \dnm }, \\
     \ketdn_\pm = \frac{1}{\sqrt{2}} \bb{ \dnp \pm \upm }.
@@ -72,7 +70,7 @@ In the new basis $\ketup_-, \ketdn_-, \ketup_+, \ketdn_+$ the Hamiltonian takes 
     \end{pmatrix} \\
     &= - t \, \id \otimes M_k - w \, \sigma_z \otimes N_k.
 \end{align}
-We see that the Hamiltonian factors into two blocks $H_\mp(k) = -t M_k \mp w N_k$, where we have defined the two matrices
+We see that the Hamiltonian factors into two blocks $H_\mp(k) = -t M_k \mp w N_k$ which are given in terms of the two matrices
 \begin{align}
     M_k = \begin{pmatrix}
         \ep_k & \et_k^0 \\
@@ -90,7 +88,7 @@ We see that the Hamiltonian factors into two blocks $H_\mp(k) = -t M_k \mp w N_k
 
 To understand the structure of the Hamiltonian, let us first assume that $t=0$.
 We can focus on one of the blocks, say $H_+(k) = w N_k$ with the states $\ketup_+, \ketdn_+$.
-Furthermore, we introduce a cut-off $R_c \lesssim 2a$ in the dipolar tunneling such that only terms within one plaquette remain, see \tref{setup}.
+Furthermore, we introduce a cut-off $R_c = \sqrt{a^2+h^2}$ in the dipolar tunneling, such that only terms within one plaquette remain, see \tref{setup}.
 We use the symbols $w_h = w$ to denote the horizontal (intra-chain) tunneling, $w_v = w \cot^3(\delta)$ for the vertical (inter-chain) coupling and $w_d = w \cos^3(\delta)$ for the strength of the diagonal (inter-chain) tunneling.
 The angle $\delta$ is given by $\tan \delta = h/a$.
 
@@ -142,21 +140,6 @@ Consequently, the excitations are localized on single plaquettes. Each plaquette
 
 \doublefig{.42}{disp_single/disp_single}{ }{.4}{interference}{ }{\sfA~Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal. \sfB~Destructive interference of the two paths from $A$ to $B$ in the flat band limit for $\delta=\pi/4$ and $w_d=w_h$. Indicated tunneling elements are in units of $w$.}
 
-% \subsection{Topological structure}
-% \Tref{hplus} can be written in as $H_+(k) = n^0_k \cdot \id + \vec{n}_k \cdot \vecsigma$. Here, $n^0_k$ is the diagonal part and $\vec{n}_k$ is given by
-% \begin{align}
-%     \vec{n}_k = \begin{pmatrix}
-%         2 w_h \cos(ka) \\
-%         0 \\
-%         2 w_d \sin(2\delta) \sin(ka)
-%     \end{pmatrix}.
-% \end{align}
-% To determine the topological phase diagram, we look for points where $\vec{n}_k=0$. Clearly, the $z$-component is zero for $k = 0$ and $k=\pi/a$.
-
-% [For M. Tovmasyan, E. P. L. van Nieuwenburg, and S. D. Huber, Phys. Rev. B 88, 220510 (2013), the parameters are $m=0, \delta=0, t=w_h$ and $\epsilon=w_d/w_h-1$]
-
-% \fig{0.8}{dispersion-creutz}{Dispersion relation for the double-Creutz-ladder.
-% The lower band has a flatness ratio of $\sim 2$. The plot on the right shows the spectrum of an open ladder with two edge states in each of the two band gaps.}
 
 % \subsection{Symmetries}
 % The model is time reversal symmetric with $\mathcal{T}=\sigma_x \mathcal{K}$:
@@ -172,13 +155,15 @@ Consequently, the excitations are localized on single plaquettes. Each plaquette
 % In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
 
 \subsection{Edge states}
-A finite system of length $L$ has $2L$ lattice sites but only $L-1$ plaquettes, i.e. $2L - 2$ states.
-Consequently, two states can not be represented by $\ket{P_i^\pm}$.
-These two states are edge states at each end of the ladder. In the flat-band limit, the left-hand side edge state is given by
+A finite system of length $L$ has $2L$ lattice sites but only $L-1$ plaquettes. This means that only $2L - 2$ states can be described in terms of the plaquette states $\ket{P_i^\pm}$.
+Consequently, two states are left over.
+These are the two edge states at each end of the ladder. In the flat-band limit, the left-hand side edge state is given by \qu{half} a plaquette state
 \begin{align}
     \ket{E}_+ = \frac{1}{\sqrt{2}} \bb{ \ketup_+ + i \ketdn_+ } = \frac{1}{2} \bb{ \upp + \dnm + i\dnp + i\upm }.
 \end{align}
 We can see that the edge state shares the excitation among all four orbitals in the original basis.
+The exact localization at the edge is only true for the flat-band limit.
+In the following, we look at the full model including the long-range dipolar hopping.
 
 % \subsection{Adding $t$ contributions}
 % Adding NN and NNN terms with $t_+=t_-\ne 0$, we find an on-site-coupling:
