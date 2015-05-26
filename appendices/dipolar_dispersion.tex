@@ -18,7 +18,7 @@ we can derive the following properties of the dispersion relation ($m$ is always
     \eps_{-\veck}^m &= \epskm, \\
     \epsk^{-m} &= \bb{ \epskm }^*.
 \end{align}
-The second property also shows that $\epsZ^0 \in \mathbb{R}$.
+The second property also shows that $\epsk^0 \in \mathbb{R}$.
 
 \sidefig{.45\textwidth}{epsk/epsk}{Plot of the function $\epskm$ on a high-symmetry path in the Brillouin zone of the square lattice. The linear behavior at $\veck=\vecGamma$ is apparent as well as the zeros of $\epsk^2$ at $\veck=\vecGamma, \vecM$.}
 
@@ -52,8 +52,8 @@ invariant under $C_4$ rotations, leading to the two zeros $\epsZ^2=\epsM^2=0$, s
 \tlabel{lowmomentum}
 For small $|\veck| \ll 1$ we can make a crude approximation and replace the discrete Fourier series
 by a continuous Fourier transform (we will re-derive the results in this section in a \qu{cleaner} way later). We set $\veck\vecR = k R \cos(\phi-\psi)$ where
-$\phi$ is the angle between $\vecR$ and the $x$-axis and $\psi$ is the
-corresponding angle between $\veck$ and the $x$-axis. Then
+$\phi \approx \phi_\vecR$ is the angle between $\vecR$ and the $x$-axis and $\psi$ is the
+corresponding angle between $\veck$ and the $k_x$-axis. Then
 \begin{align}
     \epskm &= \sum_{\vecR\ne 0} R^{-3} \ef{i\veck\vecR+i m \phi_\vecR}
     \approx \integralb{R_c}{\infty}{R} \integralb{0}{2\pi}{\phi} \ef{ikR \cos(\phi-\psi) + i m \phi} / R^2\\
@@ -61,9 +61,9 @@ corresponding angle between $\veck$ and the $x$-axis. Then
     &= 2\pi k (-1)^{m/2} \ef{i m \psi} \integralb{z_c}{\infty}{z} J_{\absv{m}}(z)/z^2
 \end{align}
 where we have to introduce a lower cutoff $R_c$ for the radial integration which
-we cannot determine. Consequently, this calculation is only useful
+we cannot determine ($J_m$ is the Bessel function of the first kind). Consequently, this calculation is only useful
 if we find quantities like $\epskm-\epsZ^m$ which (a) allow
-us to safely take the limit $z_c \goesto 0$ while keeping $R_c$ constant and
+us to safely take the limit $z_c = k R_c \goesto 0$ while keeping $R_c$ constant and
 (b) do not depend on $R_c$ in this limit.
 
 \paragraph{$m=0$:} In the case of $\epsk^0$, the integral in the expression
@@ -160,7 +160,7 @@ values of $\vecq$ and $\vec{R}$, respectively, are exponentially suppressed by $
 Using this expression, we can accurately plot the function $\epskm$ in the Brillouin zone, see \tref{epsk/epsk}.
 
 \subsection{Non-analytic behavior at low momenta}
-For $s=3, m=0$ we can simplify \tref{twosum}:
+Setting $s=3 \Leftrightarrow m=0$ in \tref{twosum}, we find:
 \begin{align}
     \epsk^0 = \chi^3(\veck) = 2\pi \bb{ \sum_{\vecq} E_{3/2}\!\bb{\frac{\absvsq{\vecq+\veck}}{4\pi}}\! - \frac{2}{3} + \!\sum_{\vec{R}\ne 0}\! E_{-1/2}\!\bb{\pi R^2} \ef{i \veck \vec{R}} }
 \end{align}
