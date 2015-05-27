@@ -142,19 +142,6 @@ with exact energies $E_\pm=\smallbraketop{P_j^\pm}{H}{P_j^\pm}=-w_v \pm 2 w_h$.
 \doublefig{.42}{disp_single/disp_single}{ }{.4}{interference}{ }{\sfA~Dispersion relation for a single two-by-two block $H_+(k)$ for $\delta=\pi/4$ and $w_d = w_h$ (solid lines, perfectly flat bands) and $w_d = 2^{-3/2} w_h$, which is the generic value that is obtained for a simple setup where $\sqrt{2}$ is the distance along the diagonal. \sfB~Destructive interference of the two paths going from $j$ to $j+2$ in the flat band limit for $\delta=\pi/4$ and $w_d=w_h$, cf. original figure by Creutz~\cite{Creutz1999}. The indicated tunneling elements are in units of $w$.}
 
 
-% \subsection{Symmetries}
-% The model is time reversal symmetric with $\mathcal{T}=\sigma_x \mathcal{K}$:
-% \begin{align}
-%     \mathcal{T}H_+(k)\mathcal{T}^{-1}= H_+(-k)
-% \end{align}
-% For $w_v=0$ (energy offset) and $\delta=\pi/4$, the system is additionally particle-hole symmetric (This only works because of the cut-off!):
-% \begin{align}
-%     \mathcal{C}H_+(k)\mathcal{C}^{-1}= -H_+(-k)
-% \end{align}
-% with $\mathcal{C}= \sigma_z \mathcal{K}$. This leads to a chiral symmetry $\mathcal{S} = i\sigma_y$ which anti-commutes with the Hamiltonian.
-
-% In total, at the point $\delta=\pi/4$, the system has $\mathcal{T}^2=1, \mathcal{C}^2=1, \mathcal{S}^2=1$ and is in symmetry class BDI.
-
 \subsection{Edge states}
 A finite system of length $L$ has $2L$ lattice sites but only $L-1$ plaquettes. This means that only $2L - 2$ states can be described in terms of the plaquette states $\ket{P_j^\pm}$.
 Consequently, two states are left over.
@@ -243,6 +230,32 @@ For a Hamiltonian $H(k) = \vec{n}_k \cdot \vecsigma$, the two symmetries lead to
 Consequently, $n^x_k$ needs to be an even function of $k$, $n^z_k$ needs to be an odd function of $k$ and $n^y_k = 0$ for all $k$.
 If the condition $n^y_k = 0$ is violated by breaking one of the two symmetries, the winding number $\nu$ is no longer a useful index, as it can change without a closing of the bandgap.
 
+\subsection{Symmetry classification}
+One might wonder to which symmetry class our model belongs according to the general classification scheme~\cite{Schnyder2008,Kitaev2009,Ryu2010}.
+We have seen that the full model is time-reversal symmetric with $\mathcal{T}^2 = + \id$.
+In the language of the classification scheme, the inversion symmetry can also be regarded as a time-reversal symmetry with $\mathcal{T}_2 = \mathcal{P} \mathcal{K}$ and $\mathcal{T}^2_2 = +\id$.
+This construction is possible because the Hamiltonian is real-valued.
+Considering just a single time-reversal symmetry is sufficient, as the combination of two time-reversal symmetries always leads to the appearance of a unitary symmetry~\cite{Ryu2010}.
+In our case this is just the operator $\sigma_x \otimes \sigma_x$ which we used to block-diagonalize the Hamiltonian.
+The full dipolar model consequently belongs to symmetry class AI, apparently without any topological index in one dimension~\cite{Schnyder2008,Kitaev2009,Ryu2010}.
+Note that this is not in contradiction to the existence of the winding number defined above: the presence of inversion symmetry can lead to the appearance of additional symmetry-protected topological phases.
+In fact, adding inversion symmetry to the class AI leads to a $\mathbb{Z}$ topological index~\cite{Chiu2014,Lu2014}.
+
+At a certain fine-tuned point, the \emph{idealized} model becomes \qu{particle-hole} symmetric.
+To see this, consider a single block $H_+(k)$ from \tref{hplus} at $\pi$-flux, i.e. $\delta = \pi/4$. Subtracting the constant energy shift $-w_v$, we have
+\begin{align}
+    H'_+(k) = H_+(k) + w_v \id = &\begin{pmatrix}
+        2w_d \sin ka &   2w_h \cos ka \\
+        2w_h \cos ka & - 2w_d \sin ka
+    \end{pmatrix}.
+\end{align}
+This Hamiltonian satisfies $\mathcal{C}H'_+(k)\mathcal{C}^{-1}= -H'_+(-k)$ where $\mathcal{C}$ is the anti-unitary operator $\mathcal{C}= \sigma_z \mathcal{K}$ that squares to $+\id$.
+In combination with time-reversal symmetry, this also leads to a chiral symmetry $\mathcal{S} = i\sigma_y$ which anti-commutes with the Hamiltonian.
+Summarizing these results, we find that the idealized model at the point $\delta=\pi/4$ belongs to the symmetry class BDI, because $\mathcal{T}^2=1, \mathcal{C}^2=1$ and $\mathcal{S}^2=1$ (same conclusion as Tovmasyan~\cite{Tovmasyan2013a}).
+In a one-dimensional system, the BDI class has a $\mathbb{Z}$ topological index.
+However, since the \qu{fake} particle-hole symmetry $\mathcal{C}$ only appears at a fine-tuned point in the presence of inversion symmetry, this topological index is symmetry-protected in the same way as the winding number of the full dipolar model.
+This is very similar to the case of the Su-Schrieffer-Heeger model~\cite{Su1979}, which can also be classified as BDI, but only in the presence of inversion symmetry~\cite{Wang2013}.
+
 \subsection{Edge state properties}
 
 \sidefig{.5\textwidth}{scaling/scaling}{Scaling behavior of the energy difference $\Delta E$ between the two edge states. In the full dipolar model without any cut-off ($R_c=\infty$), the energy scales algebraically with $L^{-3}$ (green line is a fit to $\Delta E_1/L^3$). If a cut-off $R_c = 5a < L$ is introduced, the scaling turns exponential. For a disordered system with a random on-site potential $\mu_\text{rand}/w \approx 0.01$, the edge states split off with a constant $\Delta E$.}
@@ -258,3 +271,10 @@ Finally, if the inversion symmetry is broken, the edge states split off independ
 Such a symmetry breaking could be introduced by a random on-site potential, for example.
 The energy scaling results are summarized in \tref{scaling/scaling}.
 
+\subsection{Outlook}
+We have shown that dipolar exchange interactions can lead to the appearance of a constant magnetic flux in a very simple setup on a double-chain lattice.
+The artificial magnetic field can be tuned by changing a single geometric parameter: the height between the two chains.
+Moreover, the system can be understood as two decoupled copies of a Creutz-ladder with opposite-sign parameters.
+This model has a topological phase with edge states that are protected by inversion symmetry.
+The many-body physics of our model can be understood by studying hard-core bosons on the Creutz-ladder.
+In the short-range version, this has been subject of a work by Tovmasyan \etal~\cite{Tovmasyan2013a}.
