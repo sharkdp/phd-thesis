@@ -37,12 +37,6 @@ tgrep "\\\\cite{}" "${files[@]}"
 category "todo, TODO"
 tgrep "todo" "${files[@]}"
 
-category "oops: paper, manuscript, letter, supplement"
-tgrep "paper" "${files[@]}"
-tgrep "manuscript" "${files[@]}"
-tgrep "letter" "${files[@]}"
-tgrep "supplement" "${files[@]}"
-
 category "old-style labels"
 tgrep "eq:" "${files[@]}"
 tgrep "ap:" "${files[@]}"

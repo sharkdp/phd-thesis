@@ -13,3 +13,7 @@ clean:
 check:
 	bash tools/spellcheck
 	bash tools/check-common-errors || true
+
+dist/declaration.pdf:
+	pdflatex -interaction=nonstopmode --output-directory=dist frontmatter/declaration.tex
+	pdflatex -interaction=nonstopmode --output-directory=dist frontmatter/declaration.tex
