@@ -1,4 +1,4 @@
-\chapter[Realizing the Creutz ladder model with dipolar spins]{Realizing the Creutz ladder model\texorpdfstring{\\}{ }with dipolar spins}
+\chapter[Realizing the Creutz ladder model with dipolar interactions]{Realizing the Creutz ladder model\texorpdfstring{\\}{ }with dipolar interactions}
 \label{creutz_ladder}
 
 In this part we apply the ideas of \cref{topological_bands} to one-dimensional systems.
@@ -29,7 +29,7 @@ Introducing hard-core bosons for each of these states and transforming to moment
         w \et^{-2}_{k} & -t \et^0_{k} & w \ep_k & -t \ep_k
     \end{pmatrix}.
 \end{align}
-Here, $t$ is the orbital-preserving tunneling strength ($t \equiv t^+ = t^-$) and $w$ is the spin-changing tunneling rate, as defined in \cref{tb:tunnelingRates}.
+Here, $t$ is the orbital-preserving tunneling strength ($t \equiv t^+ = t^-$) and $w$ is the orbital-changing tunneling rate, as defined in \cref{tb:tunnelingRates}.
 The one-dimensional variant of the dipolar dispersion relation comes in two forms. The function
 \begin{align}
     \ep_k &= a^3 \sum_{x\ne 0} \frac{\ef{i k x}}{|x|^3} = 2 \sum_{j>0} \frac{\cos(k a j)}{|j|^3}
@@ -155,7 +155,7 @@ In the following, we look at the full model including the long-range dipolar hop
 
 
 \section{The full dipolar model}
-Leaving the idealized model, we remove the artificial cut-off and also add the spin-preserving tunneling terms proportional to $t$.
+Leaving the idealized model, we remove the artificial cut-off and also add the orbital-preserving tunneling terms proportional to $t$.
 Then, we can write the block $H_+(k)$ from \tref{hblock} as
 \begin{align} \tlabel{hplusfull}
     H_+(k) &= -t M_k + w N_k \\
@@ -188,7 +188,7 @@ By replacing $w$ with $-w$, we immediately get the dispersion relation for the u
 
 \subsection{Topological structure}
 
-\fig{.7}{phasediag}{Topological phase diagram for the double Creutz ladder system as a function of the angle $\delta = \arctan(h/a)$ and the ratio of tunneling rates $t/w$. The lines indicate band touchings at the $k=0$ or $k=\pi/a$ point for the $H_-$-ladder (blue) and $H_+$-ladder (green). The shaded areas have nontrivial winding numbers $\nu_\pm$ for one of the Creutz ladders or both of them.}
+\fig{.7}{phasediag}{Topological winding numbers of the double Creutz ladder system as a function of the angle $\delta = \arctan(h/a)$ and the ratio of tunneling rates $t/w$. The lines indicate band touchings at the $k=0$ or $k=\pi/a$ point for the $H_-$-ladder (blue) and $H_+$-ladder (green). The shaded areas have nontrivial winding numbers $\nu_\pm$ for one of the Creutz ladders or both of them.}
 
 Following the strategy of \cref{tb:chernnumber}, \tref{hplusfull} can be written in the form $H_+(k) = n^0_k \cdot \id + \vec{n}_k \cdot \vecsigma$. Here, $n^0_k = \frac{1}{2} \operatorname{tr} H_+(k)$ is the diagonal part and $\vec{n}_k$ is given by
 \begin{align}
@@ -198,7 +198,7 @@ Following the strategy of \cref{tb:chernnumber}, \tref{hplusfull} can be written
         -w \et^a_k
     \end{pmatrix}.
 \end{align}
-To determine the topological phase diagram, we look for points where $\vec{n}_k=0$.
+To determine the topological `phase diagram', we look for points where $\vec{n}_k=0$.
 The odd function $\et^a_k$ in the $z$-component can only be zero at $k = 0$ and $k=\pi/a$.
 Consequently, the bandgap closes if $n^x_0 = 0$ or $n^x_{\pi/a} = 0$, leading to the two conditions
 \begin{align}
