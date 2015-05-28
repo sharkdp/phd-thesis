@@ -2,11 +2,11 @@
 \label{creutz_ladder}
 
 In this part we apply the ideas of \cref{topological_bands} to one-dimensional systems.
-Using a lattice with a double-chain structure, we show how dipolar exchange interactions can lead to the simulation of a homogeneous magnetic field and a symmetry-protected topological phase.
+Using a lattice with a double-chain structure, we show how dipolar exchange interactions can lead to the simulation of a homogeneous magnetic field and nontrivial topological band structures.
 The appearance of a constant magnetic field in a time-reversal invariant system is only possible because the system decomposes into two completely separate sectors.
 Each of them acquires a magnetic field of equal strength but opposite sign, in a similar way to the quantum spin Hall effect~\cite{Kane2005a}.
 Furthermore, we show that each sector is a realization of a cross-linked ladder model introduced by Creutz~\cite{Creutz1999,Bermudez2009,Tovmasyan2013a,Takayoshi2013,Sticlet2014}.
-This model has a topological phase with a perfectly flat band and symmetry protected edge states.
+This model has topological bands which can be perfectly flat. The topological properties and the resulting edge states are protected by inversion symmetry.
 We examine the properties of the double Creutz ladder and describe the modifications due to the long-range dipolar hoppings.
 
 \section{Setup}
@@ -123,7 +123,8 @@ From the expansion into the $\id, \sigma_z, \sigma_x$ components, we can directl
 
 \subsection{Perfectly flat bands}
 The Creutz ladder supports two perfectly flat bands. To see this, we first set the displacement between the two chains equal to the lattice constant, i.e. $h=a$.
-Then, the angle $\delta$ is given by $\pi/4$ which results in a flux of $\pi$ per unit cell.
+Then, the angle $\delta$ is given by $\pi/4$.
+This results in a flux of $\pi$ per unit cell.
 In this case, \tref{disp} simplifies to
 \begin{align}
     E_\pm(k) = -w_v \pm \sqrt{ \bb{ 2w_d\sin(ka) }^2 + \bb{ 2w_h\cos(ka) }^2 }.
@@ -150,7 +151,7 @@ These are the two edge states at each end of the ladder. In the flat-band limit,
     \ket{E}_+ = \frac{1}{\sqrt{2}} \bb{ \ketup_{1,+} + i \ketdn_{1,+} } = \frac{1}{2} \bb{ \upp_1 + \dnm_1 + i\dnp_1 + i\upm_1 }.
 \end{align}
 We can see that the excitation is shared among all four orbitals in the original basis.
-The exact localization at the edge is only true for the flat-band limit.
+The localization at the edge is only exact in the flat-band limit.
 In the following, we look at the full model including the long-range dipolar hopping.
 
 
@@ -212,10 +213,10 @@ If $t/w$ is not at one of the critical values, we can normalize the vector and d
 \end{align}
 For values $t/w$ between the two critical values, each ladder has a non-trivial winding number of $\nu = 1$.
 The resulting topological phase diagram for both sectors is shown in \tref{phasediag}.
-It has overlapping regions where both of the ladders are in the topologically nontrivial phase.
+It has overlapping regions where both of the ladders have topologically nontrivial winding numbers.
 
 
-\sidefig{.4\textwidth}{disp_dipolar/disp_dipolar}{Dispersion relation of the full dipolar model for realistic parameters with $h/a = 0.72$ and $t/w = 1/3$. Both ladders (blue and green bands) are in the topological phase with $\nu=1$. Note that the bands are allowed to cross due to the block-diagonal structure of the full Hamiltonian. The point-spectrum on the right side shows the energies of a finite ladder with the same parameters and a length of $L=100$. Two edge states appear in the bandgap of each sector.}
+\sidefig{.4\textwidth}{disp_dipolar/disp_dipolar}{Dispersion relation of the full dipolar model for realistic parameters with $h/a = 0.72$ and $t/w = 1/3$. Both ladders (blue and green bands) have winding numbers of $\nu=1$. Note that the bands are allowed to cross due to the block-diagonal structure of the full Hamiltonian. The point-spectrum on the right side shows the energies of a finite ladder with the same parameters and a length of $L=100$. Two edge states appear in the bandgap of each sector.}
 
 \subsection{Symmetry protection}
 In both blocks of the full Hamiltonian, the symmetries found in \tref{symmetries} are given by $\mathcal{P} = \sigma_x$ and $\mathcal{T}=\sigma_x \mathcal{K}$ with respect to the new basis.
@@ -275,6 +276,6 @@ The energy scaling results are summarized in \tref{scaling/scaling}.
 We have shown that dipolar exchange interactions can lead to the appearance of a constant magnetic flux in a very simple setup on a double-chain lattice.
 The artificial magnetic field can be tuned by changing a single geometric parameter: the height between the two chains.
 Moreover, the system can be understood as two decoupled copies of a Creutz-ladder with opposite-sign parameters.
-This model has a topological phase with edge states that are protected by inversion symmetry.
+This model can have bands with topologically nontrivial winding numbers and edge states that are protected by inversion symmetry.
 The many-body physics of our model can be understood by studying hard-core bosons on the Creutz-ladder.
 In the short-range version, this has been subject of a work by Tovmasyan \etal~\cite{Tovmasyan2013a}.
