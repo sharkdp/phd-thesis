@@ -17,7 +17,7 @@ The exchange interactions can be subdivided into two sectors according to the an
 One sector preserves the internal and external angular momentum separately.
 In \cref{anomalous_behavior}, this will be used to simulate $XY$-type spin interactions.
 The second sector only conserves the sum of internal and external angular momentum.
-This type of interaction induces a spin-orbit coupling which plays an essential part in \cref{dipolar_fermions,topological_bands,creutz_ladder} where the coupling between internal and external degrees of freedom will be used in different ways.
+This type of interaction induces a spin-orbit coupling. It plays an essential part in \cref{dipolar_fermions,topological_bands,creutz_ladder}, where the coupling between internal and external degrees of freedom will be used in different ways.
 
 \section{Physical implementations of dipolar systems}
 
@@ -52,10 +52,10 @@ molecules~\cite{Ospelkaus2010a,Quemener2012}.
 The dipolar effects in polar molecules can be much larger due to the
 electric nature of the dipole moments which typically leads to an interaction strength which
 is stronger by up to four orders of magnitude due to the $\alpha^2$ fine-structure factor between electric
-and magnetic systems. For a detailed comparison of the different interaction strengths,
-see~\cite{Lahaye2009}. Different species of polar molecules have been successfully cooled, among
+and magnetic systems. For a detailed comparison of the interaction strengths,
+see Lahaye \etal~\cite{Lahaye2009}. Different species of polar molecules have been successfully cooled, among
 them KRb~\cite{Ni2008b,Ospelkaus2010}, NaK~\cite{Wu2012a} and NaLi~\cite{Heo2012}. For a review,
-see~\cite{Quemener2012}.
+see Quéméner and Julienne~\cite{Quemener2012}.
 
 In this thesis, we focus on the rotational structure of the polar molecules,
 neglecting any vibrational and electronic excitations, as well as possible hyperfine structure
@@ -92,13 +92,13 @@ realization of dipolar spin systems~\cite{Barredo2014,Weber2015}.
 \section{Dipole-dipole interaction}
 The aim of this section is to rewrite the familiar interaction between two dipoles $\vec{d}_i$ and $\vec{d}_j$ at positions $\vecR_i, \vecR_j$, namely
 \begin{align} \tlabel{ddint}
-\Hdd_{ij} = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } },
+    \Hdd_{ij} = \frac{\kappa}{\absv{\vecR_{ij}}^3} \bc{ \vecd_i \cdot \vecd_j -3 \bb{ \vecd_i \cdot \hat{\vecR}_{ij} }\bb{ \vecd_j \cdot \hat{\vecR}_{ij} } } = \frac{\kappa}{\absv{\vecR_{ij}}^3} \, D_{ij},
 \end{align}
 in a spherical tensor representation~\cite{Micheli2007,Gorshkov2011c} which will be useful throughout this thesis.
 \Tref{ddint} is given in terms of the relative vector $\vecR_{ij} = \vecR_j - \vecR_i$ and its normalized form $\hat{\vecR}_{ij}$.
 The constant prefactor is given by $\kappa = 1/4\pi\epsilon_0$ for electric dipoles and by
 $\kappa = \mu_0 / 4\pi$ for magnetic dipoles.
-In the following, we focus on the distance-independent part $D_{ij} \equiv \Hdd_{ij} \cdot \absv{\vecR_{ij}}^3/\kappa=\vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij})$ of the dipole-dipole interaction which can be written in terms of the spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with the components
+In the following, we focus on the distance-independent part $D_{ij} = \vecd_i \cdot \vecd_j -3 (\vecd_i \cdot \hat{\vecR}_{ij})(\vecd_j \cdot \hat{\vecR}_{ij})$ of the dipole-dipole interaction which can be written in terms of the spherical tensor $T^2(\vecd_i, \vecd_j)$ of rank two with the components
 \begin{align}
 T^2_0(\vecd_i, \vecd_j) &= \frac{1}{\sqrt{6}} (d_i^+ d_j^- + 2d_i^0 d_j^0 + d_i^{-} d_j^{+}), \\
 T^2_{\pm 1}(\vecd_i, \vecd_j) &= \frac{1}{\sqrt{2}} (d_i^{\pm} d_j^0 + d_i^0 d_j^{\pm}), \\
@@ -140,7 +140,7 @@ Conversely, if the dipoles point along the lattice direction, we can set $\theta
 \subsection{Tilted field geometry}
 \doublefig{.4}{lattice-geometry}{Tilted-field 2D geometry}
 {.4}{dipole-moments}{Schematic level structure}
-{\sfA~Illustration of the relevant axes and angles. The lattice lies in the $xy$ plane while the static external field $\vec{E}$ is tilted from the $z$ axis by an angle $\Theta_0$ and rotated around it by an angle $\Phi_0$ with respect to the $x$ axis. The direction of the vector $\vec{R}$, connecting two dipoles, is determined by the polar angle $\phi_{ij}$.
+{\sfA~Illustration of the relevant axes and angles. The lattice lies in the $xy$ plane while the static external field $\vec{E}$ is tilted from the $z$ axis by an angle $\Theta_0$ and rotated around it by an angle $\Phi_0$ with respect to the $x$ axis. The direction of the vector $\vecR_{ij}$, connecting two dipoles, is determined by the polar angle $\phi_{ij}$.
 \sfB~Internal rotational states of a dipole with a ground state $\ketz$ and excited state $\keto$ with $M=0$, as well as two states $\ketpm$ with $M=\pm 1$. The relevant static dipole moments (blue) and transition dipole moments (red) are shown. The plus sign is for the transitions going \qu{upwards} and the minus sign for transitions going \qu{downwards}.}
 
 
