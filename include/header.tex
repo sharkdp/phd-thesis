@@ -29,15 +29,19 @@
 
 %%% Print or PDF version?
 \RequirePackage{etoolbox}
+\newtoggle{twoside}
 \newtoggle{print}
-\settoggle{print}{false} % use this to toggle between the two layouts
 
-\iftoggle{print}{
-    % Use a two-sided layout for the print version
+% Use these to toggle between the different layouts and
+% whether it is a print version or an electronic version
+\settoggle{twoside}{false}
+\settoggle{print}{false}
+
+\iftoggle{twoside}{
     \KOMAoption{twoside=true}
 }{
-    % Use a centered type area for the PDF version. We use twoside=semi
-    % to preserve the page numbers between the print layout and PDF layout.
+    % Use a centered type area for the oneside version. We use twoside=semi
+    % to preserve the page numbers between the different layouts.
     \KOMAoption{twoside=semi}
 
     % Patch the headers and footers to be centered
@@ -126,7 +130,7 @@
 ]{hyperref}
 
 \iftoggle{print}{
-    % Use a two-sided layout for the print version
+    % Hide the colored links in the print version
     \hypersetup{hidelinks}
 }{}
 
