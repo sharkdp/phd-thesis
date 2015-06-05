@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=(chapters/*.tex appendices/*.tex frontmatter/*.tex endmatter/*.tex)
+files=(chapters/*.tex appendices/*.tex endmatter/*.tex)
 
 function category() {
     echo
