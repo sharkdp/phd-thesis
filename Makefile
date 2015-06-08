@@ -13,6 +13,6 @@ check:
 	bash tools/spellcheck
 	bash tools/check-common-errors || true
 
-dist/declaration.pdf:
+dist/declaration.pdf: frontmatter/declaration.tex include/metadata.tex
 	pdflatex -interaction=nonstopmode --output-directory=dist frontmatter/declaration.tex
 	pdflatex -interaction=nonstopmode --output-directory=dist frontmatter/declaration.tex
