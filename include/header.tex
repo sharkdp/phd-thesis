@@ -34,11 +34,11 @@
 
 % Use these to toggle between the different layouts and
 % whether it is a print version or an electronic version
-\settoggle{twoside}{false}
-\settoggle{print}{false}
+\settoggle{twoside}{true}
+\settoggle{print}{true}
 
 \iftoggle{twoside}{
-    \KOMAoption{twoside=true}
+    \KOMAoption{twoside=semi}
 }{
     % Use a centered type area for the oneside version. We use twoside=semi
     % to preserve the page numbers between the different layouts.
